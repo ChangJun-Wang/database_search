@@ -283,15 +283,12 @@ class search:
                     tmp_rec = pathlist
                     tmp_rec.append(downRec)
                     if product.name != "H2O":
-                        if self.DFS_all(product, notes, tmp_rec, tmp_node):
-                            return True
+                        if (notes in product.label):
+                            label = product.labelA[0]
+                            product.tmp_label = label
+                            self.DFS_all(product, notes, [], [])
                         else:
-                            return False
-                    if (notes in product.label):
-                        label = product.labelA
-                        self.DFS_all(product, notes, [], [])
-                        return True
-        return False
+                            self.DFS_all(product, notes, tmp_rec, tmp_node)
 
 
     def DFS_down(self, startNode, notes, pathlist, pathnode):
@@ -304,14 +301,14 @@ class search:
                     mark = False
             for product in downRec.getpro():
                 if(product.visited == 0 and mark):
-                    print("find", "A")
+                    #print("find", notes)
                     product.visited = 1
                     product.recStack = True
                     downRec.recStack = True
                     pathlist.append(downRec)
                     pathnode.append(startNode)
-                    if ("A" in product.label):
-                        print("find", "A")
+                    if (product.tmp_label[0] == notes):
+                        print("find", notes)
                         for path in pathlist:
                             print(path.show())
                         print("\n********** pathnode *********\n")
@@ -533,14 +530,19 @@ if __name__ == '__main__':
     #specified input species :
     input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["glucose"]]
     notes         = ["A","A","E","C"]
-    note          = notes[0]
-    for node in input_species:
-        (result, pathlist, pathnode) = searcher.DFS_down(node, note, [], [searcher.mapToNode["H2O"], searcher.mapToNode["glucose"]])
-        print(result)
 
-        print(pathlist)
-        print(pathnode)
-        
+    searcher.DFS_all(input_species[0], "A", [], [])
+    searcher.ClearVis()
+    (result0, pathlist0, pathnode0) = searcher.DFS_down(input_species[1], "A", [], [])
+    print(result0)
+
+    print(pathlist0)
+    print(pathnode0)
     
+    (result1, pathlist1, pathnode1) = searcher.DFS_down(input_species[1], "A", pathlist0, pathnode0)
+    print(result1)
+
+    print(pathlist1)
+    print(pathnode1)
 
     print ("count : ", count)
