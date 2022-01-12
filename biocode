@@ -1,0 +1,32 @@
+clear_model.
+parameter(k1=0.3, k2=11.22, k3=91.3, k4=4.25, k5=0.003).
+
+present(L_galactonolactone_oxidase, 1e-6).
+present(D_arabinose_1_dehydrogenase, 1e-6).
+present(alcohol_dehydrogenase, 1/4.25).
+present(propanediol_dehydrogenase, 1e-6).
+present(L_ascorbate_cytochrome_b5_reductase, 1e-2).
+
+present(L_galactono_lactone,1).
+present(L_galactose,0.5).
+present(acetaldehyde,1).
+present(HP,1).
+present(NADH,1).
+present(ferricytochrome_b5,5).
+
+present(benzoquinone,1).
+present(O2,1).
+
+present(NADP,1).
+
+k5*L_ascorbate*ferricytochrome_b5*L_ascorbate_cytochrome_b5_reductase for L_ascorbate + ferricytochrome_b5 =[L_ascorbate_cytochrome_b5_reductase]=> monodehydroascorbate + ferrocytochrome_b5 + HP.
+
+k4*acetaldehyde*NADH*HP*alcohol_dehydrogenase*propanediol_dehydrogenase for acetaldehyde + NADH + HP + propanediol_dehydrogenase =[alcohol_dehydrogenase]=> ethanol + NADP + propanediol_dehydrogenase.
+
+numerical_simulation(time: 20000). plot(show:{L_ascorbate}).
+
+k1*L_galactono_lactone*O2*L_galactonolactone_oxidase for L_galactono_lactone + O2 =[L_galactonolactone_oxidase]=> L_ascorbate + H2O2.
+
+k2*L_galactono_lactone*benzoquinone*L_galactonolactone_oxidase for L_galactono_lactone + benzoquinone =[L_galactonolactone_oxidase]=> L_ascorbate + benzoquinol.
+
+k3*L_galactose*NADP*D_arabinose_1_dehydrogenase for L_galactose + NADP =[D_arabinose_1_dehydrogenase]=> L_ascorbate + NADH.

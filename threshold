@@ -1,0 +1,122 @@
+C79
+
+reaction : 50
+Enzyme :
+alcohol_dehydrogenase
+Reactant :
+n-hexanol  NAD+
+Product :
+n-hexanal  NADH
+C79
+
+reaction : 8199
+Enzyme :
+glycerol_dehydrogenase
+Reactant :
+n-hexanal  NADPH  H+
+Product :
+n-hexanol  NADP+
+C79
+
+reaction : 50
+Enzyme :
+alcohol_dehydrogenase
+Reactant :
+n-hexanol  NAD+
+Product :
+n-hexanal  NADH
+find C
+
+reaction : 2
+Enzyme :
+spontaneous_reaction
+Reactant :
+H2O  L-dehydroascorbate
+Product :
+(4R,5S)-4,5,6-trihydroxy-2,3-dioxohexanoate
+
+reaction : 1345
+Enzyme :
+3-dehydro-L-gulonate_2-dehydrogenase
+Reactant :
+(4R,5S)-4,5,6-trihydroxy-2,3-dioxohexanoate  NAD(P)H
+Product :
+3-dehydro-L-gulonate  NAD(P)+
+
+reaction : 1344
+Enzyme :
+3-dehydro-L-gulonate_2-dehydrogenase
+Reactant :
+3-dehydro-L-gulonate  NAD(P)+
+Product :
+(4R,5S)-4,5,6-trihydroxy-2,3-dioxohexanoate  NAD(P)H  H+
+
+reaction : 819
+Enzyme :
+L-xylulose_reductase
+Reactant :
+diacetyl  NAD(P)H
+Product :
+acetoin  NAD(P)+
+
+reaction : 262
+Enzyme :
+alcohol_dehydrogenase
+Reactant :
+acetoin  NADH  H+
+Product :
+3-hydroxy-2-butanol  NAD+
+
+reaction : 3
+Enzyme :
+spontaneous_reaction
+Reactant :
+L-ascorbate
+Product :
+L-dehydroascorbate
+find A
+
+reaction : 12610
+Enzyme :
+L-ascorbate_peroxidase
+Reactant :
+2_monodehydroascorbate
+Product :
+L-ascorbate  L-dehydroascorbate
+find A
+
+reaction : 12611
+Enzyme :
+L-ascorbate_peroxidase
+Reactant :
+2_L-ascorbate  H2O2  2_H+
+Product :
+L-ascorbate  L-dehydroascorbate  2_H2O
+find A
+
+reaction : 28937
+Enzyme :
+violaxanthin_de-epoxidase
+Reactant :
+violaxanthin  L-ascorbate
+Product :
+antheraxanthin  L-dehydroascorbate  H2O
+find A
+
+reaction : 28938
+Enzyme :
+violaxanthin_de-epoxidase
+Reactant :
+antheraxanthin  L-ascorbate
+Product :
+zeaxanthin  L-dehydroascorbate  H2O
+find A
+
+reaction : 30529
+Enzyme :
+L-galactonolactone_dehydrogenase
+Reactant :
+L-galactono-1,4-lactone  4_ferricytochrome_c
+Product :
+L-dehydroascorbate  4_ferrocytochrome_c  4_H+
+find A

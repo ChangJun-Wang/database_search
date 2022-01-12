@@ -13,26 +13,16 @@ class node :
         self.name     = name
         self.upEdge   = []
         self.downEdge = []
-        self.catEdge  = []
         self.pin      = 0
         self.pout     = 0
         self.visited  = 0
         self.recStack = False
-        self.typeC    = 0
-        self.label    = set()
-        self.enzyme   = set()
-        self.tmp_label= ""
-        self.labelA   = []
-        self.labelB   = []
-        self.labelC   = []
-        self.labelD   = []
-        self.labelE   = []
+        self.typeC = 0
+        self.label = []
     def getUpedge(self):
         return self.upEdge
     def getDownedge(self):
         return self.downEdge
-    def getCatedge(self):
-        return self.catEdge
     def getpin(self):
         return self.pin
     def getpout(self):
@@ -46,8 +36,6 @@ class node :
         (self.upEdge).append(rec)
     def addDownedge(self, rec):
         (self.downEdge).append(rec)
-    def addCatedge(self, rec):
-        (self.catEdge).append(rec)
 
 class edge :
     def __init__(self, name):
@@ -55,7 +43,7 @@ class edge :
         self.toRea    = []  #
         self.toPro    = []  #
         self.toEnz    = []
-        self.label    = set()
+        self.label = []
         self.visited  = 0
         self.recStack = False
     def getpro(self):
@@ -97,11 +85,8 @@ class search:
         self.HashTable   = {}
         self.HashCollect = {}
         self.reaction    = 0
-        self.typeA       = 0
-        self.typeB       = 0
         self.typeC       = 0
         self.typeD       = 0
-        self.typeE       = 0
         self.store       = []
 
         self.count       = 0
@@ -117,28 +102,6 @@ class search:
             else:
                 temp += w
         return tmpList
-    def initialize(self):
-        for nodes in self.nodeList:
-            if (self.mapToNode[nodes].getpin() > 1):
-                self.typeA += 1
-                self.mapToNode[nodes].label.add("A")
-                self.mapToNode[nodes].labelA.append("A" + str(self.typeA))
-            if (self.mapToNode[nodes].getpout() > 1):
-                self.typeB += 1
-                self.mapToNode[nodes].label.add("B")
-                self.mapToNode[nodes].labelB.append("B" + str(self.typeB))
-            if (self.mapToNode[nodes].getpout() > 0) and (self.mapToNode[nodes].getpin() > 0):
-                self.typeD += 1
-                self.mapToNode[nodes].label.add("D")
-                self.mapToNode[nodes].labelD.append("D" + str(self.typeD))
-            if (len(self.mapToNode[nodes].getCatedge()) > 1):
-                self.typeE += 1
-                self.mapToNode[nodes].label.add("E")
-                self.mapToNode[nodes].labelD.append("E" + str(self.typeE))
-            if self.mapToNode[nodes].visited == 0:
-                self.mapToNode[nodes].visited = 1
-                self.DFS(self.mapToNode[nodes], [], [])
-        self.ClearVis()
 
     def parsing(self, inputfile):
         temp = ""
@@ -164,7 +127,8 @@ class search:
                 #self.edgeList.append(self.reaction)
 
                 self.mapToEdge[self.reaction].addenz(self.mapToNode[enzyme])
-                self.mapToNode[enzyme].addCatedge(self.mapToEdge[self.reaction])
+                self.mapToNode[enzyme].addUpedge(self.mapToEdge[self.reaction])
+                self.mapToNode[enzyme].addDownedge(self.mapToEdge[self.reaction])
 
                 for species in tmpList[1:]:
                     HashKey = HashKey + species[0]
@@ -185,10 +149,7 @@ class search:
                         else:
                             self.mapToEdge[self.reaction].addpro(self.mapToNode[species])
                             self.mapToNode[species].addUpedge(self.mapToEdge[self.reaction])
-                            if (enzyme != 'spontaneous_reaction' and enzyme not in self.mapToNode[species].enzyme):
-                                self.mapToNode[species].enzyme.add(enzyme)
-                                self.mapToNode[species].addpin()
-
+                            self.mapToNode[species].addpin()
 
                 if (HashKey in self.HashTable):
                     typeD_tmp = 0
@@ -197,9 +158,11 @@ class search:
                             and (self.mapToEdge[rec].getpro() == self.mapToEdge[self.reaction].getpro())
                             and (self.mapToNode[enzyme] not in self.mapToEdge[rec].getenz())):
                             typeD_tmp += 1
-                            ((self.mapToEdge[rec]).label).add("D")
+                            ((self.mapToEdge[rec]).label).append("D")
                             for i in self.mapToEdge[rec].getpro():
-                                i.label.add("D")
+                                i.label.append("D")
+                            #for j in self.mapToEdge[rec].getrea():
+                                #j.label.append("D")
                             if (self.reaction not in self.HashCollect):
                                 templist = []
                                 templist.append(rec)
@@ -220,50 +183,45 @@ class search:
                     self.HashTable[HashKey] = []
                     self.HashTable[HashKey].append(self.reaction)
                 HashKey = ""
-        self.initialize()
 
-
-    def backTrace(self, startRec, pathlist, pathnode):
+    def backTrace(self, startRec, pathlist):
         #print("in backtrae")
         for index in range(len(pathlist)):
             if startRec == pathlist[index]:
                 #print("add label")
                 #(self.typeC) += 1
-                #startRec.label.add("C" + str(self.typeC))
-                #startRec.label.add("C")
-                #for enz in startRec.getenz():
-                #    (enz).label.add("C" + str(self.typeC))
-                #    (enz).label.add("C")
+                startRec.label.append("C" + str(self.typeC))
+                startRec.label.append("C")
+                for enz in startRec.getenz():
+                    (enz).label.append("C" + str(self.typeC))
+                    (enz).label.append("C")
                 self.mapToCycle["C" + str(self.typeC)] = pathlist[index:]
-                for rec in pathlist[index:]:
-                    rec.label.add("C")
-                for species in pathnode[index:]:
-                    species.labelC.append("C" + str(self.typeC))
-                    species.label.add("C")
                 return True
         return False
 
-    def DFS(self, startRea, pathlist, pathnode):
+    def DFS(self, startRea, pathlist):
         #print("in DFS")
-        tmp_node = pathnode
-        tmp_node.append(startRea)
         for downRec in startRea.getDownedge():
             if downRec.visited == 0:
                 downRec.visited = 1
-                tmp_rec = pathlist
-                tmp_rec.append(downRec)
+                tmp = pathlist
+                tmp.append(downRec)
                 downRec.recStack = True
+                #self.count += 1
                 for product in downRec.getpro():
                     if product.name != "H2O":
-                        if self.DFS(product, tmp_rec, tmp_node):
+                        if self.DFS(product, tmp):
                             return True
             else:
                 if (downRec.recStack == True):# and (self.count > 2):
                     (self.typeC) += 1
+                    #print("A cycle")
                     pathlist.append(downRec)
-                    return self.backTrace(downRec, pathlist, pathnode)
+                    return self.backTrace(downRec, pathlist)
+                    #self.count = 0
             if downRec.recStack == True:
                 downRec.recStack = False
+                #self.count -= 1
         return False
         
     def reveal(self):
@@ -271,155 +229,29 @@ class search:
             if self.mapToEdge[rec+1].recStack:
                 print(self.mapToEdge[rec+1].show())
 
-
-    def DFS_all(self, startNode, notes, pathlist, pathnode):
-        #print("in DFS")
-        tmp_node = pathnode
-        tmp_node.append(startNode)
-        for downRec in startNode.getDownedge():
-            for product in downRec.getpro():
-                if product.visited == 0:
-                    product.visited = 1
-                    tmp_rec = pathlist
-                    tmp_rec.append(downRec)
-                    if product.name != "H2O":
-                        if (notes in product.label):
-                            label = product.labelA[0]
-                            product.tmp_label = label
-                            self.DFS_all(product, notes, [], [])
-                        else:
-                            self.DFS_all(product, notes, tmp_rec, tmp_node)
-
-
-    def DFS_down(self, startNode, notes, pathlist, pathnode):
-        #print("DFS down")
-        for downRec in startNode.getDownedge():
-            #print("DFS down")
-            mark = True
-            for reactant in downRec.getrea():
-                if reactant in pathnode:
-                    mark = False
-            for product in downRec.getpro():
-                if(product.visited == 0 and mark):
-                    #print("find", notes)
-                    product.visited = 1
-                    product.recStack = True
-                    downRec.recStack = True
-                    pathlist.append(downRec)
-                    pathnode.append(startNode)
-                    if (product.tmp_label[0] == notes):
-                        print("find", notes)
-                        for path in pathlist:
-                            print(path.show())
-                        print("\n********** pathnode *********\n")
-                        for node in pathnode:
-                            print(node.name)
-                        print("\n********** pathnode *********")
-                        return (True, pathnode, pathlist)
-                    return self.DFS_down(product, notes, pathlist, pathnode)
-                product.recStack = False
-                downRec.recStack = False
-        return (False, [], [])
-
-        """mark = True
+    def DFSsearch(self, startPro, notes, pathlist):
         for downRec in startPro.getDownedge():
             for product in downRec.getpro():
-                if (product in pathnode):
-                    mark = False
-            for product in downRec.getpro():
-                if(product.visited == 0 and product.name != "H2O" and mark):
+                if(product.visited == 0 and product.name != "H2O"):
                     product.visited = 1
                     product.recStack = True
                     downRec.recStack = True
                     pathlist.append(downRec)
-                    pathnode.append(startPro)
                     for enz in downRec.getenz():
-                        for reactant in downRec.getrea():
-                            if (reactant == pathnode[0]):
-                                mark = False
-                        if (notes in (enz).label) and mark:
-                            if self.show(enz):
-                                print("find", notes)
-                                (enz).label.remove(notes)
-                                for path in pathlist:
-                                    print(path.show())
-                                print("\n********** pathnode *********\n")
-                                for node in pathnode:
-                                    print(node.name)
-                                print("\n********** pathnode *********")
-                                return (True, pathnode, pathlist)
-                    return self.DFS_down(product, notes, pathlist, pathnode)
+                        if ("C" in (enz).label) and self.show(enz):
+                            print("find C")
+                            for path in pathlist:
+                                print(path.show())
+                            #self.reveal()
+                            #for rec in product.getUpedge():
+                            #    if "C" in rec.label:
+                            #        print(rec.show())
+                            #        print ("Find type ", "note")
+                            return True
+                    return self.DFSsearch(product, notes, pathlist)
                 product.recStack = False
                 downRec.recStack = False
-        return (False, [], [])"""
-
-    """def BFS_down(self, startPro, notes, pathlist, pathnode):
-        record = [startPro]
-        BFS = [startPro]
-        while BFS != []:
-            startPro = BFS.pop()
-            for downRec in startPro.getDownedge():
-                for product in downRec.getpro():
-                    if(product.visited == 0):
-                        product.visited = 1
-                        BFS.append(product)
-                        pathlist.append(downRec)
-                        pathnode.append(startPro)
-
-            pass
-        mark = True
-        for downRec in startPro.getDownedge():
-            for product in downRec.getpro():
-                if (product in pathnode):
-                    mark = False
-            for product in downRec.getpro():
-                if(product.visited == 0 and product.name != "H2O" and mark):
-                    product.visited = 1
-                    product.recStack = True
-                    downRec.recStack = True
-                    pathlist.append(downRec)
-                    pathnode.append(startPro)
-                    for enz in downRec.getenz():
-                        for reactant in downRec.getrea():
-                            if (reactant == pathnode[0]):
-                                mark = False
-                        if (notes in (enz).label) and mark:
-                            if self.show(enz):
-                                print("find", notes)
-                                (enz).label.remove(notes)
-                                for path in pathlist:
-                                    print(path.show())
-                                print("\n********** pathnode *********\n")
-                                for node in pathnode:
-                                    print(node.name)
-                                print("\n********** pathnode *********")
-                                return True
-                    return self.DFS_down(product, notes, pathlist, pathnode)
-                product.recStack = False
-                downRec.recStack = False
-        return False"""
-
-    def DFS_up(self, startPro, notes, pathlist, pathnode):
-        print("in DFS up")
-        mark = True
-        for upRec in startPro.getUpedge():
-            for reactant in upRec.getrea():
-                if(reactant.visited == 0 and reactant.name != "H2O" and mark):
-                    reactant.visited = 1
-                    reactant.recStack = True
-                    upRec.recStack = True
-                    pathlist.append(upRec)
-                    pathnode.append(startPro)
-                    if (notes in (reactant).label) and mark:
-                        print("find", notes)
-                        (reactant).label.remove(notes)
-                        for path in pathlist:
-                            print(path.show())
-                        return (True, pathnode, pathlist)
-                    return self.DFS_up(reactant, notes, pathlist, pathnode)
-                reactant.recStack = False
-                upRec.recStack = False
-        return (False, [], [])
+        return False
 
     def ClearVis(self):
         for nodes in self.nodeList:
@@ -429,10 +261,9 @@ class search:
             self.mapToEdge[rec+1].recStack = False
 
     def show(self, node):
-        if "C" in node.label:
-            for label in node.labelC:
-                if ((len(self.mapToCycle[label]) > 2) 
-                    and (len(self.mapToCycle[label]) < 5)):
+        for label in node.label:
+            if len(label) > 1:
+                if (len(self.mapToCycle[label]) > 2) and (len(self.mapToCycle[label]) < 5):
                     if self.mapToCycle[label][0].getenz() != self.mapToCycle[label][1].getenz() :
                         print("There are the related reaction: \n")
                         for i in self.mapToCycle[label]:
@@ -441,23 +272,22 @@ class search:
                         return True
         return False
     
-    def showRec(self, node):
-        if "C" in node.label:
-            for label in node.labelC:
-                if ((len(self.mapToCycle[label]) == 3)):
-                    #print("There are the related reaction: \n")
-                    pathlist = self.mapToCycle[label]
-                    for index in range(len(pathlist) - 1):
-                        for product in pathlist[index].getpro():
-                            if (product in pathlist[index + 1].getrea()):
-                                product.label.add(label)
-                                product.label.add("C")
-                                break
-                    return pathlist
-        return []
+    def showRec(self, edge):
+        for label in edge.label:
+            if len(label) > 1:
+                #if (len(self.mapToCycle[label]) > 2) and (len(self.mapToCycle[label]) < 10):
+                #if self.mapToCycle[label][0].getenz() != self.mapToCycle[label][1].getenz() :
+                print("There are the related reaction: \n")
+                for i in self.mapToCycle[label]:
+                    print(i.show())
+                return True
+
 
 if __name__ == '__main__':
     #traversal(store)
+    typeA = 0
+    typeB = 0
+    typeC = 0
 
     searcher = search()
     f = open("parseddata.txt", encoding="utf-8", mode='r')
@@ -468,10 +298,34 @@ if __name__ == '__main__':
     
     temp = 0
     fw = open("outputNode.txt", encoding="utf-8", mode='w')
+    for nodes in searcher.nodeList:
+        if (searcher.mapToNode[nodes].getpin() > 1):
+            typeA += 1
+            searcher.mapToNode[nodes].label.append("A")
+        if (searcher.mapToNode[nodes].getpout() > 1):
+            typeB += 1
+            searcher.mapToNode[nodes].label.append("B")
+        if searcher.mapToNode[nodes].visited == 0:
+            searcher.mapToNode[nodes].visited = 1
+            searcher.DFS(searcher.mapToNode[nodes], [])
+
+    #for edges in range(searcher.reaction):
+    #    if (searcher.mapToEdge[edges+1].visited == 0):
+    #        searcher.mapToEdge[edges+1].visited = 1
+    #        searcher.mapToEdge[edges+1].recStack = True
+    #        for product in searcher.mapToEdge[edges+1].getpro():
+     #           if product.name != "H2O":
+     #               searcher.DFS(searcher.mapToNode[nodes], [])
+     #       searcher.mapToEdge[edges+1].recStack = False
+            #for edges in range(searcher.reaction):
+            #    if searcher.mapToEdge[edges+1].recStack == True:
+            #        print("still true stack exists")
+    #for nodes in searcher.nodeList:
+    #    typeC += searcher.mapToNode[nodes].typeC
 
 
-    print("typeA : ", searcher.typeA)
-    print("typeB : ", searcher.typeB)
+    print("typeA : ", typeA)
+    print("typeB : ", typeB)
     print("typeC : ", searcher.typeC)
     print("typeD : ", searcher.typeD)
 
@@ -482,67 +336,35 @@ if __name__ == '__main__':
         fw.write("\n")
     fw.close()
 
+    searcher.ClearVis()
+
+    #fc = open("cycle.txt", encoding="utf-8", mode='w')
+    #for i in range(searcher.typeC):
+    #    fc.write(str(i+1))
+    #    fc.write(searcher.mapToCycle["C" + str(i+1)])
+    #    fc.write("\n")
+    #fc.close()
 
     count = 0
-    notes = ["C","C","C"]
+    notes = ["C"]
     print ("\n", "*************************************************")
+    '''for edges in range(searcher.reaction):
+        if "C" in searcher.mapToEdge[edges+1].label: # and searcher.mapToNode[nodes].name != "H2O":
+            if searcher.show(searcher.mapToEdge[edges+1]):
+                print("find C")
+                break'''
+    for nodes in searcher.nodeList:
+        if "A" in searcher.mapToNode[nodes].label and searcher.mapToNode[nodes].name != "H2O":
+            result = searcher.DFSsearch(searcher.mapToNode[nodes], notes, [])
+            if result:
+                for rec in searcher.mapToNode[nodes].getUpedge():
+                    print(rec.show())
+                    print("find A")
+                notes.pop()
+                print ("*************************************************")
+                count += 1
 
-    """for nodes in searcher.nodeList:
-        if len(notes) == 0:
-            break
-        if ("C" in searcher.mapToNode[nodes].label and searcher.mapToNode[nodes].name != "H2O"):
-            temp = searcher.showRec(searcher.mapToNode[nodes])
-            if temp != []:
-                for rea0 in temp[0].getrea():
-                    for rea1 in temp[1].getrea():
-                        if ("C" not in rea0.label) and ("C" not in rea1.label):
-                            for downRec in rea0.getDownedge():
-                                if len(notes) == 0:
-                                    break
-                                if (downRec in rea1.getDownedge()):
-                                    notes.pop()
-                                    print(downRec.show())
-                                    print("\n", "find C", "\n")
-                                    for rec in temp:
-                                        print(rec.show())
-                    
-                                    count = 0
-                                    for rec in rea1.getUpedge():
-                                        if count == 2:
-                                            break
-                                        if (rea0 not in rec.getpro()) and (rea0 not in rec.getrea()) and (searcher.mapToNode["alcohol_dehydrogenase"] not in rec.getenz()):
-                                            print(rec.show())
-                                            print("find A rea1", "\n")
-                                            count += 1
-
-                                    count = 0
-                                    enzyme = "alcohol_dehydrogenase"
-                                    for rec in rea0.getUpedge():
-                                        if count == 7:
-                                            break
-                                        if (rea1 not in rec.getpro()) and (rea1 not in rec.getrea()) and (searcher.mapToNode[enzyme] not in rec.getenz()):
-                                            enzyme = rec.getenz()[0].name
-                                            print(rec.show())
-                                            print("find A rea0", "\n")
-                                            count += 1
-                                    print("\n", "*************************************************")"""
-
-    #specified input species :
-    input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["glucose"]]
-    notes         = ["A","A","E","C"]
-
-    searcher.DFS_all(input_species[0], "A", [], [])
-    searcher.ClearVis()
-    (result0, pathlist0, pathnode0) = searcher.DFS_down(input_species[1], "A", [], [])
-    print(result0)
-
-    print(pathlist0)
-    print(pathnode0)
-    
-    (result1, pathlist1, pathnode1) = searcher.DFS_down(input_species[1], "A", pathlist0, pathnode0)
-    print(result1)
-
-    print(pathlist1)
-    print(pathnode1)
+            if not notes:
+                break
 
     print ("count : ", count)
