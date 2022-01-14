@@ -34,9 +34,25 @@ if __name__ == '__main__':
     print("typeD : ", searcher.typeD)
     print("typeE : ", searcher.typeE)
 
-    # for node in searcher.nodeList:
-    #     fw.write(nodes.name + " : ")
-    #     fw.write("\n")
+    # print(searcher.mapToClist)
+    # print(searcher.mapToCnode)
+    # print(searcher.mapToCforbid)
+
+    for typeC in range(searcher.typeC):
+        fw.write("TypeC: " + str(typeC) + "\n")
+        if (typeC) in searcher.mapToClist:
+            for rec in searcher.mapToClist[typeC]:
+                fw.write(rec.show())
+
+            fw.write( "\n" + "CoreNode: ")
+            for node in searcher.mapToCnode[typeC]:
+                fw.write( " " + node.show() )
+
+            fw.write("\n" + "Forbidnode: " + "\n" )
+            for nodelist in searcher.mapToCforbid[typeC]:
+                for node in nodelist:
+                    fw.write(node.show() + " ")
+        fw.write("\n")
     fw.close()
 
 
@@ -104,5 +120,5 @@ if __name__ == '__main__':
 
     # related_rec = searcher.check(allnodes)
     # fw.write(related_rec)
-    fw.close()
+    # fw.close()
 

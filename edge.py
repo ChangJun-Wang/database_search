@@ -35,13 +35,13 @@ class edge :
         return True
 
     def show(self):
-        temp = "\n" + "reaction : "
-        temp += (str(self.name)) + "\n"
+        temp = "\n" + "reaction: "
+        temp += (str(self.name)) + " \n"
 
         for i in self.getrea():
-            temp +=  (str(i.name)) + " + "
+            temp +=  (str(i.name)) + " "
         for i in self.getenz():
-            temp +=  "=[" + (str(i.name)) + "]=> "
+            temp +=  " =[ " + (str(i.name)) + " ]=> "
         for i in self.getpro():
-            temp += (str(i.name)) + " + "
+            temp += (str(i.name)) + " "
         return temp

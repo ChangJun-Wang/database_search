@@ -25,6 +25,7 @@ class node :
         self.labelA   = []
         self.labelB   = []
         self.labelC   = []
+        self.labelC_side = []
         self.labelD   = []
         self.labelE   = []
     def getUpedge(self):
@@ -55,4 +56,4 @@ class node :
         (self.catEdge).append(rec)
 
     def show(self):
-        print(self.name)
+        return (self.name)
