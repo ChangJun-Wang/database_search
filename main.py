@@ -21,6 +21,9 @@ if __name__ == '__main__':
     f = open("parseddata.txt", encoding="utf-8", mode='r')
     searcher.parsing(f)
     f.close()
+    fl = open("label.txt", encoding="utf-8", mode='r')
+    searcher.parsing_label(fl)
+    fl.close()
     print("num of reaction : ", searcher.reaction)
     print("num of species : ", len(searcher.nodeList))
     
@@ -40,18 +43,19 @@ if __name__ == '__main__':
 
     for typeC in range(searcher.typeC):
         fw.write("TypeC: " + str(typeC) + "\n")
-        if (typeC) in searcher.mapToClist:
-            for rec in searcher.mapToClist[typeC]:
+        if (str(typeC)) in searcher.mapToClist:
+            for rec in searcher.mapToClist[str(typeC)]:
                 fw.write(rec.show())
 
             fw.write( "\n" + "CoreNode: ")
-            for node in searcher.mapToCnode[typeC]:
+            for node in searcher.mapToCnode[str(typeC)]:
                 fw.write( " " + node.show() )
 
             fw.write("\n" + "Forbidnode: " + "\n" )
-            for nodelist in searcher.mapToCforbid[typeC]:
+            for nodelist in searcher.mapToCforbid[str(typeC)]:
                 for node in nodelist:
                     fw.write(node.show() + " ")
+                fw.write("\n")
         fw.write("\n")
     fw.close()
 

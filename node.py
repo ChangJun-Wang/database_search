@@ -13,11 +13,13 @@ class node :
         self.tmp_vis  = 0
         self.recStack = False
         self.label    = set()
+        self.path     = []
         self.pathnode = []
         self.pathlist = []
+        self.forbid   = set()
         self.tmp_node = []
         self.tmp_list = []
-        self.forbid   = set()
+        self.related  = set()
         self.tmp_forbid   = set()
 
         self.tmp_label= []
