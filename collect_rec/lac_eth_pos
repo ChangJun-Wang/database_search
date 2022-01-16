@@ -4,36 +4,49 @@ reaction: 8155
 O2 lactate  =[ alcohol_oxidase ]=> H2O2 decanal
 
 reaction: 10478
-H+ H2O2 NADH  =[ NADH_peroxidase ]=> H2O NAD+
+NADH H+ H2O2  =[ NADH_peroxidase ]=> NAD+ H2O
 *********** From i1 : ************
 ethanol
 lactate
 H2O2
 *********** From i2 : ************
 
-
 reaction: 8106
-O2 ethanol  =[ alcohol_oxidase ]=> acetaldehyde H2O2
-*********** Find A : ************
-
-reaction: 2020
-9,10-phenanthrenequinone NADH  =[ 15-hydroxyprostaglandin_dehydrogenase ]=> H2O2
-
-reaction: 2021
-5,6-chrysenequinone NADH  =[ 15-hydroxyprostaglandin_dehydrogenase ]=> H2O2
-
-reaction: 7990
-O2 D-glucose  =[ pyranose_oxidase ]=> H2O2 2-dehydro-D-glucose
-
-reaction: 7991
-D-galactose O2  =[ pyranose_oxidase ]=> H2O2 2-dehydro-D-galactose
+ethanol O2  =[ alcohol_oxidase ]=> H2O2 acetaldehyde
 *********** Find C : ************
 
 reaction: 28642
-H+ pyruvate L-alanine NADH  =[ alanopine_dehydrogenase ]=> 2,2'-iminodipropanoate H2O NAD+
+NADH L-alanine H+ pyruvate  =[ alanopine_dehydrogenase ]=> H2O 2,2'-iminodipropanoate NAD+
 
 reaction: 28641
-2,2'-iminodipropanoate H2O NAD+  =[ alanopine_dehydrogenase ]=> H+ pyruvate L-alanine NADH
+H2O 2,2'-iminodipropanoate NAD+  =[ alanopine_dehydrogenase ]=> NADH L-alanine H+ pyruvate
 
 reaction: 1861
-pyruvate NAD+  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH
+NAD+ pyruvate  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH
+*********** Threshold : ************
+pyruvate
+
+reaction: 7609
+(R)-malate NAD+  =[ D-malate_dehydrogenase ]=> NADH CO2 H+ pyruvate
+/////////////////all related reaction///////////////
+
+reaction: 10478
+NADH H+ H2O2  =[ NADH_peroxidase ]=> NAD+ H2O 3
+reaction: 10479
+NAD+ H2O  =[ NADH_peroxidase ]=> NADH H2O2 2
+reaction: 10480
+NADH H+ H2O2  =[ NADH_peroxidase ]=> NAD+ H2O 3
+reaction: 10481
+NADH H2O2  =[ NADH_peroxidase ]=> NAD+ H2O 2
+reaction: 1861
+NAD+ pyruvate  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH 2
+reaction: 7609
+(R)-malate NAD+  =[ D-malate_dehydrogenase ]=> NADH CO2 H+ pyruvate 2
+reaction: 8106
+ethanol O2  =[ alcohol_oxidase ]=> H2O2 acetaldehyde 2
+reaction: 8155
+O2 lactate  =[ alcohol_oxidase ]=> H2O2 decanal 2
+reaction: 28641
+H2O 2,2'-iminodipropanoate NAD+  =[ alanopine_dehydrogenase ]=> NADH L-alanine H+ pyruvate 3
+reaction: 28642
+NADH L-alanine H+ pyruvate  =[ alanopine_dehydrogenase ]=> H2O 2,2'-iminodipropanoate NAD+ 4

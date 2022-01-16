@@ -390,29 +390,74 @@ class search:
                                 if result:
                                     (result1, find_tmp) = self.BFS_tmp(input_species, findC, labelC)
                                     if result1:
+                                        allnodes = set()
+                                        allnodes.add(self.mapToNode["spontaneous_reaction"])
                                         print("*********** From i1 : ************ ")
                                         for rec in (findC.path[0])["pathlist"]:
                                             print(rec.show())
+                                            for node in rec.getrea():
+                                                allnodes.add(node)
+                                            for node in rec.getenz():
+                                                allnodes.add(node)
+                                            for node in rec.getpro():
+                                                allnodes.add(node)
                                         print("*********** From i1 : ************ ")
                                         for node in (findC.path[0])["pathnode"]:
                                             print(node.show())
                                         print("*********** From i2 : ************ ")
                                         for rec in (find_tmp.path_tmp[0])["pathlist"]:
                                             print(rec.show())
-                                        print("*********** Find A : ************ ")
-                                        c = 0
-                                        for rec in product.getUpedge():
-                                            if c == 4:
-                                                break
-                                            c += 1
-                                            print(rec.show())
+                                            for node in rec.getrea():
+                                                allnodes.add(node)
+                                            for node in rec.getenz():
+                                                allnodes.add(node)
+                                            for node in rec.getpro():
+                                                allnodes.add(node)
+                                        # print("*********** Find A : ************ ")
+                                        # c = 0
+                                        # for rec in product.getUpedge():
+                                        #     if c == 4:
+                                        #         break
+                                        #     c += 1
+                                        #     print(rec.show())
                                         print("*********** Find C : ************ ")
                                         for rec in self.mapToClist[labelC]:
                                             print(rec.show())
+                                            for node in rec.getrea():
+                                                allnodes.add(node)
+                                            for node in rec.getenz():
+                                                allnodes.add(node)
+                                            for node in rec.getpro():
+                                                allnodes.add(node)
+
+                                        print("*********** Threshold : ************ ")
+                                        for i in self.mapToCnode[labelC][2:]:
+                                            if i != findC:
+                                                print(i.show())
+                                                for rec in i.getUpedge():
+                                                    if (rec.getenz()[0] != self.mapToNode["spontaneous_reaction"]):
+                                                        if self.check_rea(rec.getenz()[0], i):
+                                                            print(rec.show())
+                                                            for node in rec.getrea():
+                                                                allnodes.add(node)
+                                                            for node in rec.getenz():
+                                                                allnodes.add(node)
+                                                            for node in rec.getpro():
+                                                                allnodes.add(node)
+                                                            break
+
+                                        print("/////////////////all related reaction///////////////")
+                                        print(self.check(allnodes))
                                         return True
                                 # self.ClearPath()
 
         return False
+
+    def check_rea(self, enz, product):
+        for catrec in enz.getCatedge():
+            if product in catrec.getrea():
+                return False
+        return True
 
     def check_cycle(self, path, c_side):
         for node in self.mapToCnode[c_side]:
@@ -521,10 +566,8 @@ class search:
                 for reactant in reaction.getrea():
                     if reactant in allnodes:
                         count += 1
-                for product in reaction.getpro():
-                    if reactant in allnodes and count == len(reaction.getrea()):
-                        temp += (reaction.show())
-                        break
+                if count == len(reaction.getrea()):
+                    temp += (reaction.show()) + str(count)
         return temp
         
 
