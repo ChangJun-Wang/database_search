@@ -307,15 +307,22 @@ class search:
             rec.tmp_vis  = 0
             rec.recStack = False
 
+    def check_species(self, pathnode, downRec):
+        for species in (downRec.getrea()):
+            if species in pathnode:
+                return False
+        for species in (downRec.getpro()):
+            if species in pathnode:
+                return False
+        for species in (downRec.getenz()):
+            if species in pathnode:
+                return False
+        return True
+
     def check_downRec(self, startPro, downRec):
         tmp = []
         for path in startPro.path:
-            mark = True
-            for species in (downRec.getrea() + downRec.getpro() + downRec.getenz()):
-                if species in path["pathnode"]:
-                    mark = False
-                    break
-            if mark:
+            if self.check_species(path["pathnode"], downRec):
                 tmp.append(path)
         return tmp
 
@@ -357,11 +364,23 @@ class search:
                             self.add_path(startPro, product, downRec, check_downRec)
                             assert product.path != startPro.path
                             assert product.path != check_downRec
+                            assert len(product.path) != 0
                             if ("A" in product.label) and (product.getpin() > 2):
                                 labelA = product.labelA[0]
-                                (result, findC, next_tar, labelC) = self.BFS_findC(labelA, product)
+                                (result, findC, labelC) = self.BFS_findC(product)
+                                if result:
+                                    for rec in (findC.path[0])["pathlist"]:
+                                        print(rec.show())
+                                    print("*********** Find A : ************ \n")
+                                    for rec in product.getUpedge():
+                                        print(rec.show())
+                                    print("*********** Find C : ************ \n")
+                                    for rec in self.mapToClist[labelC]:
+                                        print(rec.show())
+                                    return True
+        return False
 
-    def check_cycle(self, c_side):
+    def check_cycle(self, path, c_side):
         for node in self.mapToCnode[c_side]:
             if node in path["related"]:
                 return False
@@ -374,7 +393,7 @@ class search:
                 return False
         return True
 
-    def BFS_findC(self, label, input_node):
+    def BFS_findC(self, input_node):
         BFS    = [input_node]
         while BFS != []:
             startPro = BFS.pop(0)
@@ -389,9 +408,9 @@ class search:
                             if ("C_side" in product.label):
                                 for c_side in product.labelC_side:
                                     for path in product.path:
-                                        if self.check_cycle(c_side):
-                                            return (True, product, reactant, [label, product.labelB[0],product.labelC[0]])
-        return (False, node(None), node(None), [])
+                                        if self.check_cycle(path, c_side):
+                                            return (True, product, c_side)
+        return (False, node(None), None)
 
 
     def sec_input(self, input_species, notes):

@@ -60,17 +60,17 @@ if __name__ == '__main__':
     fw.close()
 
 
-    # count = 0
-    # notes = ["C","C","C"]
-    # print ("\n", "*************************************************")
+    count = 0
+    notes = ["C","C","C"]
+    print ("\n", "*************************************************")
 
-    # #specified input species :
-    # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
-    # notes         = ["A","A","B","C"]
+    #specified input species :
+    input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
+    notes         = ["A","A","B","C"]
 
-    # searcher.BFS_all(input_species, "A")
-    # print (searcher.c)
-    # searcher.ClearVis()
+    searcher.BFS_all(input_species, "A")
+    print (searcher.c)
+    searcher.ClearVis()
     # searcher.sec_input(input_species, notes)
     # searcher.ClearTmp()
 
