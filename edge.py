@@ -2,7 +2,7 @@ class edge :
     def __init__(self, name):
         self.name     = name
         self.enable   = True
-        self.tmp_path = []
+        # self.tmp_path = []
         self.toRea    = set()  #
         self.toPro    = set()  #
         self.toEnz      = []
@@ -10,8 +10,8 @@ class edge :
         self.label    = set()
         self.labelC   = []
         self.visited  = 0
-        self.tmp_vis  = 0
-        self.recStack = False
+        # self.tmp_vis  = 0
+        # self.recStack = False
     def getpro(self):
         return self.toPro
     def getrea(self):

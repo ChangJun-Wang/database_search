@@ -1,0 +1,39 @@
+*********** From i1 : ************
+
+reaction: 8155
+O2 lactate  =[ alcohol_oxidase ]=> H2O2 decanal
+
+reaction: 10478
+H+ H2O2 NADH  =[ NADH_peroxidase ]=> H2O NAD+
+*********** From i1 : ************
+ethanol
+lactate
+H2O2
+*********** From i2 : ************
+
+
+reaction: 8106
+O2 ethanol  =[ alcohol_oxidase ]=> acetaldehyde H2O2
+*********** Find A : ************
+
+reaction: 2020
+9,10-phenanthrenequinone NADH  =[ 15-hydroxyprostaglandin_dehydrogenase ]=> H2O2
+
+reaction: 2021
+5,6-chrysenequinone NADH  =[ 15-hydroxyprostaglandin_dehydrogenase ]=> H2O2
+
+reaction: 7990
+O2 D-glucose  =[ pyranose_oxidase ]=> H2O2 2-dehydro-D-glucose
+
+reaction: 7991
+D-galactose O2  =[ pyranose_oxidase ]=> H2O2 2-dehydro-D-galactose
+*********** Find C : ************
+
+reaction: 28642
+H+ pyruvate L-alanine NADH  =[ alanopine_dehydrogenase ]=> 2,2'-iminodipropanoate H2O NAD+
+
+reaction: 28641
+2,2'-iminodipropanoate H2O NAD+  =[ alanopine_dehydrogenase ]=> H+ pyruvate L-alanine NADH
+
+reaction: 1861
+pyruvate NAD+  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH

@@ -61,7 +61,7 @@ class search:
                 self.typeA += 1
                 nodes.setpin(len(enz))
                 nodes.label.add("A")
-                nodes.labelA.append("A" + str(self.typeA))
+                nodes.labelA = str(self.typeA)
             if (nodes.getpout() > 1):
                 enz = set()
                 for rec in nodes.getDownedge():
@@ -70,15 +70,15 @@ class search:
                 self.typeB += 1
                 nodes.setpout(len(enz))
                 nodes.label.add("B")
-                nodes.labelB.append("B" + str(self.typeB))
+                nodes.labelB = str(self.typeB)
             if (nodes.getpout() > 0) and (nodes.getpin() > 0):
                 self.typeD += 1
                 nodes.label.add("D")
-                nodes.labelD.append("D" + str(self.typeD))
+                nodes.labelD = str(self.typeD)
             if (len(nodes.getCatedge()) > 1):
                 self.typeE += 1
                 nodes.label.add("E")
-                nodes.labelE.append("E" + str(self.typeE))
+                nodes.labelE.append(str(self.typeE))
             # if nodes.visited == 0:
             #     # print(nodes.name)
             #     nodes.visited = 1
@@ -87,7 +87,10 @@ class search:
                 #     break
                     # self.typeC += 1
                 # self.Cycle_Find(nodes, [], [])
-
+        # for nodes in self.nodeList:
+        #     assert len(nodes.labelA) == 0 or len(nodes.labelA) == 1
+        #     assert len(nodes.labelB) == 0 or len(nodes.labelB) == 1
+        #     assert len(nodes.labelD) == 0 or len(nodes.labelD) == 1
         self.ClearVis()
 
     def parsing(self, inputfile):
@@ -307,7 +310,10 @@ class search:
             rec.tmp_vis  = 0
             rec.recStack = False
 
-    def check_species(self, pathnode, downRec):
+    def ClearPath(self):
+        pass
+
+    def check_RecSpecies(self, pathnode, downRec):
         for species in (downRec.getrea()):
             if species in pathnode:
                 return False
@@ -322,12 +328,12 @@ class search:
     def check_downRec(self, startPro, downRec):
         tmp = []
         for path in startPro.path:
-            if self.check_species(path["pathnode"], downRec):
+            if self.check_RecSpecies(path["pathnode"], downRec):
                 tmp.append(path)
         return tmp
 
-    def add_path(self, startPro, product, downRec, downPath):
-        for path in downPath:
+    def add_path(self, startPro, product, downRec, pathlist):
+        for path in pathlist:
             tmp_path = {}
             tmp_path["related"]  = set()
             tmp_path["pathnode"] = []
@@ -343,6 +349,17 @@ class search:
                 tmp_path["pathnode"].append(i)
             tmp_path["pathnode"].append(startPro)
             product.path.append(tmp_path)
+            assert tmp_path["pathlist"] != path["pathlist"]
+            assert tmp_path["pathnode"] != path["pathnode"]
+            assert tmp_path != path
+
+
+    def check_pro(self, product, pathlist):
+        tmp = []
+        for path in pathlist:
+            if product not in path["related"]:
+                tmp.append(path)
+        return tmp
 
     def BFS_all(self, input_species, notes):
         BFS    = [input_species[0]]
@@ -359,25 +376,42 @@ class search:
                 check_downRec = self.check_downRec(startPro, downRec)
                 if check_downRec != []:
                     for product in downRec.getpro():
-                        if ((product not in self.forbid_node) and (product not in startPro.related)):
+                        check_pro = self.check_pro(product, check_downRec)
+                        if check_pro != []:  #((product not in self.forbid_node) and (product not in startPro.related)):
                             BFS.append(product)
-                            self.add_path(startPro, product, downRec, check_downRec)
-                            assert product.path != startPro.path
-                            assert product.path != check_downRec
+                            self.add_path(startPro, product, downRec, check_pro)
+                            assert product.path != check_pro
                             assert len(product.path) != 0
+                            
                             if ("A" in product.label) and (product.getpin() > 2):
-                                labelA = product.labelA[0]
+                                labelA = product.labelA
+                                # if self.BFS_tmp(input_species, target):
                                 (result, findC, labelC) = self.BFS_findC(product)
                                 if result:
-                                    for rec in (findC.path[0])["pathlist"]:
-                                        print(rec.show())
-                                    print("*********** Find A : ************ \n")
-                                    for rec in product.getUpedge():
-                                        print(rec.show())
-                                    print("*********** Find C : ************ \n")
-                                    for rec in self.mapToClist[labelC]:
-                                        print(rec.show())
-                                    return True
+                                    (result1, find_tmp) = self.BFS_tmp(input_species, findC, labelC)
+                                    if result1:
+                                        print("*********** From i1 : ************ ")
+                                        for rec in (findC.path[0])["pathlist"]:
+                                            print(rec.show())
+                                        print("*********** From i1 : ************ ")
+                                        for node in (findC.path[0])["pathnode"]:
+                                            print(node.show())
+                                        print("*********** From i2 : ************ ")
+                                        for rec in (find_tmp.path_tmp[0])["pathlist"]:
+                                            print(rec.show())
+                                        print("*********** Find A : ************ ")
+                                        c = 0
+                                        for rec in product.getUpedge():
+                                            if c == 4:
+                                                break
+                                            c += 1
+                                            print(rec.show())
+                                        print("*********** Find C : ************ ")
+                                        for rec in self.mapToClist[labelC]:
+                                            print(rec.show())
+                                        return True
+                                # self.ClearPath()
+
         return False
 
     def check_cycle(self, path, c_side):
@@ -402,147 +436,81 @@ class search:
                 check_downRec = self.check_downRec(startPro, downRec)
                 if check_downRec != []:
                     for product in downRec.getpro():
-                        if ((product not in self.forbid_node) and (product not in startPro.related)):
+                        check_pro = self.check_pro(product, check_downRec)
+                        if check_pro != []:
                             BFS.append(product)
-                            self.add_path(startPro, product, downRec, check_downRec)
                             if ("C_side" in product.label):
                                 for c_side in product.labelC_side:
                                     for path in product.path:
                                         if self.check_cycle(path, c_side):
+                                            self.add_path(startPro, product, downRec, check_pro)
                                             return (True, product, c_side)
+                            self.add_path(startPro, product, downRec, check_pro)
         return (False, node(None), None)
 
 
-    def sec_input(self, input_species, notes):
-        count = 2
-        while count > 0:
-            (result0, product0, target0) = self.BFS_tmp(input_species, [], [])
-            pathlist = product0.tmp_list
-            pathnode = product0.tmp_node
-            if result0:
-                print("///////////find first one//////////////")
-                for rec in product0.pathlist:
-                    print(rec.show())
-                for rec in pathlist:
-                    print(rec.show())
-                count -= 1
-                print("/////////////////end////////////////////")
-                target0.show()
-            (result1, product1) = self.BFS_findA(target0, input_species, notes)
-            if result1:
-                print("///////////find second one//////////////")
-                for rec in product1.tmp_list:
-                    print(rec.show())
-                print("/////////////////end////////////////////")
-                count -= 1
-                c = 0
-                print("///////////selection for threshold//////////////")
-                for rec in self.mapToNode["acceptor"].getUpedge():
-                    if (self.mapToNode["spontaneous_reaction"] not in rec.getenz() 
-                        and self.mapToNode["H+"] not in rec.getrea()
-                        and self.mapToNode["reduced_acceptor"] not in rec.getrea()
-                        ):
-                        print(rec.show())
-                        c += 1
-                    if c == 3:
-                        break
-                print("/////////////////end////////////////////")
-            self.ClearTmp()
+    def check_downRectmp(self, startPro, downRec):
+        tmp = []
+        for tmp_path in startPro.path_tmp:
+            if self.check_RecSpecies(tmp_path["pathnode"], downRec):
+                tmp.append(tmp_path)
+        return tmp
+
+    def add_pathtmp(self, startPro, product, downRec, downPath):
+        for path in downPath:
+            tmp_path = {}
+            tmp_path["related"]  = set()
+            tmp_path["pathnode"] = []
+            tmp_path["pathlist"] = []
+            for i in path["related"]:
+                tmp_path["related"].add(i)
+            for i in downRec.getrea():
+                tmp_path["related"].add(i)
+            for i in path["pathlist"]:
+                tmp_path["pathlist"].append(i)
+            tmp_path["pathlist"].append(downRec)
+            for i in path["pathnode"]:
+                tmp_path["pathnode"].append(i)
+            tmp_path["pathnode"].append(startPro)
+            product.path_tmp.append(tmp_path)
+
+    # def check_protmp(self, product, pathlist):
+    #     tmp = []
+    #     for path in pathlist:
+    #         if product not in path["related"]:
+    #             tmp.append(path)
+    #     return tmp
 
 
-
-    def BFS_tmp(self, input_species, pathlist, pathnode):
-        startPro = input_species[1]
-        BFS    = [startPro]
+    def BFS_tmp(self, input_species, target, labelC):
+        targetlist   = target.path[0]["pathnode"][2:]
+        targetlist.append(target)
+        tar_relate   = target.path[0]["related"]
+        BFS    = [input_species[1]]
+        tmp    = {}
+        tmp["related"]  = set()
+        tmp["pathlist"] = []
+        tmp["pathnode"] = []
+        tmp["pathnode"].append(input_species[0])
+        input_species[1].path_tmp.append(tmp)
         while BFS != []:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
-                if downRec.tmp_vis == 0:
-                    downRec.tmp_vis = 1
-                    mark = True
-
-                    #check whether this reaction has conflict to previous reactions and input
-                    for reactant in downRec.getrea():
-                        if reactant == input_species[0] or reactant.name == "NAD+"  or reactant.name == "H+":
-                            mark = False
+                #check whether this reaction has conflict to previous reactions and input
+                check_downRec = self.check_downRectmp(startPro, downRec)
+                if check_downRec != []:
                     for product in downRec.getpro():
-                        if product in startPro.tmp_node or product == startPro or product == input_species[0]:
-                            mark = False
-                        if product in pathnode:
-                            mark = False
-                    for enzyme in downRec.getenz():
-                        if enzyme in startPro.tmp_node:
-                            mark = False
-                        if enzyme in pathnode:
-                            mark = False
-                    if mark:
-                        for product in downRec.getpro():
-                            if (product.tmp_vis == 0 and product not in self.forbid_node):
-                                product.tmp_vis = 1
+                        check_pro = self.check_pro(product, check_downRec)
+                        if check_pro != []:
+                            if product in targetlist:
+                                self.add_pathtmp(startPro, product, downRec, check_downRec)
+                                return (True, product)
+                            if product not in tar_relate:
                                 BFS.append(product)
-                                for i in startPro.forbid:
-                                    product.tmp_forbid.add(i)
-                                for i in downRec.getrea():
-                                    product.tmp_forbid.add(i)
-                                for i in startPro.tmp_list:
-                                    (product.tmp_list).append(i)
-                                (product.tmp_list).append(downRec)
-                                assert product.tmp_list != startPro.tmp_list
-                                for i in startPro.tmp_node:
-                                    product.tmp_node.append(i)
-                                product.tmp_node.append(startPro)
-                                assert product.tmp_node != startPro.tmp_node
-                                #if ("A" in product.label):
-                                if len(product.tmp_label) == 3:
-                                    product.tmp_node.append(product)
-                                    tmp_str = ""
-                                    for i in product.tmp_label:
-                                        tmp_str += i
-                                    
-                                    target = self.mapTotar[tmp_str]
-                                    return (True, product, target)
-        return (False, node(None), node(None))
-
-
-    def BFS_findA(self, target, input_species, notes):
-        BFS    = [input_species[0]]
-        while BFS != []:
-            startPro = BFS.pop(0)
-            for downRec in startPro.getDownedge():
-                if downRec.visited == 0:
-                    downRec.visited = 1
-                    mark = True
-                    #check whether this reaction has conflict to previous reactions and input
-                    for reactant in downRec.getrea():
-                        if reactant == input_species[1]:
-                            mark = False
-                    for product in downRec.getpro():
-                        if product in startPro.tmp_node or product == input_species[0]:
-                            mark = False
-                    for enzyme in downRec.getenz():
-                        if enzyme in startPro.tmp_node:
-                            mark = False
-                    if mark:
-                        for product in downRec.getpro():
-                            if (product.visited == 0
-                                and product not in self.forbid_node):
-                                product.visited = 1
-                                BFS.append(product)
-                                for i in startPro.tmp_forbid:
-                                    product.tmp_forbid.add(i)
-                                for i in downRec.getrea():
-                                    product.tmp_forbid.add(i)
-                                for i in startPro.tmp_list:
-                                    product.tmp_list.append(i)
-                                product.tmp_list.append(downRec)
-                                assert product.tmp_list != startPro.tmp_list
-                                for i in startPro.tmp_node:
-                                    product.tmp_node.append(i)
-                                product.tmp_node.append(startPro)
-                                assert product.tmp_node != startPro.tmp_node
-                                #if ("A" in product.label):
-                                if product == target:
-                                    return (True, product)
+                                self.add_pathtmp(startPro, product, downRec, check_downRec)
+                                assert product.path_tmp != startPro.path_tmp
+                                assert product.path_tmp != check_downRec
+                                assert len(product.path_tmp) != 0
         return (False, node(None))
 
     def check(self, allnodes):
@@ -559,6 +527,84 @@ class search:
                         break
         return temp
         
+
+     # def BFS_findA(self, target, input_species, notes):
+     #    BFS    = [input_species[0]]
+     #    while BFS != []:
+     #        startPro = BFS.pop(0)
+     #        for downRec in startPro.getDownedge():
+     #            if downRec.visited == 0:
+     #                downRec.visited = 1
+     #                mark = True
+     #                #check whether this reaction has conflict to previous reactions and input
+     #                for reactant in downRec.getrea():
+     #                    if reactant == input_species[1]:
+     #                        mark = False
+     #                for product in downRec.getpro():
+     #                    if product in startPro.tmp_node or product == input_species[0]:
+     #                        mark = False
+     #                for enzyme in downRec.getenz():
+     #                    if enzyme in startPro.tmp_node:
+     #                        mark = False
+     #                if mark:
+     #                    for product in downRec.getpro():
+     #                        if (product.visited == 0
+     #                            and product not in self.forbid_node):
+     #                            product.visited = 1
+     #                            BFS.append(product)
+     #                            for i in startPro.tmp_forbid:
+     #                                product.tmp_forbid.add(i)
+     #                            for i in downRec.getrea():
+     #                                product.tmp_forbid.add(i)
+     #                            for i in startPro.tmp_list:
+     #                                product.tmp_list.append(i)
+     #                            product.tmp_list.append(downRec)
+     #                            assert product.tmp_list != startPro.tmp_list
+     #                            for i in startPro.tmp_node:
+     #                                product.tmp_node.append(i)
+     #                            product.tmp_node.append(startPro)
+     #                            assert product.tmp_node != startPro.tmp_node
+     #                            #if ("A" in product.label):
+     #                            if product == target:
+     #                                return (True, product)
+     #    return (False, node(None))
+
+
+    # def sec_input(self, input_species, notes):
+    #     count = 2
+    #     while count > 0:
+    #         (result0, product0, target0) = self.BFS_tmp(input_species, [], [])
+    #         pathlist = product0.tmp_list
+    #         pathnode = product0.tmp_node
+    #         if result0:
+    #             print("///////////find first one//////////////")
+    #             for rec in product0.pathlist:
+    #                 print(rec.show())
+    #             for rec in pathlist:
+    #                 print(rec.show())
+    #             count -= 1
+    #             print("/////////////////end////////////////////")
+    #             target0.show()
+    #         (result1, product1) = self.BFS_findA(target0, input_species, notes)
+    #         if result1:
+    #             print("///////////find second one//////////////")
+    #             for rec in product1.tmp_list:
+    #                 print(rec.show())
+    #             print("/////////////////end////////////////////")
+    #             count -= 1
+    #             c = 0
+    #             print("///////////selection for threshold//////////////")
+    #             for rec in self.mapToNode["acceptor"].getUpedge():
+    #                 if (self.mapToNode["spontaneous_reaction"] not in rec.getenz() 
+    #                     and self.mapToNode["H+"] not in rec.getrea()
+    #                     and self.mapToNode["reduced_acceptor"] not in rec.getrea()
+    #                     ):
+    #                     print(rec.show())
+    #                     c += 1
+    #                 if c == 3:
+    #                     break
+    #             print("/////////////////end////////////////////")
+    #         self.ClearTmp()
 
 
     # def backTrace(self, startRec, pathlist, pathnode):
@@ -673,11 +719,11 @@ class search:
     #                                             if mark0:
     #                                                 vbuf.append(rec)
     #                                             reactant = rea
-    #                                             rea.tmp_label = ([product.labelB[0],product.labelC[0]])
+    #                                             rea.tmp_label = ([product.labelB,product.labelC[0]])
     #                                 if vbuf != [] and mark_tmp:
     #                                     for i in self.mapToClist[product.labelC[0]]:
     #                                         product.pathlist.append(i)
     #                                     product.pathlist.append(vbuf[0])
     #                                     product.pathnode.append(product)
-    #                                     return (True, product, reactant, [label, product.labelB[0],product.labelC[0]])
+    #                                     return (True, product, reactant, [label, product.labelB,product.labelC[0]])
     #     return (False, node(None), node(None), [])   

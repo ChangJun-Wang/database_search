@@ -10,25 +10,26 @@ class node :
         self.pin      = 0
         self.pout     = 0
         self.visited  = 0
-        self.tmp_vis  = 0
-        self.recStack = False
+        # self.tmp_vis  = 0
+        # self.recStack = False
         self.label    = set()
         self.path     = []
-        self.pathnode = []
-        self.pathlist = []
-        self.forbid   = set()
-        self.tmp_node = []
-        self.tmp_list = []
-        self.related  = set()
-        self.tmp_forbid   = set()
+        self.path_tmp = []
+        # self.pathnode = []
+        # self.pathlist = []
+        # self.forbid   = set()
+        # self.tmp_node = []
+        # self.tmp_list = []
+        # self.related  = set()
+        # self.tmp_forbid   = set()
 
-        self.tmp_label= []
-        self.tmp_path = []
-        self.labelA   = []
-        self.labelB   = []
+        # self.tmp_label= []
+        # self.tmp_path = []
+        self.labelA   = ""
+        self.labelB   = ""
         self.labelC   = []
         self.labelC_side = []
-        self.labelD   = []
+        self.labelD   = ""
         self.labelE   = []
     def getUpedge(self):
         return self.upEdge
