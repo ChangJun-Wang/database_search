@@ -388,7 +388,11 @@ class search:
                                 # if self.BFS_tmp(input_species, target):
                                 (result, findC, labelC) = self.BFS_findC(product)
                                 if result:
-                                    (result1, find_tmp) = self.BFS_tmp(input_species, findC, labelC)
+                                    result1 = False
+                                    find_tmp = None
+                                    for i in self.mapToCnode[labelC][2:]:
+                                        if i != findC:
+                                            (result1, find_tmp) = self.BFS_tmp(input_species, i, findC)
                                     if result1:
                                         allnodes = set()
                                         allnodes.add(self.mapToNode["spontaneous_reaction"])
@@ -436,7 +440,7 @@ class search:
                                                 print(i.show())
                                                 for rec in i.getUpedge():
                                                     if (rec.getenz()[0] != self.mapToNode["spontaneous_reaction"]):
-                                                        if self.check_rea(rec.getenz()[0], i):
+                                                        if self. check_rea(rec.getenz()[0], i):
                                                             print(rec.show())
                                                             for node in rec.getrea():
                                                                 allnodes.add(node)
@@ -449,13 +453,11 @@ class search:
                                         print("/////////////////all related reaction///////////////")
                                         print(self.check(allnodes))
                                         return True
-                                # self.ClearPath()
-
         return False
 
     def check_rea(self, enz, product):
         for catrec in enz.getCatedge():
-            if product in catrec.getrea():
+            if product in catrec.getrea() or self.mapToNode["NAD+"] in catrec.getrea() or self.mapToNode["H2O2"] in catrec.getpro():
                 return False
         return True
 
@@ -519,18 +521,13 @@ class search:
             tmp_path["pathnode"].append(startPro)
             product.path_tmp.append(tmp_path)
 
-    # def check_protmp(self, product, pathlist):
-    #     tmp = []
-    #     for path in pathlist:
-    #         if product not in path["related"]:
-    #             tmp.append(path)
-    #     return tmp
 
-
-    def BFS_tmp(self, input_species, target, labelC):
-        targetlist   = target.path[0]["pathnode"][2:]
+    def BFS_tmp(self, input_species, target, relate):
+        # targetlist   = target.path[0]["pathnode"][2:]
+        targetlist = []
         targetlist.append(target)
-        tar_relate   = target.path[0]["related"]
+        tar_relate   = relate.path[0]["related"]
+        tar_relate.add(relate)
         BFS    = [input_species[1]]
         tmp    = {}
         tmp["related"]  = set()
@@ -570,203 +567,3 @@ class search:
                     temp += (reaction.show()) + str(count)
         return temp
         
-
-     # def BFS_findA(self, target, input_species, notes):
-     #    BFS    = [input_species[0]]
-     #    while BFS != []:
-     #        startPro = BFS.pop(0)
-     #        for downRec in startPro.getDownedge():
-     #            if downRec.visited == 0:
-     #                downRec.visited = 1
-     #                mark = True
-     #                #check whether this reaction has conflict to previous reactions and input
-     #                for reactant in downRec.getrea():
-     #                    if reactant == input_species[1]:
-     #                        mark = False
-     #                for product in downRec.getpro():
-     #                    if product in startPro.tmp_node or product == input_species[0]:
-     #                        mark = False
-     #                for enzyme in downRec.getenz():
-     #                    if enzyme in startPro.tmp_node:
-     #                        mark = False
-     #                if mark:
-     #                    for product in downRec.getpro():
-     #                        if (product.visited == 0
-     #                            and product not in self.forbid_node):
-     #                            product.visited = 1
-     #                            BFS.append(product)
-     #                            for i in startPro.tmp_forbid:
-     #                                product.tmp_forbid.add(i)
-     #                            for i in downRec.getrea():
-     #                                product.tmp_forbid.add(i)
-     #                            for i in startPro.tmp_list:
-     #                                product.tmp_list.append(i)
-     #                            product.tmp_list.append(downRec)
-     #                            assert product.tmp_list != startPro.tmp_list
-     #                            for i in startPro.tmp_node:
-     #                                product.tmp_node.append(i)
-     #                            product.tmp_node.append(startPro)
-     #                            assert product.tmp_node != startPro.tmp_node
-     #                            #if ("A" in product.label):
-     #                            if product == target:
-     #                                return (True, product)
-     #    return (False, node(None))
-
-
-    # def sec_input(self, input_species, notes):
-    #     count = 2
-    #     while count > 0:
-    #         (result0, product0, target0) = self.BFS_tmp(input_species, [], [])
-    #         pathlist = product0.tmp_list
-    #         pathnode = product0.tmp_node
-    #         if result0:
-    #             print("///////////find first one//////////////")
-    #             for rec in product0.pathlist:
-    #                 print(rec.show())
-    #             for rec in pathlist:
-    #                 print(rec.show())
-    #             count -= 1
-    #             print("/////////////////end////////////////////")
-    #             target0.show()
-    #         (result1, product1) = self.BFS_findA(target0, input_species, notes)
-    #         if result1:
-    #             print("///////////find second one//////////////")
-    #             for rec in product1.tmp_list:
-    #                 print(rec.show())
-    #             print("/////////////////end////////////////////")
-    #             count -= 1
-    #             c = 0
-    #             print("///////////selection for threshold//////////////")
-    #             for rec in self.mapToNode["acceptor"].getUpedge():
-    #                 if (self.mapToNode["spontaneous_reaction"] not in rec.getenz() 
-    #                     and self.mapToNode["H+"] not in rec.getrea()
-    #                     and self.mapToNode["reduced_acceptor"] not in rec.getrea()
-    #                     ):
-    #                     print(rec.show())
-    #                     c += 1
-    #                 if c == 3:
-    #                     break
-    #             print("/////////////////end////////////////////")
-    #         self.ClearTmp()
-
-
-    # def backTrace(self, startRec, pathlist, pathnode):
-    #     #print("in backtrae")
-    #     for index in range(len(pathlist)):
-    #         if startRec == pathlist[index]:
-    #             self.mapToClist[self.typeC] = pathlist[index:]
-    #             self.mapToCnode[self.typeC] = pathnode[index:]
-    #             for rec in pathlist[index:]:
-    #                 rec.label.add("C")
-    #                 for enz in rec.getenz():
-    #                     enz.labelC.append("C" + str(self.typeC))
-    #                     enz.label.add("C")
-    #                 for species in rec.getrea():
-    #                     if species not in pathnode[index:]:
-    #                         species.labelC_side.append(self.typeC)
-    #                         species.label.add("C_side")
-    #             for species in pathnode[index:]:
-    #                 species.labelC_side.append(self.typeC)
-    #                 species.label.add("C")
-    #             return True
-    #     return False
-
-    # def Cycle_Find(self, startRea, pathlist, pathnode):
-    #     #print("in DFS")
-    #     for downRec in startRea.getDownedge():
-    #         if downRec.visited == 0 and downRec.enable:
-    #             downRec.visited = 1
-    #             pathlist.append(downRec)
-    #             pathnode.append(startRea)
-    #             downRec.recStack = True
-    #             for product in downRec.getpro():
-    #                 if product not in self.forbid_node:
-    #                     #product.visited = 1
-    #                     if self.Cycle_Find(product, pathlist, pathnode):
-    #                         return True
-    #         else:
-    #             if (downRec.recStack == True):
-    #                 (self.typeC) += 1
-    #                 pathlist.append(downRec)
-    #                 return self.backTrace(downRec, pathlist, pathnode)
-    #         if downRec.recStack == True:
-    #             downRec.recStack = False
-    #     return False
-     
-
-    # def BFS_findBC(self, label, input_node, notes):
-    #     BFS    = [input_node]
-    #     while BFS != []:
-    #         startPro = BFS.pop(0)
-    #         for downRec in startPro.getDownedge():
-    #             if downRec.visited == 0:
-    #                 downRec.visited = 1
-    #                 mark = True
-
-    #                 # check whether this reaction has conflict to previous reactions and input
-    #                 # for reactant in downRec.getrea():
-    #                 #     if reactant == input_species[1]:
-    #                 #         mark = False
-    #                 for product in downRec.getpro():
-    #                     if product in startPro.pathnode or product in startPro.forbid:
-    #                         mark = False
-    #                 for enzyme in downRec.getenz():
-    #                     if enzyme in startPro.pathnode:
-    #                         mark = False
-    #                 if mark:
-    #                     for product in downRec.getpro():
-    #                         if (product.visited == 0 
-    #                             and product not in self.forbid_node):
-    #                             product.visited = 1
-    #                             BFS.append(product)
-    #                             for i in startPro.forbid:
-    #                                 product.forbid.add(i)
-    #                             for i in downRec.getrea():
-    #                                 product.forbid.add(i)
-    #                             for i in startPro.pathlist:
-    #                                 product.pathlist.append(i)
-    #                             product.pathlist.append(downRec)
-    #                             assert product.pathlist != startPro.pathlist
-    #                             for i in startPro.pathnode:
-    #                                 product.pathnode.append(i)
-    #                             product.pathnode.append(startPro)
-    #                             assert product.pathnode != startPro.pathnode
-    #                             #if ("A" in product.label):
-    #                             if (("B" in product.label) and product not in self.forbid_node
-    #                                 and ("C_side" in product.label) and ("C" not in product.label)
-    #                                 and (len(self.mapToClist[product.labelC[0]]) == 3)):
-
-    #                                 reaction = edge(None)
-    #                                 reactant = node(None)
-    #                                 vbuf = []
-    #                                 mark_tmp = True
-    #                                 for rec in self.mapToClist[product.labelC[0]]:
-    #                                     for rea in rec.getrea():
-    #                                         if rea in product.forbid:
-    #                                             mark_tmp = False
-    #                                 for rec in self.mapToClist[product.labelC[0]]:
-    #                                     if rec not in product.getDownedge():
-    #                                         reaction = rec
-    #                                 for rea in reaction.getrea():
-    #                                     for rec in product.getDownedge():
-    #                                         if ("C" not in rea.label and rea.name != "ethanol"
-    #                                             and "C" not in rec.label 
-    #                                             and rea in rec.getrea()):
-    #                                             mark0 = True
-    #                                             for i in rec.getrea():
-    #                                                 if i in product.pathnode:
-    #                                                     mark0 = False
-    #                                             for i in rec.getpro():
-    #                                                 if i in product.pathnode:
-    #                                                     mark0 = False
-    #                                             if mark0:
-    #                                                 vbuf.append(rec)
-    #                                             reactant = rea
-    #                                             rea.tmp_label = ([product.labelB,product.labelC[0]])
-    #                                 if vbuf != [] and mark_tmp:
-    #                                     for i in self.mapToClist[product.labelC[0]]:
-    #                                         product.pathlist.append(i)
-    #                                     product.pathlist.append(vbuf[0])
-    #                                     product.pathnode.append(product)
-    #                                     return (True, product, reactant, [label, product.labelB,product.labelC[0]])
-    #     return (False, node(None), node(None), [])   
