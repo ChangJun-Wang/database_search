@@ -319,6 +319,7 @@ class search:
         tmp    = {}
         tmp["related"]  = set()
         tmp["pathlist"] = []
+        tmp["pathenz"]  = []
         tmp["pathnode"] = []
         tmp["pathnode"].append(input_species[1])
         input_species[0].path.append(tmp)
@@ -448,6 +449,12 @@ class search:
                             product.add_path(startPro, downRec, check_pro)
         return (False, node(None), None)
 
+    # def BFS_checkC(self, product):
+    #     for c_side in product.labelC_side:
+    #         for path in product.path:
+    #             if self.check_cycle(path, c_side):
+    #                 return True
+    #     return False
 
     def add_pathtmp(self, startPro, product, downRec, downPath):
         for path in downPath:
@@ -478,6 +485,7 @@ class search:
         tmp    = {}
         tmp["related"]  = set()
         tmp["pathlist"] = []
+        tmp["pathenz"]  = []
         tmp["pathnode"] = []
         tmp["pathnode"].append(input_species[0])
         input_species[1].path_tmp.append(tmp)
