@@ -5,7 +5,7 @@ class edge :
         # self.tmp_path = []
         self.toRea    = set()  #
         self.toPro    = set()  #
-        self.toEnz      = []
+        self.toEnz    = []
         self.reverse  = False
         self.label    = set()
         self.labelC   = []

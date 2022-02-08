@@ -50,3 +50,63 @@ class node :
 
     def show(self):
         return (self.name)
+
+    def add_path(self, startPro, downRec, pathlist):
+        for path in pathlist:
+            tmp_path = {}
+            tmp_path["related"]  = set()
+            tmp_path["pathnode"] = []
+            tmp_path["pathlist"] = []
+            tmp_path["pathenz"]  = []
+            for i in path["related"]:
+                tmp_path["related"].add(i)
+            for i in downRec.getrea():
+                tmp_path["related"].add(i)
+            for i in path["pathlist"]:
+                tmp_path["pathlist"].append(i)
+            tmp_path["pathlist"].append(downRec)
+            for i in path["pathnode"]:
+                tmp_path["pathnode"].append(i)
+            tmp_path["pathnode"].append(startPro)
+            for i in path["pathenz"]:
+                tmp_path["pathenz"].append(i)
+            tmp_path["pathenz"].append(downRec.getenz()[0])
+            self.path.append(tmp_path)
+            assert tmp_path["pathlist"] != path["pathlist"]
+            assert tmp_path["pathnode"] != path["pathnode"]
+            assert tmp_path != path
+
+    def check_RecSpecies(self, pathnode, downRec):
+        for species in (downRec.getrea()):
+            if species in pathnode:
+                return False
+        for species in (downRec.getpro()):
+            if species in pathnode:
+                return False
+        for species in (downRec.getenz()):
+            if species in pathnode:
+                return False
+        return True
+
+    def check_downRec(self, downRec):
+        tmp = []
+        for path in self.path:
+            if self.check_RecSpecies(path["pathnode"], downRec):
+                tmp.append(path)
+        return tmp
+
+
+
+    def check_pro(self, pathlist):
+        tmp = []
+        for path in pathlist:
+            if self not in path["related"]:
+                tmp.append(path)
+        return tmp
+
+    def check_downRectmp(self, downRec):
+        tmp = []
+        for tmp_path in self.path_tmp:
+            if self.check_RecSpecies(tmp_path["pathnode"], downRec):
+                tmp.append(tmp_path)
+        return tmp

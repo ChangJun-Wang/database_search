@@ -313,53 +313,6 @@ class search:
     def ClearPath(self):
         pass
 
-    def check_RecSpecies(self, pathnode, downRec):
-        for species in (downRec.getrea()):
-            if species in pathnode:
-                return False
-        for species in (downRec.getpro()):
-            if species in pathnode:
-                return False
-        for species in (downRec.getenz()):
-            if species in pathnode:
-                return False
-        return True
-
-    def check_downRec(self, startPro, downRec):
-        tmp = []
-        for path in startPro.path:
-            if self.check_RecSpecies(path["pathnode"], downRec):
-                tmp.append(path)
-        return tmp
-
-    def add_path(self, startPro, product, downRec, pathlist):
-        for path in pathlist:
-            tmp_path = {}
-            tmp_path["related"]  = set()
-            tmp_path["pathnode"] = []
-            tmp_path["pathlist"] = []
-            for i in path["related"]:
-                tmp_path["related"].add(i)
-            for i in downRec.getrea():
-                tmp_path["related"].add(i)
-            for i in path["pathlist"]:
-                tmp_path["pathlist"].append(i)
-            tmp_path["pathlist"].append(downRec)
-            for i in path["pathnode"]:
-                tmp_path["pathnode"].append(i)
-            tmp_path["pathnode"].append(startPro)
-            product.path.append(tmp_path)
-            assert tmp_path["pathlist"] != path["pathlist"]
-            assert tmp_path["pathnode"] != path["pathnode"]
-            assert tmp_path != path
-
-
-    def check_pro(self, product, pathlist):
-        tmp = []
-        for path in pathlist:
-            if product not in path["related"]:
-                tmp.append(path)
-        return tmp
 
     def BFS_all(self, input_species, notes):
         BFS    = [input_species[0]]
@@ -373,13 +326,13 @@ class search:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
                 #check whether this reaction has conflict to previous reactions and input
-                check_downRec = self.check_downRec(startPro, downRec)
+                check_downRec = startPro.check_downRec(downRec)
                 if check_downRec != []:
                     for product in downRec.getpro():
-                        check_pro = self.check_pro(product, check_downRec)
+                        check_pro = product.check_pro(check_downRec)
                         if check_pro != []:  #((product not in self.forbid_node) and (product not in startPro.related)):
                             BFS.append(product)
-                            self.add_path(startPro, product, downRec, check_pro)
+                            product.add_path(startPro, downRec, check_pro)
                             assert product.path != check_pro
                             assert len(product.path) != 0
                             
@@ -480,28 +433,21 @@ class search:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
                 # check whether this reaction has conflict to previous reactions and input
-                check_downRec = self.check_downRec(startPro, downRec)
+                check_downRec = startPro.check_downRec(downRec)
                 if check_downRec != []:
                     for product in downRec.getpro():
-                        check_pro = self.check_pro(product, check_downRec)
+                        check_pro = product.check_pro(check_downRec)
                         if check_pro != []:
                             BFS.append(product)
                             if ("C_side" in product.label):
                                 for c_side in product.labelC_side:
                                     for path in product.path:
                                         if self.check_cycle(path, c_side):
-                                            self.add_path(startPro, product, downRec, check_pro)
+                                            product.add_path(startPro, downRec, check_pro)
                                             return (True, product, c_side)
-                            self.add_path(startPro, product, downRec, check_pro)
+                            product.add_path(startPro, downRec, check_pro)
         return (False, node(None), None)
 
-
-    def check_downRectmp(self, startPro, downRec):
-        tmp = []
-        for tmp_path in startPro.path_tmp:
-            if self.check_RecSpecies(tmp_path["pathnode"], downRec):
-                tmp.append(tmp_path)
-        return tmp
 
     def add_pathtmp(self, startPro, product, downRec, downPath):
         for path in downPath:
@@ -539,10 +485,10 @@ class search:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
                 #check whether this reaction has conflict to previous reactions and input
-                check_downRec = self.check_downRectmp(startPro, downRec)
+                check_downRec = startPro.check_downRectmp(downRec)
                 if check_downRec != []:
                     for product in downRec.getpro():
-                        check_pro = self.check_pro(product, check_downRec)
+                        check_pro = product.check_pro(check_downRec)
                         if check_pro != []:
                             if product in targetlist:
                                 self.add_pathtmp(startPro, product, downRec, check_downRec)
