@@ -118,9 +118,46 @@ class node :
                 tmp.append(path)
         return tmp
 
-    def check_downRectmp(self, downRec):
+    # def check_downRectmp(self, downRec):
+    #     tmp = []
+    #     for tmp_path in self.path_tmp:
+    #         if self.check_RecSpecies(tmp_path["pathnode"], downRec):
+    #             tmp.append(tmp_path)
+    #     return tmp
+
+    def check_downRectmp(self, downRec, relate):
         tmp = []
-        for tmp_path in self.path_tmp:
-            if self.check_RecSpecies(tmp_path["pathnode"], downRec):
-                tmp.append(tmp_path)
+        downRecs = []
+        downRecs.append(downRec)
+        added_species = set()
+        for path in self.path_tmp:
+            pathenz = path["pathenz"].copy()
+            pathenz.append(downRec.getenz()[0])
+
+            added_species = path["related"].copy()
+            for enz in path["pathenz"]:
+                added_species.add(enz)
+            for enz in pathenz:
+                for rec in enz.getCatedge():
+                    if rec.activated(added_species):
+                        downRecs.append(rec)
+
+        for path in self.path_tmp:
+            if self.check_RecSpecies(path["pathnode"], downRec) and self.check_EnzSpecies(path["pathnode"], downRecs):
+                tmp.append(path)
         return tmp
+
+    def add_pathtmp(self, startPro, downRec, downPath):
+        for path in downPath:
+            tmp_path = {}
+            tmp_path["related"] = path["related"].copy()
+            for i in downRec.getrea():
+                tmp_path["related"].add(i)
+            tmp_path["pathlist"] = path["pathlist"].copy()
+            tmp_path["pathlist"].append(downRec)
+            tmp_path["pathnode"] = path["pathnode"].copy()
+            tmp_path["pathnode"].append(startPro)
+            tmp_path["pathenz"] = path["pathenz"].copy()
+            tmp_path["pathenz"].append(downRec.getenz()[0])
+
+            self.path_tmp.append(tmp_path)

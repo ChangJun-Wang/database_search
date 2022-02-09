@@ -449,28 +449,6 @@ class search:
                             product.add_path(startPro, downRec, check_pro)
         return (False, node(None), None)
 
-    # def BFS_checkC(self, product):
-    #     for c_side in product.labelC_side:
-    #         for path in product.path:
-    #             if self.check_cycle(path, c_side):
-    #                 return True
-    #     return False
-
-    def add_pathtmp(self, startPro, product, downRec, downPath):
-        for path in downPath:
-            tmp_path = {}
-            tmp_path["related"] = path["related"].copy()
-            for i in downRec.getrea():
-                tmp_path["related"].add(i)
-            tmp_path["pathlist"] = path["pathlist"].copy()
-            tmp_path["pathlist"].append(downRec)
-            tmp_path["pathnode"] = path["pathnode"].copy()
-            tmp_path["pathnode"].append(startPro)
-            tmp_path["pathenz"] = path["pathenz"].copy()
-            tmp_path["pathenz"].append(downRec.getenz()[0])
-
-            product.path_tmp.append(tmp_path)
-
 
     def BFS_tmp(self, input_species, target, relate):
         # targetlist   = target.path[0]["pathnode"][2:]
@@ -490,17 +468,17 @@ class search:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
                 #check whether this reaction has conflict to previous reactions and input
-                check_downRec = startPro.check_downRectmp(downRec)
+                check_downRec = startPro.check_downRectmp(downRec, relate)
                 if check_downRec != []:
                     for product in downRec.getpro():
                         check_pro = product.check_pro(check_downRec)
                         if check_pro != []:
                             if product in targetlist:
-                                self.add_pathtmp(startPro, product, downRec, check_downRec)
+                                product.add_pathtmp(startPro, downRec, check_pro)
                                 return (True, product)
                             if product not in tar_relate:
                                 BFS.append(product)
-                                self.add_pathtmp(startPro, product, downRec, check_downRec)
+                                product.add_pathtmp(startPro, downRec, check_pro)
                                 assert product.path_tmp != startPro.path_tmp
                                 assert product.path_tmp != check_downRec
                                 assert len(product.path_tmp) != 0

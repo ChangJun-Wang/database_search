@@ -1,11 +1,11 @@
 TypeC: 0
 
 reaction: 36 
-H+ 2-dehydro-3-deoxy-D-gluconate NADH  =[ alcohol_dehydrogenase ]=> 4-deoxy-L-erythro-5-hexoseulose NAD+ 
+H+ NADH 2-dehydro-3-deoxy-D-gluconate  =[ alcohol_dehydrogenase ]=> 4-deoxy-L-erythro-5-hexoseulose NAD+ 
 reaction: 37 
-4-deoxy-L-erythro-5-hexoseulose NAD+  =[ alcohol_dehydrogenase ]=> H+ 2-dehydro-3-deoxy-D-gluconate NADH 
+4-deoxy-L-erythro-5-hexoseulose NAD+  =[ alcohol_dehydrogenase ]=> H+ NADH 2-dehydro-3-deoxy-D-gluconate 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-dehydro-3-deoxy-D-gluconate 4-deoxy-L-erythro-5-hexoseulose H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -1259,11 +1259,11 @@ isopropanol
 TypeC: 1
 
 reaction: 42 
-NAD+ all-trans-retinol  =[ alcohol_dehydrogenase ]=> all-trans-retinal NADH 
+all-trans-retinol NAD+  =[ alcohol_dehydrogenase ]=> all-trans-retinal NADH 
 reaction: 422 
-all-trans-retinal H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ all-trans-retinol 
+all-trans-retinal H+ NADH  =[ alcohol_dehydrogenase ]=> all-trans-retinol NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  all-trans-retinol all-trans-retinal NAD+ H+
 Forbidnode: 
 a_primary_alcohol 
@@ -2517,11 +2517,11 @@ isopropanol
 TypeC: 2
 
 reaction: 150 
-4-methylcyclohexanol NAD+  =[ alcohol_dehydrogenase ]=> H+ 4-methylcyclohexanone NADH 
+4-methylcyclohexanol NAD+  =[ alcohol_dehydrogenase ]=> 4-methylcyclohexanone H+ NADH 
 reaction: 151 
-H+ 4-methylcyclohexanone NADH  =[ alcohol_dehydrogenase ]=> 4-methylcyclohexanol NAD+ 
+4-methylcyclohexanone H+ NADH  =[ alcohol_dehydrogenase ]=> 4-methylcyclohexanol NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  4-methylcyclohexanol 4-methylcyclohexanone NAD+ H+
 Forbidnode: 
 a_primary_alcohol 
@@ -3775,11 +3775,11 @@ isopropanol
 TypeC: 3
 
 reaction: 493 
-methanol NAD+  =[ alcohol_dehydrogenase ]=> H+ formaldehyde NADH 
+methanol NAD+  =[ alcohol_dehydrogenase ]=> formaldehyde H+ NADH 
 reaction: 485 
-H+ formaldehyde NADH  =[ alcohol_dehydrogenase ]=> methanol NAD+ 
+formaldehyde H+ NADH  =[ alcohol_dehydrogenase ]=> methanol NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  methanol formaldehyde NAD+ H+
 Forbidnode: 
 a_primary_alcohol 
@@ -5033,11 +5033,11 @@ isopropanol
 TypeC: 4
 
 reaction: 173 
-12-hydroxylauric_acid_methyl_ester NAD+  =[ alcohol_dehydrogenase ]=> H+ 12-oxolauric_acid_methyl_ester NADH 
+12-hydroxylauric_acid_methyl_ester NAD+  =[ alcohol_dehydrogenase ]=> 12-oxolauric_acid_methyl_ester H+ NADH 
 reaction: 174 
-H+ 12-oxolauric_acid_methyl_ester NADH  =[ alcohol_dehydrogenase ]=> 12-hydroxylauric_acid_methyl_ester NAD+ 
+12-oxolauric_acid_methyl_ester H+ NADH  =[ alcohol_dehydrogenase ]=> 12-hydroxylauric_acid_methyl_ester NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  12-hydroxylauric_acid_methyl_ester 12-oxolauric_acid_methyl_ester NAD+ H+
 Forbidnode: 
 a_primary_alcohol 
@@ -6295,7 +6295,7 @@ reaction: 230
 reaction: 7704 
 NAD+ 3-chlorobenzyl_alcohol  =[ aryl-alcohol_dehydrogenase ]=> 3-chlorobenzaldehyde NADH 
 reaction: 21853 
-H+ NAD+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
+NAD+ H+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
 CoreNode:  3-chlorobenzaldehyde 3-chlorobenzyl_alcohol H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -7770,11 +7770,11 @@ rac-butan-2,3-diol
 TypeC: 6
 
 reaction: 235 
-4-chlorobenzaldehyde H+ NADH  =[ alcohol_dehydrogenase ]=> 4-chlorobenzyl_alcohol NAD+ 
+NADH H+ 4-chlorobenzaldehyde  =[ alcohol_dehydrogenase ]=> 4-chlorobenzyl_alcohol NAD+ 
 reaction: 7758 
 4-chlorobenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> 4-chlorobenzaldehyde NADH 
 reaction: 21853 
-H+ NAD+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
+NAD+ H+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
 CoreNode:  4-chlorobenzaldehyde 4-chlorobenzyl_alcohol H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -9249,11 +9249,11 @@ rac-butan-2,3-diol
 TypeC: 7
 
 reaction: 276 
-H+ D-arabinose NADH  =[ alcohol_dehydrogenase ]=> D-arabitol NAD+ 
+D-arabinose H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ D-arabitol 
 reaction: 343 
-D-arabitol H+ NADH  =[ alcohol_dehydrogenase ]=> D-lyxose NAD+ D-arabinose 
+D-arabitol H+ NADH  =[ alcohol_dehydrogenase ]=> D-arabinose D-lyxose NAD+ 
 reaction: 54 
-NADH 5-hydroxymethylfurfural H+  =[ alcohol_dehydrogenase ]=> NAD+ (furan-2,5-diyl)dimethanol 
+5-hydroxymethylfurfural H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ (furan-2,5-diyl)dimethanol 
 CoreNode:  D-arabinose D-arabitol NADH H+
 Forbidnode: 
 a_primary_alcohol 
@@ -10476,11 +10476,11 @@ N,N-dimethyl-4-nitrosoaniline
 TypeC: 8
 
 reaction: 1421 
-D-arabitol NAD+  =[ D-arabinitol_4-dehydrogenase ]=> D-xylulose H+ NADH 
+NAD+ D-arabitol  =[ D-arabinitol_4-dehydrogenase ]=> D-xylulose H+ NADH 
 reaction: 1424 
-D-xylulose H+ NADH  =[ D-arabinitol_4-dehydrogenase ]=> D-arabitol NAD+ 
+D-xylulose H+ NADH  =[ D-arabinitol_4-dehydrogenase ]=> NAD+ D-arabitol 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  D-arabitol D-xylulose NAD+ H+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -10532,11 +10532,11 @@ meso-erythritol
 TypeC: 9
 
 reaction: 423 
-NADH H+ 11-cis-retinal  =[ alcohol_dehydrogenase ]=> 11-cis-retinol NAD+ 
+H+ NADH 11-cis-retinal  =[ alcohol_dehydrogenase ]=> 11-cis-retinol NAD+ 
 reaction: 490 
 11-cis-retinol NAD+  =[ alcohol_dehydrogenase ]=> NADH 11-cis-retinal 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  11-cis-retinal 11-cis-retinol H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -11790,11 +11790,11 @@ isopropanol
 TypeC: 10
 
 reaction: 424 
-13-cis-retinal H+ NADH  =[ alcohol_dehydrogenase ]=> 13-cis-retinol NAD+ 
+13-cis-retinal H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ 13-cis-retinol 
 reaction: 491 
-13-cis-retinol NAD+  =[ alcohol_dehydrogenase ]=> 13-cis-retinal NADH 
+NAD+ 13-cis-retinol  =[ alcohol_dehydrogenase ]=> 13-cis-retinal NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  13-cis-retinal 13-cis-retinol H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -13048,11 +13048,11 @@ isopropanol
 TypeC: 11
 
 reaction: 569 
-retinol NAD+  =[ alcohol_dehydrogenase ]=> retinal NADH 
+NAD+ retinol  =[ alcohol_dehydrogenase ]=> retinal NADH 
 reaction: 585 
-H+ retinal NADH  =[ alcohol_dehydrogenase ]=> retinol NAD+ 
+retinal H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ retinol 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  retinol retinal NAD+ H+
 Forbidnode: 
 a_primary_alcohol 
@@ -14480,11 +14480,11 @@ pyridine-3-aldehyde
 TypeC: 13
 
 reaction: 589 
-H+ 3-nitrobenzaldehyde NADH  =[ alcohol_dehydrogenase ]=> 3-nitrobenzyl_alcohol NAD+ 
+NADH H+ 3-nitrobenzaldehyde  =[ alcohol_dehydrogenase ]=> 3-nitrobenzyl_alcohol NAD+ 
 reaction: 7754 
-3-nitrobenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> 3-nitrobenzaldehyde NADH 
+3-nitrobenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> NADH 3-nitrobenzaldehyde 
 reaction: 21853 
-H+ NAD+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
+NAD+ H+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
 CoreNode:  3-nitrobenzaldehyde 3-nitrobenzyl_alcohol H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -15959,11 +15959,11 @@ rac-butan-2,3-diol
 TypeC: 14
 
 reaction: 674 
-hydrocinnamaldehyde H+ NADH  =[ alcohol_dehydrogenase ]=> hydrocinnamyl_alcohol NAD+ 
+hydrocinnamaldehyde H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ hydrocinnamyl_alcohol 
 reaction: 675 
-hydrocinnamyl_alcohol NAD+  =[ alcohol_dehydrogenase ]=> hydrocinnamaldehyde H+ NADH 
+NAD+ hydrocinnamyl_alcohol  =[ alcohol_dehydrogenase ]=> hydrocinnamaldehyde H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  hydrocinnamaldehyde hydrocinnamyl_alcohol H+ NAD+
 Forbidnode: 
 a_primary_alcohol 
@@ -17340,11 +17340,11 @@ ferrocyanide
 TypeC: 16
 
 reaction: 1422 
-D-fructose H+ NADH  =[ D-arabinitol_4-dehydrogenase ]=> D-mannitol NAD+ 
+D-fructose H+ NADH  =[ D-arabinitol_4-dehydrogenase ]=> NAD+ D-mannitol 
 reaction: 1412 
-D-mannitol NAD+  =[ D-arabinitol_4-dehydrogenase ]=> D-fructose H+ NADH 
+NAD+ D-mannitol  =[ D-arabinitol_4-dehydrogenase ]=> D-fructose H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  D-fructose D-mannitol H+ NAD+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -17400,7 +17400,7 @@ NAD+ (2S,3S)-2,3-butanediol  =[ diacetyl_reductase_[(S)-acetoin_forming] ]=> (3S
 reaction: 5565 
 (3S)-acetoin H+ NADH  =[ diacetyl_reductase_[(S)-acetoin_forming] ]=> NAD+ (2S,3S)-2,3-butanediol 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  (2S,3S)-2,3-butanediol (3S)-acetoin NAD+ H+
 Forbidnode: 
 (S)-acetoin 
@@ -17452,11 +17452,11 @@ isopropanol
 TypeC: 18
 
 reaction: 4944 
-H+ pyruvate ferrocytochrome_c  =[ L-lactate_dehydrogenase ]=> (S)-lactate ferricytochrome_c 
+H+ ferrocytochrome_c pyruvate  =[ L-lactate_dehydrogenase ]=> ferricytochrome_c (S)-lactate 
 reaction: 4941 
-(S)-lactate ferricytochrome_c  =[ L-lactate_dehydrogenase ]=> H+ pyruvate ferrocytochrome_c 
+ferricytochrome_c (S)-lactate  =[ L-lactate_dehydrogenase ]=> H+ ferrocytochrome_c pyruvate 
 reaction: 117270 
-ferricytochrome_c alpha-tocopheryl_hydroquinone H+  =[ quinol-cytochrome-c_reductase ]=> H2O alpha-tocopherol ferrocytochrome_c 
+alpha-tocopheryl_hydroquinone ferricytochrome_c H+  =[ quinol-cytochrome-c_reductase ]=> H2O alpha-tocopherol ferrocytochrome_c 
 CoreNode:  ferrocytochrome_c (S)-lactate H+ ferricytochrome_c
 Forbidnode: 
 NAD+ 
@@ -17733,11 +17733,11 @@ ferrocyanide
 TypeC: 21
 
 reaction: 1403 
-carnitine NAD+  =[ carnitine_3-dehydrogenase ]=> H+ 3-dehydrocarnitine NADH 
+carnitine NAD+  =[ carnitine_3-dehydrogenase ]=> 3-dehydrocarnitine H+ NADH 
 reaction: 1406 
-H+ 3-dehydrocarnitine NADH  =[ carnitine_3-dehydrogenase ]=> carnitine NAD+ 
+3-dehydrocarnitine H+ NADH  =[ carnitine_3-dehydrogenase ]=> carnitine NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  carnitine 3-dehydrocarnitine NAD+ H+
 Forbidnode: 
 (R)-(-)-3-hydroxy-4-(trimethylamino)butyrate 
@@ -17778,9 +17778,9 @@ isopropanol
 TypeC: 22
 
 reaction: 24849 
-NAD+ lactate reduced_ferredoxin_iron-sulfur_cluster  =[ lactate_dehydrogenase ]=> oxidized_ferredoxin_iron-sulfur_cluster pyruvate NADH 
+reduced_ferredoxin_iron-sulfur_cluster NAD+ lactate  =[ lactate_dehydrogenase ]=> oxidized_ferredoxin_iron-sulfur_cluster NADH pyruvate 
 reaction: 24850 
-oxidized_ferredoxin_iron-sulfur_cluster pyruvate NADH  =[ lactate_dehydrogenase ]=> NAD+ lactate reduced_ferredoxin_iron-sulfur_cluster 
+oxidized_ferredoxin_iron-sulfur_cluster NADH pyruvate  =[ lactate_dehydrogenase ]=> reduced_ferredoxin_iron-sulfur_cluster NAD+ lactate 
 reaction: 1861 
 NAD+ pyruvate  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH 
 CoreNode:  lactate oxidized_ferredoxin_iron-sulfur_cluster NAD+ pyruvate
@@ -17793,7 +17793,7 @@ reduced_ferredoxin_[iron-sulfur]_cluster
 TypeC: 23
 
 reaction: 1435 
-NAD(P)H 2-oxobutyrate H+  =[ aromatic_2-oxoacid_reductase ]=> 2-hydroxybutyrate NAD(P)+ 
+2-oxobutyrate H+ NAD(P)H  =[ aromatic_2-oxoacid_reductase ]=> NAD(P)+ 2-hydroxybutyrate 
 reaction: 9927 
 acceptor 2-hydroxybutyrate  =[ (S)-mandelate_dehydrogenase ]=> 2-oxobutyrate reduced_acceptor 
 reaction: 19950 
@@ -17876,7 +17876,7 @@ reaction: 6306
 reaction: 6300 
 NAD+ 3beta,7alpha-dihydroxy-5beta-cholan-24-oic_acid  =[ 3beta-hydroxycholanate_3-dehydrogenase ]=> 7alpha-hydroxy-3-oxo-5beta-cholan-24-oic_acid H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  7alpha-hydroxy-3-oxo-5beta-cholan-24-oic_acid 3beta,7alpha-dihydroxy-5beta-cholan-24-oic_acid H+ NAD+
 Forbidnode: 
 isolithocholate 
@@ -17931,7 +17931,7 @@ reaction: 2098
 reaction: 2099 
 5beta-pregnane-3beta-ol-20-one NAD+  =[ 3beta-hydroxy-DELTA5-steroid_dehydrogenase ]=> 5beta-pregnane-3,20-dione H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  5beta-pregnane-3,20-dione 5beta-pregnane-3beta-ol-20-one H+ NAD+
 Forbidnode: 
 a_3beta-hydroxy-DELTA5-steroid 
@@ -18079,9 +18079,9 @@ isopropanol
 TypeC: 26
 
 reaction: 2769 
-NADP+ cholic_acid  =[ 12alpha-hydroxysteroid_dehydrogenase ]=> 12-ketochenodeoxycholic_acid NADPH 
+cholic_acid NADP+  =[ 12alpha-hydroxysteroid_dehydrogenase ]=> 12-ketochenodeoxycholic_acid NADPH 
 reaction: 2767 
-12-ketochenodeoxycholic_acid NADH  =[ 12alpha-hydroxysteroid_dehydrogenase ]=> NAD+ cholic_acid 
+NADH 12-ketochenodeoxycholic_acid  =[ 12alpha-hydroxysteroid_dehydrogenase ]=> NAD+ cholic_acid 
 reaction: 117056 
 NADP+ NADH  =[ proton-translocating_NAD(P)+_transhydrogenase ]=> NAD+ NADPH 
 CoreNode:  cholic_acid 12-ketochenodeoxycholic_acid NADP+ NADH
@@ -18125,11 +18125,11 @@ H+/in
 TypeC: 27
 
 reaction: 6876 
-D-psicose H+ NADH  =[ ribitol_2-dehydrogenase ]=> allitol NAD+ 
+D-psicose H+ NADH  =[ ribitol_2-dehydrogenase ]=> NAD+ allitol 
 reaction: 6873 
-allitol NAD+  =[ ribitol_2-dehydrogenase ]=> D-psicose NADH 
+NAD+ allitol  =[ ribitol_2-dehydrogenase ]=> D-psicose NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  D-psicose allitol H+ NAD+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -18174,11 +18174,11 @@ D-sorbitol
 TypeC: 28
 
 reaction: 3230 
-GDP-4-dehydro-alpha-D-rhamnose NAD(P)H H+  =[ GDP-4-dehydro-D-rhamnose_reductase ]=> NAD(P)+ GDP-alpha-D-rhamnose 
+GDP-4-dehydro-alpha-D-rhamnose H+ NAD(P)H  =[ GDP-4-dehydro-D-rhamnose_reductase ]=> GDP-alpha-D-rhamnose NAD(P)+ 
 reaction: 3227 
-NAD(P)+ GDP-alpha-D-rhamnose  =[ GDP-4-dehydro-D-rhamnose_reductase ]=> GDP-4-dehydro-alpha-D-rhamnose NAD(P)H H+ 
+GDP-alpha-D-rhamnose NAD(P)+  =[ GDP-4-dehydro-D-rhamnose_reductase ]=> GDP-4-dehydro-alpha-D-rhamnose H+ NAD(P)H 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  GDP-4-dehydro-alpha-D-rhamnose GDP-alpha-D-rhamnose H+ NAD(P)+
 Forbidnode: 
 NADPH 
@@ -18195,11 +18195,11 @@ GDP-4-dehydro-6-deoxy-D-mannose
 TypeC: 29
 
 reaction: 2711 
-D-fructose_6-phosphate H+ NADH  =[ mannitol-1-phosphate_5-dehydrogenase ]=> D-mannitol_1-phosphate NAD+ 
+D-fructose_6-phosphate H+ NADH  =[ mannitol-1-phosphate_5-dehydrogenase ]=> NAD+ D-mannitol_1-phosphate 
 reaction: 2708 
-D-mannitol_1-phosphate NAD+  =[ mannitol-1-phosphate_5-dehydrogenase ]=> D-fructose_6-phosphate H+ NADH 
+NAD+ D-mannitol_1-phosphate  =[ mannitol-1-phosphate_5-dehydrogenase ]=> D-fructose_6-phosphate H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  D-fructose_6-phosphate D-mannitol_1-phosphate H+ NAD+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -18248,11 +18248,11 @@ nicotinamide_purine_dinucleotide
 TypeC: 30
 
 reaction: 2094 
-H+ 4-androsten-17beta-ol-3-one NADH  =[ 3beta-hydroxy-DELTA5-steroid_dehydrogenase ]=> NAD+ 4-androsten-3beta,17beta-diol 
+4-androsten-17beta-ol-3-one H+ NADH  =[ 3beta-hydroxy-DELTA5-steroid_dehydrogenase ]=> NAD+ 4-androsten-3beta,17beta-diol 
 reaction: 2183 
 NAD+ 4-androsten-3beta,17beta-diol  =[ 3beta-hydroxy-DELTA5-steroid_dehydrogenase ]=> 4-androsten-17beta-ol-3-one NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  4-androsten-17beta-ol-3-one 4-androsten-3beta,17beta-diol H+ NAD+
 Forbidnode: 
 a_3beta-hydroxy-DELTA5-steroid 
@@ -18400,9 +18400,9 @@ isopropanol
 TypeC: 31
 
 reaction: 2516 
-(S)-3-hydroxybutanoyl-CoA NADP+  =[ 3-hydroxybutyryl-CoA_dehydrogenase ]=> H+ 3-acetoacetyl-CoA NADPH 
+(S)-3-hydroxybutanoyl-CoA NADP+  =[ 3-hydroxybutyryl-CoA_dehydrogenase ]=> 3-acetoacetyl-CoA H+ NADPH 
 reaction: 2517 
-H+ 3-acetoacetyl-CoA NADPH  =[ 3-hydroxybutyryl-CoA_dehydrogenase ]=> (S)-3-hydroxybutanoyl-CoA NADP+ 
+3-acetoacetyl-CoA H+ NADPH  =[ 3-hydroxybutyryl-CoA_dehydrogenase ]=> (S)-3-hydroxybutanoyl-CoA NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  (S)-3-hydroxybutanoyl-CoA 3-acetoacetyl-CoA NADP+ H+
@@ -18449,11 +18449,11 @@ ferrocyanide
 TypeC: 32
 
 reaction: 115483 
-ATP deoxycholate CoA  =[ cholate-CoA_ligase ]=> AMP deoxycholoyl-CoA diphosphate 
+CoA deoxycholate ATP  =[ cholate-CoA_ligase ]=> diphosphate deoxycholoyl-CoA AMP 
 reaction: 58496 
 cholate deoxycholoyl-CoA  =[ bile_acid_CoA-transferase ]=> deoxycholate choloyl-CoA 
 reaction: 115478 
-cholate ATP CoA  =[ cholate-CoA_ligase ]=> AMP choloyl-CoA diphosphate 
+cholate CoA ATP  =[ cholate-CoA_ligase ]=> diphosphate choloyl-CoA AMP 
 CoreNode:  deoxycholate deoxycholoyl-CoA CoA cholate
 Forbidnode: 
 lithocholoyl-CoA 
@@ -18473,7 +18473,7 @@ reaction: 4016
 reaction: 4014 
 5alpha-androstan-17-beta-ol-3-one H+ NADH  =[ 3alpha-hydroxysteroid_3-dehydrogenase ]=> 5alpha-androstane-3alpha,17beta-diol NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  5alpha-androstane-3alpha,17beta-diol 5alpha-androstan-17-beta-ol-3-one NAD+ H+
 Forbidnode: 
 NAD(P)+ 
@@ -18843,9 +18843,9 @@ TypeC: 34
 reaction: 3087 
 H+ 3-hydroxybenzaldehyde NADPH  =[ carbonyl_reductase ]=> 3-hydroxybenzyl_alcohol NADP+ 
 reaction: 7753 
-3-hydroxybenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> 3-hydroxybenzaldehyde NADH 
+3-hydroxybenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> NADH 3-hydroxybenzaldehyde 
 reaction: 21853 
-H+ NAD+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
+NAD+ H+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
 CoreNode:  3-hydroxybenzaldehyde 3-hydroxybenzyl_alcohol H+ NAD+
 Forbidnode: 
 R-CHOH-R' 
@@ -19447,11 +19447,11 @@ rac-butan-2,3-diol
 TypeC: 35
 
 reaction: 3338 
-H2O NAD+ n-nonanol  =[ long-chain-alcohol_dehydrogenase ]=> n-nonanal NADH 
+NAD+ n-nonanol H2O  =[ long-chain-alcohol_dehydrogenase ]=> n-nonanal NADH 
 reaction: 5514 
-H+ n-nonanal NADPH  =[ NADP-retinol_dehydrogenase ]=> n-nonanol NADP+ 
+n-nonanal H+ NADPH  =[ NADP-retinol_dehydrogenase ]=> NADP+ n-nonanol 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  n-nonanol n-nonanal NAD+ H+
 Forbidnode: 
 retinol 
@@ -19522,7 +19522,7 @@ NH3 NADP+ IMP  =[ GMP_reductase ]=> GMP H+ NADPH
 reaction: 30658 
 GMP H+ NADPH  =[ GMP_reductase ]=> NH3 NADP+ IMP 
 reaction: 27175 
-NH3 2-oxosuccinic_acid H+ NADPH  =[ diaminopimelate_dehydrogenase ]=> 
+NH3 H+ 2-oxosuccinic_acid NADPH  =[ diaminopimelate_dehydrogenase ]=> 
 CoreNode:  IMP GMP NH3 NADPH
 Forbidnode: 
 meso-2,6-diaminoheptanedioate 
@@ -19544,9 +19544,9 @@ TypeC: 37
 reaction: 3734 
 H+ geranylgeranial NADPH  =[ aldose_reductase ]=> geranylgeraniol NADP+ 
 reaction: 4422 
-geranylgeraniol NAD+  =[ 3alpha(17beta)-hydroxysteroid_dehydrogenase ]=> H+ geranylgeranial NADH 
+geranylgeraniol NAD+  =[ 3alpha(17beta)-hydroxysteroid_dehydrogenase ]=> NADH H+ geranylgeranial 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  geranylgeranial geranylgeraniol H+ NAD+
 Forbidnode: 
 testosterone 
@@ -19846,7 +19846,7 @@ cholic_acid thio-NAD+  =[ 3alpha-hydroxysteroid_3-dehydrogenase ]=> thio-NADH 7a
 reaction: 29658 
 thio-NADH NADP+  =[ NAD(P)+_transhydrogenase ]=> thio-NAD+ NADPH 
 reaction: 3964 
-NADP+ cholic_acid  =[ 3alpha-hydroxysteroid_3-dehydrogenase ]=> H+ NADPH 
+cholic_acid NADP+  =[ 3alpha-hydroxysteroid_3-dehydrogenase ]=> H+ NADPH 
 CoreNode:  thio-NAD+ thio-NADH cholic_acid NADP+
 Forbidnode: 
 NAD(P)+ 
@@ -20275,11 +20275,11 @@ ferrocyanide
 TypeC: 40
 
 reaction: 7029 
-D-glycerate NAD(P)+  =[ 2-hydroxy-3-oxopropionate_reductase ]=> 2-hydroxy-3-oxopropanoate NAD(P)H H+ 
+NAD(P)+ D-glycerate  =[ 2-hydroxy-3-oxopropionate_reductase ]=> 2-hydroxy-3-oxopropanoate H+ NAD(P)H 
 reaction: 7039 
 2-hydroxy-3-oxopropanoate H+ NADH  =[ 2-hydroxy-3-oxopropionate_reductase ]=> NAD+ D-glycerate 
 reaction: 20932 
-Fe(II)-ferrozine H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-ferrozine 
+NAD(P)+ H+ Fe(II)-ferrozine  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-ferrozine NAD(P)H 
 CoreNode:  D-glycerate 2-hydroxy-3-oxopropanoate NAD(P)+ H+
 Forbidnode: 
 Fe(II)-siderophore 
@@ -20304,9 +20304,9 @@ NADP+
 TypeC: 41
 
 reaction: 7351 
-H+ 2-cyclohexenone NADH  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> 2-cyclohexenol NADP+ 
+NADH H+ 2-cyclohexenone  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> 2-cyclohexenol NADP+ 
 reaction: 7350 
-2-cyclohexenol NADP+  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> H+ 2-cyclohexenone NADH 
+2-cyclohexenol NADP+  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> NADH H+ 2-cyclohexenone 
 reaction: 117056 
 NADP+ NADH  =[ proton-translocating_NAD(P)+_transhydrogenase ]=> NAD+ NADPH 
 CoreNode:  2-cyclohexenone 2-cyclohexenol NADH NADP+
@@ -20540,9 +20540,9 @@ H+/in
 TypeC: 42
 
 reaction: 4690 
-scytalone NADP+  =[ tetrahydroxynaphthalene_reductase ]=> H+ 1,3,6,8-tetrahydroxynaphthalene NADPH 
+scytalone NADP+  =[ tetrahydroxynaphthalene_reductase ]=> 1,3,6,8-tetrahydroxynaphthalene H+ NADPH 
 reaction: 4692 
-H+ 1,3,6,8-tetrahydroxynaphthalene NADPH  =[ tetrahydroxynaphthalene_reductase ]=> scytalone NADP+ 
+1,3,6,8-tetrahydroxynaphthalene H+ NADPH  =[ tetrahydroxynaphthalene_reductase ]=> scytalone NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  scytalone 1,3,6,8-tetrahydroxynaphthalene NADP+ H+
@@ -20621,9 +20621,9 @@ Phenanthrenequinone
 TypeC: 43
 
 reaction: 5046 
-2-oxoisocaproate H+ NADH  =[ D-2-hydroxyacid_dehydrogenase ]=> NAD+ L-2-hydroxyisocaproate 
+H+ NADH 2-oxoisocaproate  =[ D-2-hydroxyacid_dehydrogenase ]=> L-2-hydroxyisocaproate NAD+ 
 reaction: 8320 
-O2 L-2-hydroxyisocaproate  =[ (S)-2-hydroxy-acid_oxidase ]=> 2-oxoisocaproate H2O2 
+O2 L-2-hydroxyisocaproate  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 2-oxoisocaproate 
 reaction: 10061 
 O2 NADH  =[ ubiquinol_oxidase ]=> 
 CoreNode:  2-oxoisocaproate L-2-hydroxyisocaproate NADH O2
@@ -20803,11 +20803,11 @@ ubiquinol-1
 TypeC: 44
 
 reaction: 4882 
-NAD+ 2-(R)-hydroxypropyl-CoM  =[ 2-(R)-hydroxypropyl-CoM_dehydrogenase ]=> NADH H+ 2-oxopropyl-CoM 
+NAD+ 2-(R)-hydroxypropyl-CoM  =[ 2-(R)-hydroxypropyl-CoM_dehydrogenase ]=> 2-oxopropyl-CoM H+ NADH 
 reaction: 4897 
-NADH H+ 2-oxopropyl-CoM  =[ 2-(R)-hydroxypropyl-CoM_dehydrogenase ]=> NAD+ 2-(R)-hydroxypropyl-CoM 
+2-oxopropyl-CoM H+ NADH  =[ 2-(R)-hydroxypropyl-CoM_dehydrogenase ]=> NAD+ 2-(R)-hydroxypropyl-CoM 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-(R)-hydroxypropyl-CoM 2-oxopropyl-CoM NAD+ H+
 Forbidnode: 
 2-(2-hydroxyethylthio)ethanesulfonate 
@@ -20858,11 +20858,11 @@ isopropanol
 TypeC: 45
 
 reaction: 27208 
-NH3 2-oxovalerate H+ NADH  =[ glutamate_dehydrogenase ]=> L-valine H2O NAD+ 
+NH3 H+ NADH 2-oxovalerate  =[ glutamate_dehydrogenase ]=> NAD+ H2O L-valine 
 reaction: 27211 
-L-valine H2O NAD+  =[ glutamate_dehydrogenase ]=> NH3 2-oxovalerate H+ NADH 
+NAD+ H2O L-valine  =[ glutamate_dehydrogenase ]=> NH3 H+ NADH 2-oxovalerate 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-oxovalerate L-valine H+ NAD+
 Forbidnode: 
 L-glutamate 
@@ -20939,11 +20939,11 @@ isopropanol
 TypeC: 46
 
 reaction: 5063 
-2-oxohexanoate H+ NADH  =[ D-2-hydroxyacid_dehydrogenase ]=> NAD+ 2-hydroxyhexanoate 
+2-oxohexanoate H+ NADH  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-hydroxyhexanoate NAD+ 
 reaction: 5067 
-NAD+ 2-hydroxyhexanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-oxohexanoate H+ NADH 
+2-hydroxyhexanoate NAD+  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-oxohexanoate H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-oxohexanoate 2-hydroxyhexanoate H+ NAD+
 Forbidnode: 
 NADP+ 
@@ -21026,11 +21026,11 @@ isopropanol
 TypeC: 47
 
 reaction: 5065 
-H+ 2-oxooctanoate NADH  =[ D-2-hydroxyacid_dehydrogenase ]=> NAD+ 2-hydroxyoctanoate 
+2-oxooctanoate H+ NADH  =[ D-2-hydroxyacid_dehydrogenase ]=> NAD+ 2-hydroxyoctanoate 
 reaction: 5064 
-NAD+ 2-hydroxyoctanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> H+ 2-oxooctanoate NADH 
+NAD+ 2-hydroxyoctanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-oxooctanoate H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-oxooctanoate 2-hydroxyoctanoate H+ NAD+
 Forbidnode: 
 NADP+ 
@@ -21113,9 +21113,9 @@ isopropanol
 TypeC: 48
 
 reaction: 4999 
-5beta-pregnane-21-ol-3,20-dione H+ NADPH  =[ 3beta-hydroxysteroid_3-dehydrogenase ]=> 5beta-pregnane-3beta,21-diol-20-one NADP+ 
+H+ 5beta-pregnane-21-ol-3,20-dione NADPH  =[ 3beta-hydroxysteroid_3-dehydrogenase ]=> 5beta-pregnane-3beta,21-diol-20-one NADP+ 
 reaction: 5001 
-5beta-pregnane-3beta,21-diol-20-one NADP+  =[ 3beta-hydroxysteroid_3-dehydrogenase ]=> 5beta-pregnane-21-ol-3,20-dione H+ NADPH 
+5beta-pregnane-3beta,21-diol-20-one NADP+  =[ 3beta-hydroxysteroid_3-dehydrogenase ]=> H+ 5beta-pregnane-21-ol-3,20-dione NADPH 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  5beta-pregnane-21-ol-3,20-dione 5beta-pregnane-3beta,21-diol-20-one H+ NADP+
@@ -21226,9 +21226,9 @@ ferrocyanide
 TypeC: 49
 
 reaction: 10025 
-2-oxoglutarate D-lactate  =[ (R)-2-hydroxyglutarate-pyruvate_transhydrogenase ]=> pyruvate D-2-hydroxyglutarate 
+2-oxoglutarate D-lactate  =[ (R)-2-hydroxyglutarate-pyruvate_transhydrogenase ]=> D-2-hydroxyglutarate pyruvate 
 reaction: 10027 
-pyruvate D-2-hydroxyglutarate  =[ (R)-2-hydroxyglutarate-pyruvate_transhydrogenase ]=> 2-oxoglutarate D-lactate 
+D-2-hydroxyglutarate pyruvate  =[ (R)-2-hydroxyglutarate-pyruvate_transhydrogenase ]=> 2-oxoglutarate D-lactate 
 reaction: 34729 
 2-oxoglutarate pyruvate  =[ 2-succinyl-5-enolpyruvyl-6-hydroxy-3-cyclohexene-1-carboxylic-acid_synthase ]=> CO2 4-hydroxy-5-oxohexanoic_acid 
 CoreNode:  D-lactate D-2-hydroxyglutarate 2-oxoglutarate pyruvate
@@ -21266,7 +21266,7 @@ oxaloacetate
 TypeC: 50
 
 reaction: 5058 
-NADH H+ 2-oxobutanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-hydroxybutanoate NAD+ 
+H+ NADH 2-oxobutanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-hydroxybutanoate NAD+ 
 reaction: 8531 
 2-hydroxybutanoate O2  =[ L-lactate_oxidase ]=> H2O2 2-oxobutanoate 
 reaction: 10061 
@@ -21369,11 +21369,11 @@ ubiquinol-1
 TypeC: 51
 
 reaction: 30343 
-NAD(P)H NO H+  =[ nitric_oxide_reductase_[NAD(P)+,_nitrous_oxide-forming] ]=> N2O H2O NAD(P)+ 
+NO H+ NAD(P)H  =[ nitric_oxide_reductase_[NAD(P)+,_nitrous_oxide-forming] ]=> N2O NAD(P)+ H2O 
 reaction: 30342 
-N2O H2O NAD(P)+  =[ nitric_oxide_reductase_[NAD(P)+,_nitrous_oxide-forming] ]=> NAD(P)H NO H+ 
+N2O NAD(P)+ H2O  =[ nitric_oxide_reductase_[NAD(P)+,_nitrous_oxide-forming] ]=> NO H+ NAD(P)H 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  NO N2O H+ NAD(P)+
 Forbidnode: 
 NADPH 
@@ -21393,9 +21393,9 @@ DEA-NONOate
 TypeC: 52
 
 reaction: 5370 
-glutathione NAD+ methylglyoxal  =[ S-(hydroxymethyl)glutathione_dehydrogenase ]=> S-pyruvylglutathione NADH 
+NAD+ glutathione methylglyoxal  =[ S-(hydroxymethyl)glutathione_dehydrogenase ]=> S-pyruvylglutathione NADH 
 reaction: 5365 
-S-pyruvylglutathione NADH  =[ S-(hydroxymethyl)glutathione_dehydrogenase ]=> glutathione NAD+ methylglyoxal 
+S-pyruvylglutathione NADH  =[ S-(hydroxymethyl)glutathione_dehydrogenase ]=> NAD+ glutathione methylglyoxal 
 reaction: 3222 
 NADH methylglyoxal  =[ L-glycol_dehydrogenase ]=> L-lactaldehyde 
 CoreNode:  glutathione S-pyruvylglutathione methylglyoxal NADH
@@ -21452,11 +21452,11 @@ captopril
 TypeC: 53
 
 reaction: 5380 
-NAD(P)+ 2'-deoxymugineic_acid  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> 3''-deamino-3''-oxonicotianamine H+ NAD(P)H 
+NAD(P)+ 2'-deoxymugineic_acid  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)H H+ 3''-deamino-3''-oxonicotianamine 
 reaction: 5381 
-3''-deamino-3''-oxonicotianamine H+ NAD(P)H  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)+ 2'-deoxymugineic_acid 
+NAD(P)H H+ 3''-deamino-3''-oxonicotianamine  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)+ 2'-deoxymugineic_acid 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  2'-deoxymugineic_acid 3''-deamino-3''-oxonicotianamine NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -21470,11 +21470,11 @@ Fe(II)-ferrozine
 TypeC: 54
 
 reaction: 5436 
-H+ 2-formylglutarate NADH  =[ 2-hydroxymethylglutarate_dehydrogenase ]=> 2-hydroxymethylglutarate NAD+ 
+2-formylglutarate H+ NADH  =[ 2-hydroxymethylglutarate_dehydrogenase ]=> 2-hydroxymethylglutarate NAD+ 
 reaction: 5437 
-2-hydroxymethylglutarate NAD+  =[ 2-hydroxymethylglutarate_dehydrogenase ]=> H+ 2-formylglutarate NADH 
+2-hydroxymethylglutarate NAD+  =[ 2-hydroxymethylglutarate_dehydrogenase ]=> 2-formylglutarate H+ NADH 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-formylglutarate 2-hydroxymethylglutarate H+ NAD+
 Forbidnode: 
 (S)-2-hydroxymethylglutarate 
@@ -21512,11 +21512,11 @@ isopropanol
 TypeC: 55
 
 reaction: 5439 
-chlorophyllide_b H+ NADPH  =[ b_reductase ]=> NADP+ 7-hydroxychlorophyllide_a 
+H+ NADPH chlorophyllide_b  =[ b_reductase ]=> NADP+ 7-hydroxychlorophyllide_a 
 reaction: 15133 
-O2 7-hydroxychlorophyllide_a NADPH  =[ chlorophyllide-a_oxygenase ]=> chlorophyllide_b H2O NADP+ 
+O2 7-hydroxychlorophyllide_a NADPH  =[ chlorophyllide-a_oxygenase ]=> NADP+ H2O chlorophyllide_b 
 reaction: 14333 
-anthranilate H+ O2 NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 NH3 catechol NADP+ 
+anthranilate O2 H+ NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 catechol NH3 NADP+ 
 CoreNode:  chlorophyllide_b 7-hydroxychlorophyllide_a NADPH O2
 Forbidnode: 
 NAD(P)H 
@@ -21549,11 +21549,11 @@ ZnPheide_a
 TypeC: 56
 
 reaction: 5640 
-2-hydroxyethylphosphonate NAD+  =[ phosphonoacetaldehyde_reductase ]=> H+ phosphonoacetaldehyde NADH 
+NAD+ 2-hydroxyethylphosphonate  =[ phosphonoacetaldehyde_reductase ]=> NADH H+ phosphonoacetaldehyde 
 reaction: 5641 
-H+ phosphonoacetaldehyde NADH  =[ phosphonoacetaldehyde_reductase ]=> 2-hydroxyethylphosphonate NAD+ 
+NADH H+ phosphonoacetaldehyde  =[ phosphonoacetaldehyde_reductase ]=> NAD+ 2-hydroxyethylphosphonate 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2-hydroxyethylphosphonate phosphonoacetaldehyde NAD+ H+
 Forbidnode: 
 NADPH 
@@ -21591,11 +21591,11 @@ isopropanol
 TypeC: 57
 
 reaction: 5662 
-(2S)-3-sulfolactate NAD+  =[ (S)-sulfolactate_dehydrogenase ]=> H+ 3-sulfopyruvate NADH 
+NAD+ (2S)-3-sulfolactate  =[ (S)-sulfolactate_dehydrogenase ]=> 3-sulfopyruvate H+ NADH 
 reaction: 5663 
-H+ 3-sulfopyruvate NADH  =[ (S)-sulfolactate_dehydrogenase ]=> (2S)-3-sulfolactate NAD+ 
+3-sulfopyruvate H+ NADH  =[ (S)-sulfolactate_dehydrogenase ]=> NAD+ (2S)-3-sulfolactate 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  (2S)-3-sulfolactate 3-sulfopyruvate NAD+ H+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -21632,9 +21632,9 @@ isopropanol
 TypeC: 58
 
 reaction: 5678 
-NADP+ isethionate  =[ sulfoacetaldehyde_reductase ]=> 2-sulfoacetaldehyde H+ NADPH 
+isethionate NADP+  =[ sulfoacetaldehyde_reductase ]=> 2-sulfoacetaldehyde H+ NADPH 
 reaction: 5679 
-2-sulfoacetaldehyde H+ NADPH  =[ sulfoacetaldehyde_reductase ]=> NADP+ isethionate 
+2-sulfoacetaldehyde H+ NADPH  =[ sulfoacetaldehyde_reductase ]=> isethionate NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  isethionate 2-sulfoacetaldehyde NADP+ H+
@@ -21682,9 +21682,9 @@ ferrocyanide
 TypeC: 59
 
 reaction: 23547 
-2-sulfoacetaldehyde CoA NADP+  =[ sulfoacetaldehyde_dehydrogenase ]=> sulfoacetyl-CoA H+ NADPH 
+CoA 2-sulfoacetaldehyde NADP+  =[ sulfoacetaldehyde_dehydrogenase ]=> sulfoacetyl-CoA H+ NADPH 
 reaction: 23548 
-sulfoacetyl-CoA H+ NADPH  =[ sulfoacetaldehyde_dehydrogenase ]=> 2-sulfoacetaldehyde CoA NADP+ 
+sulfoacetyl-CoA H+ NADPH  =[ sulfoacetaldehyde_dehydrogenase ]=> CoA 2-sulfoacetaldehyde NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  2-sulfoacetaldehyde sulfoacetyl-CoA NADP+ H+
@@ -21735,11 +21735,11 @@ NAD(P)+
 TypeC: 60
 
 reaction: 5684 
-11-cis-retinol-[cellular_retinaldehyde_binding_protein] NAD+  =[ 11-cis-retinol_dehydrogenase ]=> H+ 11-cis-retinal-[cellular_retinaldehyde_binding_protein] NADH 
+NAD+ 11-cis-retinol-[cellular_retinaldehyde_binding_protein]  =[ 11-cis-retinol_dehydrogenase ]=> 11-cis-retinal-[cellular_retinaldehyde_binding_protein] H+ NADH 
 reaction: 5693 
-H+ 11-cis-retinal-[cellular_retinaldehyde_binding_protein] NADH  =[ 11-cis-retinol_dehydrogenase ]=> 11-cis-retinol-[cellular_retinaldehyde_binding_protein] NAD+ 
+11-cis-retinal-[cellular_retinaldehyde_binding_protein] H+ NADH  =[ 11-cis-retinol_dehydrogenase ]=> NAD+ 11-cis-retinol-[cellular_retinaldehyde_binding_protein] 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  11-cis-retinol-[cellular_retinaldehyde_binding_protein] 11-cis-retinal-[cellular_retinaldehyde_binding_protein] NAD+ H+
 Forbidnode: 
 11-cis-retinol-[retinal-binding-protein] 
@@ -21789,9 +21789,9 @@ isopropanol
 TypeC: 61
 
 reaction: 5702 
-NADP+ raucaffrinoline  =[ perakine_reductase ]=> perakine H+ NADPH 
+raucaffrinoline NADP+  =[ perakine_reductase ]=> H+ perakine NADPH 
 reaction: 5703 
-perakine H+ NADPH  =[ perakine_reductase ]=> NADP+ raucaffrinoline 
+H+ perakine NADPH  =[ perakine_reductase ]=> raucaffrinoline NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  raucaffrinoline perakine NADP+ H+
@@ -21839,11 +21839,11 @@ ferrocyanide
 TypeC: 62
 
 reaction: 5710 
-coniferyl_acetate H+ NADPH  =[ isoeugenol_synthase ]=> isoeugenol NADP+ acetate 
+H+ coniferyl_acetate NADPH  =[ isoeugenol_synthase ]=> NADP+ isoeugenol acetate 
 reaction: 5709 
-isoeugenol NADP+ acetate  =[ isoeugenol_synthase ]=> coniferyl_acetate H+ NADPH 
+NADP+ isoeugenol acetate  =[ isoeugenol_synthase ]=> H+ coniferyl_acetate NADPH 
 reaction: 5012 
-NADPH 24-methylenepollinastanone acetate  =[ 3beta-hydroxysteroid_3-dehydrogenase ]=> 24-methylenepollinastanol NADP+ 
+24-methylenepollinastanone NADPH acetate  =[ 3beta-hydroxysteroid_3-dehydrogenase ]=> 24-methylenepollinastanol NADP+ 
 CoreNode:  coniferyl_acetate isoeugenol NADPH acetate
 Forbidnode: 
 a_3beta-hydroxysteroid 
@@ -21916,11 +21916,11 @@ fecosterone
 TypeC: 63
 
 reaction: 5753 
-5-exo-hydroxycamphor NAD+  =[ 5-exo-hydroxycamphor_dehydrogenase ]=> H+ bornane-2,5-dione NADH 
+NAD+ 5-exo-hydroxycamphor  =[ 5-exo-hydroxycamphor_dehydrogenase ]=> bornane-2,5-dione H+ NADH 
 reaction: 5754 
-H+ bornane-2,5-dione NADH  =[ 5-exo-hydroxycamphor_dehydrogenase ]=> 5-exo-hydroxycamphor NAD+ 
+bornane-2,5-dione H+ NADH  =[ 5-exo-hydroxycamphor_dehydrogenase ]=> NAD+ 5-exo-hydroxycamphor 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  5-exo-hydroxycamphor bornane-2,5-dione NAD+ H+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -21957,9 +21957,9 @@ isopropanol
 TypeC: 64
 
 reaction: 5771 
-a_very-long-chain_(3R)-3-hydroxyacyl-CoA NADP+  =[ very-long-chain_3-oxoacyl-CoA_reductase ]=> H+ a_very-long-chain_3-oxoacyl-CoA NADPH 
+NADP+ a_very-long-chain_(3R)-3-hydroxyacyl-CoA  =[ very-long-chain_3-oxoacyl-CoA_reductase ]=> a_very-long-chain_3-oxoacyl-CoA H+ NADPH 
 reaction: 5772 
-H+ a_very-long-chain_3-oxoacyl-CoA NADPH  =[ very-long-chain_3-oxoacyl-CoA_reductase ]=> a_very-long-chain_(3R)-3-hydroxyacyl-CoA NADP+ 
+a_very-long-chain_3-oxoacyl-CoA H+ NADPH  =[ very-long-chain_3-oxoacyl-CoA_reductase ]=> NADP+ a_very-long-chain_(3R)-3-hydroxyacyl-CoA 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  a_very-long-chain_(3R)-3-hydroxyacyl-CoA a_very-long-chain_3-oxoacyl-CoA NADP+ H+
@@ -22010,9 +22010,9 @@ nonanal
 TypeC: 65
 
 reaction: 5862 
-H+ CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose NADPH  =[ CDP-paratose_synthase ]=> CDP-alpha-D-paratose NADP+ 
+CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose H+ NADPH  =[ CDP-paratose_synthase ]=> NADP+ CDP-alpha-D-paratose 
 reaction: 5861 
-CDP-alpha-D-paratose NADP+  =[ CDP-paratose_synthase ]=> H+ CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose NADPH 
+NADP+ CDP-alpha-D-paratose  =[ CDP-paratose_synthase ]=> CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose H+ NADPH 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  CDP-4-dehydro-3,6-dideoxy-alpha-D-glucose CDP-alpha-D-paratose H+ NADP+
@@ -22059,9 +22059,9 @@ ferrocyanide
 TypeC: 66
 
 reaction: 5891 
-(1'S)-averantin NADP+  =[ norsolorinic_acid_ketoreductase ]=> H+ norsolorinic_acid NADPH 
+(1'S)-averantin NADP+  =[ norsolorinic_acid_ketoreductase ]=> norsolorinic_acid H+ NADPH 
 reaction: 5892 
-H+ norsolorinic_acid NADPH  =[ norsolorinic_acid_ketoreductase ]=> (1'S)-averantin NADP+ 
+norsolorinic_acid H+ NADPH  =[ norsolorinic_acid_ketoreductase ]=> (1'S)-averantin NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  (1'S)-averantin norsolorinic_acid NADP+ H+
@@ -22108,9 +22108,9 @@ ferrocyanide
 TypeC: 67
 
 reaction: 5948 
-versicolorone NADP+  =[ versiconal_hemiacetal_acetate_reductase ]=> 1'-hydroxyversicolorone H+ NADPH 
+NADP+ versicolorone  =[ versiconal_hemiacetal_acetate_reductase ]=> 1'-hydroxyversicolorone H+ NADPH 
 reaction: 5953 
-1'-hydroxyversicolorone H+ NADPH  =[ versiconal_hemiacetal_acetate_reductase ]=> versicolorone NADP+ 
+1'-hydroxyversicolorone H+ NADPH  =[ versiconal_hemiacetal_acetate_reductase ]=> NADP+ versicolorone 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  versicolorone 1'-hydroxyversicolorone NADP+ H+
@@ -22161,9 +22161,9 @@ versiconal_hemiacetal_acetate
 TypeC: 68
 
 reaction: 5949 
-versiconol_acetate NADP+  =[ versiconal_hemiacetal_acetate_reductase ]=> H+ versiconal_hemiacetal_acetate NADPH 
+NADP+ versiconol_acetate  =[ versiconal_hemiacetal_acetate_reductase ]=> versiconal_hemiacetal_acetate H+ NADPH 
 reaction: 5952 
-H+ versiconal_hemiacetal_acetate NADPH  =[ versiconal_hemiacetal_acetate_reductase ]=> versiconol_acetate NADP+ 
+versiconal_hemiacetal_acetate H+ NADPH  =[ versiconal_hemiacetal_acetate_reductase ]=> NADP+ versiconol_acetate 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  versiconol_acetate versiconal_hemiacetal_acetate NADP+ H+
@@ -22214,9 +22214,9 @@ versiconal
 TypeC: 69
 
 reaction: 5950 
-versiconol NADP+  =[ versiconal_hemiacetal_acetate_reductase ]=> H+ versiconal NADPH 
+versiconol NADP+  =[ versiconal_hemiacetal_acetate_reductase ]=> versiconal H+ NADPH 
 reaction: 5951 
-H+ versiconal NADPH  =[ versiconal_hemiacetal_acetate_reductase ]=> versiconol NADP+ 
+versiconal H+ NADPH  =[ versiconal_hemiacetal_acetate_reductase ]=> versiconol NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  versiconol versiconal NADP+ H+
@@ -22316,11 +22316,11 @@ ferrocyanide
 TypeC: 71
 
 reaction: 5956 
-GDP-beta-L-colitose NAD(P)+  =[ GDP-L-colitose_synthase ]=> GDP-4-dehydro-3,6-dideoxy-alpha-D-mannose H+ NAD(P)H 
+NAD(P)+ GDP-beta-L-colitose  =[ GDP-L-colitose_synthase ]=> NAD(P)H H+ GDP-4-dehydro-3,6-dideoxy-alpha-D-mannose 
 reaction: 5957 
-GDP-4-dehydro-3,6-dideoxy-alpha-D-mannose H+ NAD(P)H  =[ GDP-L-colitose_synthase ]=> GDP-beta-L-colitose NAD(P)+ 
+NAD(P)H H+ GDP-4-dehydro-3,6-dideoxy-alpha-D-mannose  =[ GDP-L-colitose_synthase ]=> NAD(P)+ GDP-beta-L-colitose 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  GDP-beta-L-colitose GDP-4-dehydro-3,6-dideoxy-alpha-D-mannose NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -22336,9 +22336,9 @@ NADPH
 TypeC: 72
 
 reaction: 6017 
-NADP+ aklavinone  =[ aklaviketone_reductase ]=> aklaviketone H+ NADPH 
+aklavinone NADP+  =[ aklaviketone_reductase ]=> H+ aklaviketone NADPH 
 reaction: 6018 
-aklaviketone H+ NADPH  =[ aklaviketone_reductase ]=> NADP+ aklavinone 
+H+ aklaviketone NADPH  =[ aklaviketone_reductase ]=> aklavinone NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  aklavinone aklaviketone NADP+ H+
@@ -22387,11 +22387,11 @@ maggiemycin
 TypeC: 73
 
 reaction: 39712 
-ATP CoA citrate  =[ ATP_citrate_synthase ]=> phosphate ADP oxaloacetate acetyl-CoA 
+CoA citrate ATP  =[ ATP_citrate_synthase ]=> oxaloacetate phosphate ADP acetyl-CoA 
 reaction: 39711 
-phosphate ADP oxaloacetate acetyl-CoA  =[ ATP_citrate_synthase ]=> ATP CoA citrate 
+oxaloacetate phosphate ADP acetyl-CoA  =[ ATP_citrate_synthase ]=> CoA citrate ATP 
 reaction: 23357 
-CoA NADP+ oxaloacetate  =[ pyruvate_dehydrogenase ]=> CO2 NADPH 
+CoA oxaloacetate NADP+  =[ pyruvate_dehydrogenase ]=> CO2 NADPH 
 CoreNode:  citrate phosphate CoA oxaloacetate
 Forbidnode: 
 dATP 
@@ -22448,9 +22448,9 @@ TypeC: 74
 reaction: 6127 
 (S)-malate ubiquinone-6  =[ malate_dehydrogenase ]=> ubiquinol-6 oxaloacetate 
 reaction: 10082 
-O2 ubiquinol-6  =[ menaquinol_oxidase ]=> ubiquinone-6 H2O 
+O2 ubiquinol-6  =[ menaquinol_oxidase ]=> H2O ubiquinone-6 
 reaction: 13446 
-(S)-malate O2  =[ lactate_2-monooxygenase ]=> oxaloacetate H2O2 
+O2 (S)-malate  =[ lactate_2-monooxygenase ]=> oxaloacetate H2O2 
 CoreNode:  ubiquinone-6 ubiquinol-6 (S)-malate O2
 Forbidnode: 
 NAD+ 
@@ -22574,7 +22574,7 @@ NAD+ (2R)-2,3-dihydroxy-3-methylbutanoate  =[ ketol-acid_reductoisomerase ]=> (2
 reaction: 6199 
 (2S)-2-hydroxy-2-methyl-3-oxobutanoate H+ NADH  =[ ketol-acid_reductoisomerase ]=> NAD+ (2R)-2,3-dihydroxy-3-methylbutanoate 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  (2R)-2,3-dihydroxy-3-methylbutanoate (2S)-2-hydroxy-2-methyl-3-oxobutanoate NAD+ H+
 Forbidnode: 
 NADP+ 
@@ -22649,9 +22649,9 @@ isopropanol
 TypeC: 76
 
 reaction: 6243 
-dTDP-4-dehydro-2,6-dideoxy-alpha-D-glucose NADP+  =[ dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose_3-reductase ]=> H+ dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose NADPH 
+dTDP-4-dehydro-2,6-dideoxy-alpha-D-glucose NADP+  =[ dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose_3-reductase ]=> dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose H+ NADPH 
 reaction: 6244 
-H+ dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose NADPH  =[ dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose_3-reductase ]=> dTDP-4-dehydro-2,6-dideoxy-alpha-D-glucose NADP+ 
+dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose H+ NADPH  =[ dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose_3-reductase ]=> dTDP-4-dehydro-2,6-dideoxy-alpha-D-glucose NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  dTDP-4-dehydro-2,6-dideoxy-alpha-D-glucose dTDP-3,4-didehydro-2,6-dideoxy-alpha-D-glucose NADP+ H+
@@ -22756,11 +22756,11 @@ ferrocyanide
 TypeC: 78
 
 reaction: 115482 
-ATP CoA lithocholate  =[ cholate-CoA_ligase ]=> lithocholoyl-CoA AMP diphosphate 
+CoA lithocholate ATP  =[ cholate-CoA_ligase ]=> lithocholoyl-CoA diphosphate AMP 
 reaction: 58495 
 cholate lithocholoyl-CoA  =[ bile_acid_CoA-transferase ]=> lithocholate choloyl-CoA 
 reaction: 115478 
-cholate ATP CoA  =[ cholate-CoA_ligase ]=> AMP choloyl-CoA diphosphate 
+cholate CoA ATP  =[ cholate-CoA_ligase ]=> diphosphate choloyl-CoA AMP 
 CoreNode:  lithocholate lithocholoyl-CoA CoA cholate
 Forbidnode: 
 deoxycholoyl-CoA 
@@ -22780,7 +22780,7 @@ reaction: 6447
 reaction: 6448 
 2,3,5,6-tetrachloro-1,4-benzoquinone H+ NADH  =[ tetrachlorobenzoquinone_reductase ]=> 2,3,5,6-tetrachlorohydroquinone NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  2,3,5,6-tetrachlorohydroquinone 2,3,5,6-tetrachloro-1,4-benzoquinone NAD+ H+
 Forbidnode: 
 NADP+ 
@@ -22875,11 +22875,11 @@ syn-2-octyl-3-hydroxydodecanoic_acid
 TypeC: 81
 
 reaction: 6510 
-narcotine_hemiacetal NAD+  =[ noscapine_synthase ]=> H+ noscapine NADH 
+narcotine_hemiacetal NAD+  =[ noscapine_synthase ]=> noscapine H+ NADH 
 reaction: 6512 
-H+ noscapine NADH  =[ noscapine_synthase ]=> narcotine_hemiacetal NAD+ 
+noscapine H+ NADH  =[ noscapine_synthase ]=> narcotine_hemiacetal NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  narcotine_hemiacetal noscapine NAD+ H+
 Forbidnode: 
 NADP+ 
@@ -22918,11 +22918,11 @@ isopropanol
 TypeC: 82
 
 reaction: 16130 
-methane O2 succinate  =[ methane_monooxygenase ]=> fumarate H2O methanol 
+O2 succinate methane  =[ methane_monooxygenase ]=> methanol H2O fumarate 
 reaction: 12093 
-fumarate H2  =[ hydrogenase ]=> succinate 
+H2 fumarate  =[ hydrogenase ]=> succinate 
 reaction: 12077 
-O2 H2  =[ hydrogenase ]=> 
+H2 O2  =[ hydrogenase ]=> 
 CoreNode:  succinate fumarate O2 H2
 Forbidnode: 
 NAD+ 
@@ -23112,9 +23112,9 @@ n-pentane
 TypeC: 83
 
 reaction: 22139 
-NADP+ H2O malonic_semialdehyde  =[ succinate-semialdehyde_dehydrogenase_[NAD(P)+] ]=> malonate H+ NADPH 
+malonic_semialdehyde NADP+ H2O  =[ succinate-semialdehyde_dehydrogenase_[NAD(P)+] ]=> malonate H+ NADPH 
 reaction: 22225 
-malonate NADH  =[ glycolaldehyde_dehydrogenase ]=> H2O NAD+ malonic_semialdehyde 
+malonate NADH  =[ glycolaldehyde_dehydrogenase ]=> malonic_semialdehyde NAD+ H2O 
 reaction: 117056 
 NADP+ NADH  =[ proton-translocating_NAD(P)+_transhydrogenase ]=> NAD+ NADPH 
 CoreNode:  malonic_semialdehyde malonate NADP+ NADH
@@ -23187,11 +23187,11 @@ H+/in
 TypeC: 84
 
 reaction: 7334 
-H+ 2-methylbenzaldehyde NADPH  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> 2-methylbenzyl_alcohol NADP+ 
+2-methylbenzaldehyde H+ NADPH  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> 2-methylbenzyl_alcohol NADP+ 
 reaction: 7749 
-2-methylbenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> NADH 2-methylbenzaldehyde 
+NAD+ 2-methylbenzyl_alcohol  =[ aryl-alcohol_dehydrogenase ]=> 2-methylbenzaldehyde NADH 
 reaction: 21853 
-H+ NAD+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
+NAD+ H+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
 CoreNode:  2-methylbenzaldehyde 2-methylbenzyl_alcohol H+ NAD+
 Forbidnode: 
 reduced_ferredoxin 
@@ -23655,11 +23655,11 @@ pentan-1-ol
 TypeC: 85
 
 reaction: 7336 
-3-methylbenzaldehyde H+ NADPH  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> NADP+ 3-methylbenzyl_alcohol 
+3-methylbenzaldehyde H+ NADPH  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> 3-methylbenzyl_alcohol NADP+ 
 reaction: 7759 
-NAD+ 3-methylbenzyl_alcohol  =[ aryl-alcohol_dehydrogenase ]=> 3-methylbenzaldehyde NADH 
+3-methylbenzyl_alcohol NAD+  =[ aryl-alcohol_dehydrogenase ]=> 3-methylbenzaldehyde NADH 
 reaction: 21853 
-H+ NAD+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
+NAD+ H+ ferrocytochrome_c  =[ ferredoxin-NADP+_reductase ]=> ferricytochrome_c NADH 
 CoreNode:  3-methylbenzaldehyde 3-methylbenzyl_alcohol H+ NAD+
 Forbidnode: 
 reduced_ferredoxin 
@@ -24127,7 +24127,7 @@ NAD+ 1-phenoxypropan-2-ol  =[ octanol_dehydrogenase ]=> 1-phenoxypropan-2-one H+
 reaction: 7467 
 1-phenoxypropan-2-one H+ NADH  =[ octanol_dehydrogenase ]=> NAD+ 1-phenoxypropan-2-ol 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  1-phenoxypropan-2-ol 1-phenoxypropan-2-one NAD+ H+
 Forbidnode: 
 octan-1-ol 
@@ -24201,9 +24201,9 @@ isopropanol
 TypeC: 87
 
 reaction: 9915 
-phenylpyruvate reduced_methylene_blue  =[ 2-oxo-acid_reductase ]=> (2R)-phenyllactate oxidized_methylene_blue 
+reduced_methylene_blue phenylpyruvate  =[ 2-oxo-acid_reductase ]=> oxidized_methylene_blue (2R)-phenyllactate 
 reaction: 12030 
-NAD(P)H oxidized_methylene_blue  =[ hydrogen_dehydrogenase ]=> reduced_methylene_blue NAD(P)+ 
+oxidized_methylene_blue NAD(P)H  =[ hydrogen_dehydrogenase ]=> reduced_methylene_blue NAD(P)+ 
 reaction: 1433 
 phenylpyruvate NAD(P)H  =[ aromatic_2-oxoacid_reductase ]=> NAD(P)+ D-phenyllactate 
 CoreNode:  reduced_methylene_blue oxidized_methylene_blue phenylpyruvate NAD(P)H
@@ -24357,11 +24357,11 @@ H2
 TypeC: 88
 
 reaction: 7802 
-NADPH 3-hydroxy-4-methoxybenzaldehyde H+  =[ aryl-alcohol_dehydrogenase ]=> NADP+ 3-hydroxy-4-methoxybenzyl_alcohol 
+3-hydroxy-4-methoxybenzaldehyde H+ NADPH  =[ aryl-alcohol_dehydrogenase ]=> NADP+ 3-hydroxy-4-methoxybenzyl_alcohol 
 reaction: 8988 
 O2 3-hydroxy-4-methoxybenzyl_alcohol  =[ aryl-alcohol_oxidase ]=> 3-hydroxy-4-methoxybenzaldehyde H2O2 
 reaction: 14333 
-anthranilate H+ O2 NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 NH3 catechol NADP+ 
+anthranilate O2 H+ NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 catechol NH3 NADP+ 
 CoreNode:  3-hydroxy-4-methoxybenzaldehyde 3-hydroxy-4-methoxybenzyl_alcohol NADPH O2
 Forbidnode: 
 NAD(P)H 
@@ -24628,9 +24628,9 @@ rac-butan-2,3-diol
 TypeC: 89
 
 reaction: 28642 
-H+ pyruvate L-alanine NADH  =[ alanopine_dehydrogenase ]=> H2O NAD+ 2,2'-iminodipropanoate 
+L-alanine H+ NADH pyruvate  =[ alanopine_dehydrogenase ]=> 2,2'-iminodipropanoate NAD+ H2O 
 reaction: 28641 
-H2O NAD+ 2,2'-iminodipropanoate  =[ alanopine_dehydrogenase ]=> H+ pyruvate L-alanine NADH 
+2,2'-iminodipropanoate NAD+ H2O  =[ alanopine_dehydrogenase ]=> L-alanine H+ NADH pyruvate 
 reaction: 1861 
 NAD+ pyruvate  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH 
 CoreNode:  L-alanine 2,2'-iminodipropanoate pyruvate NAD+
@@ -24656,9 +24656,9 @@ glycine
 TypeC: 90
 
 reaction: 25270 
-H+ cholest-4-en-3-one NADPH  =[ DELTA4-3-oxosteroid_5beta-reductase ]=> 5beta-cholestan-3-one NADP+ 
+cholest-4-en-3-one H+ NADPH  =[ DELTA4-3-oxosteroid_5beta-reductase ]=> NADP+ 5beta-cholestan-3-one 
 reaction: 25265 
-5beta-cholestan-3-one NADP+  =[ DELTA4-3-oxosteroid_5beta-reductase ]=> H+ cholest-4-en-3-one NADPH 
+NADP+ 5beta-cholestan-3-one  =[ DELTA4-3-oxosteroid_5beta-reductase ]=> cholest-4-en-3-one H+ NADPH 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  cholest-4-en-3-one 5beta-cholestan-3-one H+ NADP+
@@ -24748,7 +24748,7 @@ epitestosterone
 TypeC: 91
 
 reaction: 9169 
-menaquinone-4 L-2-hydroxyglutarate  =[ (S)-2-hydroxyglutarate_dehydrogenase ]=> 2-oxoglutarate menaquinol-4 
+L-2-hydroxyglutarate menaquinone-4  =[ (S)-2-hydroxyglutarate_dehydrogenase ]=> 2-oxoglutarate menaquinol-4 
 reaction: 10080 
 O2 menaquinol-4  =[ menaquinol_oxidase ]=> menaquinone-4 H2O 
 reaction: 9163 
@@ -24783,11 +24783,11 @@ n_H+[side_1]
 TypeC: 92
 
 reaction: 9207 
-reduced_coenzyme_F420 menaquinone  =[ F420H2:quinone_oxidoreductase ]=> oxidized_coenzyme_F420 menaquinol 
+menaquinone reduced_coenzyme_F420  =[ F420H2:quinone_oxidoreductase ]=> menaquinol oxidized_coenzyme_F420 
 reaction: 10065 
-H+[side_1] O2 menaquinol  =[ ubiquinol_oxidase ]=> H2O menaquinone H+[side_2] 
+O2 H+[side_1] menaquinol  =[ ubiquinol_oxidase ]=> menaquinone H2O H+[side_2] 
 reaction: 29243 
-O2 reduced_coenzyme_F420  =[ coenzyme_F420H2_oxidase ]=> oxidized_coenzyme_F420 H2O 
+O2 reduced_coenzyme_F420  =[ coenzyme_F420H2_oxidase ]=> H2O oxidized_coenzyme_F420 
 CoreNode:  menaquinone menaquinol reduced_coenzyme_F420 O2
 Forbidnode: 
 a_quinol 
@@ -24829,9 +24829,9 @@ TypeC: 93
 reaction: 9212 
 reduced_coenzyme_F420 2,3-dimethyl-1,4-naphthoquinone  =[ F420H2:quinone_oxidoreductase ]=> 2,3-dimethyl-1,4-naphthoquinol oxidized_coenzyme_F420 
 reaction: 10085 
-2,3-dimethyl-1,4-naphthoquinol n_H+[side_1] O2  =[ menaquinol_oxidase ]=> H2O n_H+[side_2] 2,3-dimethyl-1,4-naphthoquinone 
+O2 n_H+[side_1] 2,3-dimethyl-1,4-naphthoquinol  =[ menaquinol_oxidase ]=> H2O 2,3-dimethyl-1,4-naphthoquinone n_H+[side_2] 
 reaction: 29243 
-O2 reduced_coenzyme_F420  =[ coenzyme_F420H2_oxidase ]=> oxidized_coenzyme_F420 H2O 
+O2 reduced_coenzyme_F420  =[ coenzyme_F420H2_oxidase ]=> H2O oxidized_coenzyme_F420 
 CoreNode:  2,3-dimethyl-1,4-naphthoquinone 2,3-dimethyl-1,4-naphthoquinol reduced_coenzyme_F420 O2
 Forbidnode: 
 a_quinol 
@@ -24861,11 +24861,11 @@ demethylmenaquinol
 TypeC: 94
 
 reaction: 51616 
-adenosine dADP  =[ adenosine_kinase ]=> dAMP AMP 
+dADP adenosine  =[ adenosine_kinase ]=> dAMP AMP 
 reaction: 55163 
-dAMP dGTP  =[ nucleoside-triphosphate-adenylate_kinase ]=> dGDP dADP 
+dAMP dGTP  =[ nucleoside-triphosphate-adenylate_kinase ]=> dADP dGDP 
 reaction: 51637 
-adenosine dGTP  =[ adenosine_kinase ]=> AMP dGDP 
+adenosine dGTP  =[ adenosine_kinase ]=> dGDP AMP 
 CoreNode:  dADP dAMP adenosine dGTP
 Forbidnode: 
 nucleoside_triphosphate 
@@ -24946,11 +24946,11 @@ ATP
 TypeC: 95
 
 reaction: 30464 
-anthranilate NAD+ N,N-dimethyl-1,4-phenylenediamine  =[ FMN-dependent_NADH-azoreductase ]=> H+ 2-(4-dimethylaminophenyl)diazenylbenzoate NADH 
+anthranilate NAD+ N,N-dimethyl-1,4-phenylenediamine  =[ FMN-dependent_NADH-azoreductase ]=> 2-(4-dimethylaminophenyl)diazenylbenzoate H+ NADH 
 reaction: 30465 
-H+ 2-(4-dimethylaminophenyl)diazenylbenzoate NADH  =[ FMN-dependent_NADH-azoreductase ]=> anthranilate NAD+ N,N-dimethyl-1,4-phenylenediamine 
+2-(4-dimethylaminophenyl)diazenylbenzoate H+ NADH  =[ FMN-dependent_NADH-azoreductase ]=> anthranilate NAD+ N,N-dimethyl-1,4-phenylenediamine 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  N,N-dimethyl-1,4-phenylenediamine 2-(4-dimethylaminophenyl)diazenylbenzoate NAD+ H+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -25009,9 +25009,9 @@ benzoic_acid
 TypeC: 96
 
 reaction: 28760 
-H+ pyruvate taurine NADH  =[ Tauropine_dehydrogenase ]=> H2O NAD+ tauropine 
+taurine H+ NADH pyruvate  =[ Tauropine_dehydrogenase ]=> tauropine NAD+ H2O 
 reaction: 28759 
-H2O NAD+ tauropine  =[ Tauropine_dehydrogenase ]=> H+ pyruvate taurine NADH 
+tauropine NAD+ H2O  =[ Tauropine_dehydrogenase ]=> taurine H+ NADH pyruvate 
 reaction: 1861 
 NAD+ pyruvate  =[ 2-dehydro-3-deoxy-D-gluconate_5-dehydrogenase ]=> NADH 
 CoreNode:  taurine tauropine pyruvate NAD+
@@ -25036,11 +25036,11 @@ Val
 TypeC: 97
 
 reaction: 22853 
-fatty_acid ATP H+ NADPH  =[ carboxylate_reductase ]=> fatty_aldehyde AMP NADP+ diphosphate 
+fatty_acid ATP H+ NADPH  =[ carboxylate_reductase ]=> diphosphate fatty_aldehyde NADP+ AMP 
 reaction: 17793 
-fatty_aldehyde O2 FMNH2  =[ bacterial_luciferase ]=> H2O fatty_acid FMN hn 
+O2 fatty_aldehyde FMNH2  =[ bacterial_luciferase ]=> hn FMN fatty_acid H2O 
 reaction: 14333 
-anthranilate H+ O2 NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 NH3 catechol NADP+ 
+anthranilate O2 H+ NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 catechol NH3 NADP+ 
 CoreNode:  fatty_acid fatty_aldehyde NADPH O2
 Forbidnode: 
 NAD(P)H 
@@ -25197,9 +25197,9 @@ salicylaldehyde
 TypeC: 98
 
 reaction: 30936 
-hydrogen_sulfide NADP+ (sulfide)n  =[ sulfide_dehydrogenase ]=> H+ (sulfide)n+1 NADPH 
+hydrogen_sulfide NADP+ (sulfide)n  =[ sulfide_dehydrogenase ]=> (sulfide)n+1 H+ NADPH 
 reaction: 30937 
-H+ (sulfide)n+1 NADPH  =[ sulfide_dehydrogenase ]=> hydrogen_sulfide NADP+ (sulfide)n 
+(sulfide)n+1 H+ NADPH  =[ sulfide_dehydrogenase ]=> hydrogen_sulfide NADP+ (sulfide)n 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  (sulfide)n (sulfide)n+1 NADP+ H+
@@ -25247,11 +25247,11 @@ ferrocyanide
 TypeC: 99
 
 reaction: 27363 
-L-arginine NAD(P)+ H2O  =[ L-arginine_dehydrogenase ]=> NH3 NAD(P)H 5-guanidino-2-oxopentanoate H+ 
+L-arginine NAD(P)+ H2O  =[ L-arginine_dehydrogenase ]=> 5-guanidino-2-oxopentanoate NH3 H+ NAD(P)H 
 reaction: 27364 
-NH3 NAD(P)H 5-guanidino-2-oxopentanoate H+  =[ L-arginine_dehydrogenase ]=> L-arginine NAD(P)+ H2O 
+5-guanidino-2-oxopentanoate NH3 H+ NAD(P)H  =[ L-arginine_dehydrogenase ]=> L-arginine NAD(P)+ H2O 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  L-arginine 5-guanidino-2-oxopentanoate NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -25265,9 +25265,9 @@ Fe(II)-ferrozine
 TypeC: 100
 
 reaction: 23737 
-AMP NADP+ diphosphate (S)-2-amino-6-oxohexanoate  =[ L-2-aminoadipate_reductase ]=> ATP L-2-aminoadipate H+ NADPH 
+diphosphate NADP+ (S)-2-amino-6-oxohexanoate AMP  =[ L-2-aminoadipate_reductase ]=> L-2-aminoadipate ATP H+ NADPH 
 reaction: 23740 
-ATP L-2-aminoadipate H+ NADPH  =[ L-2-aminoadipate_reductase ]=> AMP NADP+ diphosphate (S)-2-amino-6-oxohexanoate 
+L-2-aminoadipate ATP H+ NADPH  =[ L-2-aminoadipate_reductase ]=> diphosphate NADP+ (S)-2-amino-6-oxohexanoate AMP 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  diphosphate L-2-aminoadipate NADP+ H+
@@ -25484,9 +25484,9 @@ ubiquinol-1
 TypeC: 102
 
 reaction: 26296 
-O2 octanoyl-CoA  =[ acyl-CoA_oxidase ]=> H2O2 trans-2-octenoyl-CoA 
+O2 octanoyl-CoA  =[ acyl-CoA_oxidase ]=> trans-2-octenoyl-CoA H2O2 
 reaction: 24752 
-NADH H+ trans-2-octenoyl-CoA  =[ enoyl-[acyl-carrier-protein]_reductase ]=> NAD+ octanoyl-CoA 
+trans-2-octenoyl-CoA H+ NADH  =[ enoyl-[acyl-carrier-protein]_reductase ]=> octanoyl-CoA NAD+ 
 reaction: 10061 
 O2 NADH  =[ ubiquinol_oxidase ]=> 
 CoreNode:  octanoyl-CoA trans-2-octenoyl-CoA O2 NADH
@@ -25649,11 +25649,11 @@ ubiquinol-1
 TypeC: 103
 
 reaction: 28539 
-L-pipecolate NAD(P)+  =[ 1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase_[NAD(P)H] ]=> NAD(P)H H+ 1-piperideine-2-carboxylate 
+L-pipecolate NAD(P)+  =[ 1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase_[NAD(P)H] ]=> 1-piperideine-2-carboxylate H+ NAD(P)H 
 reaction: 28543 
-NAD(P)H H+ 1-piperideine-2-carboxylate  =[ 1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase_[NAD(P)H] ]=> L-pipecolate NAD(P)+ 
+1-piperideine-2-carboxylate H+ NAD(P)H  =[ 1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase_[NAD(P)H] ]=> L-pipecolate NAD(P)+ 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  L-pipecolate 1-piperideine-2-carboxylate NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -25739,9 +25739,9 @@ trans-4-coumaroyl-CoA
 TypeC: 105
 
 reaction: 24877 
-trans-4-coumaroyl-CoA H+ NADPH  =[ hydroxycinnamoyl-CoA_reductase ]=> NADP+ dihydro-4-coumaroyl-CoA 
+H+ trans-4-coumaroyl-CoA NADPH  =[ hydroxycinnamoyl-CoA_reductase ]=> dihydro-4-coumaroyl-CoA NADP+ 
 reaction: 24875 
-NADP+ dihydro-4-coumaroyl-CoA  =[ hydroxycinnamoyl-CoA_reductase ]=> trans-4-coumaroyl-CoA H+ NADPH 
+dihydro-4-coumaroyl-CoA NADP+  =[ hydroxycinnamoyl-CoA_reductase ]=> H+ trans-4-coumaroyl-CoA NADPH 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  trans-4-coumaroyl-CoA dihydro-4-coumaroyl-CoA H+ NADP+
@@ -25790,11 +25790,11 @@ trans-feruloyl-CoA
 TypeC: 106
 
 reaction: 31665 
-H2O menaquinone dimethylsulfide  =[ respiratory_dimethylsulfoxide_reductase ]=> dimethylsulfoxide menaquinol 
+dimethylsulfide H2O menaquinone  =[ respiratory_dimethylsulfoxide_reductase ]=> menaquinol dimethylsulfoxide 
 reaction: 30687 
-c)-subunit dimethylsulfoxide H+  =[ trimethylamine-N-oxide_reductase ]=> H2O c)-subunit dimethylsulfide 
+c)-subunit H+ dimethylsulfoxide  =[ trimethylamine-N-oxide_reductase ]=> c)-subunit dimethylsulfide H2O 
 reaction: 30214 
-H+ menaquinone NADH  =[ NADH:quinone_reductase ]=> NAD+ menaquinol 
+menaquinone H+ NADH  =[ NADH:quinone_reductase ]=> NAD+ menaquinol 
 CoreNode:  dimethylsulfide dimethylsulfoxide menaquinone H+
 Forbidnode: 
 a_quinone 
@@ -25903,11 +25903,11 @@ electron_donor
 TypeC: 107
 
 reaction: 16527 
-O2 trimethylamine NADPH  =[ flavin-containing_monooxygenase ]=> trimethylamine_N-oxide H2O NADP+ 
+O2 trimethylamine NADPH  =[ flavin-containing_monooxygenase ]=> trimethylamine_N-oxide NADP+ H2O 
 reaction: 30663 
-trimethylamine_N-oxide NADH  =[ trimethylamine-N-oxide_reductase ]=> H2O NAD+ trimethylamine 
+NADH trimethylamine_N-oxide  =[ trimethylamine-N-oxide_reductase ]=> H2O NAD+ trimethylamine 
 reaction: 38434 
-malonyl-CoA NADH acetyl-CoA NADPH  =[ fatty-acyl-CoA_synthase_system ]=> 
+NADH acetyl-CoA malonyl-CoA NADPH  =[ fatty-acyl-CoA_synthase_system ]=> 
 CoreNode:  trimethylamine trimethylamine_N-oxide NADPH NADH
 Forbidnode: 
 H+ 
@@ -26186,11 +26186,11 @@ electron_donor
 TypeC: 108
 
 reaction: 16532 
-O2 imipramine NADPH  =[ flavin-containing_monooxygenase ]=> imipramine_N-oxide H2O NADP+ 
+O2 imipramine NADPH  =[ flavin-containing_monooxygenase ]=> NADP+ H2O imipramine_N-oxide 
 reaction: 23969 
 electron_donor imipramine_N-oxide  =[ aldehyde_oxidase ]=> imipramine electron_acceptor 
 reaction: 17528 
-electron_donor O2 a_steroid  =[ steroid_21-monooxygenase ]=> H2O oxidized_electron_donor a_21-hydroxysteroid 
+O2 a_steroid electron_donor  =[ steroid_21-monooxygenase ]=> oxidized_electron_donor a_21-hydroxysteroid H2O 
 CoreNode:  imipramine imipramine_N-oxide O2 electron_donor
 Forbidnode: 
 H+ 
@@ -26698,9 +26698,9 @@ TypeC: 109
 reaction: 36758 
 phosphate hexadecanoyl-[acyl-carrier_protein]  =[ phosphate_acyltransferase ]=> hexadecanoyl_phosphate an_[acyl-carrier_protein] 
 reaction: 115023 
-ATP hexadecanoate an_[acyl-carrier_protein]  =[ long-chain-fatty-acid-[acyl-carrier-protein]_ligase ]=> AMP diphosphate hexadecanoyl-[acyl-carrier_protein] 
+an_[acyl-carrier_protein] ATP hexadecanoate  =[ long-chain-fatty-acid-[acyl-carrier-protein]_ligase ]=> diphosphate hexadecanoyl-[acyl-carrier_protein] AMP 
 reaction: 56941 
-ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=> 
+PPDK_central_domain_construct_of_residues_381-512 phosphate ATP  =[ pyruvate,_phosphate_dikinase ]=> 
 CoreNode:  hexadecanoyl-[acyl-carrier_protein] an_[acyl-carrier_protein] phosphate ATP
 Forbidnode: 
 an_acyl-[acyl-carrier_protein] 
@@ -26743,11 +26743,11 @@ arsenate
 TypeC: 110
 
 reaction: 23346 
-H+ palmitoyl-[acyl-carrier_protein] NADPH  =[ long-chain_acyl-protein_thioester_reductase ]=> hexadecanal NADP+ [acyl-carrier_protein] 
+palmitoyl-[acyl-carrier_protein] H+ NADPH  =[ long-chain_acyl-protein_thioester_reductase ]=> hexadecanal NADP+ [acyl-carrier_protein] 
 reaction: 115033 
-ATP palmitic_acid [acyl-carrier_protein]  =[ long-chain-fatty-acid-[acyl-carrier-protein]_ligase ]=> AMP palmitoyl-[acyl-carrier_protein] diphosphate 
+palmitic_acid [acyl-carrier_protein] ATP  =[ long-chain-fatty-acid-[acyl-carrier-protein]_ligase ]=> diphosphate AMP palmitoyl-[acyl-carrier_protein] 
 reaction: 17034 
-palmitic_acid O2 NADPH  =[ unspecific_monooxygenase ]=> 
+O2 palmitic_acid NADPH  =[ unspecific_monooxygenase ]=> 
 CoreNode:  palmitoyl-[acyl-carrier_protein] [acyl-carrier_protein] NADPH palmitic_acid
 Forbidnode: 
 [reduced_NADPH-hemoprotein_reductase] 
@@ -27018,11 +27018,11 @@ hexanoic_acid
 TypeC: 111
 
 reaction: 20620 
-phylloquinone O2 reduced_acceptor  =[ phylloquinone_monooxygenase ]=> acceptor H2O 2,3-epoxyphylloquinone 
+O2 reduced_acceptor phylloquinone  =[ phylloquinone_monooxygenase ]=> acceptor 2,3-epoxyphylloquinone H2O 
 reaction: 21514 
-AH2 2,3-epoxyphylloquinone  =[ vitamin-K-epoxide_reductase ]=> phylloquinone A 
+2,3-epoxyphylloquinone AH2  =[ vitamin-K-epoxide_reductase ]=> A phylloquinone 
 reaction: 17533 
-AH2 O2 17alpha-hydroxyprogesterone  =[ steroid_21-monooxygenase ]=> H2O A 11-deoxycortisol 
+O2 17alpha-hydroxyprogesterone AH2  =[ steroid_21-monooxygenase ]=> A 11-deoxycortisol H2O 
 CoreNode:  phylloquinone 2,3-epoxyphylloquinone O2 AH2
 Forbidnode: 
 [reduced_NADPH-hemoprotein_reductase] 
@@ -27088,11 +27088,11 @@ electron_donor
 TypeC: 112
 
 reaction: 28950 
-a_5,6,7,8-tetrahydropteridine NAD(P)+  =[ 6,7-dihydropteridine_reductase ]=> NAD(P)H H+ a_6,7-dihydropteridine 
+NAD(P)+ a_5,6,7,8-tetrahydropteridine  =[ 6,7-dihydropteridine_reductase ]=> a_6,7-dihydropteridine H+ NAD(P)H 
 reaction: 28957 
-NAD(P)H H+ a_6,7-dihydropteridine  =[ 6,7-dihydropteridine_reductase ]=> a_5,6,7,8-tetrahydropteridine NAD(P)+ 
+a_6,7-dihydropteridine H+ NAD(P)H  =[ 6,7-dihydropteridine_reductase ]=> NAD(P)+ a_5,6,7,8-tetrahydropteridine 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  a_5,6,7,8-tetrahydropteridine a_6,7-dihydropteridine NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -27144,11 +27144,11 @@ quinonoid_dihydro-2-methylamino-4-hydroxy-6,7-dimethylpteridine
 TypeC: 113
 
 reaction: 19666 
-O2 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde a_ferrocytochrome  =[ plant_4,4-dimethylsterol_C-4alpha-methyl-monooxygenase ]=> 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate a_ferricytochrome H2O 
+a_ferrocytochrome O2 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde  =[ plant_4,4-dimethylsterol_C-4alpha-methyl-monooxygenase ]=> 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate H2O a_ferricytochrome 
 reaction: 19669 
-O2 H+ 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde a_ferricytochrome  =[ plant_4,4-dimethylsterol_C-4alpha-methyl-monooxygenase ]=> 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate a_ferrocytochrome H2O 
+O2 H+ 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde a_ferricytochrome  =[ plant_4,4-dimethylsterol_C-4alpha-methyl-monooxygenase ]=> a_ferrocytochrome 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate H2O 
 reaction: 19666 
-O2 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde a_ferrocytochrome  =[ plant_4,4-dimethylsterol_C-4alpha-methyl-monooxygenase ]=> 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate a_ferricytochrome H2O 
+a_ferrocytochrome O2 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde  =[ plant_4,4-dimethylsterol_C-4alpha-methyl-monooxygenase ]=> 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carboxylate H2O a_ferricytochrome 
 CoreNode:  a_ferrocytochrome a_ferricytochrome O2 3beta-hydroxy-4beta-methyl-5alpha-cholest-7-ene-4alpha-carbaldehyde
 Forbidnode: 
 24-methylidenecycloartanol 
@@ -27175,9 +27175,9 @@ ferricytochrome_b5
 TypeC: 114
 
 reaction: 25537 
-NADP+ acyl-CoA  =[ trans-2-enoyl-CoA_reductase ]=> trans-2,3-dehydroacyl-CoA H+ NADPH 
+acyl-CoA NADP+  =[ trans-2-enoyl-CoA_reductase ]=> trans-2,3-dehydroacyl-CoA H+ NADPH 
 reaction: 25542 
-trans-2,3-dehydroacyl-CoA H+ NADPH  =[ trans-2-enoyl-CoA_reductase ]=> NADP+ acyl-CoA 
+trans-2,3-dehydroacyl-CoA H+ NADPH  =[ trans-2-enoyl-CoA_reductase ]=> acyl-CoA NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  acyl-CoA trans-2,3-dehydroacyl-CoA NADP+ H+
@@ -27257,9 +27257,9 @@ crotonyl-CoA
 TypeC: 115
 
 reaction: 28815 
-NADP+ (R)-reticuline  =[ 1,2-dehydroreticulinium_reductase ]=> H+ 1,2-dehydroreticulinium NADPH 
+NADP+ (R)-reticuline  =[ 1,2-dehydroreticulinium_reductase ]=> 1,2-dehydroreticulinium H+ NADPH 
 reaction: 28817 
-H+ 1,2-dehydroreticulinium NADPH  =[ 1,2-dehydroreticulinium_reductase ]=> NADP+ (R)-reticuline 
+1,2-dehydroreticulinium H+ NADPH  =[ 1,2-dehydroreticulinium_reductase ]=> NADP+ (R)-reticuline 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  (R)-reticuline 1,2-dehydroreticulinium NADP+ H+
@@ -27308,9 +27308,9 @@ ferrocyanide
 TypeC: 116
 
 reaction: 24626 
-(+)-pinoresinol H+ NADPH  =[ (+)-pinoresinol_reductase ]=> (+)-lariciresinol NADP+ 
+(+)-pinoresinol H+ NADPH  =[ (+)-pinoresinol_reductase ]=> NADP+ (+)-lariciresinol 
 reaction: 24625 
-(+)-lariciresinol NADP+  =[ (+)-pinoresinol_reductase ]=> (+)-pinoresinol H+ NADPH 
+NADP+ (+)-lariciresinol  =[ (+)-pinoresinol_reductase ]=> (+)-pinoresinol H+ NADPH 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  (+)-pinoresinol (+)-lariciresinol H+ NADP+
@@ -27361,9 +27361,9 @@ syringaresinol
 TypeC: 117
 
 reaction: 20917 
-Hg H+ NADP+  =[ reductase ]=> Hg2+ NADPH 
+NADP+ H+ Hg  =[ reductase ]=> Hg2+ NADPH 
 reaction: 20918 
-Hg2+ NADPH  =[ reductase ]=> Hg H+ NADP+ 
+Hg2+ NADPH  =[ reductase ]=> NADP+ H+ Hg 
 reaction: 708 
 H+ NADPH  =[ alcohol_dehydrogenase ]=> NADP+ 
 CoreNode:  Hg Hg2+ H+ NADPH
@@ -28596,9 +28596,9 @@ merthiolate
 TypeC: 118
 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 reaction: 20926 
-Fe(III)-siderophore NADPH  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(II)-siderophore H+ NADP+ 
+Fe(III)-siderophore NADPH  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(II)-siderophore NADP+ H+ 
 reaction: 708 
 H+ NADPH  =[ alcohol_dehydrogenase ]=> NADP+ 
 CoreNode:  Fe(II)-siderophore Fe(III)-siderophore H+ NADPH
@@ -29831,9 +29831,9 @@ N,N-dimethyl-4-nitrosoaniline
 TypeC: 119
 
 reaction: 20932 
-Fe(II)-ferrozine H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-ferrozine 
+NAD(P)+ H+ Fe(II)-ferrozine  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-ferrozine NAD(P)H 
 reaction: 20929 
-Fe(III)-ferrozine NADPH  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(II)-ferrozine H+ NADP+ 
+Fe(III)-ferrozine NADPH  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NADP+ H+ Fe(II)-ferrozine 
 reaction: 708 
 H+ NADPH  =[ alcohol_dehydrogenase ]=> NADP+ 
 CoreNode:  Fe(II)-ferrozine Fe(III)-ferrozine H+ NADPH
@@ -31066,11 +31066,11 @@ N,N-dimethyl-4-nitrosoaniline
 TypeC: 120
 
 reaction: 20933 
-transferrin[Fe(II)]2 H+ NAD+  =[ diferric-transferrin_reductase ]=> transferrin[Fe(III)]2 NADH 
+transferrin[Fe(II)]2 NAD+ H+  =[ diferric-transferrin_reductase ]=> transferrin[Fe(III)]2 NADH 
 reaction: 20934 
 transferrin[Fe(III)]2 NADH  =[ diferric-transferrin_reductase ]=> transferrin[Fe(II)]2 NAD+ 
 reaction: 54 
-NADH 5-hydroxymethylfurfural H+  =[ alcohol_dehydrogenase ]=> NAD+ (furan-2,5-diyl)dimethanol 
+5-hydroxymethylfurfural H+ NADH  =[ alcohol_dehydrogenase ]=> NAD+ (furan-2,5-diyl)dimethanol 
 CoreNode:  transferrin[Fe(II)]2 transferrin[Fe(III)]2 H+ NADH
 Forbidnode: 
 a_primary_alcohol 
@@ -32297,9 +32297,9 @@ ferric_ammonium_citrate
 TypeC: 121
 
 reaction: 20966 
-an_Fe(III)-siderophore NADPH  =[ ferric-chelate_reductase ]=> H+ NADP+ an_apo-siderophore 
+an_Fe(III)-siderophore NADPH  =[ ferric-chelate_reductase ]=> an_apo-siderophore NADP+ H+ 
 reaction: 20976 
-H+ NADP+ an_apo-siderophore  =[ ferric-chelate_reductase ]=> an_Fe(III)-siderophore NADPH 
+an_apo-siderophore NADP+ H+  =[ ferric-chelate_reductase ]=> an_Fe(III)-siderophore NADPH 
 reaction: 708 
 H+ NADPH  =[ alcohol_dehydrogenase ]=> NADP+ 
 CoreNode:  an_Fe(III)-siderophore an_apo-siderophore NADPH H+
@@ -33563,11 +33563,11 @@ ferrocyanide
 TypeC: 122
 
 reaction: 32125 
-(S)-reticuline S-adenosyl-L-homocysteine  =[ 3'-hydroxy-N-methyl-(S)-coclaurine_4'-O-methyltransferase ]=> 3'-hydroxy-N-methyl-(S)-coclaurine S-adenosyl-L-methionine 
+S-adenosyl-L-homocysteine (S)-reticuline  =[ 3'-hydroxy-N-methyl-(S)-coclaurine_4'-O-methyltransferase ]=> 3'-hydroxy-N-methyl-(S)-coclaurine S-adenosyl-L-methionine 
 reaction: 32123 
-3'-hydroxy-N-methyl-(S)-coclaurine S-adenosyl-L-methionine  =[ 3'-hydroxy-N-methyl-(S)-coclaurine_4'-O-methyltransferase ]=> (S)-reticuline S-adenosyl-L-homocysteine 
+3'-hydroxy-N-methyl-(S)-coclaurine S-adenosyl-L-methionine  =[ 3'-hydroxy-N-methyl-(S)-coclaurine_4'-O-methyltransferase ]=> S-adenosyl-L-homocysteine (S)-reticuline 
 reaction: 33127 
-(S)-reticuline S-adenosyl-L-methionine  =[ (R,S)-reticuline_7-O-methyltransferase ]=> (S)-laudanine S-adenosyl-L-homocysteine 
+(S)-reticuline S-adenosyl-L-methionine  =[ (R,S)-reticuline_7-O-methyltransferase ]=> S-adenosyl-L-homocysteine (S)-laudanine 
 CoreNode:  S-adenosyl-L-homocysteine 3'-hydroxy-N-methyl-(S)-coclaurine (S)-reticuline S-adenosyl-L-methionine
 Forbidnode: 
 (R)-reticuline 
@@ -33586,11 +33586,11 @@ S-Adenosyl-L-methionine
 TypeC: 123
 
 reaction: 21334 
-H2O NAD(P)+ (S)-2,3,4,5-tetrahydropyridine-2,6-dicarboxylate  =[ 4-hydroxy-tetrahydrodipicolinate_reductase ]=> NAD(P)H (2S,4S)-4-hydroxy-2,3,4,5-tetrahydrodipicolinate H+ 
+NAD(P)+ (S)-2,3,4,5-tetrahydropyridine-2,6-dicarboxylate H2O  =[ 4-hydroxy-tetrahydrodipicolinate_reductase ]=> (2S,4S)-4-hydroxy-2,3,4,5-tetrahydrodipicolinate H+ NAD(P)H 
 reaction: 21335 
-NAD(P)H (2S,4S)-4-hydroxy-2,3,4,5-tetrahydrodipicolinate H+  =[ 4-hydroxy-tetrahydrodipicolinate_reductase ]=> H2O NAD(P)+ (S)-2,3,4,5-tetrahydropyridine-2,6-dicarboxylate 
+(2S,4S)-4-hydroxy-2,3,4,5-tetrahydrodipicolinate H+ NAD(P)H  =[ 4-hydroxy-tetrahydrodipicolinate_reductase ]=> NAD(P)+ (S)-2,3,4,5-tetrahydropyridine-2,6-dicarboxylate H2O 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  (S)-2,3,4,5-tetrahydropyridine-2,6-dicarboxylate (2S,4S)-4-hydroxy-2,3,4,5-tetrahydrodipicolinate NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -33749,9 +33749,9 @@ ferrocyanide
 TypeC: 125
 
 reaction: 22325 
-caproaldehyde NADP+ coenzyme_A  =[ succinate-semialdehyde_dehydrogenase ]=> H+ n-hexanoyl-CoA NADPH 
+caproaldehyde NADP+ coenzyme_A  =[ succinate-semialdehyde_dehydrogenase ]=> n-hexanoyl-CoA H+ NADPH 
 reaction: 22329 
-H+ n-hexanoyl-CoA NADPH  =[ succinate-semialdehyde_dehydrogenase ]=> caproaldehyde NADP+ coenzyme_A 
+n-hexanoyl-CoA H+ NADPH  =[ succinate-semialdehyde_dehydrogenase ]=> caproaldehyde NADP+ coenzyme_A 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  coenzyme_A n-hexanoyl-CoA NADP+ H+
@@ -33886,9 +33886,9 @@ ferrocyanide
 TypeC: 126
 
 reaction: 26757 
-eicosanoyl-CoA phenazine_methosulfate  =[ long-chain_acyl-CoA_dehydrogenase ]=> trans-2-eicosenoyl-CoA reduced_phenazine_methosulfate 
+phenazine_methosulfate eicosanoyl-CoA  =[ long-chain_acyl-CoA_dehydrogenase ]=> reduced_phenazine_methosulfate trans-2-eicosenoyl-CoA 
 reaction: 25983 
-trans-2-eicosenoyl-CoA NADPH  =[ acyl-CoA_dehydrogenase ]=> eicosanoyl-CoA NADP+ 
+trans-2-eicosenoyl-CoA NADPH  =[ acyl-CoA_dehydrogenase ]=> NADP+ eicosanoyl-CoA 
 reaction: 21251 
 cytochrome_c phenazine_methosulfate NADPH  =[ xanthine_dehydrogenase ]=> NADP+ 
 CoreNode:  eicosanoyl-CoA trans-2-eicosenoyl-CoA phenazine_methosulfate NADPH
@@ -34120,9 +34120,9 @@ crotonyl-CoA
 TypeC: 127
 
 reaction: 23533 
-L-glutamate_1-semialdehyde NADP+ tRNAGlu  =[ glutamyl-tRNA_reductase ]=> H+ L-glutamyl-tRNAGlu NADPH 
+tRNAGlu L-glutamate_1-semialdehyde NADP+  =[ glutamyl-tRNA_reductase ]=> H+ L-glutamyl-tRNAGlu NADPH 
 reaction: 23534 
-H+ L-glutamyl-tRNAGlu NADPH  =[ glutamyl-tRNA_reductase ]=> L-glutamate_1-semialdehyde NADP+ tRNAGlu 
+H+ L-glutamyl-tRNAGlu NADPH  =[ glutamyl-tRNA_reductase ]=> tRNAGlu L-glutamate_1-semialdehyde NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  tRNAGlu L-glutamyl-tRNAGlu NADP+ H+
@@ -34171,11 +34171,11 @@ L-glutaminyl-tRNAGlu
 TypeC: 128
 
 reaction: 24222 
-acetyl-SCoA H2O tetrahydrosarcinapterin  =[ anaerobic_carbon-monoxide_dehydrogenase ]=> CO2 CoASH methyltetrahydrosarcinapterin 
+tetrahydrosarcinapterin acetyl-SCoA H2O  =[ anaerobic_carbon-monoxide_dehydrogenase ]=> CO2 methyltetrahydrosarcinapterin CoASH 
 reaction: 24247 
 acetyl-SCoA CoASH  =[ anaerobic_carbon-monoxide_dehydrogenase ]=> acetyl-SCoA CoASH 
 reaction: 24222 
-acetyl-SCoA H2O tetrahydrosarcinapterin  =[ anaerobic_carbon-monoxide_dehydrogenase ]=> CO2 CoASH methyltetrahydrosarcinapterin 
+tetrahydrosarcinapterin acetyl-SCoA H2O  =[ anaerobic_carbon-monoxide_dehydrogenase ]=> CO2 methyltetrahydrosarcinapterin CoASH 
 CoreNode:  acetyl-SCoA CoASH tetrahydrosarcinapterin acetyl-SCoA
 Forbidnode: 
 CO 
@@ -34274,7 +34274,7 @@ cobalt-precorrin-6B NAD+  =[ cobalt-precorrin-6A_reductase ]=> NADH H+ cobalt-pr
 reaction: 24825 
 NADH H+ cobalt-precorrin-6A  =[ cobalt-precorrin-6A_reductase ]=> cobalt-precorrin-6B NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  cobalt-precorrin-6B cobalt-precorrin-6A NAD+ H+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -34311,11 +34311,11 @@ isopropanol
 TypeC: 131
 
 reaction: 25715 
-23,24-dihydrocucurbitacin_B NAD(P)+  =[ cucurbitacin_DELTA23-reductase ]=> cucurbitacin_B H+ NAD(P)H 
+23,24-dihydrocucurbitacin_B NAD(P)+  =[ cucurbitacin_DELTA23-reductase ]=> NAD(P)H H+ cucurbitacin_B 
 reaction: 25716 
-cucurbitacin_B H+ NAD(P)H  =[ cucurbitacin_DELTA23-reductase ]=> 23,24-dihydrocucurbitacin_B NAD(P)+ 
+NAD(P)H H+ cucurbitacin_B  =[ cucurbitacin_DELTA23-reductase ]=> 23,24-dihydrocucurbitacin_B NAD(P)+ 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  23,24-dihydrocucurbitacin_B cucurbitacin_B NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -34335,9 +34335,9 @@ cucurbitacin_C
 TypeC: 132
 
 reaction: 25862 
-17-O-acetylnorajmaline NADP+  =[ 1,2-dihydrovomilenine_reductase ]=> H+ 1,2-dihydrovomilenine NADPH 
+NADP+ 17-O-acetylnorajmaline  =[ 1,2-dihydrovomilenine_reductase ]=> 1,2-dihydrovomilenine H+ NADPH 
 reaction: 25863 
-H+ 1,2-dihydrovomilenine NADPH  =[ 1,2-dihydrovomilenine_reductase ]=> 17-O-acetylnorajmaline NADP+ 
+1,2-dihydrovomilenine H+ NADPH  =[ 1,2-dihydrovomilenine_reductase ]=> NADP+ 17-O-acetylnorajmaline 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  17-O-acetylnorajmaline 1,2-dihydrovomilenine NADP+ H+
@@ -34384,11 +34384,11 @@ ferrocyanide
 TypeC: 133
 
 reaction: 26408 
-3,8-divinyl_chlorophyllide_a H2O ATP reduced_ferredoxin_[iron-sulfur]_cluster H+  =[ 3,8-divinyl_chlorophyllide_a_reductase ]=> phosphate ADP oxidized_ferredoxin_[iron-sulfur]_cluster bacteriochlorophyllide_g 
+3,8-divinyl_chlorophyllide_a H+ ATP reduced_ferredoxin_[iron-sulfur]_cluster H2O  =[ 3,8-divinyl_chlorophyllide_a_reductase ]=> bacteriochlorophyllide_g oxidized_ferredoxin_[iron-sulfur]_cluster phosphate ADP 
 reaction: 26407 
-phosphate ADP oxidized_ferredoxin_[iron-sulfur]_cluster bacteriochlorophyllide_g  =[ 3,8-divinyl_chlorophyllide_a_reductase ]=> 3,8-divinyl_chlorophyllide_a H2O ATP H+ reduced_ferredoxin_[iron-sulfur]_cluster 
+bacteriochlorophyllide_g oxidized_ferredoxin_[iron-sulfur]_cluster phosphate ADP  =[ 3,8-divinyl_chlorophyllide_a_reductase ]=> 3,8-divinyl_chlorophyllide_a H+ ATP reduced_ferredoxin_[iron-sulfur]_cluster H2O 
 reaction: 56941 
-ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=> 
+PPDK_central_domain_construct_of_residues_381-512 phosphate ATP  =[ pyruvate,_phosphate_dikinase ]=> 
 CoreNode:  3,8-divinyl_chlorophyllide_a bacteriochlorophyllide_g ATP phosphate
 Forbidnode: 
 pyruvate 
@@ -34403,11 +34403,11 @@ arsenate
 TypeC: 134
 
 reaction: 26081 
-5,6-dihydrouracil16_in_tRNA NAD(P)+  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> NAD(P)H uracil16_in_tRNA H+ 
+5,6-dihydrouracil16_in_tRNA NAD(P)+  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> uracil16_in_tRNA H+ NAD(P)H 
 reaction: 26083 
-NAD(P)H uracil16_in_tRNA H+  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> 5,6-dihydrouracil16_in_tRNA NAD(P)+ 
+uracil16_in_tRNA H+ NAD(P)H  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> 5,6-dihydrouracil16_in_tRNA NAD(P)+ 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  5,6-dihydrouracil16_in_tRNA uracil16_in_tRNA NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -34424,11 +34424,11 @@ uracil17_in_pre-tRNAPhe
 TypeC: 135
 
 reaction: 26082 
-NAD(P)+ 5,6-dihydrouracil17_in_tRNA  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> NAD(P)H uracil17_in_tRNA H+ 
+NAD(P)+ 5,6-dihydrouracil17_in_tRNA  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> uracil17_in_tRNA H+ NAD(P)H 
 reaction: 26084 
-NAD(P)H uracil17_in_tRNA H+  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> NAD(P)+ 5,6-dihydrouracil17_in_tRNA 
+uracil17_in_tRNA H+ NAD(P)H  =[ tRNA-dihydrouridine16/17_synthase_[NAD(P)+] ]=> NAD(P)+ 5,6-dihydrouracil17_in_tRNA 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  5,6-dihydrouracil17_in_tRNA uracil17_in_tRNA NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -34445,11 +34445,11 @@ uracil17_in_pre-tRNAPhe
 TypeC: 136
 
 reaction: 26094 
-5,6-dihydrouracil20_in_tRNA NAD(P)+  =[ tRNA-dihydrouridine20_synthase_[NAD(P)+] ]=> NAD(P)H H+ uracil20_in_tRNA 
+5,6-dihydrouracil20_in_tRNA NAD(P)+  =[ tRNA-dihydrouridine20_synthase_[NAD(P)+] ]=> uracil20_in_tRNA H+ NAD(P)H 
 reaction: 26096 
-NAD(P)H H+ uracil20_in_tRNA  =[ tRNA-dihydrouridine20_synthase_[NAD(P)+] ]=> 5,6-dihydrouracil20_in_tRNA NAD(P)+ 
+uracil20_in_tRNA H+ NAD(P)H  =[ tRNA-dihydrouridine20_synthase_[NAD(P)+] ]=> 5,6-dihydrouracil20_in_tRNA NAD(P)+ 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  5,6-dihydrouracil20_in_tRNA uracil20_in_tRNA NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -34466,11 +34466,11 @@ uracil_in_pre-tRNATyr
 TypeC: 137
 
 reaction: 26090 
-5,6-dihydrouracil20b_in_tRNA NAD(P)+  =[ tRNA-dihydrouridine20a/20b_synthase_[NAD(P)+] ]=> NAD(P)H uracil20b_in_tRNA H+ 
+NAD(P)+ 5,6-dihydrouracil20b_in_tRNA  =[ tRNA-dihydrouridine20a/20b_synthase_[NAD(P)+] ]=> uracil20b_in_tRNA H+ NAD(P)H 
 reaction: 26092 
-NAD(P)H uracil20b_in_tRNA H+  =[ tRNA-dihydrouridine20a/20b_synthase_[NAD(P)+] ]=> 5,6-dihydrouracil20b_in_tRNA NAD(P)+ 
+uracil20b_in_tRNA H+ NAD(P)H  =[ tRNA-dihydrouridine20a/20b_synthase_[NAD(P)+] ]=> NAD(P)+ 5,6-dihydrouracil20b_in_tRNA 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  5,6-dihydrouracil20b_in_tRNA uracil20b_in_tRNA NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -34487,9 +34487,9 @@ uracil20a_in_tRNA
 TypeC: 138
 
 reaction: 26109 
-ditrans,polycis-dolichol NADP+  =[ polyprenol_reductase ]=> NADPH ditrans,polycis-polyprenol H+ 
+NADP+ ditrans,polycis-dolichol  =[ polyprenol_reductase ]=> ditrans,polycis-polyprenol H+ NADPH 
 reaction: 26111 
-NADPH ditrans,polycis-polyprenol H+  =[ polyprenol_reductase ]=> ditrans,polycis-dolichol NADP+ 
+ditrans,polycis-polyprenol H+ NADPH  =[ polyprenol_reductase ]=> NADP+ ditrans,polycis-dolichol 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  ditrans,polycis-dolichol ditrans,polycis-polyprenol NADP+ H+
@@ -34537,9 +34537,9 @@ polyprenol
 TypeC: 139
 
 reaction: 26117 
-UDP-N-acetyl-alpha-D-muramate NADP+  =[ UDP-N-acetylmuramate_dehydrogenase ]=> H+ UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine NADPH 
+NADP+ UDP-N-acetyl-alpha-D-muramate  =[ UDP-N-acetylmuramate_dehydrogenase ]=> UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine H+ NADPH 
 reaction: 26120 
-H+ UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine NADPH  =[ UDP-N-acetylmuramate_dehydrogenase ]=> UDP-N-acetyl-alpha-D-muramate NADP+ 
+UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine H+ NADPH  =[ UDP-N-acetylmuramate_dehydrogenase ]=> NADP+ UDP-N-acetyl-alpha-D-muramate 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  UDP-N-acetyl-alpha-D-muramate UDP-N-acetyl-3-O-(1-carboxyvinyl)-alpha-D-glucosamine NADP+ H+
@@ -34590,11 +34590,11 @@ ferrocyanide
 TypeC: 140
 
 reaction: 111794 
-Fe2+ coproporphyrin_III  =[ coproporphyrin_ferrochelatase ]=> H+ Fe-coproporphyrin_III 
+coproporphyrin_III Fe2+  =[ coproporphyrin_ferrochelatase ]=> Fe-coproporphyrin_III H+ 
 reaction: 111793 
-H+ Fe-coproporphyrin_III  =[ coproporphyrin_ferrochelatase ]=> Fe2+ coproporphyrin_III 
+Fe-coproporphyrin_III H+  =[ coproporphyrin_ferrochelatase ]=> coproporphyrin_III Fe2+ 
 reaction: 21085 
-Fe2+ O2 H+  =[ manganese_oxidase ]=> Fe3+ H2O 
+O2 H+ Fe2+  =[ manganese_oxidase ]=> Fe3+ H2O 
 CoreNode:  coproporphyrin_III Fe-coproporphyrin_III Fe2+ H+
 Forbidnode: 
 Mn2+ 
@@ -34615,9 +34615,9 @@ protoporphyrin_IX
 TypeC: 141
 
 reaction: 26311 
-caldariellaquinone succinate  =[ succinate_dehydrogenase ]=> fumarate caldariellaquinol 
+caldariellaquinone succinate  =[ succinate_dehydrogenase ]=> caldariellaquinol fumarate 
 reaction: 117211 
-n_H+[side_1] O2 caldariellaquinol  =[ caldariellaquinol_oxidase ]=> caldariellaquinone n_H+[side_2] H2O 
+O2 n_H+[side_1] caldariellaquinol  =[ caldariellaquinol_oxidase ]=> caldariellaquinone n_H+[side_2] H2O 
 reaction: 10057 
 O2 succinate  =[ ubiquinol_oxidase ]=> 
 CoreNode:  caldariellaquinone caldariellaquinol succinate O2
@@ -34712,9 +34712,9 @@ ubiquinol-1
 TypeC: 142
 
 reaction: 26351 
-oxidized_N,N,N',N'-tetramethyl-4-phenylenediamine succinate  =[ succinate_dehydrogenase ]=> fumarate reduced_N,N,N',N'-tetramethyl-4-phenylenediamine 
+oxidized_N,N,N',N'-tetramethyl-4-phenylenediamine succinate  =[ succinate_dehydrogenase ]=> reduced_N,N,N',N'-tetramethyl-4-phenylenediamine fumarate 
 reaction: 117342 
-O2 H2 reduced_N,N,N',N'-tetramethyl-4-phenylenediamine  =[ cytochrome-c_oxidase ]=> H2O oxidized_N,N,N',N'-tetramethyl-4-phenylenediamine 
+H2 O2 reduced_N,N,N',N'-tetramethyl-4-phenylenediamine  =[ cytochrome-c_oxidase ]=> oxidized_N,N,N',N'-tetramethyl-4-phenylenediamine H2O 
 reaction: 10057 
 O2 succinate  =[ ubiquinol_oxidase ]=> 
 CoreNode:  oxidized_N,N,N',N'-tetramethyl-4-phenylenediamine reduced_N,N,N',N'-tetramethyl-4-phenylenediamine succinate O2
@@ -34858,9 +34858,9 @@ TypeC: 143
 reaction: 58381 
 glutarate glutaconyl-CoA  =[ glutaconate_CoA-transferase ]=> glutaconate glutaryl-CoA 
 reaction: 115447 
-ATP CoA glutaconate  =[ glutarate-CoA_ligase ]=> phosphate ADP glutaconyl-CoA 
+CoA glutaconate ATP  =[ glutarate-CoA_ligase ]=> glutaconyl-CoA phosphate ADP 
 reaction: 115446 
-ATP CoA glutarate  =[ glutarate-CoA_ligase ]=> phosphate ADP glutaryl-CoA 
+CoA glutarate ATP  =[ glutarate-CoA_ligase ]=> phosphate glutaryl-CoA ADP 
 CoreNode:  glutaconyl-CoA glutaconate glutarate CoA
 Forbidnode: 
 (E)-glutaconate 
@@ -34888,7 +34888,7 @@ TypeC: 144
 reaction: 26957 
 acceptor dihydrourocanate  =[ urocanate_reductase ]=> reduced_acceptor urocanate 
 reaction: 26958 
-urocanate H+ reduced_methyl_viologen  =[ urocanate_reductase ]=> dihydrourocanate methyl_viologen 
+reduced_methyl_viologen H+ urocanate  =[ urocanate_reductase ]=> methyl_viologen dihydrourocanate 
 reaction: 19950 
 acceptor O2 H+ (9E)-tetradecenoate  =[ acyl-CoA_11-(E)-desaturase ]=> (9E,11E)-tetradecadienoate 
 CoreNode:  dihydrourocanate urocanate acceptor H+
@@ -34905,9 +34905,9 @@ tetradecenoyl-CoA
 TypeC: 145
 
 reaction: 29034 
-H+ putrescine L-aspartate_4-semialdehyde NADPH  =[ carboxynorspermidine_synthase ]=> H2O carboxyspermidine NADP+ 
+L-aspartate_4-semialdehyde H+ putrescine NADPH  =[ carboxynorspermidine_synthase ]=> carboxyspermidine NADP+ H2O 
 reaction: 29032 
-H2O carboxyspermidine NADP+  =[ carboxynorspermidine_synthase ]=> H+ putrescine L-aspartate_4-semialdehyde NADPH 
+carboxyspermidine NADP+ H2O  =[ carboxynorspermidine_synthase ]=> L-aspartate_4-semialdehyde H+ putrescine NADPH 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  putrescine carboxyspermidine H+ NADP+
@@ -34957,9 +34957,9 @@ propane-1,3-diamine
 TypeC: 146
 
 reaction: 29031 
-H2O NADP+ carboxynorspermidine  =[ carboxynorspermidine_synthase ]=> H+ propane-1,3-diamine L-aspartate_4-semialdehyde NADPH 
+carboxynorspermidine NADP+ H2O  =[ carboxynorspermidine_synthase ]=> L-aspartate_4-semialdehyde H+ propane-1,3-diamine NADPH 
 reaction: 29033 
-H+ propane-1,3-diamine L-aspartate_4-semialdehyde NADPH  =[ carboxynorspermidine_synthase ]=> H2O NADP+ carboxynorspermidine 
+L-aspartate_4-semialdehyde H+ propane-1,3-diamine NADPH  =[ carboxynorspermidine_synthase ]=> carboxynorspermidine NADP+ H2O 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  carboxynorspermidine propane-1,3-diamine NADP+ H+
@@ -35009,11 +35009,11 @@ NADH
 TypeC: 147
 
 reaction: 29036 
-NAD+ festuclavine  =[ festuclavine_dehydrogenase ]=> 6,8-dimethyl-6,7-didehydroergoline H+ NADH 
+festuclavine NAD+  =[ festuclavine_dehydrogenase ]=> 6,8-dimethyl-6,7-didehydroergoline H+ NADH 
 reaction: 29037 
-6,8-dimethyl-6,7-didehydroergoline H+ NADH  =[ festuclavine_dehydrogenase ]=> NAD+ festuclavine 
+6,8-dimethyl-6,7-didehydroergoline H+ NADH  =[ festuclavine_dehydrogenase ]=> festuclavine NAD+ 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  festuclavine 6,8-dimethyl-6,7-didehydroergoline NAD+ H+
 Forbidnode: 
 chanoclavine-I_aldehyde 
@@ -35105,11 +35105,11 @@ chanoclavine-I_aldehyde
 TypeC: 149
 
 reaction: 29050 
-5,6,7,8-tetrahydromethanopterin NAD(P)+  =[ dihydromethanopterin_reductase_[NAD(P)+] ]=> NAD(P)H H+ 7,8-dihydromethanopterin 
+5,6,7,8-tetrahydromethanopterin NAD(P)+  =[ dihydromethanopterin_reductase_[NAD(P)+] ]=> 7,8-dihydromethanopterin H+ NAD(P)H 
 reaction: 29051 
-NAD(P)H H+ 7,8-dihydromethanopterin  =[ dihydromethanopterin_reductase_[NAD(P)+] ]=> 5,6,7,8-tetrahydromethanopterin NAD(P)+ 
+7,8-dihydromethanopterin H+ NAD(P)H  =[ dihydromethanopterin_reductase_[NAD(P)+] ]=> 5,6,7,8-tetrahydromethanopterin NAD(P)+ 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  5,6,7,8-tetrahydromethanopterin 7,8-dihydromethanopterin NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -35123,9 +35123,9 @@ Fe(II)-ferrozine
 TypeC: 150
 
 reaction: 29052 
-(R)-2-methylpyrrolidine NADP+  =[ 2-methyl-1-pyrroline_reductase ]=> H+ 2-methyl-1-pyrroline NADPH 
+(R)-2-methylpyrrolidine NADP+  =[ 2-methyl-1-pyrroline_reductase ]=> 2-methyl-1-pyrroline H+ NADPH 
 reaction: 29053 
-H+ 2-methyl-1-pyrroline NADPH  =[ 2-methyl-1-pyrroline_reductase ]=> (S)-2-methylpyrrolidine (R)-2-methylpyrrolidine NADP+ 
+2-methyl-1-pyrroline H+ NADPH  =[ 2-methyl-1-pyrroline_reductase ]=> (R)-2-methylpyrrolidine NADP+ (S)-2-methylpyrrolidine 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  (R)-2-methylpyrrolidine 2-methyl-1-pyrroline NADP+ H+
@@ -35213,9 +35213,9 @@ ferrocyanide
 TypeC: 151
 
 reaction: 29100 
-NADP+ 5,6,7,8-tetrahydromonapterin  =[ dihydromonapterin_reductase ]=> 7,8-dihydromonapterin H+ NADPH 
+5,6,7,8-tetrahydromonapterin NADP+  =[ dihydromonapterin_reductase ]=> 7,8-dihydromonapterin H+ NADPH 
 reaction: 29103 
-7,8-dihydromonapterin H+ NADPH  =[ dihydromonapterin_reductase ]=> NADP+ 5,6,7,8-tetrahydromonapterin 
+7,8-dihydromonapterin H+ NADPH  =[ dihydromonapterin_reductase ]=> 5,6,7,8-tetrahydromonapterin NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  5,6,7,8-tetrahydromonapterin 7,8-dihydromonapterin NADP+ H+
@@ -35264,11 +35264,11 @@ ferrocyanide
 TypeC: 152
 
 reaction: 29104 
-H2O NAD+ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate  =[ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate_dehydrogenase ]=> NADH 2-oxoglutarate L-2,3-diaminopropanoate H+ 
+NAD+ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate H2O  =[ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate_dehydrogenase ]=> 2-oxoglutarate L-2,3-diaminopropanoate H+ NADH 
 reaction: 29105 
-NADH 2-oxoglutarate L-2,3-diaminopropanoate H+  =[ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate_dehydrogenase ]=> H2O NAD+ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate 
+2-oxoglutarate L-2,3-diaminopropanoate H+ NADH  =[ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate_dehydrogenase ]=> NAD+ N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate H2O 
 reaction: 3359 
-H+ NAD+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
+NAD+ H+ decanal  =[ long-chain-alcohol_dehydrogenase ]=> decanoic_acid NADH 
 CoreNode:  N-[(2S)-2-amino-2-carboxyethyl]-L-glutamate L-2,3-diaminopropanoate NAD+ H+
 Forbidnode: 
 a_long-chain_alcohol 
@@ -35305,11 +35305,11 @@ isopropanol
 TypeC: 153
 
 reaction: 31234 
-paraquat NAD(P)H  =[ thioredoxin-disulfide_reductase ]=> paraquat_radical NAD(P)+ 
+paraquat NAD(P)H  =[ thioredoxin-disulfide_reductase ]=> NAD(P)+ paraquat_radical 
 reaction: 31235 
-paraquat_radical O2  =[ thioredoxin-disulfide_reductase ]=> paraquat O2- 
+O2 paraquat_radical  =[ thioredoxin-disulfide_reductase ]=> O2- paraquat 
 reaction: 14335 
-NAD(P)H catechol O2 H2O  =[ anthranilate_1,2-dioxygenase ]=> 
+O2 catechol H2O NAD(P)H  =[ anthranilate_1,2-dioxygenase ]=> 
 CoreNode:  paraquat paraquat_radical NAD(P)H O2
 Forbidnode: 
 NADP+ 
@@ -35434,9 +35434,9 @@ salicylic_acid
 TypeC: 154
 
 reaction: 30334 
-7-aminomethyl-7-carbaguanine NADP+  =[ preQ1_synthase ]=> H+ 7-cyano-7-carbaguanine NADPH 
+7-aminomethyl-7-carbaguanine NADP+  =[ preQ1_synthase ]=> 7-cyano-7-carbaguanine H+ NADPH 
 reaction: 30338 
-H+ 7-cyano-7-carbaguanine NADPH  =[ preQ1_synthase ]=> 7-aminomethyl-7-carbaguanine NADP+ 
+7-cyano-7-carbaguanine H+ NADPH  =[ preQ1_synthase ]=> 7-aminomethyl-7-carbaguanine NADP+ 
 reaction: 20990 
 2 NADP+ H+  =[ ferric-chelate_reductase ]=> 2 NADPH 
 CoreNode:  7-aminomethyl-7-carbaguanine 7-cyano-7-carbaguanine NADP+ H+
@@ -35491,9 +35491,9 @@ TypeC: 155
 reaction: 31473 
 sulfite cytochrome_c GMP  =[ adenylyl-sulfate_reductase ]=> guanylyl_sulfate 
 reaction: 31477 
-guanylyl_sulfate reduced_methyl_viologen  =[ adenylyl-sulfate_reductase ]=> sulfite methyl_viologen GMP 
+reduced_methyl_viologen guanylyl_sulfate  =[ adenylyl-sulfate_reductase ]=> methyl_viologen sulfite GMP 
 reaction: 31858 
-sulfite reduced_methyl_viologen  =[ sulfite_reductase ]=> hydrogen_sulfide oxidized_methyl_viologen 
+reduced_methyl_viologen sulfite  =[ sulfite_reductase ]=> hydrogen_sulfide oxidized_methyl_viologen 
 CoreNode:  GMP guanylyl_sulfate sulfite reduced_methyl_viologen
 Forbidnode: 
 AMP 
@@ -35556,11 +35556,11 @@ reduced_coenzyme_F420
 TypeC: 156
 
 reaction: 30660 
-H2O 4-(hydroxyamino)quinoline_N-oxide NAD(P)+  =[ nitroquinoline-N-oxide_reductase ]=> NAD(P)H H+ 4-nitroquinoline_N-oxide 
+4-(hydroxyamino)quinoline_N-oxide NAD(P)+ H2O  =[ nitroquinoline-N-oxide_reductase ]=> 4-nitroquinoline_N-oxide H+ NAD(P)H 
 reaction: 30661 
-NAD(P)H H+ 4-nitroquinoline_N-oxide  =[ nitroquinoline-N-oxide_reductase ]=> H2O 4-(hydroxyamino)quinoline_N-oxide NAD(P)+ 
+4-nitroquinoline_N-oxide H+ NAD(P)H  =[ nitroquinoline-N-oxide_reductase ]=> 4-(hydroxyamino)quinoline_N-oxide NAD(P)+ H2O 
 reaction: 20925 
-Fe(II)-siderophore H+ NAD(P)+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore 
+Fe(II)-siderophore NAD(P)+ H+  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore NAD(P)H 
 CoreNode:  4-(hydroxyamino)quinoline_N-oxide 4-nitroquinoline_N-oxide NAD(P)+ H+
 Forbidnode: 
 NADPH 
@@ -35574,20 +35574,20 @@ Fe(II)-ferrozine
 TypeC: 157
 
 reaction: 31618 
-a_[DsbD_protein]_with_reduced_L-cysteine_residues thioredoxin_disulfide  =[ thioredoxin:protein_disulfide_reductase ]=> thioredoxin a_[DsbD_protein]_carrying_a_disulfide_bond 
+thioredoxin_disulfide a_[DsbD_protein]_with_reduced_L-cysteine_residues  =[ thioredoxin:protein_disulfide_reductase ]=> a_[DsbD_protein]_carrying_a_disulfide_bond thioredoxin 
 reaction: 31619 
-a_[protein]_with_reduced_L-cysteine_residues a_[DsbD_protein]_carrying_a_disulfide_bond  =[ thioredoxin:protein_disulfide_reductase ]=> a_[DsbD_protein]_with_reduced_L-cysteine_residues a_[protein]_carrying_a_disulfide_bond 
+a_[DsbD_protein]_carrying_a_disulfide_bond a_[protein]_with_reduced_L-cysteine_residues  =[ thioredoxin:protein_disulfide_reductase ]=> a_[DsbD_protein]_with_reduced_L-cysteine_residues a_[protein]_carrying_a_disulfide_bond 
 reaction: 31617 
-a_[protein]_with_reduced_L-cysteine_residues thioredoxin_disulfide  =[ thioredoxin:protein_disulfide_reductase ]=> thioredoxin a_[protein]_carrying_a_disulfide_bond 
+thioredoxin_disulfide a_[protein]_with_reduced_L-cysteine_residues  =[ thioredoxin:protein_disulfide_reductase ]=> thioredoxin a_[protein]_carrying_a_disulfide_bond 
 CoreNode:  a_[DsbD_protein]_with_reduced_L-cysteine_residues a_[DsbD_protein]_carrying_a_disulfide_bond thioredoxin_disulfide a_[protein]_with_reduced_L-cysteine_residues
 Forbidnode: 
 
 TypeC: 158
 
 reaction: 31787 
-a_[DsbA_protein]_with_reduced_L-cysteine_residues a_[DsbB_protein]_carrying_a_disulfide_bond  =[ protein_dithiol:quinone_oxidoreductase_DsbB ]=> a_[DsbB_protein]_with_reduced_L-cysteine_residues a_[DsbA_protein]_carrying_a_disulfide_bond 
+a_[DsbB_protein]_carrying_a_disulfide_bond a_[DsbA_protein]_with_reduced_L-cysteine_residues  =[ protein_dithiol:quinone_oxidoreductase_DsbB ]=> a_[DsbB_protein]_with_reduced_L-cysteine_residues a_[DsbA_protein]_carrying_a_disulfide_bond 
 reaction: 31788 
-a_[DsbB_protein]_with_reduced_L-cysteine_residues a_quinone  =[ protein_dithiol:quinone_oxidoreductase_DsbB ]=> a_quinol a_[DsbB_protein]_carrying_a_disulfide_bond 
+a_quinone a_[DsbB_protein]_with_reduced_L-cysteine_residues  =[ protein_dithiol:quinone_oxidoreductase_DsbB ]=> a_[DsbB_protein]_carrying_a_disulfide_bond a_quinol 
 reaction: 31786 
 a_quinone a_[DsbA_protein]_with_reduced_L-cysteine_residues  =[ protein_dithiol:quinone_oxidoreductase_DsbB ]=> a_quinol a_[DsbA_protein]_carrying_a_disulfide_bond 
 CoreNode:  a_[DsbB_protein]_carrying_a_disulfide_bond a_[DsbB_protein]_with_reduced_L-cysteine_residues a_[DsbA_protein]_with_reduced_L-cysteine_residues a_quinone
@@ -35596,11 +35596,11 @@ Forbidnode:
 TypeC: 159
 
 reaction: 31832 
-coenzyme_M coenzyme_B H+ coenzyme_F420 reduced_ferredoxin  =[ dihydromethanophenazine:CoB-CoM_heterodisulfide_reductase ]=> reduced_coenzyme_F420 H2 ferredoxin coenzyme_B-coenzyme_M_disulfide 
+coenzyme_B H+ coenzyme_F420 reduced_ferredoxin coenzyme_M  =[ dihydromethanophenazine:CoB-CoM_heterodisulfide_reductase ]=> H2 ferredoxin coenzyme_B-coenzyme_M_disulfide reduced_coenzyme_F420 
 reaction: 31813 
-reduced_ferredoxin coenzyme_B-coenzyme_M_disulfide  =[ dihydromethanophenazine:CoB-CoM_heterodisulfide_reductase ]=> ferredoxin coenzyme_M coenzyme_B 
+coenzyme_B-coenzyme_M_disulfide reduced_ferredoxin  =[ dihydromethanophenazine:CoB-CoM_heterodisulfide_reductase ]=> ferredoxin coenzyme_B coenzyme_M 
 reaction: 31832 
-coenzyme_M coenzyme_B H+ coenzyme_F420 reduced_ferredoxin  =[ dihydromethanophenazine:CoB-CoM_heterodisulfide_reductase ]=> reduced_coenzyme_F420 H2 ferredoxin coenzyme_B-coenzyme_M_disulfide 
+coenzyme_B H+ coenzyme_F420 reduced_ferredoxin coenzyme_M  =[ dihydromethanophenazine:CoB-CoM_heterodisulfide_reductase ]=> H2 ferredoxin coenzyme_B-coenzyme_M_disulfide reduced_coenzyme_F420 
 CoreNode:  coenzyme_B coenzyme_B-coenzyme_M_disulfide coenzyme_F420 reduced_ferredoxin
 Forbidnode: 
 CoB 
@@ -35634,9 +35634,9 @@ reduced_methylviologen
 TypeC: 160
 
 reaction: 34394 
-malonyl-CoA [biotin_carboxyl-carrier_protein_87]-N6-biotinyl-L-lysine  =[ acetyl-CoA_carboxytransferase ]=> [biotin_carboxyl-carrier_protein_87]-N6-carboxybiotinyl-L-lysine acetyl-CoA 
+[biotin_carboxyl-carrier_protein_87]-N6-biotinyl-L-lysine malonyl-CoA  =[ acetyl-CoA_carboxytransferase ]=> [biotin_carboxyl-carrier_protein_87]-N6-carboxybiotinyl-L-lysine acetyl-CoA 
 reaction: 34395 
-[biotin_carboxyl-carrier_protein_87]-N6-carboxybiotinyl-L-lysine acetyl-CoA  =[ acetyl-CoA_carboxytransferase ]=> malonyl-CoA [biotin_carboxyl-carrier_protein_87]-N6-biotinyl-L-lysine 
+[biotin_carboxyl-carrier_protein_87]-N6-carboxybiotinyl-L-lysine acetyl-CoA  =[ acetyl-CoA_carboxytransferase ]=> [biotin_carboxyl-carrier_protein_87]-N6-biotinyl-L-lysine malonyl-CoA 
 reaction: 35409 
 malonyl-CoA acetyl-CoA  =[ acridone_synthase ]=> CO2 CoA 
 CoreNode:  [biotin_carboxyl-carrier_protein_87]-N6-biotinyl-L-lysine [biotin_carboxyl-carrier_protein_87]-N6-carboxybiotinyl-L-lysine malonyl-CoA acetyl-CoA
@@ -35659,11 +35659,11 @@ hexanoyl-CoA
 TypeC: 161
 
 reaction: 43320 
-cyanidin_3-O-beta-D-glucoside 1-O-sinapoyl-beta-D-glucose  =[ cyanidin_3-O-glucoside_5-O-glucosyltransferase ]=> sinapate cyanidin_3,5-di-O-beta-D-glucoside 
+cyanidin_3-O-beta-D-glucoside 1-O-sinapoyl-beta-D-glucose  =[ cyanidin_3-O-glucoside_5-O-glucosyltransferase ]=> cyanidin_3,5-di-O-beta-D-glucoside sinapate 
 reaction: 40163 
-sinapate UDP-alpha-D-glucose  =[ sinapate_1-glucosyltransferase ]=> UDP 1-O-sinapoyl-beta-D-glucose 
+sinapate UDP-alpha-D-glucose  =[ sinapate_1-glucosyltransferase ]=> 1-O-sinapoyl-beta-D-glucose UDP 
 reaction: 43299 
-cyanidin_3-O-beta-D-glucoside UDP-alpha-D-glucose  =[ anthocyanidin_3-O-glucoside_2''-O-glucosyltransferase ]=> UDP cyanidin_3-O-sophoroside 
+cyanidin_3-O-beta-D-glucoside UDP-alpha-D-glucose  =[ anthocyanidin_3-O-glucoside_2''-O-glucosyltransferase ]=> cyanidin_3-O-sophoroside UDP 
 CoreNode:  1-O-sinapoyl-beta-D-glucose sinapate cyanidin_3-O-beta-D-glucoside UDP-alpha-D-glucose
 Forbidnode: 
 an_anthocyanidin_3-O-beta-D-glucoside 
@@ -35705,11 +35705,11 @@ pelargonidin_3-O-(6-O-malyl)-beta-D-glucoside
 TypeC: 162
 
 reaction: 35124 
-4,8-dimethylnonanoyl-CoA L-carnitine  =[ carnitine_O-octanoyltransferase ]=> CoA 4,8-dimethylnonanoyl-L-carnitine 
+L-carnitine 4,8-dimethylnonanoyl-CoA  =[ carnitine_O-octanoyltransferase ]=> CoA 4,8-dimethylnonanoyl-L-carnitine 
 reaction: 35125 
-CoA 4,8-dimethylnonanoyl-L-carnitine  =[ carnitine_O-octanoyltransferase ]=> 4,8-dimethylnonanoyl-CoA L-carnitine 
+CoA 4,8-dimethylnonanoyl-L-carnitine  =[ carnitine_O-octanoyltransferase ]=> L-carnitine 4,8-dimethylnonanoyl-CoA 
 reaction: 115377 
-ATP CoA L-carnitine  =[ carnitine-CoA_ligase ]=> AMP L-carnitinyl-CoA diphosphate 
+L-carnitine CoA ATP  =[ carnitine-CoA_ligase ]=> L-carnitinyl-CoA diphosphate AMP 
 CoreNode:  4,8-dimethylnonanoyl-CoA 4,8-dimethylnonanoyl-L-carnitine L-carnitine CoA
 Forbidnode: 
 octanoyl-CoA 
@@ -35765,11 +35765,11 @@ gamma-butyrobetaine
 TypeC: 163
 
 reaction: 35138 
-3-methylglutaryl-CoA L-carnitine  =[ carnitine_O-octanoyltransferase ]=> 3-methylglutaryl-L-carnitine CoA 
+L-carnitine 3-methylglutaryl-CoA  =[ carnitine_O-octanoyltransferase ]=> CoA 3-methylglutaryl-L-carnitine 
 reaction: 35139 
-3-methylglutaryl-L-carnitine CoA  =[ carnitine_O-octanoyltransferase ]=> 3-methylglutaryl-CoA L-carnitine 
+CoA 3-methylglutaryl-L-carnitine  =[ carnitine_O-octanoyltransferase ]=> L-carnitine 3-methylglutaryl-CoA 
 reaction: 115377 
-ATP CoA L-carnitine  =[ carnitine-CoA_ligase ]=> AMP L-carnitinyl-CoA diphosphate 
+L-carnitine CoA ATP  =[ carnitine-CoA_ligase ]=> L-carnitinyl-CoA diphosphate AMP 
 CoreNode:  3-methylglutaryl-CoA 3-methylglutaryl-L-carnitine L-carnitine CoA
 Forbidnode: 
 octanoyl-CoA 
@@ -35825,11 +35825,11 @@ gamma-butyrobetaine
 TypeC: 164
 
 reaction: 49625 
-pyruvate 5-aminolevulinate  =[ aminolevulinate_transaminase ]=> 4,5-dioxopentanoate L-alanine 
+5-aminolevulinate pyruvate  =[ aminolevulinate_transaminase ]=> 4,5-dioxopentanoate L-alanine 
 reaction: 49626 
-L-alanine 4,5-dioxopentanoate  =[ aminolevulinate_transaminase ]=> pyruvate 5-aminolevulinate 
+L-alanine 4,5-dioxopentanoate  =[ aminolevulinate_transaminase ]=> 5-aminolevulinate pyruvate 
 reaction: 28597 
-pyruvate L-alanine NADH  =[ D-octopine_dehydrogenase ]=> H2O NAD+ 
+L-alanine NADH pyruvate  =[ D-octopine_dehydrogenase ]=> NAD+ H2O 
 CoreNode:  5-aminolevulinate 4,5-dioxopentanoate pyruvate L-alanine
 Forbidnode: 
 L-asparagine 
@@ -35886,11 +35886,11 @@ H+
 TypeC: 165
 
 reaction: 39197 
-[E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [HECT-type_E3_ubiquitin_transferase]-L-cysteine  =[ HECT-type_E3_ubiquitin_transferase ]=> [HECT-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
+[E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [HECT-type_E3_ubiquitin_transferase]-L-cysteine  =[ HECT-type_E3_ubiquitin_transferase ]=> [E2_ubiquitin-conjugating_enzyme]-L-cysteine [HECT-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine 
 reaction: 39198 
-[acceptor_protein]-L-lysine [HECT-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine  =[ HECT-type_E3_ubiquitin_transferase ]=> [acceptor_protein]-N6-ubiquitinyl-L-lysine [HECT-type_E3_ubiquitin_transferase]-L-cysteine 
+[acceptor_protein]-L-lysine [HECT-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine  =[ HECT-type_E3_ubiquitin_transferase ]=> [HECT-type_E3_ubiquitin_transferase]-L-cysteine [acceptor_protein]-N6-ubiquitinyl-L-lysine 
 reaction: 39196 
-[acceptor_protein]-L-lysine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ HECT-type_E3_ubiquitin_transferase ]=> [acceptor_protein]-N6-ubiquitinyl-L-lysine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
+[acceptor_protein]-L-lysine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ HECT-type_E3_ubiquitin_transferase ]=> [E2_ubiquitin-conjugating_enzyme]-L-cysteine [acceptor_protein]-N6-ubiquitinyl-L-lysine 
 CoreNode:  [HECT-type_E3_ubiquitin_transferase]-L-cysteine [HECT-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [acceptor_protein]-L-lysine
 Forbidnode: 
 S-ubiquitinyl-[HECT-type_E3_ubiquitin_transferase]-L-cysteine 
@@ -35919,11 +35919,11 @@ S-ubiquitinyl-[E2_ubiquitin-conjugating_enzyme]-L-cysteine
 TypeC: 166
 
 reaction: 39290 
-[E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [RBR-type_E3_ubiquitin_transferase]-L-cysteine  =[ RBR-type_E3_ubiquitin_transferase ]=> [RBR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
+[E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [RBR-type_E3_ubiquitin_transferase]-L-cysteine  =[ RBR-type_E3_ubiquitin_transferase ]=> [E2_ubiquitin-conjugating_enzyme]-L-cysteine [RBR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine 
 reaction: 39291 
-[RBR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [acceptor_protein]-L-lysine  =[ RBR-type_E3_ubiquitin_transferase ]=> [acceptor_protein]-N6-ubiquitinyl-L-lysine [RBR-type_E3_ubiquitin_transferase]-L-cysteine 
+[acceptor_protein]-L-lysine [RBR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine  =[ RBR-type_E3_ubiquitin_transferase ]=> [RBR-type_E3_ubiquitin_transferase]-L-cysteine [acceptor_protein]-N6-ubiquitinyl-L-lysine 
 reaction: 39289 
-[acceptor_protein]-L-lysine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ RBR-type_E3_ubiquitin_transferase ]=> [acceptor_protein]-N6-ubiquitinyl-L-lysine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
+[acceptor_protein]-L-lysine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ RBR-type_E3_ubiquitin_transferase ]=> [E2_ubiquitin-conjugating_enzyme]-L-cysteine [acceptor_protein]-N6-ubiquitinyl-L-lysine 
 CoreNode:  [RBR-type_E3_ubiquitin_transferase]-L-cysteine [RBR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [acceptor_protein]-L-lysine
 Forbidnode: 
 [E2_ubiquitin-conjugating_enzyme_cullin-1]-S-ubiquitinyl-L-cysteine 
@@ -35937,11 +35937,11 @@ Forbidnode:
 TypeC: 167
 
 reaction: 39308 
-[RCR-type_E3_ubiquitin_transferase]-L-cysteine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ RCR-type_E3_ubiquitin_transferase ]=> [E2_ubiquitin-conjugating_enzyme]-L-cysteine [RCR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine 
+[RCR-type_E3_ubiquitin_transferase]-L-cysteine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ RCR-type_E3_ubiquitin_transferase ]=> [RCR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
 reaction: 39309 
-[acceptor_protein]-L-threonine [RCR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine  =[ RCR-type_E3_ubiquitin_transferase ]=> [RCR-type_E3_ubiquitin_transferase]-L-cysteine [acceptor_protein]-3-O-ubiquitinyl-L-threonine 
+[RCR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [acceptor_protein]-L-threonine  =[ RCR-type_E3_ubiquitin_transferase ]=> [RCR-type_E3_ubiquitin_transferase]-L-cysteine [acceptor_protein]-3-O-ubiquitinyl-L-threonine 
 reaction: 39307 
-[acceptor_protein]-L-threonine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine  =[ RCR-type_E3_ubiquitin_transferase ]=> [acceptor_protein]-3-O-ubiquitinyl-L-threonine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
+[E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [acceptor_protein]-L-threonine  =[ RCR-type_E3_ubiquitin_transferase ]=> [acceptor_protein]-3-O-ubiquitinyl-L-threonine [E2_ubiquitin-conjugating_enzyme]-L-cysteine 
 CoreNode:  [RCR-type_E3_ubiquitin_transferase]-L-cysteine [RCR-type_E3_ubiquitin_transferase]-S-ubiquitinyl-L-cysteine [E2_ubiquitin-conjugating_enzyme]-S-ubiquitinyl-L-cysteine [acceptor_protein]-L-threonine
 Forbidnode: 
 [F-box_protein_FBXW7]-L-threonine 
@@ -35950,11 +35950,11 @@ Forbidnode:
 TypeC: 168
 
 reaction: 55991 
-ADP-mannose phosphate  =[ aldose-1-phosphate_nucleotidyltransferase ]=> D-mannose_1-phosphate ADP 
+phosphate ADP-mannose  =[ aldose-1-phosphate_nucleotidyltransferase ]=> D-mannose_1-phosphate ADP 
 reaction: 55731 
-D-mannose_1-phosphate ATP  =[ mannose-1-phosphate_guanylyltransferase ]=> ADP-mannose diphosphate 
+D-mannose_1-phosphate ATP  =[ mannose-1-phosphate_guanylyltransferase ]=> diphosphate ADP-mannose 
 reaction: 56941 
-ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=> 
+PPDK_central_domain_construct_of_residues_381-512 phosphate ATP  =[ pyruvate,_phosphate_dikinase ]=> 
 CoreNode:  ADP-mannose D-mannose_1-phosphate phosphate ATP
 Forbidnode: 
 alpha-D-mannose_1-phosphate 
@@ -36030,7 +36030,7 @@ TypeC: 169
 reaction: 57150 
 a_phenol 3'-phosphoadenylyl_sulfate  =[ aryl_sulfotransferase ]=> adenosine_3',5'-bisphosphate an_aryl_sulfate 
 reaction: 57846 
-a_phenol an_aryl_sulfate  =[ aryl-sulfate_sulfotransferase ]=> a_phenol an_aryl_sulfate 
+an_aryl_sulfate a_phenol  =[ aryl-sulfate_sulfotransferase ]=> an_aryl_sulfate a_phenol 
 reaction: 57150 
 a_phenol 3'-phosphoadenylyl_sulfate  =[ aryl_sulfotransferase ]=> adenosine_3',5'-bisphosphate an_aryl_sulfate 
 CoreNode:  a_phenol an_aryl_sulfate 3'-phosphoadenylyl_sulfate a_phenol
@@ -36330,11 +36330,11 @@ alpha-naphthyl_sulfate
 TypeC: 170
 
 reaction: 45331 
-6-mercaptoguanosine phosphate  =[ purine-nucleoside_phosphorylase ]=> alpha-D-ribose_1-phosphate 6-mercaptoguanine 
+phosphate 6-mercaptoguanosine  =[ purine-nucleoside_phosphorylase ]=> 6-mercaptoguanine alpha-D-ribose_1-phosphate 
 reaction: 46179 
-6-mercaptoguanine thymidine  =[ nucleoside_deoxyribosyltransferase ]=> 6-mercaptoguanosine thymine 
+6-mercaptoguanine thymidine  =[ nucleoside_deoxyribosyltransferase ]=> thymine 6-mercaptoguanosine 
 reaction: 45739 
-phosphate thymidine  =[ uridine_phosphorylase ]=> thymine alpha-D-ribose_1-phosphate 
+thymidine phosphate  =[ uridine_phosphorylase ]=> thymine alpha-D-ribose_1-phosphate 
 CoreNode:  6-mercaptoguanosine 6-mercaptoguanine phosphate thymidine
 Forbidnode: 
 uridine 
@@ -36684,9 +36684,9 @@ TypeC: 171
 reaction: 45483 
 5-trifluoromethyl-2'-deoxyuridine phosphate  =[ pyrimidine-nucleoside_phosphorylase ]=> 5-trifluoromethyluracil 2-deoxy-D-ribose_1-phosphate 
 reaction: 45491 
-2'-deoxyuridine 5-trifluoromethyluracil  =[ pyrimidine-nucleoside_phosphorylase ]=> 5-trifluoromethyl-2'-deoxyuridine uracil 
+5-trifluoromethyluracil 2'-deoxyuridine  =[ pyrimidine-nucleoside_phosphorylase ]=> 5-trifluoromethyl-2'-deoxyuridine uracil 
 reaction: 45464 
-2'-deoxyuridine phosphate  =[ pyrimidine-nucleoside_phosphorylase ]=> 2-deoxy-alpha-D-ribose_1-phosphate uracil 
+2'-deoxyuridine phosphate  =[ pyrimidine-nucleoside_phosphorylase ]=> uracil 2-deoxy-alpha-D-ribose_1-phosphate 
 CoreNode:  5-trifluoromethyl-2'-deoxyuridine 5-trifluoromethyluracil phosphate 2'-deoxyuridine
 Forbidnode: 
 thymidine 
@@ -36724,11 +36724,11 @@ thymine
 TypeC: 172
 
 reaction: 45484 
-phosphate 5-trifluorothymidine  =[ pyrimidine-nucleoside_phosphorylase ]=> 2-deoxy-alpha-D-ribose_1-phosphate 5-trifluorothymine 
+5-trifluorothymidine phosphate  =[ pyrimidine-nucleoside_phosphorylase ]=> 5-trifluorothymine 2-deoxy-alpha-D-ribose_1-phosphate 
 reaction: 46198 
 2'-deoxyuridine 5-trifluorothymine  =[ nucleoside_deoxyribosyltransferase ]=> 5-trifluorothymidine uracil 
 reaction: 45464 
-2'-deoxyuridine phosphate  =[ pyrimidine-nucleoside_phosphorylase ]=> 2-deoxy-alpha-D-ribose_1-phosphate uracil 
+2'-deoxyuridine phosphate  =[ pyrimidine-nucleoside_phosphorylase ]=> uracil 2-deoxy-alpha-D-ribose_1-phosphate 
 CoreNode:  5-trifluorothymidine 5-trifluorothymine phosphate 2'-deoxyuridine
 Forbidnode: 
 thymidine 
@@ -36970,11 +36970,11 @@ thymine
 TypeC: 173
 
 reaction: 49855 
-pyruvate 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol  =[ 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol_transaminase ]=> 1D-1-guanidino-1-deoxy-3-dehydro-scyllo-inositol L-alanine 
+1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol pyruvate  =[ 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol_transaminase ]=> L-alanine 1D-1-guanidino-1-deoxy-3-dehydro-scyllo-inositol 
 reaction: 49856 
-1D-1-guanidino-1-deoxy-3-dehydro-scyllo-inositol L-alanine  =[ 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol_transaminase ]=> pyruvate 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol 
+L-alanine 1D-1-guanidino-1-deoxy-3-dehydro-scyllo-inositol  =[ 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol_transaminase ]=> 1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol pyruvate 
 reaction: 28597 
-pyruvate L-alanine NADH  =[ D-octopine_dehydrogenase ]=> H2O NAD+ 
+L-alanine NADH pyruvate  =[ D-octopine_dehydrogenase ]=> NAD+ H2O 
 CoreNode:  1D-1-guanidino-3-amino-1,3-dideoxy-scyllo-inositol 1D-1-guanidino-1-deoxy-3-dehydro-scyllo-inositol pyruvate L-alanine
 Forbidnode: 
 N2-(D-1-carboxyethyl)-L-arginine 
@@ -37016,11 +37016,11 @@ L-glutamine
 TypeC: 174
 
 reaction: 50509 
-ATP beta-D-fructose_6-phosphate  =[ 6-phosphofructo-2-kinase ]=> beta-D-fructose_2,6-bisphosphate ADP 
+beta-D-fructose_6-phosphate ATP  =[ 6-phosphofructo-2-kinase ]=> ADP beta-D-fructose_2,6-bisphosphate 
 reaction: 50516 
-beta-D-fructose_2,6-bisphosphate ADP  =[ 6-phosphofructo-2-kinase ]=> ATP beta-D-fructose_6-phosphate 
+ADP beta-D-fructose_2,6-bisphosphate  =[ 6-phosphofructo-2-kinase ]=> beta-D-fructose_6-phosphate ATP 
 reaction: 116884 
-ATP ADP  =[ DNA_ligase ]=> diphosphate P1-(5'-adenosyl),P3-(5'-adenosyl)triphosphate 
+ADP ATP  =[ DNA_ligase ]=> diphosphate P1-(5'-adenosyl),P3-(5'-adenosyl)triphosphate 
 CoreNode:  beta-D-fructose_6-phosphate beta-D-fructose_2,6-bisphosphate ATP ADP
 Forbidnode: 
 MgATP2- 
@@ -37114,11 +37114,11 @@ NAD+
 TypeC: 175
 
 reaction: 50827 
-histidine-containing_protein phosphoenolpyruvate  =[ phosphoenolpyruvate-glycerone_phosphotransferase ]=> pyruvate phosphohistidinoprotein 
+phosphoenolpyruvate histidine-containing_protein  =[ phosphoenolpyruvate-glycerone_phosphotransferase ]=> phosphohistidinoprotein pyruvate 
 reaction: 50828 
-glycerone phosphohistidinoprotein  =[ phosphoenolpyruvate-glycerone_phosphotransferase ]=> glycerone_phosphate histidine-containing_protein 
+glycerone phosphohistidinoprotein  =[ phosphoenolpyruvate-glycerone_phosphotransferase ]=> histidine-containing_protein glycerone_phosphate 
 reaction: 50826 
-glycerone phosphoenolpyruvate  =[ phosphoenolpyruvate-glycerone_phosphotransferase ]=> glycerone_phosphate pyruvate 
+phosphoenolpyruvate glycerone  =[ phosphoenolpyruvate-glycerone_phosphotransferase ]=> glycerone_phosphate pyruvate 
 CoreNode:  histidine-containing_protein phosphohistidinoprotein phosphoenolpyruvate glycerone
 Forbidnode: 
 D-mannitol 
@@ -37133,11 +37133,11 @@ dihydroxyacetone
 TypeC: 176
 
 reaction: 54705 
-pyruvate,phosphate_dikinase ADP  =[ [pyruvate,_phosphate_dikinase]_kinase ]=> AMP [pyruvate,phosphate_dikinase]phosphate 
+pyruvate,phosphate_dikinase ADP  =[ [pyruvate,_phosphate_dikinase]_kinase ]=> [pyruvate,phosphate_dikinase]phosphate AMP 
 reaction: 55345 
-phosphate [pyruvate,phosphate_dikinase]phosphate  =[ [pyruvate,_phosphate_dikinase]-phosphate_phosphotransferase ]=> pyruvate,phosphate_dikinase diphosphate 
+[pyruvate,phosphate_dikinase]phosphate phosphate  =[ [pyruvate,_phosphate_dikinase]-phosphate_phosphotransferase ]=> diphosphate pyruvate,phosphate_dikinase 
 reaction: 26411 
-3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a phosphate ADP oxidized_ferredoxin_[iron-sulfur]_cluster  =[ chlorophyllide_a_reductase ]=> H2O ATP H+ reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a 
+3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a oxidized_ferredoxin_[iron-sulfur]_cluster phosphate ADP  =[ chlorophyllide_a_reductase ]=> H+ ATP reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a H2O 
 CoreNode:  pyruvate,phosphate_dikinase [pyruvate,phosphate_dikinase]phosphate ADP phosphate
 Forbidnode: 
 [pyruvate,_phosphate_dikinase]_phosphate 
@@ -37158,11 +37158,11 @@ reduced_dithionite
 TypeC: 177
 
 reaction: 54706 
-pyruvate,Pi_dikinase ADP  =[ [pyruvate,_phosphate_dikinase]_kinase ]=> AMP [pyruvate,Pi_dikinase]phosphate 
+ADP pyruvate,Pi_dikinase  =[ [pyruvate,_phosphate_dikinase]_kinase ]=> [pyruvate,Pi_dikinase]phosphate AMP 
 reaction: 55346 
-phosphate [pyruvate,Pi_dikinase]phosphate  =[ [pyruvate,_phosphate_dikinase]-phosphate_phosphotransferase ]=> pyruvate,Pi_dikinase diphosphate 
+[pyruvate,Pi_dikinase]phosphate phosphate  =[ [pyruvate,_phosphate_dikinase]-phosphate_phosphotransferase ]=> diphosphate pyruvate,Pi_dikinase 
 reaction: 26411 
-3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a phosphate ADP oxidized_ferredoxin_[iron-sulfur]_cluster  =[ chlorophyllide_a_reductase ]=> H2O ATP H+ reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a 
+3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a oxidized_ferredoxin_[iron-sulfur]_cluster phosphate ADP  =[ chlorophyllide_a_reductase ]=> H+ ATP reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a H2O 
 CoreNode:  pyruvate,Pi_dikinase [pyruvate,Pi_dikinase]phosphate ADP phosphate
 Forbidnode: 
 [pyruvate,_phosphate_dikinase]_phosphate 
@@ -37183,11 +37183,11 @@ reduced_dithionite
 TypeC: 178
 
 reaction: 54708 
-[pyruvate,_water_dikinase] ADP  =[ [pyruvate,_water_dikinase]_kinase ]=> AMP [pyruvate,_water_dikinase]_phosphate 
+[pyruvate,_water_dikinase] ADP  =[ [pyruvate,_water_dikinase]_kinase ]=> [pyruvate,_water_dikinase]_phosphate AMP 
 reaction: 55348 
-phosphate [pyruvate,_water_dikinase]_phosphate  =[ [pyruvate,_water_dikinase]-phosphate_phosphotransferase ]=> [pyruvate,_water_dikinase] diphosphate 
+[pyruvate,_water_dikinase]_phosphate phosphate  =[ [pyruvate,_water_dikinase]-phosphate_phosphotransferase ]=> [pyruvate,_water_dikinase] diphosphate 
 reaction: 26411 
-3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a phosphate ADP oxidized_ferredoxin_[iron-sulfur]_cluster  =[ chlorophyllide_a_reductase ]=> H2O ATP H+ reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a 
+3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a oxidized_ferredoxin_[iron-sulfur]_cluster phosphate ADP  =[ chlorophyllide_a_reductase ]=> H+ ATP reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a H2O 
 CoreNode:  [pyruvate,_water_dikinase] [pyruvate,_water_dikinase]_phosphate ADP phosphate
 Forbidnode: 
 3-deacetyl-3-vinylbacteriochlorophyllide_a 
@@ -37203,11 +37203,11 @@ phosphoenolpyruvate_synthase
 TypeC: 179
 
 reaction: 54709 
-phosphoenolpyruvate_synthase ADP  =[ [pyruvate,_water_dikinase]_kinase ]=> AMP [phosphoenolpyruvate_synthase]phosphate 
+phosphoenolpyruvate_synthase ADP  =[ [pyruvate,_water_dikinase]_kinase ]=> [phosphoenolpyruvate_synthase]phosphate AMP 
 reaction: 55349 
 phosphate [phosphoenolpyruvate_synthase]phosphate  =[ [pyruvate,_water_dikinase]-phosphate_phosphotransferase ]=> phosphoenolpyruvate_synthase diphosphate 
 reaction: 26411 
-3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a phosphate ADP oxidized_ferredoxin_[iron-sulfur]_cluster  =[ chlorophyllide_a_reductase ]=> H2O ATP H+ reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a 
+3-deacetyl-3-(1-hydroxyethyl)bacteriochlorophyllide_a oxidized_ferredoxin_[iron-sulfur]_cluster phosphate ADP  =[ chlorophyllide_a_reductase ]=> H+ ATP reduced_ferredoxin_[iron-sulfur]_cluster 3-devinyl-3-(1-hydroxyethyl)chlorophyllide_a H2O 
 CoreNode:  phosphoenolpyruvate_synthase [phosphoenolpyruvate_synthase]phosphate ADP phosphate
 Forbidnode: 
 3-deacetyl-3-vinylbacteriochlorophyllide_a 
@@ -37223,11 +37223,11 @@ reduced_dithionite
 TypeC: 180
 
 reaction: 56059 
-ATP [glutamine_synthetase]-L-tyrosine  =[ [glutamine_synthetase]_adenylyltransferase ]=> [glutamine_synthetase]-O4-(5'-adenylyl)-L-tyrosine diphosphate 
+[glutamine_synthetase]-L-tyrosine ATP  =[ [glutamine_synthetase]_adenylyltransferase ]=> [glutamine_synthetase]-O4-(5'-adenylyl)-L-tyrosine diphosphate 
 reaction: 56529 
-[glutamine_synthetase]-O4-(5'-adenylyl)-L-tyrosine phosphate  =[ [glutamine_synthetase]-adenylyl-L-tyrosine_phosphorylase ]=> ADP [glutamine_synthetase]-L-tyrosine 
+[glutamine_synthetase]-O4-(5'-adenylyl)-L-tyrosine phosphate  =[ [glutamine_synthetase]-adenylyl-L-tyrosine_phosphorylase ]=> [glutamine_synthetase]-L-tyrosine ADP 
 reaction: 56941 
-ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=> 
+PPDK_central_domain_construct_of_residues_381-512 phosphate ATP  =[ pyruvate,_phosphate_dikinase ]=> 
 CoreNode:  [glutamine_synthetase]-L-tyrosine [glutamine_synthetase]-O4-(5'-adenylyl)-L-tyrosine ATP phosphate
 Forbidnode: 
 [L-glutamate:ammonia_ligase_(ADP-forming)] 
@@ -37254,11 +37254,11 @@ adenylyl-[L-glutamate:ammonia_ligase_(ADP-forming)]
 TypeC: 181
 
 reaction: 56062 
-ATP glutamine_synthase  =[ [glutamine_synthetase]_adenylyltransferase ]=> adenylyl-[glutamine_synthase] diphosphate 
+glutamine_synthase ATP  =[ [glutamine_synthetase]_adenylyltransferase ]=> adenylyl-[glutamine_synthase] diphosphate 
 reaction: 56067 
-phosphate adenylyl-[glutamine_synthase]  =[ [glutamine_synthetase]_adenylyltransferase ]=> glutamine_synthase ADP 
+adenylyl-[glutamine_synthase] phosphate  =[ [glutamine_synthetase]_adenylyltransferase ]=> glutamine_synthase ADP 
 reaction: 56941 
-ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=> 
+PPDK_central_domain_construct_of_residues_381-512 phosphate ATP  =[ pyruvate,_phosphate_dikinase ]=> 
 CoreNode:  glutamine_synthase adenylyl-[glutamine_synthase] ATP phosphate
 Forbidnode: 
 [glutamine_synthetase]-L-tyrosine 
@@ -37281,11 +37281,11 @@ arsenate
 TypeC: 182
 
 reaction: 57037 
-[3-mercaptopyruvate_sulfurtransferase]-L-cysteine 3-mercaptopyruvate  =[ 3-mercaptopyruvate_sulfurtransferase ]=> pyruvate [3-mercaptopyruvate_sulfurtransferase]-S-sulfanyl-L-cysteine 
+[3-mercaptopyruvate_sulfurtransferase]-L-cysteine 3-mercaptopyruvate  =[ 3-mercaptopyruvate_sulfurtransferase ]=> [3-mercaptopyruvate_sulfurtransferase]-S-sulfanyl-L-cysteine pyruvate 
 reaction: 57038 
 [3-mercaptopyruvate_sulfurtransferase]-S-sulfanyl-L-cysteine reduced_thioredoxin  =[ 3-mercaptopyruvate_sulfurtransferase ]=> oxidized_thioredoxin hydrogen_sulfide [3-mercaptopyruvate_sulfurtransferase]-L-cysteine 
 reaction: 57036 
-3-mercaptopyruvate reduced_thioredoxin  =[ 3-mercaptopyruvate_sulfurtransferase ]=> oxidized_thioredoxin pyruvate hydrogen_sulfide 
+3-mercaptopyruvate reduced_thioredoxin  =[ 3-mercaptopyruvate_sulfurtransferase ]=> oxidized_thioredoxin hydrogen_sulfide pyruvate 
 CoreNode:  [3-mercaptopyruvate_sulfurtransferase]-L-cysteine [3-mercaptopyruvate_sulfurtransferase]-S-sulfanyl-L-cysteine 3-mercaptopyruvate reduced_thioredoxin
 Forbidnode: 
 cyanide 
@@ -37313,7 +37313,7 @@ TypeC: 183
 reaction: 57867 
 tyramine 4-methylumbelliferyl_sulfate  =[ aryl-sulfate_sulfotransferase ]=> 4-(2-aminoethyl)phenyl_sulfate 4-methylumbelliferol 
 reaction: 57850 
-4-methylumbelliferol 3'-phosphoadenylylsulfate  =[ aryl-sulfate_sulfotransferase ]=> adenosine_3',5'-bisphosphate 4-methylumbelliferyl_sulfate 
+3'-phosphoadenylylsulfate 4-methylumbelliferol  =[ aryl-sulfate_sulfotransferase ]=> adenosine_3',5'-bisphosphate 4-methylumbelliferyl_sulfate 
 reaction: 58001 
 tyramine 3'-phosphoadenylylsulfate  =[ amine_sulfotransferase ]=> adenosine_3',5'-bisphosphate tyramine_N-sulfate 
 CoreNode:  4-methylumbelliferyl_sulfate 4-methylumbelliferol tyramine 3'-phosphoadenylylsulfate
@@ -37422,9 +37422,9 @@ alpha-naphthyl_sulfate
 TypeC: 184
 
 reaction: 105007 
-H+ 4-carboxy-5-aminoimidazole_ribonucleotide  =[ phosphoribosylaminoimidazole_carboxylase ]=> CO2 5-aminoimidazole_ribonucleotide 
+4-carboxy-5-aminoimidazole_ribonucleotide H+  =[ phosphoribosylaminoimidazole_carboxylase ]=> CO2 5-aminoimidazole_ribonucleotide 
 reaction: 105008 
-CO2 5-aminoimidazole_ribonucleotide  =[ phosphoribosylaminoimidazole_carboxylase ]=> H+ 4-carboxy-5-aminoimidazole_ribonucleotide 
+CO2 5-aminoimidazole_ribonucleotide  =[ phosphoribosylaminoimidazole_carboxylase ]=> 4-carboxy-5-aminoimidazole_ribonucleotide H+ 
 reaction: 26054 
 CO2 acryloyl-CoA H+ NADPH  =[ crotonyl-CoA_carboxylase/reductase ]=> methylmalonyl-CoA NADP+ 
 CoreNode:  4-carboxy-5-aminoimidazole_ribonucleotide 5-aminoimidazole_ribonucleotide H+ CO2
