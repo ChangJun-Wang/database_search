@@ -326,7 +326,7 @@ class search:
         while BFS != []:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
-                #check whether this reaction has conflict to previous reactions and input
+                # check whether this reaction has conflict to previous reactions and input
                 check_downRec = startPro.check_downRec(downRec)
                 if check_downRec != []:
                     for product in downRec.getpro():
@@ -459,19 +459,16 @@ class search:
     def add_pathtmp(self, startPro, product, downRec, downPath):
         for path in downPath:
             tmp_path = {}
-            tmp_path["related"]  = set()
-            tmp_path["pathnode"] = []
-            tmp_path["pathlist"] = []
-            for i in path["related"]:
-                tmp_path["related"].add(i)
+            tmp_path["related"] = path["related"].copy()
             for i in downRec.getrea():
                 tmp_path["related"].add(i)
-            for i in path["pathlist"]:
-                tmp_path["pathlist"].append(i)
+            tmp_path["pathlist"] = path["pathlist"].copy()
             tmp_path["pathlist"].append(downRec)
-            for i in path["pathnode"]:
-                tmp_path["pathnode"].append(i)
+            tmp_path["pathnode"] = path["pathnode"].copy()
             tmp_path["pathnode"].append(startPro)
+            tmp_path["pathenz"] = path["pathenz"].copy()
+            tmp_path["pathenz"].append(downRec.getenz()[0])
+
             product.path_tmp.append(tmp_path)
 
 

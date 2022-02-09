@@ -54,22 +54,14 @@ class node :
     def add_path(self, startPro, downRec, pathlist):
         for path in pathlist:
             tmp_path = {}
-            tmp_path["related"]  = set()
-            tmp_path["pathnode"] = []
-            tmp_path["pathlist"] = []
-            tmp_path["pathenz"]  = []
-            for i in path["related"]:
-                tmp_path["related"].add(i)
+            tmp_path["related"] = path["related"].copy()
             for i in downRec.getrea():
                 tmp_path["related"].add(i)
-            for i in path["pathlist"]:
-                tmp_path["pathlist"].append(i)
+            tmp_path["pathlist"] = path["pathlist"].copy()
             tmp_path["pathlist"].append(downRec)
-            for i in path["pathnode"]:
-                tmp_path["pathnode"].append(i)
+            tmp_path["pathnode"] = path["pathnode"].copy()
             tmp_path["pathnode"].append(startPro)
-            for i in path["pathenz"]:
-                tmp_path["pathenz"].append(i)
+            tmp_path["pathenz"] = path["pathenz"].copy()
             tmp_path["pathenz"].append(downRec.getenz()[0])
             self.path.append(tmp_path)
             assert tmp_path["pathlist"] != path["pathlist"]
@@ -88,15 +80,37 @@ class node :
                 return False
         return True
 
+    def check_EnzSpecies(self, pathnode, downRecs):
+        for rec in downRecs:
+            for species in (rec.getpro()):
+                if species in pathnode:
+                    return False
+        return True
+
     def check_downRec(self, downRec):
         tmp = []
+        downRecs = []
+        downRecs.append(downRec)
+        added_species = set()
         for path in self.path:
-            if self.check_RecSpecies(path["pathnode"], downRec):
+            pathenz = path["pathenz"].copy()
+            pathenz.append(downRec.getenz()[0])
+
+            added_species = path["related"].copy()
+            for enz in path["pathenz"]:
+                added_species.add(enz)
+            for enz in pathenz:
+                for rec in enz.getCatedge():
+                    if rec.activated(added_species):
+                        downRecs.append(rec)
+
+        for path in self.path:
+            if self.check_RecSpecies(path["pathnode"], downRec) and self.check_EnzSpecies(path["pathnode"], downRecs):
                 tmp.append(path)
         return tmp
 
 
-
+    # check these selected pathnode products whether they have been related species already or not.
     def check_pro(self, pathlist):
         tmp = []
         for path in pathlist:
