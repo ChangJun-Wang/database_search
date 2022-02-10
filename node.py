@@ -83,7 +83,7 @@ class node :
     def check_EnzSpecies(self, pathnode, downRecs):
         for rec in downRecs:
             for species in (rec.getpro()):
-                if species in pathnode:
+                if species in pathnode: # or species.name == "NAD+":
                     return False
         return True
 
@@ -143,7 +143,8 @@ class node :
                         downRecs.append(rec)
 
         for path in self.path_tmp:
-            if self.check_RecSpecies(path["pathnode"], downRec) and self.check_EnzSpecies(path["pathnode"], downRecs):
+            if (self.check_RecSpecies(path["pathnode"], downRec) 
+                and self.check_EnzSpecies(path["pathnode"], downRecs)):
                 tmp.append(path)
         return tmp
 

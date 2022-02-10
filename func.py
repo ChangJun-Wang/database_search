@@ -463,13 +463,14 @@ class search:
         tmp["pathenz"]  = []
         tmp["pathnode"] = []
         tmp["pathnode"].append(input_species[0])
+        # tmp["pathnode"].append(self.mapToNode["NAD+"])
         input_species[1].path_tmp.append(tmp)
         while BFS != []:
             startPro = BFS.pop(0)
             for downRec in startPro.getDownedge():
-                #check whether this reaction has conflict to previous reactions and input
+                # check whether this reaction has conflict to previous reactions and input
                 check_downRec = startPro.check_downRectmp(downRec, relate)
-                if check_downRec != []:
+                if (check_downRec != []) and (self.mapToNode["NAD+"] not in downRec.getrea()):
                     for product in downRec.getpro():
                         check_pro = product.check_pro(check_downRec)
                         if check_pro != []:
