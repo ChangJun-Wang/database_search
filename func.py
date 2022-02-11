@@ -12,6 +12,8 @@ from node import node
 
 from edge import edge
 
+from bfs import BFS
+
 class search:
     def __init__(self):
         self.c = 0
@@ -310,7 +312,11 @@ class search:
             rec.tmp_vis  = 0
             rec.recStack = False
 
+    
     def ClearPath(self):
+        pass
+
+    def ClearRecord():
         pass
 
 

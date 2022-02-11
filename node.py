@@ -14,6 +14,7 @@ class node :
         self.visited  = 0
         self.label    = set()
         self.path     = []
+        self.record   = []
         self.path_tmp = []
         self.labelA   = ""
         self.labelB   = ""
