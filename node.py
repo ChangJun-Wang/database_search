@@ -1,7 +1,16 @@
+import copy
+
 from path import path
 
 class node :
     def __init__(self, name):
+        path_tmp        = []
+        tmp             = {}
+        tmp["related"]  = set()
+        tmp["pathlist"] = []
+        tmp["pathenz"]  = []
+        tmp["pathnode"] = []
+        path_tmp.append(tmp)
         self.name     = name
         self.enable   = True
         self.upEdge   = []
@@ -13,9 +22,10 @@ class node :
         self.pout     = 0
         self.visited  = 0
         self.label    = set()
-        self.path     = []
-        self.record   = []
-        self.path_tmp = []
+        self.path     = path_tmp
+        self.recordA  = copy.deepcopy(path_tmp)
+        self.recordC  = {}
+        # self.path_tmp = []
         self.labelA   = ""
         self.labelB   = ""
         self.labelC   = []
@@ -119,47 +129,74 @@ class node :
                 tmp.append(path)
         return tmp
 
-    # def check_downRectmp(self, downRec):
-    #     tmp = []
-    #     for tmp_path in self.path_tmp:
-    #         if self.check_RecSpecies(tmp_path["pathnode"], downRec):
-    #             tmp.append(tmp_path)
-    #     return tmp
+    def CopyToRecord(self, label, num):
+        assert label == "A" or label == "C_side"
+        if label == "A":
+            for path in self.path:
+                tmp    = {}
+                tmp["related"]  = path["related"].copy()
+                tmp["pathlist"] = path["pathlist"].copy()
+                tmp["pathenz"]  = path["pathenz"].copy()
+                tmp["pathnode"] = path["pathnode"].copy()
+                self.recordA.append(tmp)
+        elif label == "C_side":
+            pass
 
-    def check_downRectmp(self, downRec, relate):
-        tmp = []
-        downRecs = []
-        downRecs.append(downRec)
-        added_species = set()
-        for path in self.path_tmp:
-            pathenz = path["pathenz"].copy()
-            pathenz.append(downRec.getenz()[0])
+    def CopyToPath(self, label, num):
+        # assert label == "A" or label == "C_side"
+        # if label == "A":
+        for record in self.recordA:
+            tmp    = {}
+            tmp["related"]  = record["related"].copy()
+            tmp["pathlist"] = record["pathlist"].copy()
+            tmp["pathenz"]  = record["pathenz"].copy()
+            tmp["pathnode"] = record["pathnode"].copy()
+            self.path.append(tmp)
+        # elif label == "C_side":
+        #     pass
 
-            added_species = path["related"].copy()
-            for enz in path["pathenz"]:
-                added_species.add(enz)
-            for enz in pathenz:
-                for rec in enz.getCatedge():
-                    if rec.activated(added_species):
-                        downRecs.append(rec)
+    def CheckMerge(self, path, record):
+        for species in record["pathnode"]:
+            if species in path["related"]:
+                return False
+        for species in path["pathnode"]:
+            if species in record["related"]:
+                return False
+        return True
 
-        for path in self.path_tmp:
-            if (self.check_RecSpecies(path["pathnode"], downRec) 
-                and self.check_EnzSpecies(path["pathnode"], downRecs)):
-                tmp.append(path)
+
+    def Merge(self, path, record):
+        tmp    = {}
+        tmp["related"]  = path["related"].copy()
+        tmp["pathlist"] = path["pathlist"].copy()
+        tmp["pathenz"]  = path["pathenz"].copy()
+        tmp["pathnode"] = path["pathnode"].copy()
+
+        for species in record["related"]:
+            tmp["related"].add(species)
+        for rec in record["pathlist"]:
+            tmp["pathlist"].append(rec)
+        for enz in record["pathenz"]:
+            tmp["pathenz"].append(enz)
+        for species in record["pathnode"]:
+            tmp["pathnode"].append(species)
+
         return tmp
 
-    def add_pathtmp(self, startPro, downRec, downPath):
-        for path in downPath:
-            tmp_path = {}
-            tmp_path["related"] = path["related"].copy()
-            for i in downRec.getrea():
-                tmp_path["related"].add(i)
-            tmp_path["pathlist"] = path["pathlist"].copy()
-            tmp_path["pathlist"].append(downRec)
-            tmp_path["pathnode"] = path["pathnode"].copy()
-            tmp_path["pathnode"].append(startPro)
-            tmp_path["pathenz"] = path["pathenz"].copy()
-            tmp_path["pathenz"].append(downRec.getenz()[0])
+    def MergeAll(self, label, num):
+        assert label == "A" or label == "C_side"
+        if label == "A":
+            path_tmp = []
+            for path in self.path:
+                for record in self.recordA:
+                    if self.CheckMerge(path, record):
+                        path_tmp.append(self.Merge(path, record))
+            self.recordA = path_tmp
+            return True
+        elif label == "C_side":
+            pass
 
-            self.path_tmp.append(tmp_path)
+
+
+
+

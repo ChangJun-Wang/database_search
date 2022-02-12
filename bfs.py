@@ -13,18 +13,23 @@ class BFS:
 
 	def search(self):
 		self.BFS()
-		for species in self.candidate:
-			species.record = copy.deepcopy(species.path)
+		# for species in self.candidate:
+		# 	species.record = copy.deepcopy(species.path)
+        return self.candidate
 		
 
 	def BFS(self):
 		# initializtion for starting node
-        initial_node    		 = {}
-        initial_node["related"]  = set()
-        initial_node["pathlist"] = []
-        initial_node["pathenz"]  = []
-        initial_node["pathnode"] = []
-        self.bfs[0].path.append(initial_node)
+            # initial_node    		 = {}
+            # initial_node["related"]  = set()
+            # initial_node["pathlist"] = []
+            # initial_node["pathenz"]  = []
+            # initial_node["pathnode"] = []
+        # if self.type == "A":
+        self.bfs[0].CopyToPath()
+        # elif self.type == "C_side":
+        #     self.bfs[0].CopyToPath("A", self.bfs[0].labelA)
+            # self.bfs[0].path.append(initial_node)
 
         # start to traverse
         count = 0
@@ -59,15 +64,48 @@ class BFS:
     	if product.path == []:
     		return False
     	else:
-    		self.candidate.add(product.labelA)
+    		self.candidate.add((product, product.labelA))
     		return True
 
     def foundC_side(self, product):
     	if product.path == []:
     		return False
     	for label in product.labelC_side:
-    		self.candidate.add(label)
+    		self.candidate.add((product, label))
     	return True
  
 
+    def BFS_findC(self, input_node):
+        BFS    = [input_node]
+        while BFS != []:
+            startPro = BFS.pop(0)
+            for downRec in startPro.getDownedge():
+                # check whether this reaction has conflict to previous reactions and input
+                check_downRec = startPro.check_downRec(downRec)
+                if check_downRec != []:
+                    for product in downRec.getpro():
+                        check_pro = product.check_pro(check_downRec)
+                        if check_pro != []:
+                            BFS.append(product)
+                            if ("C_side" in product.label):
+                                for c_side in product.labelC_side:
+                                    for path in product.path:
+                                        if self.check_cycle(path, c_side):
+                                            product.add_path(startPro, downRec, check_pro)
+                                            return (True, product, c_side)
+                            product.add_path(startPro, downRec, check_pro)
+        return (False, node(None), None)
+
+    def check_cycle(self, path, c_side):
+        for node in self.mapToCnode[c_side]:
+            if node in path["related"]:
+                return False
+        for nodelist in self.mapToCforbid[c_side]:
+            c = 0
+            for node in nodelist:
+                if node in path["related"]:
+                    c += 1
+            if c == len(nodelist):
+                return False
+        return True
 

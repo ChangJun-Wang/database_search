@@ -30,6 +30,9 @@ class search:
         self.edgeList    = []
         self.HashTable   = {}
         self.HashCollect = {}
+
+        self.record      = {}
+
         self.reaction    = 0
         self.typeA       = 0
         self.typeB       = 0
@@ -52,8 +55,8 @@ class search:
         return tmpList
 
     def initialize(self):
-        self.forbid_node.add(self.mapToNode["H2O"])
-        self.mapToNode["H2O"].visited = 1
+        # self.forbid_node.add(self.mapToNode["H2O"])
+        # self.mapToNode["H2O"].visited = 1
         for nodes in self.nodeList:
             if (nodes.getpin() > 1):
                 enz = set()
@@ -89,7 +92,9 @@ class search:
                 #     break
                     # self.typeC += 1
                 # self.Cycle_Find(nodes, [], [])
-        # for nodes in self.nodeList:
+        for node in self.nodeList:
+            node.path[0]["related"].add(self.mapToNode["H2O"])
+            node.path[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
         #     assert len(nodes.labelA) == 0 or len(nodes.labelA) == 1
         #     assert len(nodes.labelB) == 0 or len(nodes.labelB) == 1
         #     assert len(nodes.labelD) == 0 or len(nodes.labelD) == 1
@@ -201,8 +206,6 @@ class search:
         print("start initializing")
         self.initialize()
 
-
-
     def check_rec(self, edge, nodelist):
         temp = []
         for rea in edge.getrea():
@@ -294,6 +297,115 @@ class search:
                             return self.check_legal(node, downRec, product, d_downRec)
         return False        
 
+    def main(self, input_species, notes):
+        candidate = []
+        bfs = BFS(input_species[0], "A")
+        candidate0 = bfs.search()
+        # record all the returned type A
+        for label in candidate0:
+            # copy path to record
+            label[0].CopyToRecord("A", label[1])
+        self.ClearPath()
+
+        for species in candidate0:
+            assert len(species.recordA) != 1
+
+        bfs = BFS(input_species[1], "A")
+        candidate1 = bfs.search()
+        # check if there is any common label found between input0 and input1 path
+        for label in candidate0:
+            if label in candidate1:
+                if label[0].MergeAll("A", label[1]):
+                    candidate.append(label[0])
+        self.ClearPath()
+
+        for species in candidate:
+            assert species.recordA != []
+
+        for i in range(len(candidate)-1):
+            bfs0 = BFS(candidate[i], "C_side")
+            for j in range(i+1, len(candidate)):
+                bfs1 = BFS(input_species[j], "C_side")
+
+
+    def BFS_all(self, input_species, notes):
+        allnodes = set()
+        allnodes.add(self.mapToNode["spontaneous_reaction"])
+        print("*********** From i1 : ************ ")
+        for rec in (findC.path[0])["pathlist"]:
+            print(rec.show())
+            for node in rec.getrea():
+                allnodes.add(node)
+            for node in rec.getenz():
+                allnodes.add(node)
+            for node in rec.getpro():
+                allnodes.add(node)
+        print("*********** From i1 : ************ ")
+        for node in (findC.path[0])["pathnode"]:
+            print(node.show())
+        print("*********** From i2 : ************ ")
+        for rec in (find_tmp.path_tmp[0])["pathlist"]:
+            print(rec.show())
+            for node in rec.getrea():
+                allnodes.add(node)
+            for node in rec.getenz():
+                allnodes.add(node)
+            for node in rec.getpro():
+                allnodes.add(node)
+        # print("*********** Find A : ************ ")
+        # c = 0
+        # for rec in product.getUpedge():
+        #     if c == 4:
+        #         break
+        #     c += 1
+        #     print(rec.show())
+        print("*********** Find C : ************ ")
+        for rec in self.mapToClist[labelC]:
+            print(rec.show())
+            for node in rec.getrea():
+                allnodes.add(node)
+            for node in rec.getenz():
+                allnodes.add(node)
+            for node in rec.getpro():
+                allnodes.add(node)
+
+        print("*********** Threshold : ************ ")
+        for i in self.mapToCnode[labelC][2:]:
+            if i != findC:
+                print(i.show())
+                for rec in i.getUpedge():
+                    if (rec.getenz()[0] != self.mapToNode["spontaneous_reaction"]):
+                        if self. check_rea(rec.getenz()[0], i):
+                            print(rec.show())
+                            for node in rec.getrea():
+                                allnodes.add(node)
+                            for node in rec.getenz():
+                                allnodes.add(node)
+                            for node in rec.getpro():
+                                allnodes.add(node)
+                            break
+        print("/////////////////all related reaction///////////////")
+        print(self.check(allnodes))
+
+
+    def check_rea(self, enz, product):
+        for catrec in enz.getCatedge():
+            if product in catrec.getrea() or self.mapToNode["NAD+"] in catrec.getrea() or self.mapToNode["H2O2"] in catrec.getpro():
+                return False
+        return True
+
+    def check(self, allnodes):
+        temp = ""
+        for enz in allnodes:
+            for reaction in enz.getCatedge():
+                count = 0
+                for reactant in reaction.getrea():
+                    if reactant in allnodes:
+                        count += 1
+                if count == len(reaction.getrea()):
+                    temp += (reaction.show()) + str(count)
+        return temp
+    
     def ClearVis(self):
         for nodes in self.nodeList:
             nodes.visited  = 0
@@ -314,192 +426,33 @@ class search:
 
     
     def ClearPath(self):
-        pass
-
-    def ClearRecord():
-        pass
-
-
-    def BFS_all(self, input_species, notes):
-        BFS    = [input_species[0]]
-        tmp    = {}
+        path_tmp        = []
+        tmp             = {}
         tmp["related"]  = set()
         tmp["pathlist"] = []
         tmp["pathenz"]  = []
         tmp["pathnode"] = []
-        tmp["pathnode"].append(input_species[1])
-        input_species[0].path.append(tmp)
-        while BFS != []:
-            startPro = BFS.pop(0)
-            for downRec in startPro.getDownedge():
-                # check whether this reaction has conflict to previous reactions and input
-                check_downRec = startPro.check_downRec(downRec)
-                if check_downRec != []:
-                    for product in downRec.getpro():
-                        check_pro = product.check_pro(check_downRec)
-                        if check_pro != []:  #((product not in self.forbid_node) and (product not in startPro.related)):
-                            BFS.append(product)
-                            product.add_path(startPro, downRec, check_pro)
-                            assert product.path != check_pro
-                            assert len(product.path) != 0
-                            
-                            if ("A" in product.label) and (product.getpin() > 2):
-                                labelA = product.labelA
-                                # if self.BFS_tmp(input_species, target):
-                                (result, findC, labelC) = self.BFS_findC(product)
-                                if result:
-                                    result1 = False
-                                    find_tmp = None
-                                    for i in self.mapToCnode[labelC][2:]:
-                                        if i != findC:
-                                            (result1, find_tmp) = self.BFS_tmp(input_species, i, findC)
-                                    if result1:
-                                        allnodes = set()
-                                        allnodes.add(self.mapToNode["spontaneous_reaction"])
-                                        print("*********** From i1 : ************ ")
-                                        for rec in (findC.path[0])["pathlist"]:
-                                            print(rec.show())
-                                            for node in rec.getrea():
-                                                allnodes.add(node)
-                                            for node in rec.getenz():
-                                                allnodes.add(node)
-                                            for node in rec.getpro():
-                                                allnodes.add(node)
-                                        print("*********** From i1 : ************ ")
-                                        for node in (findC.path[0])["pathnode"]:
-                                            print(node.show())
-                                        print("*********** From i2 : ************ ")
-                                        for rec in (find_tmp.path_tmp[0])["pathlist"]:
-                                            print(rec.show())
-                                            for node in rec.getrea():
-                                                allnodes.add(node)
-                                            for node in rec.getenz():
-                                                allnodes.add(node)
-                                            for node in rec.getpro():
-                                                allnodes.add(node)
-                                        # print("*********** Find A : ************ ")
-                                        # c = 0
-                                        # for rec in product.getUpedge():
-                                        #     if c == 4:
-                                        #         break
-                                        #     c += 1
-                                        #     print(rec.show())
-                                        print("*********** Find C : ************ ")
-                                        for rec in self.mapToClist[labelC]:
-                                            print(rec.show())
-                                            for node in rec.getrea():
-                                                allnodes.add(node)
-                                            for node in rec.getenz():
-                                                allnodes.add(node)
-                                            for node in rec.getpro():
-                                                allnodes.add(node)
+        path_tmp.append(tmp)
+        for node in self.nodeList:
+            node.path = path_tmp
+        for node in self.nodeList:
+            node.path[0]["related"].add(self.mapToNode["H2O"])
+            node.path[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
 
-                                        print("*********** Threshold : ************ ")
-                                        for i in self.mapToCnode[labelC][2:]:
-                                            if i != findC:
-                                                print(i.show())
-                                                for rec in i.getUpedge():
-                                                    if (rec.getenz()[0] != self.mapToNode["spontaneous_reaction"]):
-                                                        if self. check_rea(rec.getenz()[0], i):
-                                                            print(rec.show())
-                                                            for node in rec.getrea():
-                                                                allnodes.add(node)
-                                                            for node in rec.getenz():
-                                                                allnodes.add(node)
-                                                            for node in rec.getpro():
-                                                                allnodes.add(node)
-                                                            break
-
-                                        print("/////////////////all related reaction///////////////")
-                                        print(self.check(allnodes))
-                                        return True
-        return False
-
-    def check_rea(self, enz, product):
-        for catrec in enz.getCatedge():
-            if product in catrec.getrea() or self.mapToNode["NAD+"] in catrec.getrea() or self.mapToNode["H2O2"] in catrec.getpro():
-                return False
-        return True
-
-    def check_cycle(self, path, c_side):
-        for node in self.mapToCnode[c_side]:
-            if node in path["related"]:
-                return False
-        for nodelist in self.mapToCforbid[c_side]:
-            c = 0
-            for node in nodelist:
-                if node in path["related"]:
-                    c += 1
-            if c == len(nodelist):
-                return False
-        return True
-
-    def BFS_findC(self, input_node):
-        BFS    = [input_node]
-        while BFS != []:
-            startPro = BFS.pop(0)
-            for downRec in startPro.getDownedge():
-                # check whether this reaction has conflict to previous reactions and input
-                check_downRec = startPro.check_downRec(downRec)
-                if check_downRec != []:
-                    for product in downRec.getpro():
-                        check_pro = product.check_pro(check_downRec)
-                        if check_pro != []:
-                            BFS.append(product)
-                            if ("C_side" in product.label):
-                                for c_side in product.labelC_side:
-                                    for path in product.path:
-                                        if self.check_cycle(path, c_side):
-                                            product.add_path(startPro, downRec, check_pro)
-                                            return (True, product, c_side)
-                            product.add_path(startPro, downRec, check_pro)
-        return (False, node(None), None)
-
-
-    def BFS_tmp(self, input_species, target, relate):
-        # targetlist   = target.path[0]["pathnode"][2:]
-        targetlist = []
-        targetlist.append(target)
-        tar_relate   = relate.path[0]["related"]
-        tar_relate.add(relate)
-        BFS    = [input_species[1]]
-        tmp    = {}
+    def ClearRecordA(self):
+        record_tmp      = []
+        tmp             = {}
         tmp["related"]  = set()
         tmp["pathlist"] = []
         tmp["pathenz"]  = []
         tmp["pathnode"] = []
-        tmp["pathnode"].append(input_species[0])
-        # tmp["pathnode"].append(self.mapToNode["NAD+"])
-        input_species[1].path_tmp.append(tmp)
-        while BFS != []:
-            startPro = BFS.pop(0)
-            for downRec in startPro.getDownedge():
-                # check whether this reaction has conflict to previous reactions and input
-                check_downRec = startPro.check_downRectmp(downRec, relate)
-                if (check_downRec != []) and (self.mapToNode["NAD+"] not in downRec.getrea()):
-                    for product in downRec.getpro():
-                        check_pro = product.check_pro(check_downRec)
-                        if check_pro != []:
-                            if product in targetlist:
-                                product.add_pathtmp(startPro, downRec, check_pro)
-                                return (True, product)
-                            if product not in tar_relate:
-                                BFS.append(product)
-                                product.add_pathtmp(startPro, downRec, check_pro)
-                                assert product.path_tmp != startPro.path_tmp
-                                assert product.path_tmp != check_downRec
-                                assert len(product.path_tmp) != 0
-        return (False, node(None))
+        record_tmp.append(tmp)
+        for node in self.nodeList:
+            node.recordA = record_tmp
+        for node in self.nodeList:
+            node.recordA[0]["related"].add(self.mapToNode["H2O"])
+            node.recordA[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
 
-    def check(self, allnodes):
-        temp = ""
-        for enz in allnodes:
-            for reaction in enz.getCatedge():
-                count = 0
-                for reactant in reaction.getrea():
-                    if reactant in allnodes:
-                        count += 1
-                if count == len(reaction.getrea()):
-                    temp += (reaction.show()) + str(count)
-        return temp
-        
+    def ClearRecordC(self):
+        for node in self.nodeList:
+            node.recordC = {}
