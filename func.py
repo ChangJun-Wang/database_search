@@ -55,8 +55,6 @@ class search:
         return tmpList
 
     def initialize(self):
-        # self.forbid_node.add(self.mapToNode["H2O"])
-        # self.mapToNode["H2O"].visited = 1
         for nodes in self.nodeList:
             if (nodes.getpin() > 1):
                 enz = set()
@@ -84,20 +82,11 @@ class search:
                 self.typeE += 1
                 nodes.label.add("E")
                 nodes.labelE.append(str(self.typeE))
-            # if nodes.visited == 0:
-            #     # print(nodes.name)
-            #     nodes.visited = 1
-            #     self.find_sec_part(nodes)
-                # if self.typeC == 10:
-                #     break
-                    # self.typeC += 1
-                # self.Cycle_Find(nodes, [], [])
         for node in self.nodeList:
             node.path[0]["related"].add(self.mapToNode["H2O"])
             node.path[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
-        #     assert len(nodes.labelA) == 0 or len(nodes.labelA) == 1
-        #     assert len(nodes.labelB) == 0 or len(nodes.labelB) == 1
-        #     assert len(nodes.labelD) == 0 or len(nodes.labelD) == 1
+            node.recordA[0]["related"].add(self.mapToNode["H2O"])
+            node.recordA[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
         self.ClearVis()
 
     def parsing(self, inputfile):
@@ -148,15 +137,11 @@ class search:
                             self.mapToEdge[self.reaction].addrea(self.mapToNode[species])
                             self.mapToNode[species].addDownedge(self.mapToEdge[self.reaction])
                             (self.mapToNode[species]).downEdgePar[self.mapToEdge[self.reaction]] = par
-                            # if (enzyme != 'spontaneous_reaction'): # and enzyme not in self.mapToNode[species].enzyme):
-                            #     #self.mapToNode[species].enzyme.add(enzyme)
                             self.mapToNode[species].addpout()
                         else:
                             self.mapToEdge[self.reaction].addpro(self.mapToNode[species])
                             self.mapToNode[species].addUpedge(self.mapToEdge[self.reaction])
                             (self.mapToNode[species]).upEdgePar[self.mapToEdge[self.reaction]] = par
-                            # if (enzyme != 'spontaneous_reaction'): # and enzyme not in self.mapToNode[species].enzyme):
-                            #     #self.mapToNode[species].enzyme.add(enzyme)
                             self.mapToNode[species].addpin()
 
     def parsing_label(self, inputfile):
@@ -299,7 +284,7 @@ class search:
 
     def main(self, input_species, notes):
         candidate = []
-        bfs = BFS(input_species[0], "A")
+        bfs = BFS(input_species[0], "A", self.mapToCnode, self.mapToClist)
         candidate0 = bfs.search()
         # record all the returned type A
         for label in candidate0:
@@ -310,7 +295,7 @@ class search:
         for species in candidate0:
             assert len(species.recordA) != 1
 
-        bfs = BFS(input_species[1], "A")
+        bfs = BFS(input_species[1], "A", self.mapToCnode, self.mapToClist)
         candidate1 = bfs.search()
         # check if there is any common label found between input0 and input1 path
         for label in candidate0:
@@ -323,9 +308,9 @@ class search:
             assert species.recordA != []
 
         for i in range(len(candidate)-1):
-            bfs0 = BFS(candidate[i], "C_side")
+            bfs0 = BFS(candidate[i], "C_side", self.mapToCnode, self.mapToClist)
             for j in range(i+1, len(candidate)):
-                bfs1 = BFS(input_species[j], "C_side")
+                bfs1 = BFS(input_species[j], "C_side", self.mapToCnode, self.mapToClist)
 
 
     def BFS_all(self, input_species, notes):
@@ -352,13 +337,6 @@ class search:
                 allnodes.add(node)
             for node in rec.getpro():
                 allnodes.add(node)
-        # print("*********** Find A : ************ ")
-        # c = 0
-        # for rec in product.getUpedge():
-        #     if c == 4:
-        #         break
-        #     c += 1
-        #     print(rec.show())
         print("*********** Find C : ************ ")
         for rec in self.mapToClist[labelC]:
             print(rec.show())
@@ -390,7 +368,7 @@ class search:
 
     def check_rea(self, enz, product):
         for catrec in enz.getCatedge():
-            if product in catrec.getrea() or self.mapToNode["NAD+"] in catrec.getrea() or self.mapToNode["H2O2"] in catrec.getpro():
+            if product in catrec.getrea():
                 return False
         return True
 

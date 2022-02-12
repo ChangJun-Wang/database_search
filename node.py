@@ -62,7 +62,7 @@ class node :
     def show(self):
         return (self.name)
 
-    def add_path(self, startPro, downRec, pathlist):
+    def AddPath(self, startPro, downRec, pathlist):
         for path in pathlist:
             tmp_path = {}
             tmp_path["related"] = path["related"].copy()
@@ -79,7 +79,7 @@ class node :
             assert tmp_path["pathnode"] != path["pathnode"]
             assert tmp_path != path
 
-    def check_RecSpecies(self, pathnode, downRec):
+    def CheckRecSpecies(self, pathnode, downRec):
         for species in (downRec.getrea()):
             if species in pathnode:
                 return False
@@ -91,14 +91,14 @@ class node :
                 return False
         return True
 
-    def check_EnzSpecies(self, pathnode, downRecs):
+    def CheckEnz(self, pathnode, downRecs):
         for rec in downRecs:
             for species in (rec.getpro()):
                 if species in pathnode: # or species.name == "NAD+":
                     return False
         return True
 
-    def check_downRec(self, downRec):
+    def CheckDownRec(self, downRec):
         tmp = []
         downRecs = []
         downRecs.append(downRec)
@@ -116,13 +116,13 @@ class node :
                         downRecs.append(rec)
 
         for path in self.path:
-            if self.check_RecSpecies(path["pathnode"], downRec) and self.check_EnzSpecies(path["pathnode"], downRecs):
+            if self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs):
                 tmp.append(path)
         return tmp
 
 
     # check these selected pathnode products whether they have been related species already or not.
-    def check_pro(self, pathlist):
+    def CheckProduct(self, pathlist):
         tmp = []
         for path in pathlist:
             if self not in path["related"]:

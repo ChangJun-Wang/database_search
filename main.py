@@ -28,7 +28,7 @@ if __name__ == '__main__':
     print("num of species : ", len(searcher.nodeList))
     
     temp = 0
-    fw = open("outputNode.txt", encoding="utf-8", mode='w')
+    # fw = open("outputNode.txt", encoding="utf-8", mode='w')
 
 
     print("typeA : ", searcher.typeA)
@@ -41,38 +41,38 @@ if __name__ == '__main__':
     # print(searcher.mapToCnode)
     # print(searcher.mapToCforbid)
 
-    for typeC in range(searcher.typeC):
-        fw.write("TypeC: " + str(typeC) + "\n")
-        if (str(typeC)) in searcher.mapToClist:
-            for rec in searcher.mapToClist[str(typeC)]:
-                fw.write(rec.show())
+    # for typeC in range(searcher.typeC):
+    #     fw.write("TypeC: " + str(typeC) + "\n")
+    #     if (str(typeC)) in searcher.mapToClist:
+    #         for rec in searcher.mapToClist[str(typeC)]:
+    #             fw.write(rec.show())
 
-            fw.write( "\n" + "CoreNode: ")
-            for node in searcher.mapToCnode[str(typeC)]:
-                fw.write( " " + node.show() )
+    #         fw.write( "\n" + "CoreNode: ")
+    #         for node in searcher.mapToCnode[str(typeC)]:
+    #             fw.write( " " + node.show() )
 
-            fw.write("\n" + "Forbidnode: " + "\n" )
-            for nodelist in searcher.mapToCforbid[str(typeC)]:
-                for node in nodelist:
-                    fw.write(node.show() + " ")
-                fw.write("\n")
-        fw.write("\n")
-    fw.close()
+    #         fw.write("\n" + "Forbidnode: " + "\n" )
+    #         for nodelist in searcher.mapToCforbid[str(typeC)]:
+    #             for node in nodelist:
+    #                 fw.write(node.show() + " ")
+    #             fw.write("\n")
+    #     fw.write("\n")
+    # fw.close()
 
 
     count = 0
-    notes = ["C","C","C"]
+    # notes = ["C","C","C"]
     print ("\n", "*************************************************")
 
     #specified input species :
     input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
     # input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
     # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["glucose"]]
-    notes         = ["A","A","B","C"]
+    # notes         = ["A","A","B","C"]
 
     searcher.BFS_all(input_species, "A")
     print (searcher.c)
-    searcher.ClearVis()
+    # searcher.ClearVis()
     # searcher.sec_input(input_species, notes)
     # searcher.ClearTmp()
 
