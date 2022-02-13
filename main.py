@@ -70,7 +70,7 @@ if __name__ == '__main__':
     # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["glucose"]]
     # notes         = ["A","A","B","C"]
 
-    searcher.BFS_all(input_species, "A")
+    searcher.main(input_species, "A")
     print (searcher.c)
     # searcher.ClearVis()
     # searcher.sec_input(input_species, notes)

@@ -84,9 +84,9 @@ class search:
                 nodes.labelE.append(str(self.typeE))
         for node in self.nodeList:
             node.path[0]["related"].add(self.mapToNode["H2O"])
-            node.path[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
+            node.path[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
             node.recordA[0]["related"].add(self.mapToNode["H2O"])
-            node.recordA[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
+            node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
         self.ClearVis()
 
     def parsing(self, inputfile):
@@ -293,11 +293,12 @@ class search:
         self.ClearPath()
 
         for species in candidate0:
-            assert len(species.recordA) != 1
+            assert len(species[0].recordA) != 1
 
         bfs = BFS(input_species[1], "A", self.mapToCnode, self.mapToClist)
         candidate1 = bfs.search()
         # check if there is any common label found between input0 and input1 path
+        print("start merging type A")
         for label in candidate0:
             if label in candidate1:
                 if label[0].MergeAll("A", label[1]):
@@ -306,11 +307,93 @@ class search:
 
         for species in candidate:
             assert species.recordA != []
+        for species in candidate[0:2]:
+            print("*********** From input : ************ ")
+            for rec in (species.recordA[0])["pathlist"]:
+                print(rec.show())
+                for node in rec.getrea():
+                    allnodes.add(node)
+                for node in rec.getenz():
+                    allnodes.add(node)
+                for node in rec.getpro():
+                    allnodes.add(node)
+            print("*********** To Type A  : ************ ")
 
-        for i in range(len(candidate)-1):
-            bfs0 = BFS(candidate[i], "C_side", self.mapToCnode, self.mapToClist)
-            for j in range(i+1, len(candidate)):
-                bfs1 = BFS(input_species[j], "C_side", self.mapToCnode, self.mapToClist)
+
+        # for i in range(len(candidate)-1):
+        #     bfs0 = BFS(candidate[i], "C_side", self.mapToCnode, self.mapToClist)
+        #     for j in range(i+1, len(candidate)):
+        #         bfs1 = BFS(input_species[j], "C_side", self.mapToCnode, self.mapToClist)
+
+
+    def check_rea(self, enz, product):
+        for catrec in enz.getCatedge():
+            if product in catrec.getrea():
+                return False
+        return True
+
+    def check(self, allnodes):
+        temp = ""
+        for enz in allnodes:
+            for reaction in enz.getCatedge():
+                count = 0
+                for reactant in reaction.getrea():
+                    if reactant in allnodes:
+                        count += 1
+                if count == len(reaction.getrea()):
+                    temp += (reaction.show()) + str(count)
+        return temp
+    
+    def ClearVis(self):
+        for nodes in self.nodeList:
+            nodes.visited  = 0
+            nodes.recStack = False
+        for rec in self.edgeList:
+            assert(len(rec.getenz()) == 1)
+            rec.visited  = 0
+            rec.recStack = False
+
+    def ClearTmp(self):
+        for nodes in self.nodeList:
+            nodes.tmp_vis  = 0
+            nodes.recStack = False
+        for rec in self.edgeList:
+            assert(len(rec.getenz()) == 1)
+            rec.tmp_vis  = 0
+            rec.recStack = False
+
+    
+    def ClearPath(self):
+        for node in self.nodeList:
+            path_tmp        = []
+            tmp             = {}
+            tmp["related"]  = set()
+            tmp["pathlist"] = []
+            tmp["pathenz"]  = []
+            tmp["pathnode"] = []
+            path_tmp.append(tmp)
+            node.path = path_tmp
+        for node in self.nodeList:
+            node.path[0]["related"].add(self.mapToNode["H2O"])
+            node.path[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
+
+    def ClearRecordA(self):
+        for node in self.nodeList:
+            record_tmp      = []
+            tmp             = {}
+            tmp["related"]  = set()
+            tmp["pathlist"] = []
+            tmp["pathenz"]  = []
+            tmp["pathnode"] = []
+            record_tmp.append(tmp)
+            node.recordA = record_tmp
+        for node in self.nodeList:
+            node.recordA[0]["related"].add(self.mapToNode["H2O"])
+            node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
+
+    def ClearRecordC(self):
+        for node in self.nodeList:
+            node.recordC = {}
 
 
     def BFS_all(self, input_species, notes):
@@ -364,73 +447,3 @@ class search:
                             break
         print("/////////////////all related reaction///////////////")
         print(self.check(allnodes))
-
-
-    def check_rea(self, enz, product):
-        for catrec in enz.getCatedge():
-            if product in catrec.getrea():
-                return False
-        return True
-
-    def check(self, allnodes):
-        temp = ""
-        for enz in allnodes:
-            for reaction in enz.getCatedge():
-                count = 0
-                for reactant in reaction.getrea():
-                    if reactant in allnodes:
-                        count += 1
-                if count == len(reaction.getrea()):
-                    temp += (reaction.show()) + str(count)
-        return temp
-    
-    def ClearVis(self):
-        for nodes in self.nodeList:
-            nodes.visited  = 0
-            nodes.recStack = False
-        for rec in self.edgeList:
-            assert(len(rec.getenz()) == 1)
-            rec.visited  = 0
-            rec.recStack = False
-
-    def ClearTmp(self):
-        for nodes in self.nodeList:
-            nodes.tmp_vis  = 0
-            nodes.recStack = False
-        for rec in self.edgeList:
-            assert(len(rec.getenz()) == 1)
-            rec.tmp_vis  = 0
-            rec.recStack = False
-
-    
-    def ClearPath(self):
-        path_tmp        = []
-        tmp             = {}
-        tmp["related"]  = set()
-        tmp["pathlist"] = []
-        tmp["pathenz"]  = []
-        tmp["pathnode"] = []
-        path_tmp.append(tmp)
-        for node in self.nodeList:
-            node.path = path_tmp
-        for node in self.nodeList:
-            node.path[0]["related"].add(self.mapToNode["H2O"])
-            node.path[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
-
-    def ClearRecordA(self):
-        record_tmp      = []
-        tmp             = {}
-        tmp["related"]  = set()
-        tmp["pathlist"] = []
-        tmp["pathenz"]  = []
-        tmp["pathnode"] = []
-        record_tmp.append(tmp)
-        for node in self.nodeList:
-            node.recordA = record_tmp
-        for node in self.nodeList:
-            node.recordA[0]["related"].add(self.mapToNode["H2O"])
-            node.recordA[0]["pathenz"].add(self.mapToNode["spontaneous_reaction"])
-
-    def ClearRecordC(self):
-        for node in self.nodeList:
-            node.recordC = {}

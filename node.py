@@ -142,7 +142,7 @@ class node :
         elif label == "C_side":
             pass
 
-    def CopyToPath(self, label, num):
+    def CopyToPath(self):
         # assert label == "A" or label == "C_side"
         # if label == "A":
         for record in self.recordA:
@@ -156,6 +156,8 @@ class node :
         #     pass
 
     def CheckMerge(self, path, record):
+        assert len(record["pathnode"]) <= 2
+        assert len(path["pathnode"]) <= 2
         for species in record["pathnode"]:
             if species in path["related"]:
                 return False
@@ -192,9 +194,11 @@ class node :
                     if self.CheckMerge(path, record):
                         path_tmp.append(self.Merge(path, record))
             self.recordA = path_tmp
+            # if path_tmp != []:
             return True
         elif label == "C_side":
             pass
+        return False
 
 
 

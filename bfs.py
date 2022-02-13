@@ -5,27 +5,29 @@ from node import node
 from edge import edge
 
 class BFS:
-	def __init__(self, startNode, Target_type, mapToCnode, mapToClist):
-		self.search_limit = 2
-		self.bfs 	  	  = [startNode]
-		self.type 	  	  = Target_type
-		self.candidate 	  = set()
+    def __init__(self, startNode, Target_type, mapToCnode, mapToClist):
+        self.search_limit = 1
+        self.bfs          = [startNode]
+        self.type         = Target_type
+        self.candidate    = set()
         self.mapToCnode   = mapToCnode
         self.mapToClist   = mapToClist
 
-	def search(self):
-		self.BFS()
+    def search(self):
+        self.BFS()
         return self.candidate
 		
-	def BFS(self):
+    def BFS(self):
 		# initializtion for starting node
         self.bfs[0].CopyToPath()
 
         # start to traverse
         count = 0
-        while (self.bfs != [] or count >= self.search_limit):
-        	count = count + 1
+        while (self.bfs != [] and count < self.search_limit):
+            print ("level :", count)
+            count = count + 1
             startPro = self.bfs.pop(0)
+            print ("bfslen :", len(self.bfs))
             for downRec in startPro.getDownedge():
                 # check whether this reaction has conflict to previous reactions and input
                 CheckDownRec = startPro.CheckDownRec(downRec)
@@ -33,16 +35,17 @@ class BFS:
                     for product in downRec.getpro():
                         CheckProduct = product.CheckProduct(CheckDownRec)
                         if CheckProduct != []:  #((product not in self.forbid_node) and (product not in startPro.related)):
-                            self.bfs.append(product)
+                            if product not in self.bfs:
+                                self.bfs.append(product)
                             product.AddPath(startPro, downRec, CheckProduct)
                             assert product.path != CheckProduct
                             assert len(product.path) != 0
                             if (self.type in product.label): # and (product.getpin() > 2):
-                            	assert self.type == "A" or self.type == "C_side"
-                            	if self.type == "A":
-                            		self.foundA(product)
-                            	elif self.type == "C_side":
-                            		self.foundC_side(product)
+                                assert self.type == "A" or self.type == "C_side"
+                                if self.type == "A" and (product.getpin() > 2):
+                                    self.foundA(product)
+                                elif self.type == "C_side":
+                                    self.foundC_side(product)
                             	# elif self.type == "B":
                             	# 	pass
                             	# elif self.type == "C":
