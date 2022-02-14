@@ -1,6 +1,15 @@
 import copy
 
-from path import path
+class path:
+    def __init__(self, ID):
+        self.id       = ID
+        self.related  = set()
+        self.pathlist = []
+        self.pathenz  = []
+        self.pathnode = []
+
+        
+
 
 class node :
     def __init__(self, name):
@@ -20,9 +29,12 @@ class node :
         self.downEdgePar = {}
         self.pin      = 0
         self.pout     = 0
-        self.visited  = 0
+        self.level    = 0
         self.label    = set()
         self.path     = path_tmp
+
+        # self.path     = {}
+        # self.pathID   = []
         self.recordA  = copy.deepcopy(path_tmp)
         self.recordC  = {}
         # self.path_tmp = []

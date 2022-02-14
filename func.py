@@ -285,12 +285,15 @@ class search:
     def main(self, input_species, notes):
         candidate = []
         bfs = BFS(input_species[0], "A", self.mapToCnode, self.mapToClist)
+        bfs.BuildStart(input_species)
         candidate0 = bfs.search()
         # record all the returned type A
         for label in candidate0:
             # copy path to record
             label[0].CopyToRecord("A", label[1])
         self.ClearPath()
+
+        self.ClearLevel()
 
         for species in candidate0:
             assert len(species[0].recordA) != 1
@@ -305,18 +308,21 @@ class search:
                     candidate.append(label[0])
         self.ClearPath()
 
+        self.ClearLevel()
+
         for species in candidate:
             assert species.recordA != []
-        for species in candidate[0:2]:
+        for species in candidate:
             print("*********** From input : ************ ")
+            print(species.show())
             for rec in (species.recordA[0])["pathlist"]:
                 print(rec.show())
-                for node in rec.getrea():
-                    allnodes.add(node)
-                for node in rec.getenz():
-                    allnodes.add(node)
-                for node in rec.getpro():
-                    allnodes.add(node)
+                # for node in rec.getrea():
+                #     allnodes.add(node)
+                # for node in rec.getenz():
+                #     allnodes.add(node)
+                # for node in rec.getpro():
+                #     allnodes.add(node)
             print("*********** To Type A  : ************ ")
 
 
@@ -395,6 +401,9 @@ class search:
         for node in self.nodeList:
             node.recordC = {}
 
+    def ClearLevel(self):
+        for node in self.nodeList:
+            node.level = 0
 
     def BFS_all(self, input_species, notes):
         allnodes = set()
