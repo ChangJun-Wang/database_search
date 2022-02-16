@@ -30,9 +30,6 @@ class search:
         self.edgeList    = []
         self.HashTable   = {}
         self.HashCollect = {}
-
-        self.record      = {}
-
         self.reaction    = 0
         self.typeA       = 0
         self.typeB       = 0
@@ -264,11 +261,11 @@ class search:
                                     for rea in edge1.getrea():
                                         if rea != node1:
                                             rea.label.add("C_side")
-                                            rea.labelC_side.append(self.typeC)
+                                            rea.labelC_side.append(self.typeC*2)
                                     for rea in edge2.getrea():
                                         if rea != node2:
                                             rea.label.add("C_side")
-                                            rea.labelC_side.append(self.typeC)
+                                            rea.labelC_side.append(self.typeC*2 + 1)
                                     self.typeC += 1
                                     return True
         return False
@@ -284,19 +281,22 @@ class search:
 
     def main(self, input_species, notes):
         candidate = []
+        result    = []
         bfs = BFS(input_species[0], "A", self.mapToCnode, self.mapToClist)
         bfs.BuildStart(input_species)
         candidate0 = bfs.search()
         # record all the returned type A
-        for label in candidate0:
-            # copy path to record
-            label[0].CopyToRecord("A", label[1])
+        # print (len(candidate0))
+        for species in candidate0:
+            species[0].CopyToRecord("A", species[1])
+        # print (len(candidate0))
+
         self.ClearPath()
 
         self.ClearLevel()
 
-        for species in candidate0:
-            assert len(species[0].recordA) != 1
+        # for species in candidate0:
+        #     assert len(species[0].recordA) != 1
 
         bfs = BFS(input_species[1], "A", self.mapToCnode, self.mapToClist)
         candidate1 = bfs.search()
@@ -312,6 +312,28 @@ class search:
 
         for species in candidate:
             assert species.recordA != []
+
+        for i in range(len(candidate)-1):
+            bfs0 = BFS(candidate[i], "C_side", self.mapToCnode, self.mapToClist)
+            candidate0 = bfs0.search()
+            for species in candidate0:
+                species[0].CopyToSide(species[1])
+            self.ClearPath()
+            self.ClearLevel()
+
+            for j in range(i, len(candidate)):
+                bfs1 = BFS(input_species[j], "C_side", self.mapToCnode, self.mapToClist)
+                candidate1 = bfs1.search()
+                print("start merging type C_side")
+                for label0 in candidate0:
+                    for label1 in candidate1:
+                        if int(label0[1]/2) == int(label1[1]/2):
+                            accept = self.MergeCside(label0, label1)
+                            if accept != []:
+                                result.append(accept)
+                self.ClearPath()
+                self.ClearLevel()
+
         for species in candidate:
             print("*********** From input : ************ ")
             print(species.show())
@@ -325,11 +347,60 @@ class search:
                 #     allnodes.add(node)
             print("*********** To Type A  : ************ ")
 
+////////////////////////////////////////////////////////////////////
+    def Merge(self, path, record):
+        tmp    = {}
+        tmp["related"]  = path["related"].copy()
+        tmp["pathlist"] = path["pathlist"].copy()
+        tmp["pathenz"]  = path["pathenz"].copy()
+        tmp["pathnode"] = path["pathnode"].copy()
 
-        # for i in range(len(candidate)-1):
-        #     bfs0 = BFS(candidate[i], "C_side", self.mapToCnode, self.mapToClist)
-        #     for j in range(i+1, len(candidate)):
-        #         bfs1 = BFS(input_species[j], "C_side", self.mapToCnode, self.mapToClist)
+        for species in record["related"]:
+            tmp["related"].add(species)
+        for rec in record["pathlist"]:
+            tmp["pathlist"].append(rec)
+        for enz in record["pathenz"]:
+            tmp["pathenz"].append(enz)
+        for species in record["pathnode"]:
+            tmp["pathnode"].append(species)
+
+        return tmp
+
+    def MergeCside(self, label0, label1):
+        path_tmp = []
+        for path in label0[0].path:
+            for sidepath in label1[0].sidepath:
+                if self.CheckMerge(path, sidepath):
+                    tmp = self.Merge(path, path_tmp)
+
+        self.recordA = path_tmp
+        return path_tmp
+
+    def CheckMerge(self, path0, path1):
+        for species in path1["pathnode"]:
+            if species in path0["related"]:
+                return False
+        for species in path0["pathnode"]:
+            if species in path1["related"]:
+                return False
+        return True
+
+    def CheckLabelC(self, input_node):
+        for c_side in product.labelC_side:
+            for path in product.path:
+                if self.CheckCycle(path, c_side):
+                    product.AddPath(startPro, downRec, CheckProduct)
+                    return (True, product, c_side)
+        return (False, node(None), None)
+
+    def CheckCycle(self, path, c_side):
+        for node in self.mapToCnode[c_side]:
+            if node in path["related"]:
+                return False
+        return True
+
+/////////////////////////////////////////////////////////////////////////
+
 
 
     def check_rea(self, enz, product):
@@ -456,3 +527,4 @@ class search:
                             break
         print("/////////////////all related reaction///////////////")
         print(self.check(allnodes))
+

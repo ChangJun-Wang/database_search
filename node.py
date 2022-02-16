@@ -1,16 +1,5 @@
 import copy
 
-class path:
-    def __init__(self, ID):
-        self.id       = ID
-        self.related  = set()
-        self.pathlist = []
-        self.pathenz  = []
-        self.pathnode = []
-
-        
-
-
 class node :
     def __init__(self, name):
         path_tmp        = []
@@ -32,6 +21,7 @@ class node :
         self.level    = 0
         self.label    = set()
         self.path     = path_tmp
+        self.sidepath = copy.deepcopy(path_tmp)
 
         # self.path     = {}
         # self.pathID   = []
@@ -75,21 +65,24 @@ class node :
         return (self.name)
 
     def AddPath(self, startPro, downRec, pathlist):
+        tmpList = []
         for path in pathlist:
-            tmp_path = {}
-            tmp_path["related"] = path["related"].copy()
+            tmp = {}
+            tmp["related"] = path["related"].copy()
             for i in downRec.getrea():
-                tmp_path["related"].add(i)
-            tmp_path["pathlist"] = path["pathlist"].copy()
-            tmp_path["pathlist"].append(downRec)
-            tmp_path["pathnode"] = path["pathnode"].copy()
-            tmp_path["pathnode"].append(startPro)
-            tmp_path["pathenz"] = path["pathenz"].copy()
-            tmp_path["pathenz"].append(downRec.getenz()[0])
-            self.path.append(tmp_path)
-            assert tmp_path["pathlist"] != path["pathlist"]
-            assert tmp_path["pathnode"] != path["pathnode"]
-            assert tmp_path != path
+                if i != startPro:
+                    tmp["related"].add(i)
+            tmp["pathlist"] = path["pathlist"].copy()
+            tmp["pathlist"].append(downRec)
+            tmp["pathnode"] = path["pathnode"].copy()
+            tmp["pathnode"].append(startPro)
+            tmp["pathenz"] = path["pathenz"].copy()
+            tmp["pathenz"].append(downRec.getenz()[0])
+            tmpList.append(tmp)
+            assert tmp["pathlist"] != path["pathlist"]
+            assert tmp["pathnode"] != path["pathnode"]
+            assert tmp != path
+        self.path = tmpList
 
     def CheckRecSpecies(self, pathnode, downRec):
         for species in (downRec.getrea()):
@@ -143,6 +136,7 @@ class node :
 
     def CopyToRecord(self, label, num):
         assert label == "A" or label == "C_side"
+        tmpList = []
         if label == "A":
             for path in self.path:
                 tmp    = {}
@@ -150,31 +144,43 @@ class node :
                 tmp["pathlist"] = path["pathlist"].copy()
                 tmp["pathenz"]  = path["pathenz"].copy()
                 tmp["pathnode"] = path["pathnode"].copy()
-                self.recordA.append(tmp)
+                tmpList.append(tmp)
+            self.recordA = tmpList
         elif label == "C_side":
             pass
 
     def CopyToPath(self):
         # assert label == "A" or label == "C_side"
         # if label == "A":
+        tmpList = []
         for record in self.recordA:
             tmp    = {}
             tmp["related"]  = record["related"].copy()
             tmp["pathlist"] = record["pathlist"].copy()
             tmp["pathenz"]  = record["pathenz"].copy()
             tmp["pathnode"] = record["pathnode"].copy()
-            self.path.append(tmp)
+            tmpList.append(tmp)
+        self.path = tmpList
         # elif label == "C_side":
         #     pass
 
-    def CheckMerge(self, path, record):
-        assert len(record["pathnode"]) <= 2
-        assert len(path["pathnode"]) <= 2
-        for species in record["pathnode"]:
-            if species in path["related"]:
+    def CopyToSide(self):
+        tmpList = []
+        for path in self.path:
+            tmp    = {}
+            tmp["related"]  = path["related"].copy()
+            tmp["pathlist"] = path["pathlist"].copy()
+            tmp["pathenz"]  = path["pathenz"].copy()
+            tmp["pathnode"] = path["pathnode"].copy()
+            tmpList.append(tmp)
+        self.sidepath = tmpList
+
+    def CheckMerge(self, path0, path1):
+        for species in path1["pathnode"]:
+            if species in path0["related"]:
                 return False
-        for species in path["pathnode"]:
-            if species in record["related"]:
+        for species in path0["pathnode"]:
+            if species in path1["related"]:
                 return False
         return True
 
@@ -211,8 +217,3 @@ class node :
         elif label == "C_side":
             pass
         return False
-
-
-
-
-
