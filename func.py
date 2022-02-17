@@ -317,27 +317,41 @@ class search:
             bfs0 = BFS(candidate[i], "C_side", self.mapToCnode, self.mapToClist)
             candidate0 = bfs0.search()
             for species in candidate0:
-                species[0].CopyToSide(species[1])
+                species[0].CopyToSide()
             self.ClearPath()
             self.ClearLevel()
 
             for j in range(i, len(candidate)):
-                bfs1 = BFS(input_species[j], "C_side", self.mapToCnode, self.mapToClist)
+                bfs1 = BFS(candidate[j], "C_side", self.mapToCnode, self.mapToClist)
                 candidate1 = bfs1.search()
                 print("start merging type C_side")
                 for label0 in candidate0:
                     for label1 in candidate1:
-                        if int(label0[1]/2) == int(label1[1]/2):
+                        if int(int(label0[1])/2) == int(int(label1[1])/2):
                             accept = self.MergeCside(label0, label1)
-                            if accept != []:
+                            if accept != {}:
                                 result.append(accept)
                 self.ClearPath()
                 self.ClearLevel()
 
-        for species in candidate:
+        # for species in candidate:
+        #     print("*********** From input : ************ ")
+        #     print(species.show())
+        #     for rec in (species.recordA[0])["pathlist"]:
+        #         print(rec.show())
+        #         # for node in rec.getrea():
+        #         #     allnodes.add(node)
+        #         # for node in rec.getenz():
+        #         #     allnodes.add(node)
+        #         # for node in rec.getpro():
+        #         #     allnodes.add(node)
+        #     print("*********** To Type A  : ************ ")
+
+        print(len(result))
+        for path in result:
             print("*********** From input : ************ ")
-            print(species.show())
-            for rec in (species.recordA[0])["pathlist"]:
+            # print(path)
+            for rec in path["pathlist"]:
                 print(rec.show())
                 # for node in rec.getrea():
                 #     allnodes.add(node)
@@ -347,7 +361,8 @@ class search:
                 #     allnodes.add(node)
             print("*********** To Type A  : ************ ")
 
-////////////////////////////////////////////////////////////////////
+# ////////////////////////////////////////////////////////////////////
+
     def Merge(self, path, record):
         tmp    = {}
         tmp["related"]  = path["related"].copy()
@@ -367,13 +382,27 @@ class search:
         return tmp
 
     def MergeCside(self, label0, label1):
-        path_tmp = []
-        for path in label0[0].path:
-            for sidepath in label1[0].sidepath:
+        path_tmp = {}
+        for sidepath in label0[0].sidepath:
+            for path in label1[0].path:
                 if self.CheckMerge(path, sidepath):
-                    tmp = self.Merge(path, path_tmp)
-
-        self.recordA = path_tmp
+                    path0 = self.Merge(path, sidepath)
+                labelnum = int(int(label0[1])/2)
+                pathnode = self.mapToCnode[str(labelnum)].copy()
+                related  = []
+                enz      = []
+                for rec in self.mapToClist[str(labelnum)]:
+                    enz.append(rec.getenz())
+                    for rea in rec.getrea():
+                        if rea not in pathnode:
+                            related.append(rea)
+                path1 = {}
+                path1["pathnode"] = pathnode
+                path1["related"]  = related
+                path1["pathlist"] = self.mapToClist[str(labelnum)]
+                path1["pathenz"]  = enz
+                if self.CheckMerge(path0, path1): #and self.CheckLabelC(path0, path1):
+                    path_tmp = self.Merge(path0, path1)
         return path_tmp
 
     def CheckMerge(self, path0, path1):
@@ -385,13 +414,13 @@ class search:
                 return False
         return True
 
-    def CheckLabelC(self, input_node):
+    def CheckLabelC(self, path0, path1):
         for c_side in product.labelC_side:
             for path in product.path:
                 if self.CheckCycle(path, c_side):
                     product.AddPath(startPro, downRec, CheckProduct)
-                    return (True, product, c_side)
-        return (False, node(None), None)
+                    return True
+        return False
 
     def CheckCycle(self, path, c_side):
         for node in self.mapToCnode[c_side]:
@@ -399,7 +428,7 @@ class search:
                 return False
         return True
 
-/////////////////////////////////////////////////////////////////////////
+# /////////////////////////////////////////////////////////////////////////
 
 
 
