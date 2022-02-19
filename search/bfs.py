@@ -12,21 +12,10 @@ class BFS:
         self.candidate    = set()
         self.mapToCnode   = mapToCnode
         self.mapToClist   = mapToClist
-
-    # def search(self):
-    #     self.BuildStart(input_species)
-    #     input_species[0].CopyToRecord("A", 0)
-    #     input_species[1].CopyToRecord("A", 0)
-    #     self.BFS()
-    #     return self.candidate
 	
     def BuildStart(self, input_species):
-        # (input_species[0].path[0])["pathnode"].append(input_species[0])
         (input_species[0].path[0])["pathnode"].append(input_species[1])
         (input_species[1].path[0])["pathnode"].append(input_species[0])
-        # (input_species[1].path[0])["pathnode"].append(input_species[1])
-        input_species[0].CopyToRecord("A", 0)
-        input_species[1].CopyToRecord("A", 0)
 
     def search(self):
 		# initializtion for starting node
@@ -34,12 +23,9 @@ class BFS:
 
         # start to traverse
         count = 0
-        while (self.bfs != []): # and count < self.search_limit):
-            # print ("level :", count)
-            # count = count + 1
+        while (self.bfs != []):
             startPro = self.bfs.pop(0)
-            # print ("bfslen :", len(self.bfs))
-            if (self.type in startPro.label): # and (startPro.getpin() > 2):
+            if (self.type in startPro.label):
                 assert self.type == "A" or self.type == "C_side"
                 if self.type == "A" and (startPro.getpin() > 2):
                     # print ("find A")
@@ -54,7 +40,7 @@ class BFS:
                     if CheckDownRec != []:
                         for product in downRec.getpro():
                             CheckProduct = product.CheckProduct(CheckDownRec)
-                            if CheckProduct != []:  # ((product not in self.forbid_node) and (product not in startPro.related)):
+                            if CheckProduct != []:
                                 product.AddPath(startPro, downRec, CheckProduct)
                                 product.level = startPro.level + 1
                                 if (product not in self.bfs and product.level <= self.search_limit):

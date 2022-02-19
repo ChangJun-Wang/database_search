@@ -5,13 +5,12 @@ class edge :
         # self.tmp_path = []
         self.toRea    = set()  #
         self.toPro    = set()  #
-        self.toEnz    = []
+        self.toEnz    = ""
         self.reverse  = False
         self.label    = set()
         self.labelC   = []
         self.visited  = 0
-        # self.tmp_vis  = 0
-        # self.recStack = False
+        
     def getpro(self):
         return self.toPro
     def getrea(self):
@@ -23,11 +22,11 @@ class edge :
         (self.toPro).add(pro)
     def addrea(self, rea):
         (self.toRea).add(rea)
-    def addenz(self, enz):
-        (self.toEnz).append(enz)
+    def setenz(self, enz):
+        (self.toEnz) =  (enz)
 
     def activated(self, added_species):
-        if self.toEnz[0] not in added_species:
+        if self.toEnz not in added_species:
             return False
         for rea in self.toRea:
             if rea not in added_species:
@@ -40,8 +39,7 @@ class edge :
 
         for i in self.getrea():
             temp +=  (str(i.name)) + " "
-        for i in self.getenz():
-            temp +=  " =[ " + (str(i.name)) + " ]=> "
+        temp +=  " =[ " + self.getenz().name + " ]=> "
         for i in self.getpro():
             temp += (str(i.name)) + " "
         return temp

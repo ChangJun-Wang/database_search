@@ -1,13 +1,3 @@
-import sys
- 
-# the setrecursionlimit function is
-# used to modify the default recursion
-# limit set by python. Using this,
-# we can increase the recursion limit
-# to satisfy our needs
- 
-sys.setrecursionlimit(10**6)
-
 from node import node
 
 from edge import edge
@@ -53,11 +43,30 @@ class search:
 
     def initialize(self):
         for nodes in self.nodeList:
+            pathtmp             = {}
+            sidetmp             = {}
+            rectmp              = {}
+            pathtmp["related"]  = set()
+            pathtmp["pathlist"] = []
+            pathtmp["pathenz"]  = []
+            pathtmp["pathnode"] = []
+            rectmp["related"]   = set()
+            rectmp["pathlist"]  = []
+            rectmp["pathenz"]   = []
+            rectmp["pathnode"]  = []
+            sidetmp["related"]  = set()
+            sidetmp["pathlist"] = []
+            sidetmp["pathenz"]  = []
+            sidetmp["pathnode"] = []
+            (nodes.path).append(pathtmp)
+            (nodes.sidepath).append(sidetmp)
+            (nodes.recordA).append(rectmp)
+
             if (nodes.getpin() > 1):
                 enz = set()
                 for rec in nodes.getUpedge():
-                    if rec.getenz()[0] != "spontaneous_reaction":
-                        enz.add(rec.getenz()[0])
+                    if rec.getenz() != "spontaneous_reaction":
+                        enz.add(rec.getenz())
                 self.typeA += 1
                 nodes.setpin(len(enz))
                 nodes.label.add("A")
@@ -65,8 +74,8 @@ class search:
             if (nodes.getpout() > 1):
                 enz = set()
                 for rec in nodes.getDownedge():
-                    if rec.getenz()[0] != "spontaneous_reaction":
-                        enz.add(rec.getenz()[0])
+                    if rec.getenz() != "spontaneous_reaction":
+                        enz.add(rec.getenz())
                 self.typeB += 1
                 nodes.setpout(len(enz))
                 nodes.label.add("B")
@@ -79,11 +88,6 @@ class search:
                 self.typeE += 1
                 nodes.label.add("E")
                 nodes.labelE.append(str(self.typeE))
-        for node in self.nodeList:
-            node.path[0]["related"].add(self.mapToNode["H2O"])
-            node.path[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
-            node.recordA[0]["related"].add(self.mapToNode["H2O"])
-            node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
         self.ClearVis()
 
     def parsing(self, inputfile):
@@ -109,17 +113,13 @@ class search:
                 self.mapToEdge[self.reaction] = edge(self.reaction)
                 self.edgeList.append(self.mapToEdge[self.reaction])
 
-                self.mapToEdge[self.reaction].addenz(self.mapToNode[enzyme])
+                self.mapToEdge[self.reaction].setenz(self.mapToNode[enzyme])
                 self.mapToNode[enzyme].addCatedge(self.mapToEdge[self.reaction])
 
                 for species in tmpList[1:]:
                     HashKey = HashKey + species[0]
                     if (species == "="):
                         is_product = 1
-                    # elif(species == "{r}"):
-                    #     self.mapToEdge[self.reaction].reverse = True
-                    # elif(species == "{ir}" or species == "?" or species == "more"):
-                    #     pass
                     else:
                         par = 1
                         if len(species) > 2:
@@ -188,97 +188,6 @@ class search:
         print("start initializing")
         self.initialize()
 
-    def check_rec(self, edge, nodelist):
-        temp = []
-        for rea in edge.getrea():
-            if (rea not in nodelist) and (rea != self.mapToNode["H2O"]):
-                temp.append(rea)
-        return temp
-
-    def check_activated(self, edgelist):
-        assert(len(edgelist) == 3)
-        enzyme    = set()
-        species   = set()
-        temp      = []
-
-        for rec in edgelist:
-            enzyme.add(rec.getenz()[0])
-            for i in rec.getrea():
-                species.add(i)
-            for i in rec.getpro():
-                species.add(i)
-        for enz in enzyme:
-            for rec in enz.getCatedge():
-                if rec not in edgelist:
-                    check = self.check_rec(rec, species)
-                    temp.append(check)
-                    if check == []:
-                        return False
-        self.mapToCforbid[self.typeC] = temp
-        return True
-
-
-    def check_legal(self, node1, edge1, node2, edge2):
-        for label in edge1.labelC:
-            if label in edge2.labelC:
-                return False
-        for species1 in edge1.getrea():
-            if (species1 != node1 and species1 != self.mapToNode["H2O"] 
-                and "B" in species1.label):
-                for species2 in edge2.getrea():
-                    if (species2 != node2 and species2 != species1 
-                        and species2 != self.mapToNode["H2O"]
-                        and "B" in species2.label):
-                        for downRec in species1.getDownedge():
-                            if (downRec in species2.getDownedge() 
-                                and species1 not in downRec.getpro() and species2 not in downRec.getpro()):
-                                edgelist = []
-                                edgelist.append(edge1)
-                                edgelist.append(edge2)
-                                edgelist.append(downRec)
-                                if self.check_activated(edgelist):
-                                    print("find typeC", self.typeC)
-                                    self.mapToClist[self.typeC] = []
-                                    self.mapToClist[self.typeC].append(edge1)
-                                    self.mapToClist[self.typeC].append(edge2)
-                                    self.mapToClist[self.typeC].append(downRec)
-                                    self.mapToCnode[self.typeC] = []
-                                    self.mapToCnode[self.typeC].append(node1)
-                                    self.mapToCnode[self.typeC].append(node2)
-                                    self.mapToCnode[self.typeC].append(species1)
-                                    self.mapToCnode[self.typeC].append(species2)
-                                    assert(len(self.mapToClist[self.typeC]) == 3)
-                                    assert(len(self.mapToCnode[self.typeC]) == 4)
-
-                                    node1.label.add("C")
-                                    node2.label.add("C")
-                                    edge1.label.add("C")
-                                    edge2.label.add("C")
-                                    node1.labelC.append(self.typeC)
-                                    node2.labelC.append(self.typeC)
-                                    edge1.labelC.append(self.typeC)
-                                    edge2.labelC.append(self.typeC)
-                                    for rea in edge1.getrea():
-                                        if rea != node1:
-                                            rea.label.add("C_side")
-                                            rea.labelC_side.append(self.typeC)
-                                    for rea in edge2.getrea():
-                                        if rea != node2:
-                                            rea.label.add("C_side")
-                                            rea.labelC_side.append(self.typeC)
-                                    self.typeC += 1
-                                    return True
-        return False
-
-    def find_sec_part(self, node):
-        for downRec in node.getDownedge():
-            for product in downRec.getpro():
-                if product.visited == 0:
-                    for d_downRec in product.getDownedge():
-                        if node in d_downRec.getpro():
-                            return self.check_legal(node, downRec, product, d_downRec)
-        return False        
-
     def main(self, input_species, notes):
         candidate = []
         result    = []
@@ -286,17 +195,12 @@ class search:
         bfs.BuildStart(input_species)
         candidate0 = bfs.search()
         # record all the returned type A
-        # print (len(candidate0))
         for species in candidate0:
             species[0].CopyToRecord("A", species[1])
-        # print (len(candidate0))
-
         self.ClearPath()
-
         self.ClearLevel()
 
-        # for species in candidate0:
-        #     assert len(species[0].recordA) != 1
+        print(len(candidate0))
 
         bfs = BFS(input_species[1], "A", self.mapToCnode, self.mapToClist)
         candidate1 = bfs.search()
@@ -309,6 +213,8 @@ class search:
         self.ClearPath()
 
         self.ClearLevel()
+
+        print(len(candidate1))
 
         for species in candidate:
             assert species.recordA != []
@@ -341,8 +247,7 @@ class search:
         #         print(rec.show())
         #         # for node in rec.getrea():
         #         #     allnodes.add(node)
-        #         # for node in rec.getenz():
-        #         #     allnodes.add(node)
+        #         # allnodes.add(rec.getenz())
         #         # for node in rec.getpro():
         #         #     allnodes.add(node)
         #     print("*********** To Type A  : ************ ")
@@ -355,13 +260,10 @@ class search:
         #         print(rec.show())
         #         # for node in rec.getrea():
         #         #     allnodes.add(node)
-        #         # for node in rec.getenz():
-        #         #     allnodes.add(node)
+        #         # allnodes.add(rec.getenz())
         #         # for node in rec.getpro():
         #         #     allnodes.add(node)
         #     print("*********** To Type A  : ************ ")
-
-# ////////////////////////////////////////////////////////////////////
 
     def Merge(self, path, record):
         tmp    = {}
@@ -387,7 +289,7 @@ class search:
             for path in label1[0].path:
                 if self.CheckMerge(path, sidepath):
                     path0 = self.Merge(path, sidepath)
-                labelnum = int(int(label0[1])/2)
+                labelnum = int(label0[1])
                 pathnode = self.mapToCnode[str(labelnum)].copy()
                 related  = []
                 enz      = []
@@ -414,45 +316,37 @@ class search:
                 return False
         return True
 
-    def CheckLabelC(self, path0, path1):
-        AllSpecies = set()
-        AllRec     = set()
-        for species in path0["related"]:
-            AllSpecies.add(species)
-        for species in path1["related"]:
-            AllSpecies.add(species)
-        for species in path0["pathnode"]:
-            AllSpecies.add(species)
-        for species in path1["pathnode"]:
-            AllSpecies.add(species)
+    # def CheckLabelC(self, path0, path1):
+    #     AllSpecies = set()
+    #     AllRec     = set()
+    #     for species in path0["related"]:
+    #         AllSpecies.add(species)
+    #     for species in path1["related"]:
+    #         AllSpecies.add(species)
+    #     for species in path0["pathnode"]:
+    #         AllSpecies.add(species)
+    #     for species in path1["pathnode"]:
+    #         AllSpecies.add(species)
 
-        for enz in path0["pathenz"]:
-            for rec in enz.getCatedge():
-                AllRec.add(rec)
-        for enz in path1["pathenz"]:
-            for rec in enz.getCatedge():
-                AllRec.add(rec)
-
-
-
-
-
-        for c_side in product.labelC_side:
-            for path in product.path:
-                if self.CheckCycle(path, c_side):
-                    product.AddPath(startPro, downRec, CheckProduct)
-                    return True
-        return False
+    #     for enz in path0["pathenz"]:
+    #         for rec in enz.getCatedge():
+    #             AllRec.add(rec)
+    #     for enz in path1["pathenz"]:
+    #         for rec in enz.getCatedge():
+    #             AllRec.add(rec)
+#######################################################
+    #     for c_side in product.labelC_side:
+    #         for path in product.path:
+    #             if self.CheckCycle(path, c_side):
+    #                 product.AddPath(startPro, downRec, CheckProduct)
+    #                 return True
+    #     return False
 
     def CheckCycle(self, path, c_side):
         for node in self.mapToCnode[c_side]:
             if node in path["related"]:
                 return False
         return True
-
-# /////////////////////////////////////////////////////////////////////////
-
-
 
     def check_rea(self, enz, product):
         for catrec in enz.getCatedge():
@@ -477,7 +371,6 @@ class search:
             nodes.visited  = 0
             nodes.recStack = False
         for rec in self.edgeList:
-            assert(len(rec.getenz()) == 1)
             rec.visited  = 0
             rec.recStack = False
 
@@ -486,7 +379,6 @@ class search:
             nodes.tmp_vis  = 0
             nodes.recStack = False
         for rec in self.edgeList:
-            assert(len(rec.getenz()) == 1)
             rec.tmp_vis  = 0
             rec.recStack = False
 
@@ -535,8 +427,7 @@ class search:
             print(rec.show())
             for node in rec.getrea():
                 allnodes.add(node)
-            for node in rec.getenz():
-                allnodes.add(node)
+            allnodes.add(rec.getenz())
             for node in rec.getpro():
                 allnodes.add(node)
         print("*********** From i1 : ************ ")
@@ -547,8 +438,7 @@ class search:
             print(rec.show())
             for node in rec.getrea():
                 allnodes.add(node)
-            for node in rec.getenz():
-                allnodes.add(node)
+            allnodes.add(rec.getenz())
             for node in rec.getpro():
                 allnodes.add(node)
         print("*********** Find C : ************ ")
@@ -556,8 +446,7 @@ class search:
             print(rec.show())
             for node in rec.getrea():
                 allnodes.add(node)
-            for node in rec.getenz():
-                allnodes.add(node)
+            allnodes.add(rec.getenz())
             for node in rec.getpro():
                 allnodes.add(node)
 
@@ -566,13 +455,12 @@ class search:
             if i != findC:
                 print(i.show())
                 for rec in i.getUpedge():
-                    if (rec.getenz()[0] != self.mapToNode["spontaneous_reaction"]):
-                        if self. check_rea(rec.getenz()[0], i):
+                    if (rec.getenz() != self.mapToNode["spontaneous_reaction"]):
+                        if self. check_rea(rec.getenz(), i):
                             print(rec.show())
                             for node in rec.getrea():
                                 allnodes.add(node)
-                            for node in rec.getenz():
-                                allnodes.add(node)
+                            allnodes.add(rec.getenz())
                             for node in rec.getpro():
                                 allnodes.add(node)
                             break

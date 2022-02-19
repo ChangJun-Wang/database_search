@@ -1,14 +1,5 @@
-import copy
-
 class node :
     def __init__(self, name):
-        path_tmp        = []
-        tmp             = {}
-        tmp["related"]  = set()
-        tmp["pathlist"] = []
-        tmp["pathenz"]  = []
-        tmp["pathnode"] = []
-        path_tmp.append(tmp)
         self.name     = name
         self.enable   = True
         self.upEdge   = []
@@ -20,14 +11,12 @@ class node :
         self.pout     = 0
         self.level    = 0
         self.label    = set()
-        self.path     = path_tmp
-        self.sidepath = copy.deepcopy(path_tmp)
+        self.path     = []
+        self.sidepath = []
 
-        # self.path     = {}
-        # self.pathID   = []
-        self.recordA  = copy.deepcopy(path_tmp)
+        self.recordA  = []
         self.recordC  = {}
-        # self.path_tmp = []
+
         self.labelA   = ""
         self.labelB   = ""
         self.labelC   = []
@@ -77,7 +66,7 @@ class node :
             tmp["pathnode"] = path["pathnode"].copy()
             tmp["pathnode"].append(startPro)
             tmp["pathenz"] = path["pathenz"].copy()
-            tmp["pathenz"].append(downRec.getenz()[0])
+            tmp["pathenz"].append(downRec.getenz())
             tmpList.append(tmp)
             assert tmp["pathlist"] != path["pathlist"]
             assert tmp["pathnode"] != path["pathnode"]
@@ -91,15 +80,14 @@ class node :
         for species in (downRec.getpro()):
             if species in pathnode:
                 return False
-        for species in (downRec.getenz()):
-            if species in pathnode:
-                return False
+        if downRec.getenz() in pathnode:
+            return False
         return True
 
     def CheckEnz(self, pathnode, downRecs):
         for rec in downRecs:
             for species in (rec.getpro()):
-                if species in pathnode: # or species.name == "NAD+":
+                if species in pathnode:
                     return False
         return True
 
@@ -110,7 +98,7 @@ class node :
         added_species = set()
         for path in self.path:
             pathenz = path["pathenz"].copy()
-            pathenz.append(downRec.getenz()[0])
+            pathenz.append(downRec.getenz())
 
             added_species = path["related"].copy()
             for enz in path["pathenz"]:
@@ -150,8 +138,6 @@ class node :
             pass
 
     def CopyToPath(self):
-        # assert label == "A" or label == "C_side"
-        # if label == "A":
         tmpList = []
         for record in self.recordA:
             tmp    = {}
@@ -161,8 +147,6 @@ class node :
             tmp["pathnode"] = record["pathnode"].copy()
             tmpList.append(tmp)
         self.path = tmpList
-        # elif label == "C_side":
-        #     pass
 
     def CopyToSide(self):
         tmpList = []
@@ -212,7 +196,6 @@ class node :
                     if self.CheckMerge(path, record):
                         path_tmp.append(self.Merge(path, record))
             self.recordA = path_tmp
-            # if path_tmp != []:
             return True
         elif label == "C_side":
             pass
