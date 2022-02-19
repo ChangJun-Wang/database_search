@@ -188,7 +188,7 @@ class search:
         print("start initializing")
         self.initialize()
 
-    def main(self, input_species, notes):
+    def main(self, input_species):
         candidate = []
         result    = []
         bfs = BFS(input_species[0], "A", self.mapToCnode, self.mapToClist)
@@ -196,7 +196,7 @@ class search:
         candidate0 = bfs.search()
         # record all the returned type A
         for species in candidate0:
-            species[0].CopyToRecord("A", species[1])
+            species[0].CopyToRecord()
         self.ClearPath()
         self.ClearLevel()
 
@@ -215,6 +215,8 @@ class search:
         self.ClearLevel()
 
         print(len(candidate1))
+
+        print(len(candidate))
 
         for species in candidate:
             assert species.recordA != []
@@ -385,28 +387,27 @@ class search:
     
     def ClearPath(self):
         for node in self.nodeList:
-            path_tmp        = []
+            node.path       = []
             tmp             = {}
             tmp["related"]  = set()
             tmp["pathlist"] = []
             tmp["pathenz"]  = []
             tmp["pathnode"] = []
-            path_tmp.append(tmp)
-            node.path = path_tmp
+            node.path.append(tmp)
+
         for node in self.nodeList:
             node.path[0]["related"].add(self.mapToNode["H2O"])
             node.path[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
 
     def ClearRecordA(self):
         for node in self.nodeList:
-            record_tmp      = []
+            node.recordA    = []
             tmp             = {}
             tmp["related"]  = set()
             tmp["pathlist"] = []
             tmp["pathenz"]  = []
             tmp["pathnode"] = []
-            record_tmp.append(tmp)
-            node.recordA = record_tmp
+            node.recordA.append(tmp)
         for node in self.nodeList:
             node.recordA[0]["related"].add(self.mapToNode["H2O"])
             node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])

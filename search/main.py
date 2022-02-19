@@ -31,5 +31,5 @@ if __name__ == '__main__':
     # input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
     # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["glucose"]]
 
-    searcher.main(input_species, "A")
+    searcher.main(input_species)
     print (searcher.c)

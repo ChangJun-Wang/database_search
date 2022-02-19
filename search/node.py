@@ -122,42 +122,35 @@ class node :
                 tmp.append(path)
         return tmp
 
-    def CopyToRecord(self, label, num):
-        assert label == "A" or label == "C_side"
-        tmpList = []
-        if label == "A":
-            for path in self.path:
-                tmp    = {}
-                tmp["related"]  = path["related"].copy()
-                tmp["pathlist"] = path["pathlist"].copy()
-                tmp["pathenz"]  = path["pathenz"].copy()
-                tmp["pathnode"] = path["pathnode"].copy()
-                tmpList.append(tmp)
-            self.recordA = tmpList
-        elif label == "C_side":
-            pass
-
-    def CopyToPath(self):
-        tmpList = []
-        for record in self.recordA:
-            tmp    = {}
-            tmp["related"]  = record["related"].copy()
-            tmp["pathlist"] = record["pathlist"].copy()
-            tmp["pathenz"]  = record["pathenz"].copy()
-            tmp["pathnode"] = record["pathnode"].copy()
-            tmpList.append(tmp)
-        self.path = tmpList
-
-    def CopyToSide(self):
-        tmpList = []
+    def CopyToRecord(self):
+        self.recordA = []
         for path in self.path:
             tmp    = {}
             tmp["related"]  = path["related"].copy()
             tmp["pathlist"] = path["pathlist"].copy()
             tmp["pathenz"]  = path["pathenz"].copy()
             tmp["pathnode"] = path["pathnode"].copy()
-            tmpList.append(tmp)
-        self.sidepath = tmpList
+            self.recordA.append(tmp)
+
+    def CopyToPath(self):
+        self.path = []
+        for record in self.recordA:
+            tmp    = {}
+            tmp["related"]  = record["related"].copy()
+            tmp["pathlist"] = record["pathlist"].copy()
+            tmp["pathenz"]  = record["pathenz"].copy()
+            tmp["pathnode"] = record["pathnode"].copy()
+            self.path.append(tmp)
+
+    def CopyToSide(self):
+        self.sidepath = []
+        for path in self.path:
+            tmp    = {}
+            tmp["related"]  = path["related"].copy()
+            tmp["pathlist"] = path["pathlist"].copy()
+            tmp["pathenz"]  = path["pathenz"].copy()
+            tmp["pathnode"] = path["pathnode"].copy()
+            self.sidepath.append(tmp)
 
     def CheckMerge(self, path0, path1):
         for species in path1["pathnode"]:
