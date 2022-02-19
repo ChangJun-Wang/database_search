@@ -261,11 +261,11 @@ class search:
                                     for rea in edge1.getrea():
                                         if rea != node1:
                                             rea.label.add("C_side")
-                                            rea.labelC_side.append(self.typeC*2)
+                                            rea.labelC_side.append(self.typeC)
                                     for rea in edge2.getrea():
                                         if rea != node2:
                                             rea.label.add("C_side")
-                                            rea.labelC_side.append(self.typeC*2 + 1)
+                                            rea.labelC_side.append(self.typeC)
                                     self.typeC += 1
                                     return True
         return False
@@ -327,7 +327,7 @@ class search:
                 print("start merging type C_side")
                 for label0 in candidate0:
                     for label1 in candidate1:
-                        if int(int(label0[1])/2) == int(int(label1[1])/2):
+                        if int(label0[1]) == int(label1[1]):
                             accept = self.MergeCside(label0, label1)
                             if accept != {}:
                                 result.append(accept)
@@ -348,18 +348,18 @@ class search:
         #     print("*********** To Type A  : ************ ")
 
         print(len(result))
-        for path in result:
-            print("*********** From input : ************ ")
-            # print(path)
-            for rec in path["pathlist"]:
-                print(rec.show())
-                # for node in rec.getrea():
-                #     allnodes.add(node)
-                # for node in rec.getenz():
-                #     allnodes.add(node)
-                # for node in rec.getpro():
-                #     allnodes.add(node)
-            print("*********** To Type A  : ************ ")
+        # for path in result:
+        #     print("*********** From input : ************ ")
+        #     # print(path)
+        #     for rec in path["pathlist"]:
+        #         print(rec.show())
+        #         # for node in rec.getrea():
+        #         #     allnodes.add(node)
+        #         # for node in rec.getenz():
+        #         #     allnodes.add(node)
+        #         # for node in rec.getpro():
+        #         #     allnodes.add(node)
+        #     print("*********** To Type A  : ************ ")
 
 # ////////////////////////////////////////////////////////////////////
 
@@ -401,7 +401,7 @@ class search:
                 path1["related"]  = related
                 path1["pathlist"] = self.mapToClist[str(labelnum)]
                 path1["pathenz"]  = enz
-                if self.CheckMerge(path0, path1): #and self.CheckLabelC(path0, path1):
+                if self.CheckMerge(path0, path1): # and self.CheckLabelC(path0, path1):
                     path_tmp = self.Merge(path0, path1)
         return path_tmp
 
@@ -415,6 +415,28 @@ class search:
         return True
 
     def CheckLabelC(self, path0, path1):
+        AllSpecies = set()
+        AllRec     = set()
+        for species in path0["related"]:
+            AllSpecies.add(species)
+        for species in path1["related"]:
+            AllSpecies.add(species)
+        for species in path0["pathnode"]:
+            AllSpecies.add(species)
+        for species in path1["pathnode"]:
+            AllSpecies.add(species)
+
+        for enz in path0["pathenz"]:
+            for rec in enz.getCatedge():
+                AllRec.add(rec)
+        for enz in path1["pathenz"]:
+            for rec in enz.getCatedge():
+                AllRec.add(rec)
+
+
+
+
+
         for c_side in product.labelC_side:
             for path in product.path:
                 if self.CheckCycle(path, c_side):
