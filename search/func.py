@@ -229,7 +229,7 @@ class search:
             self.ClearPath()
             self.ClearLevel()
 
-            for j in range(i, len(candidate)):
+            for j in range(i+1, len(candidate)):
                 bfs1 = BFS(candidate[j], "C_side", self.mapToCnode, self.mapToClist)
                 candidate1 = bfs1.search()
                 print("start merging type C_side")
@@ -305,7 +305,7 @@ class search:
                 path1["related"]  = related
                 path1["pathlist"] = self.mapToClist[str(labelnum)]
                 path1["pathenz"]  = enz
-                if self.CheckMerge(path0, path1): # and self.CheckLabelC(path0, path1):
+                if self.CheckMerge(path0, path1) and self.CheckLabelC(path0, path1):
                     path_tmp = self.Merge(path0, path1)
         return path_tmp
 
@@ -318,37 +318,36 @@ class search:
                 return False
         return True
 
-    # def CheckLabelC(self, path0, path1):
-    #     AllSpecies = set()
-    #     AllRec     = set()
-    #     for species in path0["related"]:
-    #         AllSpecies.add(species)
-    #     for species in path1["related"]:
-    #         AllSpecies.add(species)
-    #     for species in path0["pathnode"]:
-    #         AllSpecies.add(species)
-    #     for species in path1["pathnode"]:
-    #         AllSpecies.add(species)
+    def CheckLabelC(self, path0, path1):
+        AllSpecies = set()
+        AllRec     = set()
+        for species in path0["related"]:
+            AllSpecies.add(species)
+        for species in path1["related"]:
+            AllSpecies.add(species)
+        for species in path0["pathnode"]:
+            AllSpecies.add(species)
+        for species in path1["pathnode"]:
+            AllSpecies.add(species)
 
-    #     for enz in path0["pathenz"]:
-    #         for rec in enz.getCatedge():
-    #             AllRec.add(rec)
-    #     for enz in path1["pathenz"]:
-    #         for rec in enz.getCatedge():
-    #             AllRec.add(rec)
-#######################################################
-    #     for c_side in product.labelC_side:
-    #         for path in product.path:
-    #             if self.CheckCycle(path, c_side):
-    #                 product.AddPath(startPro, downRec, CheckProduct)
-    #                 return True
-    #     return False
-
-    def CheckCycle(self, path, c_side):
-        for node in self.mapToCnode[c_side]:
-            if node in path["related"]:
-                return False
+        for enz in path0["pathenz"]:
+            for rec in enz.getCatedge():
+                if rec.activated(AllSpecies):
+                    if not self.CheckCycle(path0, rec):
+                        return False
+        for enz in path1["pathenz"]:
+            for rec in enz.getCatedge():
+                if rec.activated(AllSpecies):
+                    if not self.CheckCycle(path1, rec):
+                        return False
         return True
+
+
+
+    def CheckCycle(self, path, rec):
+        if rec in path["pathlist"]:
+            return True
+        return False
 
     def check_rea(self, enz, product):
         for catrec in enz.getCatedge():
