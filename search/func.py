@@ -254,18 +254,20 @@ class search:
         #         #     allnodes.add(node)
         #     print("*********** To Type A  : ************ ")
 
+        
+        for path in result:
+            print("*********** From input : ************ ")
+            # print(path)
+            for rec in path["pathlist"]:
+                print(rec.show())
+                # for node in rec.getrea():
+                #     allnodes.add(node)
+                # allnodes.add(rec.getenz())
+                # for node in rec.getpro():
+                #     allnodes.add(node)
+            print("*********** To Type A  : ************ ")
+
         print(len(result))
-        # for path in result:
-        #     print("*********** From input : ************ ")
-        #     # print(path)
-        #     for rec in path["pathlist"]:
-        #         print(rec.show())
-        #         # for node in rec.getrea():
-        #         #     allnodes.add(node)
-        #         # allnodes.add(rec.getenz())
-        #         # for node in rec.getpro():
-        #         #     allnodes.add(node)
-        #     print("*********** To Type A  : ************ ")
 
     def Merge(self, path, record):
         tmp    = {}
@@ -329,6 +331,10 @@ class search:
             AllSpecies.add(species)
         for species in path1["pathnode"]:
             AllSpecies.add(species)
+
+        AllSpecies.add(self.mapToNode["H2O"])
+        AllSpecies.add(self.mapToNode["spontaneous_reaction"])
+
 
         for enz in path0["pathenz"]:
             for rec in enz.getCatedge():
