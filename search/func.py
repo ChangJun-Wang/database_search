@@ -235,7 +235,7 @@ class search:
                 print("start merging type C_side")
                 for label0 in candidate0:
                     for label1 in candidate1:
-                        if int(label0[1]) == int(label1[1]):
+                        if int(label0[1]) == int(label1[1]) and label0[0] != label1[0]:
                             accept = self.MergeCside(label0, label1)
                             if accept != {}:
                                 result.append(accept)
@@ -323,14 +323,28 @@ class search:
     def CheckLabelC(self, path0, path1):
         AllSpecies = set()
         AllRec     = set()
-        for species in path0["related"]:
-            AllSpecies.add(species)
-        for species in path1["related"]:
-            AllSpecies.add(species)
-        for species in path0["pathnode"]:
-            AllSpecies.add(species)
-        for species in path1["pathnode"]:
-            AllSpecies.add(species)
+
+        for rec in path0["pathlist"]:
+            for species in rec.getrea():
+                AllSpecies.add(species)
+            AllSpecies.add(rec.getenz())
+            for species in rec.getpro():
+                AllSpecies.add(species)
+        for rec in path1["pathlist"]:
+            for species in rec.getrea():
+                AllSpecies.add(species)
+            AllSpecies.add(rec.getenz())
+            for species in rec.getpro():
+                AllSpecies.add(species)
+
+        # for species in path0["related"]:
+        #     AllSpecies.add(species)
+        # for species in path1["related"]:
+        #     AllSpecies.add(species)
+        # for species in path0["pathnode"]:
+        #     AllSpecies.add(species)
+        # for species in path1["pathnode"]:
+        #     AllSpecies.add(species)
 
         AllSpecies.add(self.mapToNode["H2O"])
         AllSpecies.add(self.mapToNode["spontaneous_reaction"])
@@ -347,8 +361,6 @@ class search:
                     if not self.CheckCycle(path1, rec):
                         return False
         return True
-
-
 
     def CheckCycle(self, path, rec):
         if rec in path["pathlist"]:

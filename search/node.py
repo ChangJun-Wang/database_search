@@ -10,6 +10,7 @@ class node :
         self.pin      = 0
         self.pout     = 0
         self.level    = 0
+        self.mark     = 0
         self.label    = set()
         self.path     = []
         self.sidepath = []
