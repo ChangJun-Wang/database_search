@@ -6,7 +6,7 @@ from edge import edge
 
 class BFS:
     def __init__(self, startNode, Target_type, mapToCnode, mapToClist):
-        self.search_limit = 1
+        self.search_limit = 2
         self.bfs          = [startNode]
         self.type         = Target_type
         self.candidate    = set()

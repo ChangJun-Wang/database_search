@@ -23,13 +23,13 @@ if __name__ == '__main__':
     print("typeD : ", searcher.typeD)
     print("typeE : ", searcher.typeE)
 
-    count = 0
+    # count = 0
     print ("\n", "*************************************************")
 
     #specified input species :
-    input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
-    # input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
-    # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["glucose"]]
+    # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
+    input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
+    # input_species = [searcher.mapToNode["glucose"], searcher.mapToNode["lactate"]]
 
     searcher.main(input_species)
-    print (searcher.c)
+    # print (searcher.c)

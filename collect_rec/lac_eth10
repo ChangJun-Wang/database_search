@@ -1,0 +1,291 @@
+10
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5829
+NADP+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> H+ (S)-3-hydroxy-3-methylglutaryl-CoA NADPH
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 22853
+ATP fatty_acid H+ NADPH  =[ carboxylate_reductase ]=> diphosphate NADP+ fatty_aldehyde AMP
+
+reaction: 17793
+fatty_aldehyde O2 FMNH2  =[ bacterial_luciferase ]=> hn fatty_acid FMN H2O
+
+reaction: 14333
+anthranilate O2 H+ NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 NADP+ NH3 catechol
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5856
+NAD+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 26296
+O2 octanoyl-CoA  =[ acyl-CoA_oxidase ]=> trans-2-octenoyl-CoA H2O2
+
+reaction: 24752
+NADH trans-2-octenoyl-CoA H+  =[ enoyl-[acyl-carrier-protein]_reductase ]=> NAD+ octanoyl-CoA
+
+reaction: 10061
+O2 NADH  =[ ubiquinol_oxidase ]=>
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5856
+NAD+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 5058
+NADH H+ 2-oxobutanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-hydroxybutanoate NAD+
+
+reaction: 8531
+2-hydroxybutanoate O2  =[ L-lactate_oxidase ]=> H2O2 2-oxobutanoate
+
+reaction: 10061
+O2 NADH  =[ ubiquinol_oxidase ]=>
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5829
+NADP+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> H+ (S)-3-hydroxy-3-methylglutaryl-CoA NADPH
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 5439
+chlorophyllide_b H+ NADPH  =[ b_reductase ]=> NADP+ 7-hydroxychlorophyllide_a
+
+reaction: 15133
+O2 7-hydroxychlorophyllide_a NADPH  =[ chlorophyllide-a_oxygenase ]=> chlorophyllide_b NADP+ H2O
+
+reaction: 14333
+anthranilate O2 H+ NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 NADP+ NH3 catechol
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5829
+NADP+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> H+ (S)-3-hydroxy-3-methylglutaryl-CoA NADPH
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 111167
+S-(hercyn-2-yl)-L-cysteine_S-oxide reduced_acceptor  =[ hercynylcysteine_S-oxide_lyase ]=> acceptor NH3 ergothioneine pyruvate
+
+reaction: 30656
+IMP NADP+ NH3  =[ GMP_reductase ]=> GMP H+ NADPH
+
+reaction: 30658
+GMP H+ NADPH  =[ GMP_reductase ]=> IMP NADP+ NH3
+
+reaction: 27175
+2-oxosuccinic_acid NH3 H+ NADPH  =[ diaminopimelate_dehydrogenase ]=>
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5856
+NAD+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 17651
+reduced_acceptor protoheme O2  =[ heme_oxygenase ]=> Fe2+ CO H2O biliverdin-IX-delta acceptor
+
+reaction: 111794
+coproporphyrin_III Fe2+  =[ coproporphyrin_ferrochelatase ]=> Fe-coproporphyrin_III H+
+
+reaction: 111793
+Fe-coproporphyrin_III H+  =[ coproporphyrin_ferrochelatase ]=> coproporphyrin_III Fe2+
+
+reaction: 21085
+O2 Fe2+ H+  =[ manganese_oxidase ]=> Fe3+ H2O
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5829
+NADP+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> H+ (S)-3-hydroxy-3-methylglutaryl-CoA NADPH
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 7802
+H+ 3-hydroxy-4-methoxybenzaldehyde NADPH  =[ aryl-alcohol_dehydrogenase ]=> 3-hydroxy-4-methoxybenzyl_alcohol NADP+
+
+reaction: 8988
+3-hydroxy-4-methoxybenzyl_alcohol O2  =[ aryl-alcohol_oxidase ]=> H2O2 3-hydroxy-4-methoxybenzaldehyde
+
+reaction: 14333
+anthranilate O2 H+ NADPH  =[ anthranilate_1,2-dioxygenase ]=> CO2 NADP+ NH3 catechol
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5856
+NAD+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 5046
+NADH 2-oxoisocaproate H+  =[ D-2-hydroxyacid_dehydrogenase ]=> NAD+ L-2-hydroxyisocaproate
+
+reaction: 8320
+L-2-hydroxyisocaproate O2  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 2-oxoisocaproate
+
+reaction: 10061
+O2 NADH  =[ ubiquinol_oxidase ]=>
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5856
+NAD+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20916
+reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 O2 acceptor
+
+reaction: 26289
+O2 decanoyl-CoA  =[ acyl-CoA_oxidase ]=> trans-2-decenoyl-CoA H2O2
+
+reaction: 24736
+trans-2-decenoyl-CoA NADH  =[ enoyl-[acyl-carrier-protein]_reductase ]=> NAD+ decanoyl-CoA
+
+reaction: 10061
+O2 NADH  =[ ubiquinol_oxidase ]=>
+*********** To Threshold  : ************
+*********** From input : ************
+
+reaction: 58631
+acetyl-CoA ethanol  =[ carboxylesterase ]=> ethyl_acetate CoA
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> acetate pyruvate CoA
+
+reaction: 5856
+NAD+ (R)-mevalonate CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> reduced_acceptor acetaldehyde
+
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 20623
+reduced_acceptor O2 Latia_luciferin  =[ Latia-luciferin_monooxygenase ]=> H2O CO2 formate oxidized_Latia_luciferin acceptor hnu
+
+reaction: 105007
+4-carboxy-5-aminoimidazole_ribonucleotide H+  =[ phosphoribosylaminoimidazole_carboxylase ]=> CO2 5-aminoimidazole_ribonucleotide
+
+reaction: 105008
+CO2 5-aminoimidazole_ribonucleotide  =[ phosphoribosylaminoimidazole_carboxylase ]=> 4-carboxy-5-aminoimidazole_ribonucleotide H+
+
+reaction: 26054
+CO2 acryloyl-CoA H+ NADPH  =[ crotonyl-CoA_carboxylase/reductase ]=> methylmalonyl-CoA NADP+
+*********** To Threshold  : ************

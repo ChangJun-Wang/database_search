@@ -110,7 +110,7 @@ class node :
                         downRecs.append(rec)
 
         for path in self.path:
-            if self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs):
+            if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
                 tmp.append(path)
         return tmp
 
@@ -119,7 +119,7 @@ class node :
     def CheckProduct(self, pathlist):
         tmp = []
         for path in pathlist:
-            if self not in path["related"]:
+            if self not in path["related"] and self.name != "H2O":
                 tmp.append(path)
         return tmp
 
