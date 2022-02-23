@@ -213,11 +213,9 @@ class search:
                 if label[0].MergeAll("A", label[1]):
                     candidate.append(label[0])
         self.ClearPath()
-
         self.ClearLevel()
 
         print(len(candidate1))
-
         print(len(candidate))
 
         # for species in candidate:
@@ -255,36 +253,6 @@ class search:
                                 return True
                 self.ClearPath()
                 self.ClearLevel()
-
-        # for species in candidate:
-        #     print("*********** From input : ************ ")
-        #     print(species.show())
-        #     for rec in (species.recordA[0])["pathlist"]:
-        #         print(rec.show())
-        #         # for node in rec.getrea():
-        #         #     allnodes.add(node)
-        #         # allnodes.add(rec.getenz())
-        #         # for node in rec.getpro():
-        #         #     allnodes.add(node)
-        #     print("*********** To Type A  : ************ ")
-        # print(len(result))
-        
-        # for path in result:
-        #     print("*********** From input : ************ ")
-        #     # print(path)
-        #     for rec in path["pathlist"]:
-        #         print(rec.show())
-        #         # for node in rec.getrea():
-        #         #     allnodes.add(node)
-        #         # allnodes.add(rec.getenz())
-        #         # for node in rec.getpro():
-        #         #     allnodes.add(node)
-        #     print("*********** To Threshold  : ************ ")
-
-        # print("*********** From input : ************ ")
-        # for rec in result[0]["pathlist"]:
-        #     print(rec.show())
-        # print("*********** To Threshold  : ************ ")
 
         print(len(result))
         return False
@@ -348,6 +316,9 @@ class search:
 
     def CheckMerge(self, path0, path1):
         for species in path1["pathnode"]:
+            if (species in path0["pathnode"][2:]):
+                return False
+        for species in path1["pathnode"]:
             if (species in path0["related"]):
                 return False
         for species in path0["pathnode"]:
@@ -357,7 +328,6 @@ class search:
 
     def CheckLabelC(self, path0, path1):
         AllSpecies = set()
-        AllRec     = set()
 
         for rec in path0["pathlist"]:
             for species in rec.getrea():
@@ -384,7 +354,6 @@ class search:
         AllSpecies.add(self.mapToNode["H2O"])
         AllSpecies.add(self.mapToNode["spontaneous_reaction"])
 
-
         for enz in path0["pathenz"]:
             for rec in enz.getCatedge():
                 if rec.activated(AllSpecies):
@@ -395,6 +364,31 @@ class search:
                 if rec.activated(AllSpecies):
                     if not self.CheckCycle(path1, rec):
                         return False
+
+        # n = 1
+        # while n != 0:
+        #     AllRec     = set()
+        #     tmp        = len(AllSpecies)
+        #     for enz in path0["pathenz"]:
+        #         for rec in enz.getCatedge():
+        #             if rec.activated(AllSpecies):
+        #                 AllRec.add(rec)
+        #                 if not self.CheckCycle(path0, rec):
+        #                     return False
+        #     for enz in path1["pathenz"]:
+        #         for rec in enz.getCatedge():
+        #             if rec.activated(AllSpecies):
+        #                 AllRec.add(rec)
+        #                 if not self.CheckCycle(path1, rec):
+        #                     return False
+        #     for rec in AllRec:
+        #         for species in rec.getrea():
+        #             AllSpecies.add(species)
+        #         AllSpecies.add(rec.getenz())
+        #         for species in rec.getpro():
+        #             AllSpecies.add(species)
+        #     n = len(AllSpecies) - tmp
+
         return True
 
     def CheckCycle(self, path, rec):

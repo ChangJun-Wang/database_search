@@ -1,0 +1,42 @@
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> pyruvate /reduced_acceptor
+
+reaction: 9977
+acceptor D-glucose  =[ soluble_quinoprotein_glucose_dehydrogenase ]=> D-glucono-1,5-lactone /reduced_acceptor
+
+reaction: 20916
+superoxide /reduced_acceptor  =[ superoxide_reductase ]=> H2O2 /O2 acceptor
+
+reaction: 58362
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> //CoA pyruvate acetate
+
+reaction: 38193
+acetyl-CoA D-glucose  =[ maltose_O-acetyltransferase ]=> //CoA acetyl-D-glucose
+
+reaction: 5856
+//CoA NAD+ (R)-mevalonate  =[ hydroxymethylglutaryl-CoA_reductase ]=> H+ (S)-3-hydroxy-3-methylglutaryl-CoA //NADH
+
+reaction: 26296
+octanoyl-CoA /O2  =[ acyl-CoA_oxidase ]=> trans-2-octenoyl-CoA H2O2
+
+reaction: 24752
+trans-2-octenoyl-CoA H+ //NADH  =[ enoyl-[acyl-carrier-protein]_reductase ]=> octanoyl-CoA NAD+
+
+reaction: 10061
+/O2 //NADH  =[ ubiquinol_oxidase ]=>
+/////////////////all related reaction///////////////
+
+reaction: 20911
+/reduced_acceptor superoxide H+  =[ superoxide_reductase ]=> H2O2 oxidized_acceptor
+reaction: 20915
+H+ superoxide /reduced_acceptor  =[ superoxide_reductase ]=> H2O2 acceptor
+reaction: 5833
+acetyl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> //CoA acetoacetyl-CoA
+reaction: 5842
+//CoA NAD+ (R)-mevalonate  =[ hydroxymethylglutaryl-CoA_reductase ]=> H+ (S)-3-hydroxy-3-methylglutaryl-CoA //NADH
+reaction: 5853
+//CoA NAD+ (R)-mevalonate  =[ hydroxymethylglutaryl-CoA_reductase ]=> 3-hydroxy-3-methylglutaryl-CoA H+ //NADH
+reaction: 5855
+H+ (S)-3-hydroxy-3-methylglutaryl-CoA //NADH  =[ hydroxymethylglutaryl-CoA_reductase ]=> //CoA NAD+ (R)-mevalonate
+reaction: 58338
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> lactoyl-CoA acetate

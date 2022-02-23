@@ -1,52 +1,48 @@
-reaction: 9585
-/ethanol acceptor  =[ alkan-1-ol_dehydrogenase ]=> /reduced_acceptor acetaldehyde
-
-reaction: 9903
-/lactate oxidized_acceptor  =[ 2-oxo-acid_reductase ]=> /reduced_acceptor pyruvate
-
-reaction: 20916
-/reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 /O2 acceptor
-
 reaction: 58631
-//ethanol acetyl-CoA  =[ carboxylesterase ]=> ethyl_acetate //CoA
+ethanol acetyl-CoA  =[ carboxylesterase ]=> ethyl_acetate /CoA
 
 reaction: 58362
-//lactate acetyl-CoA  =[ propionate_CoA-transferase ]=> pyruvate acetate //CoA
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> pyruvate acetate /CoA
 
 reaction: 5829
-NADP+ (R)-mevalonate //CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> //NADPH H+ (S)-3-hydroxy-3-methylglutaryl-CoA
+(R)-mevalonate NADP+ /CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> (S)-3-hydroxy-3-methylglutaryl-CoA /H+ NADPH
 
-reaction: 22853
-ATP //NADPH H+ fatty_acid  =[ carboxylate_reductase ]=> diphosphate AMP fatty_aldehyde NADP+
+reaction: 9585
+ethanol acceptor  =[ alkan-1-ol_dehydrogenase ]=> acetaldehyde //reduced_acceptor
 
-reaction: 17793
-fatty_aldehyde /O2 FMNH2  =[ bacterial_luciferase ]=> fatty_acid FMN hn H2O
+reaction: 9903
+oxidized_acceptor lactate  =[ 2-oxo-acid_reductase ]=> //reduced_acceptor pyruvate
 
-reaction: 14333
-anthranilate //NADPH H+ /O2  =[ anthranilate_1,2-dioxygenase ]=> CO2 catechol NH3 NADP+
+reaction: 111167
+//reduced_acceptor S-(hercyn-2-yl)-L-cysteine_S-oxide  =[ hercynylcysteine_S-oxide_lyase ]=> ergothioneine acceptor //reduced_acceptor pyruvate
+
+reaction: 30656
+NADP+ //reduced_acceptor IMP  =[ GMP_reductase ]=> GMP /H+ NADPH
+
+reaction: 30658
+GMP /H+ NADPH  =[ GMP_reductase ]=> NADP+ //reduced_acceptor IMP
+
+reaction: 27175
+//reduced_acceptor /H+ 2-oxosuccinic_acid NADPH  =[ diaminopimelate_dehydrogenase ]=>
 /////////////////all related reaction///////////////
 
-reaction: 20911
-H+ /reduced_acceptor superoxide  =[ superoxide_reductase ]=> H2O2 oxidized_acceptor
-reaction: 20915
-/reduced_acceptor H+ superoxide  =[ superoxide_reductase ]=> H2O2 acceptor
-reaction: 5830
-//NADPH H+ (S)-3-hydroxy-3-methylglutaryl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADP+ (R)-mevalonate //CoA
-reaction: 5833
-acetyl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> acetoacetyl-CoA //CoA
-reaction: 5835
-//NADPH (S)-3-hydroxy-3-methylglutaryl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> mevaldyl-CoA NADP+
-reaction: 5838
-//NADPH (S)-3-hydroxy-3-methylglutaryl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> (R)-mevalonate //CoA NADP+
-reaction: 5845
-//NADPH (S)-3-hydroxy-3-methylglutaryl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> mevaldehyde //CoA NADP+
-reaction: 58338
-lactate acetyl-CoA  =[ propionate_CoA-transferase ]=> acetate lactoyl-CoA
-reaction: 9551
-acetaldehyde acceptor H2O  =[ alkan-1-ol_dehydrogenase ]=> /reduced_acceptor acetic_acid
 reaction: 58632
-ethanol acetate  =[ carboxylesterase ]=> ethyl_acetate H2O
-reaction: 58897
-acetate H2O  =[ carboxylesterase ]=>
-reaction: 59020
-ethyl_acetate H2O  =[ carboxylesterase ]=> ethanol acetate
+ethanol acetate  =[ carboxylesterase ]=> H2O ethyl_acetate
+reaction: 5830
+(S)-3-hydroxy-3-methylglutaryl-CoA /H+ NADPH  =[ hydroxymethylglutaryl-CoA_reductase ]=> (R)-mevalonate NADP+ /CoA
+reaction: 5833
+acetyl-CoA  =[ hydroxymethylglutaryl-CoA_reductase ]=> acetoacetyl-CoA /CoA
+reaction: 5835
+(S)-3-hydroxy-3-methylglutaryl-CoA NADPH  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADP+ mevaldyl-CoA
+reaction: 5838
+(S)-3-hydroxy-3-methylglutaryl-CoA NADPH  =[ hydroxymethylglutaryl-CoA_reductase ]=> (R)-mevalonate NADP+ /CoA
+reaction: 5845
+(S)-3-hydroxy-3-methylglutaryl-CoA NADPH  =[ hydroxymethylglutaryl-CoA_reductase ]=> NADP+ mevaldehyde /CoA
+reaction: 111171
+//reduced_acceptor S-(hercyn-2-yl)-L-cysteine_S-oxide  =[ hercynylcysteine_S-oxide_lyase ]=> ergothioneine acceptor ammonia pyruvate
+reaction: 58338
+acetyl-CoA lactate  =[ propionate_CoA-transferase ]=> lactoyl-CoA acetate
+reaction: 27177
+pyruvate NADPH  =[ diaminopimelate_dehydrogenase ]=>
+reaction: 27183
+pyruvate //reduced_acceptor /H+ NADPH  =[ diaminopimelate_dehydrogenase ]=> NADP+ D-alanine

@@ -1,0 +1,56 @@
+reaction: 42810
+alpha-D-galactose_1-phosphate D-glucose  =[ beta-D-galactosyl-(1->4)-L-rhamnose_phosphorylase ]=> beta-D-galactosyl-(1->4)-D-glucose /phosphate
+
+reaction: 116869
+GTP acetone CO2 H2O  =[ acetone_carboxylase ]=> GMP /phosphate acetoacetate
+
+reaction: 23054
+L-glutamate_5-semialdehyde NADP+ /phosphate  =[ glutamate-5-semialdehyde_dehydrogenase ]=> H+ L-5-glutamyl_phosphate /NADPH
+
+reaction: 3679
+D-glucose NAD(P)H  =[ aldose_reductase ]=> sorbitol //NAD(P)+
+
+reaction: 7271
+H+ acetone NAD(P)H  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> propan-2-ol //NAD(P)+
+
+reaction: 2526
+//NAD(P)+ cholic_acid  =[ 7alpha-hydroxysteroid_dehydrogenase ]=> 3alpha,12alpha-dihydroxy-7-oxo-5beta-cholan-24-oic_acid //NADH
+
+reaction: 16527
+trimethylamine O2 /NADPH  =[ flavin-containing_monooxygenase ]=> trimethylamine_N-oxide NADP+ H2O
+
+reaction: 30663
+trimethylamine_N-oxide //NADH  =[ trimethylamine-N-oxide_reductase ]=> trimethylamine NAD+ H2O
+
+reaction: 38434
+malonyl-CoA acetyl-CoA //NADH /NADPH  =[ fatty-acyl-CoA_synthase_system ]=>
+/////////////////all related reaction///////////////
+
+reaction: 2523
+NAD+ cholic_acid  =[ 7alpha-hydroxysteroid_dehydrogenase ]=> 3alpha,12alpha-dihydroxy-7-oxo-5beta-cholan-24-oic_acid //NADH
+reaction: 2553
+cholic_acid //NADH  =[ 7alpha-hydroxysteroid_dehydrogenase ]=> NAD+ 7-ketocholic_acid
+reaction: 42804
+alpha-D-galactose_1-phosphate D-glucose  =[ beta-D-galactosyl-(1->4)-L-rhamnose_phosphorylase ]=> D-galactosyl-beta-1,3-D-glucose /phosphate
+reaction: 7320
+H+ acetone //NADH  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> propan-2-ol NAD+
+reaction: 7361
+propan-2-ol NADP+  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> propan-2-one H+ /NADPH
+reaction: 7384
+NADP+ D-glucose  =[ alcohol_dehydrogenase_[NAD(P)+] ]=> H+ /NADPH
+reaction: 23051
+L-glutamate_5-semialdehyde NADP+ /phosphate  =[ glutamate-5-semialdehyde_dehydrogenase ]=> L-glutamyl_5-phosphate H+ /NADPH
+reaction: 23052
+L-glutamate_5-semialdehyde NAD+ /phosphate  =[ glutamate-5-semialdehyde_dehydrogenase ]=> L-glutamyl_5-phosphate H+ //NADH
+reaction: 23053
+L-5-glutamyl_phosphate /NADPH  =[ glutamate-5-semialdehyde_dehydrogenase ]=>
+reaction: 16554
+trimethylamine H+ O2 /NADPH  =[ flavin-containing_monooxygenase ]=> trimethylamine_N-oxide NADP+ H2O
+reaction: 16676
+trimethylamine H+ O2 /NADPH  =[ flavin-containing_monooxygenase ]=> trimethylamine_N-oxide H+ O2 /NADPH
+reaction: 3664
+H+ D-glucose /NADPH  =[ aldose_reductase ]=> sorbitol NADP+
+reaction: 3670
+sorbitol NAD+  =[ aldose_reductase ]=> H+ //NADH D-fructose
+reaction: 3674
+H+ D-glucose /NADPH  =[ aldose_reductase ]=> D-sorbitol NADP+
