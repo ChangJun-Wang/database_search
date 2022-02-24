@@ -1,0 +1,75 @@
+clear_model.
+parameter(k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1).
+parameter(k10 = 1, k11 = 1, k12 = 1, k13 = 1, k14 = 1, k15 = 1, k16 = 1, k17 = 1, k18 = 1).
+
+k0*ethanol*acetyl_CoA*carboxylesterase           for ethanol + acetyl_CoA  =[ carboxylesterase ]=> ethyl_acetate + CoA + ethanol.
+
+k1*acetyl_CoA*lactate*propionate_CoA_transferase for acetyl_CoA + lactate  =[ propionate_CoA_transferase ]=> pyruvate + acetate + CoA + lactate.
+
+k2*R_mevalonate*NADPp*CoA*hydroxymethylglutaryl_CoA_reductase for R_mevalonate + NADPp + CoA  =[ hydroxymethylglutaryl_CoA_reductase ]=> S_3_hydroxy_3_methylglutaryl_CoA + Hp + NADPH.
+
+k3*ethanol*acceptor*alkan_1_ol_dehydrogenase for ethanol + acceptor  =[ alkan_1_ol_dehydrogenase ]=> acetaldehyde + reduced_acceptor + ethanol.
+
+k4*oxidized_acceptor*lactate*II_oxo_acid_reductase for oxidized_acceptor + lactate  =[ II_oxo_acid_reductase ]=> reduced_acceptor + pyruvate + lactate.
+
+k5*reduced_acceptor*S_hercyn_2_yl_L_cysteine_S_oxide*hercynylcysteine_S_oxide_lyase for reduced_acceptor + S_hercyn_2_yl_L_cysteine_S_oxide  =[ hercynylcysteine_S_oxide_lyase ]=> ergothioneine + acceptor + reduced_acceptor + pyruvate.
+
+k6*NADPp*reduced_acceptor*IMP*GMP_reductase for NADPp + reduced_acceptor + IMP  =[ GMP_reductase ]=> GMP + Hp + NADPH.
+
+k7*GMP*Hp*NADPH*GMP_reductase for GMP + Hp + NADPH  =[ GMP_reductase ]=> NADPp + reduced_acceptor + IMP.
+
+k8*reduced_acceptor*Hp*II_oxosuccinic_acid*NADPH*diaminopimelate_dehydrogenase for reduced_acceptor + Hp + II_oxosuccinic_acid + NADPH  =[ diaminopimelate_dehydrogenase ]=> _.
+
+
+k9*ethanol*acetate*carboxylesterase for ethanol + acetate  =[ carboxylesterase ]=> H2O + ethyl_acetate.
+
+k10*S_3_hydroxy_3_methylglutaryl_CoA*Hp*NADPH*hydroxymethylglutaryl_CoA_reductase for S_3_hydroxy_3_methylglutaryl_CoA + Hp + NADPH  =[ hydroxymethylglutaryl_CoA_reductase ]=> R_mevalonate + NADPp + CoA.
+
+k11*acetyl_CoA*hydroxymethylglutaryl_CoA_reductase for acetyl_CoA  =[ hydroxymethylglutaryl_CoA_reductase ]=> acetoacetyl_CoA + CoA.
+
+k12*S_3_hydroxy_3_methylglutaryl_CoA*NADPH*hydroxymethylglutaryl_CoA_reductase for S_3_hydroxy_3_methylglutaryl_CoA + NADPH  =[ hydroxymethylglutaryl_CoA_reductase ]=> NADPp + mevaldyl_CoA.
+
+k13*S_3_hydroxy_3_methylglutaryl_CoA*NADPH*hydroxymethylglutaryl_CoA_reductase for S_3_hydroxy_3_methylglutaryl_CoA + NADPH  =[ hydroxymethylglutaryl_CoA_reductase ]=> R_mevalonate + NADPp + CoA.
+
+k14*S_3_hydroxy_3_methylglutaryl_CoA*NADPH*hydroxymethylglutaryl_CoA_reductase for S_3_hydroxy_3_methylglutaryl_CoA + NADPH  =[ hydroxymethylglutaryl_CoA_reductase ]=> NADPp + mevaldehyde + CoA.
+
+k15*reduced_acceptor*S_hercyn_2_yl_L_cysteine_S_oxide*hercynylcysteine_S_oxide_lyase for reduced_acceptor + S_hercyn_2_yl_L_cysteine_S_oxide  =[ hercynylcysteine_S_oxide_lyase ]=> ergothioneine + acceptor + ammonia + pyruvate.
+
+k16*acetyl_CoA*lactate*propionate_CoA_transferase for acetyl_CoA + lactate  =[ propionate_CoA_transferase ]=> lactoyl_CoA + acetate.
+
+k17*pyruvate*NADPH*diaminopimelate_dehydrogenase for pyruvate + NADPH  =[ diaminopimelate_dehydrogenase ]=> _.
+
+k18*pyruvate*reduced_acceptor*Hp*NADPH*diaminopimelate_dehydrogenase for pyruvate + reduced_acceptor + Hp + NADPH  =[ diaminopimelate_dehydrogenase ]=> NADPp + D_alanine.
+
+present(ethanol, 1e-3). 
+present(lactate, 1e-3).
+present(acetyl_CoA, 0). 
+present(R_mevalonate, 1). 
+present(NADPp, 1).
+present(acceptor, 1). 
+present(oxidized_acceptor, 1).
+present(NADPH, 1). 
+present(II_oxosuccinic_acid, 1).
+present(S_hercyn_2_yl_L_cysteine_S_oxide, 1). 
+
+present(diaminopimelate_dehydrogenase, 1e3).
+present(hercynylcysteine_S_oxide_lyase, 1e-6).
+present(GMP_reductase, 1e3).
+present(hydroxymethylglutaryl_CoA_reductase, 1.5e-6).
+
+present(carboxylesterase, 0e-3).
+present(propionate_CoA_transferase, 0e-3).
+present(II_oxo_acid_reductase, 1e-3).
+present(alkan_1_ol_dehydrogenase, 1e-3).
+
+present(GMP, 0). 
+present(IMP, 1e-6). 
+
+present(CoA, 1). 
+
+numerical_simulation(time:2000). plot(show:{GMP, IMP}).
+
+
+plot(show:{reduced_acceptor, Hp}).
+plot(show:{Hp}).
+plot(show:{GMP, IMP}).

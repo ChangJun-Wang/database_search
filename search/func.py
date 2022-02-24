@@ -250,6 +250,8 @@ class search:
 
                                 print("/////////////////all related reaction///////////////")
                                 print(self.check(allnodes, accept["pathlist"]))
+                                for node in allnodes:
+                                    print ("present(" + node.show() + ").")
                                 return True
                 self.ClearPath()
                 self.ClearLevel()
@@ -396,16 +398,21 @@ class search:
             return True
         c1 = 0
         c2 = 0
+        cr = 0
         for rea in rec.getrea():
             if rea.mark == 1:
                 c1 = c1 + 1
-            if rea.mark == 2:
+                cr = cr + 1
+            elif rea.mark == 2:
                 c2 = c2 + 1
+                cr = cr + 1
         for pro in rec.getpro():
             if pro.mark == 1:
                 c1 = c1 + 1
-            if pro.mark == 2:
+            elif pro.mark == 2:
                 c2 = c2 + 1
+        # if cr == 0:
+        #     return False
         if c1 == 0 or c2 == 0:
             return True
         return False

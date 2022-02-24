@@ -23,7 +23,7 @@ reaction: 30658
 GMP /H+ NADPH  =[ GMP_reductase ]=> NADP+ //reduced_acceptor IMP
 
 reaction: 27175
-//reduced_acceptor /H+ 2-oxosuccinic_acid NADPH  =[ diaminopimelate_dehydrogenase ]=>
+//reduced_acceptor /H+ 2-oxosuccinic_acid NADPH  =[ diaminopimelate_dehydrogenase ]=> _.
 /////////////////all related reaction///////////////
 
 reaction: 58632
