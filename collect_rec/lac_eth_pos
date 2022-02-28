@@ -1,0 +1,31 @@
+reaction: 9585
+acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> acetaldehyde reduced_acceptor
+
+reaction: 9903
+lactate oxidized_acceptor  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 107461
+reduced_acceptor L-tyrosine S-adenosyl-L-methionine  =[ 2-iminoacetate_synthase ]=> acceptor 2-iminoacetate H+ L-methionine 4-methylphenol 5'-deoxyadenosine
+
+reaction: 5380
+NAD(P)+ 2'-deoxymugineic_acid  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)H H+ 3''-deamino-3''-oxonicotianamine
+
+reaction: 5381
+NAD(P)H H+ 3''-deamino-3''-oxonicotianamine  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)+ 2'-deoxymugineic_acid
+
+reaction: 20925
+NAD(P)+ H+ Fe(II)-siderophore  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore
+/////////////////threshold reaction///////////////
+NAD(P)+
+761
+
+reaction: 885
+H+ NAD(P)H (2E,4E)-hexa-2,4-dienal  =[ alcohol_dehydrogenase ]=> NAD(P)+ (2E,4E)-6-hydroxyhexa-2,4-dienal
+/////////////////all related reaction///////////////
+
+reaction: 885
+H+ NAD(P)H (2E,4E)-hexa-2,4-dienal  =[ alcohol_dehydrogenase ]=> NAD(P)+ (2E,4E)-6-hydroxyhexa-2,4-dienal
+reaction: 1153
+acceptor ethanol  =[ alcohol_dehydrogenase ]=> acetaldehyde reduced_acceptor
+reaction: 1238
+acceptor ethanol  =[ alcohol_dehydrogenase ]=> acetaldehyde reduced_acceptor

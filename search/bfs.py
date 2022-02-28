@@ -57,8 +57,5 @@ class BFS:
             return True
 
     def foundC_side(self, product):
-        if product.path == []:
-            return False
         for label in product.labelC_side:
             self.candidate.add((product, label))
-        return True

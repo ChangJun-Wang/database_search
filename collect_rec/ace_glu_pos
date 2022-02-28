@@ -1,0 +1,33 @@
+reaction: 42810
+D-glucose alpha-D-galactose_1-phosphate  =[ beta-D-galactosyl-(1->4)-L-rhamnose_phosphorylase ]=> beta-D-galactosyl-(1->4)-D-glucose phosphate
+
+reaction: 116869
+CO2 GTP H2O acetone  =[ acetone_carboxylase ]=> acetoacetate GMP phosphate
+
+reaction: 23052
+L-glutamate_5-semialdehyde NAD+ phosphate  =[ glutamate-5-semialdehyde_dehydrogenase ]=> NADH L-glutamyl_5-phosphate H+
+
+reaction: 5058
+NADH H+ 2-oxobutanoate  =[ D-2-hydroxyacid_dehydrogenase ]=> 2-hydroxybutanoate NAD+
+
+reaction: 8531
+2-hydroxybutanoate O2  =[ L-lactate_oxidase ]=> H2O2 2-oxobutanoate
+
+reaction: 10061
+NADH O2  =[ ubiquinol_oxidase ]=>
+/////////////////threshold reaction///////////////
+O2
+62
+
+reaction: 8412
+H2O2 glycine_betaine  =[ choline_oxidase ]=> H2O betaine_aldehyde O2
+/////////////////all related reaction///////////////
+
+reaction: 42804
+D-glucose alpha-D-galactose_1-phosphate  =[ beta-D-galactosyl-(1->4)-L-rhamnose_phosphorylase ]=> phosphate D-galactosyl-beta-1,3-D-glucose
+reaction: 8409
+H2O betaine_aldehyde O2  =[ choline_oxidase ]=> betaine H2O2
+reaction: 8410
+H2O betaine_aldehyde O2  =[ choline_oxidase ]=> H2O2 glycine_betaine
+reaction: 8412
+H2O2 glycine_betaine  =[ choline_oxidase ]=> H2O betaine_aldehyde O2

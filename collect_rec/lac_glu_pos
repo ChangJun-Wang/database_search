@@ -1,0 +1,29 @@
+reaction: 9903
+lactate oxidized_acceptor  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+
+reaction: 9977
+D-glucose acceptor  =[ soluble_quinoprotein_glucose_dehydrogenase ]=> reduced_acceptor D-glucono-1,5-lactone
+
+reaction: 107571
+reduced_acceptor S-adenosyl-L-methionine 5-amino-1-(5-phospho-beta-D-ribosyl)imidazole  =[ 5-hydroxybenzimidazole_synthase ]=> L-methionine 5'-deoxyadenosine formate oxidized_acceptor 5-hydroxybenzimidazole phosphate NH3
+
+reaction: 56062
+ATP glutamine_synthase  =[ [glutamine_synthetase]_adenylyltransferase ]=> adenylyl-[glutamine_synthase] diphosphate
+
+reaction: 56067
+adenylyl-[glutamine_synthase] phosphate  =[ [glutamine_synthetase]_adenylyltransferase ]=> ADP glutamine_synthase
+
+reaction: 56941
+ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=>
+/////////////////threshold reaction///////////////
+ATP
+178
+
+reaction: 13526
+ADP  =[ firefly_luciferase ]=> ATP AMP
+/////////////////all related reaction///////////////
+
+reaction: 13526
+ADP  =[ firefly_luciferase ]=> ATP AMP
+reaction: 56936
+ATP pyruvate phosphate  =[ pyruvate,_phosphate_dikinase ]=> AMP diphosphate phosphoenolpyruvate
