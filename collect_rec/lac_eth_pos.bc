@@ -1,0 +1,60 @@
+clear_model.
+parameter(k0 = , k1 = , k2 = , k3 = , k4 = , k5 = , k6 = , k7 = , k8 =  ).
+
+
+k0*ethanol*acceptor*alkan_1_ol_dehydrogenase for ethanol + acceptor =[ alkan_1_ol_dehydrogenase ]=> acetaldehyde + reduced_acceptor.
+
+
+k1*oxidized_acceptor*lactate*II_oxo_acid_reductase for oxidized_acceptor + lactate =[ II_oxo_acid_reductase ]=> pyruvate + reduced_acceptor.
+
+
+k2*S_adenosyl_L_methionine*V_amino_1_5_phospho_beta_D_ribosylimidazole*reduced_acceptor*V_hydroxybenzimidazole_synthase for S_adenosyl_L_methionine + V_amino_1_5_phospho_beta_D_ribosylimidazole + reduced_acceptor =[ V_hydroxybenzimidazole_synthase ]=> V_deoxyadenosine + V_hydroxybenzimidazole + oxidized_acceptor + phosphate + NH3 + formate + L_methionine.
+
+
+k3*hexadecanoyl_acyl_carrier_protein*phosphate*phosphate_acyltransferase for hexadecanoyl_acyl_carrier_protein + phosphate =[ phosphate_acyltransferase ]=> hexadecanoyl_phosphate + an_acyl_carrier_protein.
+
+
+k4*an_acyl_carrier_protein*ATP*hexadecanoate*long_chain_fatty_acid_acyl_carrier_protein_ligase for an_acyl_carrier_protein + ATP + hexadecanoate =[ long_chain_fatty_acid_acyl_carrier_protein_ligase ]=> AMP + hexadecanoyl_acyl_carrier_protein + diphosphate.
+
+
+k5*PPDK_central_domain_construct_of_residues_381_512*ATP*phosphate*pyruvate_phosphate_dikinase for PPDK_central_domain_construct_of_residues_381_512 + ATP + phosphate =[ pyruvate_phosphate_dikinase ]=> .
+
+
+k6*ADP*firefly_luciferase for ADP =[ firefly_luciferase ]=> AMP + ATP.
+
+
+k7*pyruvate*ATP*phosphate*pyruvate_phosphate_dikinase for pyruvate + ATP + phosphate =[ pyruvate_phosphate_dikinase ]=> AMP + diphosphate + phosphoenolpyruvate.
+
+k8*AMP*diphosphate*phosphoenolpyruvate*pyruvate_phosphate_dikinase for AMP + diphosphate + phosphoenolpyruvate =[ pyruvate_phosphate_dikinase ]=> pyruvate + ATP + phosphate.
+
+present(ATP).
+present(alkan_1_ol_dehydrogenase).
+present(lactate).
+present(an_acyl_carrier_protein).
+present(oxidized_acceptor).
+present(acceptor).
+present(reduced_acceptor).
+present(phosphate_acyltransferase).
+present(firefly_luciferase).
+present(hexadecanoyl_acyl_carrier_protein).
+present(NH3).
+present(pyruvate_phosphate_dikinase).
+present(diphosphate).
+present(V_hydroxybenzimidazole).
+present(phosphate).
+present(AMP).
+present(formate).
+present(PPDK_central_domain_construct_of_residues_381_512).
+present(II_oxo_acid_reductase).
+present(long_chain_fatty_acid_acyl_carrier_protein_ligase).
+present(S_adenosyl_L_methionine).
+present(ADP).
+present(L_methionine).
+present(V_deoxyadenosine).
+present(pyruvate).
+present(V_hydroxybenzimidazole_synthase).
+present(hexadecanoyl_phosphate).
+present(acetaldehyde).
+present(ethanol).
+present(hexadecanoate).
+present(V_amino_1_5_phospho_beta_D_ribosylimidazole).

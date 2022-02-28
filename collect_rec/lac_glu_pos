@@ -1,29 +1,56 @@
 reaction: 9903
-lactate oxidized_acceptor  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+k*oxidized_acceptor*lactate*2-oxo-acid_reductase for oxidized_acceptor + lactate +  =[ 2-oxo-acid_reductase ]=> pyruvate + /reduced_acceptor + .
 
 reaction: 9977
-D-glucose acceptor  =[ soluble_quinoprotein_glucose_dehydrogenase ]=> reduced_acceptor D-glucono-1,5-lactone
+k*acceptor*D-glucose*soluble_quinoprotein_glucose_dehydrogenase for acceptor + D-glucose +  =[ soluble_quinoprotein_glucose_dehydrogenase ]=> D-glucono-1,5-lactone + /reduced_acceptor + .
 
-reaction: 107571
-reduced_acceptor S-adenosyl-L-methionine 5-amino-1-(5-phospho-beta-D-ribosyl)imidazole  =[ 5-hydroxybenzimidazole_synthase ]=> L-methionine 5'-deoxyadenosine formate oxidized_acceptor 5-hydroxybenzimidazole phosphate NH3
+reaction: 107461
+k*/reduced_acceptor*S-adenosyl-L-methionine*L-tyrosine*2-iminoacetate_synthase for /reduced_acceptor + S-adenosyl-L-methionine + L-tyrosine +  =[ 2-iminoacetate_synthase ]=> 5'-deoxyadenosine + acceptor + 2-iminoacetate + /H+ + L-methionine + 4-methylphenol + .
 
-reaction: 56062
-ATP glutamine_synthase  =[ [glutamine_synthetase]_adenylyltransferase ]=> adenylyl-[glutamine_synthase] diphosphate
+reaction: 30660
+k*H2O*4-(hydroxyamino)quinoline_N-oxide*//NAD(P)+*nitroquinoline-N-oxide_reductase for H2O + 4-(hydroxyamino)quinoline_N-oxide + //NAD(P)+ +  =[ nitroquinoline-N-oxide_reductase ]=> /H+ + NAD(P)H + 4-nitroquinoline_N-oxide + .
 
-reaction: 56067
-adenylyl-[glutamine_synthase] phosphate  =[ [glutamine_synthetase]_adenylyltransferase ]=> ADP glutamine_synthase
+reaction: 30661
+k*/H+*NAD(P)H*4-nitroquinoline_N-oxide*nitroquinoline-N-oxide_reductase for /H+ + NAD(P)H + 4-nitroquinoline_N-oxide +  =[ nitroquinoline-N-oxide_reductase ]=> H2O + 4-(hydroxyamino)quinoline_N-oxide + //NAD(P)+ + .
 
-reaction: 56941
-ATP PPDK_central_domain_construct_of_residues_381-512 phosphate  =[ pyruvate,_phosphate_dikinase ]=>
+reaction: 20925
+k*/H+*Fe(II)-siderophore*//NAD(P)+*ferric-chelate_reductase_[NAD(P)H] for /H+ + Fe(II)-siderophore + //NAD(P)+ +  =[ ferric-chelate_reductase_[NAD(P)H] ]=> Fe(III)-siderophore + NAD(P)H + .
 /////////////////threshold reaction///////////////
-ATP
-178
+//NAD(P)+
+761
 
-reaction: 13526
-ADP  =[ firefly_luciferase ]=> ATP AMP
+reaction: 1255
+k*NAD(P)H*diacetyl*L-xylulose_reductase for NAD(P)H + diacetyl +  =[ L-xylulose_reductase ]=> acetoin + //NAD(P)+ + .
 /////////////////all related reaction///////////////
 
-reaction: 13526
-ADP  =[ firefly_luciferase ]=> ATP AMP
-reaction: 56936
-ATP pyruvate phosphate  =[ pyruvate,_phosphate_dikinase ]=> AMP diphosphate phosphoenolpyruvate
+reaction: 1255
+k*NAD(P)H*diacetyl*L-xylulose_reductase for NAD(P)H + diacetyl +  =[ L-xylulose_reductase ]=> acetoin + //NAD(P)+ + .
+present(NAD(P)H).
+present(Fe(II)-siderophore).
+present(//NAD(P)+).
+present(Fe(III)-siderophore).
+present(/H+).
+present(lactate).
+present(soluble_quinoprotein_glucose_dehydrogenase).
+present(2-iminoacetate_synthase).
+present(acetoin).
+present(oxidized_acceptor).
+present(acceptor).
+present(nitroquinoline-N-oxide_reductase).
+present(/reduced_acceptor).
+present(4-(hydroxyamino)quinoline_N-oxide).
+present(4-nitroquinoline_N-oxide).
+present(H2O).
+present(2-iminoacetate).
+present(2-oxo-acid_reductase).
+present(L-xylulose_reductase).
+present(L-tyrosine).
+present(D-glucono-1,5-lactone).
+present(S-adenosyl-L-methionine).
+present(L-methionine).
+present(5'-deoxyadenosine).
+present(pyruvate).
+present(D-glucose).
+present(diacetyl).
+present(ferric-chelate_reductase_[NAD(P)H]).
+present(4-methylphenol).

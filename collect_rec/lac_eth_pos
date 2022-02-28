@@ -1,31 +1,60 @@
 reaction: 9585
-acceptor ethanol  =[ alkan-1-ol_dehydrogenase ]=> acetaldehyde reduced_acceptor
+k*ethanol*acceptor*alkan-1-ol_dehydrogenase for ethanol + acceptor +  =[ alkan-1-ol_dehydrogenase ]=> acetaldehyde + /reduced_acceptor + .
 
 reaction: 9903
-lactate oxidized_acceptor  =[ 2-oxo-acid_reductase ]=> reduced_acceptor pyruvate
+k*oxidized_acceptor*lactate*2-oxo-acid_reductase for oxidized_acceptor + lactate +  =[ 2-oxo-acid_reductase ]=> pyruvate + /reduced_acceptor + .
 
-reaction: 107461
-reduced_acceptor L-tyrosine S-adenosyl-L-methionine  =[ 2-iminoacetate_synthase ]=> acceptor 2-iminoacetate H+ L-methionine 4-methylphenol 5'-deoxyadenosine
+reaction: 107571
+k*S-adenosyl-L-methionine*5-amino-1-(5-phospho-beta-D-ribosyl)imidazole*/reduced_acceptor*5-hydroxybenzimidazole_synthase for S-adenosyl-L-methionine + 5-amino-1-(5-phospho-beta-D-ribosyl)imidazole + /reduced_acceptor +  =[ 5-hydroxybenzimidazole_synthase ]=> 5'-deoxyadenosine + 5-hydroxybenzimidazole + oxidized_acceptor + /phosphate + NH3 + formate + L-methionine + .
 
-reaction: 5380
-NAD(P)+ 2'-deoxymugineic_acid  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)H H+ 3''-deamino-3''-oxonicotianamine
+reaction: 36758
+k*hexadecanoyl-[acyl-carrier_protein]*/phosphate*phosphate_acyltransferase for hexadecanoyl-[acyl-carrier_protein] + /phosphate +  =[ phosphate_acyltransferase ]=> hexadecanoyl_phosphate + an_[acyl-carrier_protein] + .
 
-reaction: 5381
-NAD(P)H H+ 3''-deamino-3''-oxonicotianamine  =[ 3''-deamino-3''-oxonicotianamine_reductase ]=> NAD(P)+ 2'-deoxymugineic_acid
+reaction: 115023
+k*an_[acyl-carrier_protein]*//ATP*hexadecanoate*long-chain-fatty-acid-[acyl-carrier-protein]_ligase for an_[acyl-carrier_protein] + //ATP + hexadecanoate +  =[ long-chain-fatty-acid-[acyl-carrier-protein]_ligase ]=> AMP + hexadecanoyl-[acyl-carrier_protein] + diphosphate + .
 
-reaction: 20925
-NAD(P)+ H+ Fe(II)-siderophore  =[ ferric-chelate_reductase_[NAD(P)H] ]=> NAD(P)H Fe(III)-siderophore
+reaction: 56941
+k*PPDK_central_domain_construct_of_residues_381-512*//ATP*/phosphate*pyruvate,_phosphate_dikinase for PPDK_central_domain_construct_of_residues_381-512 + //ATP + /phosphate +  =[ pyruvate,_phosphate_dikinase ]=> .
 /////////////////threshold reaction///////////////
-NAD(P)+
-761
+//ATP
+178
 
-reaction: 885
-H+ NAD(P)H (2E,4E)-hexa-2,4-dienal  =[ alcohol_dehydrogenase ]=> NAD(P)+ (2E,4E)-6-hydroxyhexa-2,4-dienal
+reaction: 13526
+k*ADP*firefly_luciferase for ADP +  =[ firefly_luciferase ]=> AMP + //ATP + .
 /////////////////all related reaction///////////////
 
-reaction: 885
-H+ NAD(P)H (2E,4E)-hexa-2,4-dienal  =[ alcohol_dehydrogenase ]=> NAD(P)+ (2E,4E)-6-hydroxyhexa-2,4-dienal
-reaction: 1153
-acceptor ethanol  =[ alcohol_dehydrogenase ]=> acetaldehyde reduced_acceptor
-reaction: 1238
-acceptor ethanol  =[ alcohol_dehydrogenase ]=> acetaldehyde reduced_acceptor
+reaction: 56936
+k*pyruvate*//ATP*/phosphate*pyruvate,_phosphate_dikinase for pyruvate + //ATP + /phosphate +  =[ pyruvate,_phosphate_dikinase ]=> AMP + diphosphate + phosphoenolpyruvate + .
+reaction: 56937
+k*AMP*diphosphate*phosphoenolpyruvate*pyruvate,_phosphate_dikinase for AMP + diphosphate + phosphoenolpyruvate +  =[ pyruvate,_phosphate_dikinase ]=> pyruvate + //ATP + /phosphate + .
+present(//ATP).
+present(alkan-1-ol_dehydrogenase).
+present(lactate).
+present(an_[acyl-carrier_protein]).
+present(oxidized_acceptor).
+present(acceptor).
+present(/reduced_acceptor).
+present(phosphate_acyltransferase).
+present(firefly_luciferase).
+present(hexadecanoyl-[acyl-carrier_protein]).
+present(NH3).
+present(pyruvate,_phosphate_dikinase).
+present(diphosphate).
+present(5-hydroxybenzimidazole).
+present(/phosphate).
+present(AMP).
+present(formate).
+present(PPDK_central_domain_construct_of_residues_381-512).
+present(2-oxo-acid_reductase).
+present(long-chain-fatty-acid-[acyl-carrier-protein]_ligase).
+present(S-adenosyl-L-methionine).
+present(ADP).
+present(L-methionine).
+present(5'-deoxyadenosine).
+present(pyruvate).
+present(5-hydroxybenzimidazole_synthase).
+present(hexadecanoyl_phosphate).
+present(acetaldehyde).
+present(ethanol).
+present(hexadecanoate).
+present(5-amino-1-(5-phospho-beta-D-ribosyl)imidazole).

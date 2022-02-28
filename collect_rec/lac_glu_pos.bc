@@ -1,0 +1,53 @@
+clear_model.
+parameter(k0 = , k1 = , k2 = , k3 = , k4 = , k5 = , k6 = , k7 = ).
+
+
+k0*oxidized_acceptor*lactate*II_oxo_acid_reductase for oxidized_acceptor + lactate =[ II_oxo_acid_reductase ]=> pyruvate + reduced_acceptor.
+
+
+k1*acceptor*D_glucose*soluble_quinoprotein_glucose_dehydrogenase for acceptor + D_glucose =[ soluble_quinoprotein_glucose_dehydrogenase ]=> D_glucono_I_V_lactone + reduced_acceptor.
+
+
+k2*reduced_acceptor*S_adenosyl_L_methionine*L_tyrosine*II_iminoacetate_synthase for reduced_acceptor + S_adenosyl_L_methionine + L_tyrosine =[ II_iminoacetate_synthase ]=> V_deoxyadenosine + acceptor + II_iminoacetate + Hp + L_methionine + IV_methylphenol.
+
+
+k3*H2O*IV_hydroxyamino_quinoline_N_oxide*NAD_P_p*nitroquinoline_N_oxide_reductase for H2O + IV_hydroxyamino_quinoline_N_oxide + NAD_P_p =[ nitroquinoline_N_oxide_reductase ]=> Hp + NAD_P_H + IV_nitroquinoline_N_oxide.
+
+
+k4*Hp*NAD_P_H*IV_nitroquinoline_N_oxide*nitroquinoline_N_oxide_reductase for Hp + NAD_P_H + IV_nitroquinoline_N_oxide =[ nitroquinoline_N_oxide_reductase ]=> H2O + IV_hydroxyamino_quinoline_N_oxide + NAD_P_p + .
+
+
+k5*Hp*Fe_II_siderophore*NAD_P_p*ferric_chelate_reductase_NAD_P_H for Hp + Fe_II_siderophore + NAD_P_p =[ ferric_chelate_reductase_NAD_P_H ]=> Fe_III_siderophore + NAD_P_H.
+
+
+k6*NAD_P_H*diacetyl*L_xylulose_reductase for NAD_P_H + diacetyl =[ L_xylulose_reductase ]=> acetoin + NAD_P_p.
+
+present(NAD_P_H).
+present(Fe_II_siderophore).
+present(NAD_P_p).
+present(Fe_III_siderophore).
+present(Hp).
+present(lactate).
+present(soluble_quinoprotein_glucose_dehydrogenase).
+present(II_iminoacetate_synthase).
+present(acetoin).
+present(oxidized_acceptor).
+present(acceptor).
+present(nitroquinoline_N_oxide_reductase).
+present(reduced_acceptor).
+present(IV_hydroxyamino_quinoline_N_oxide).
+present(IV_nitroquinoline_N_oxide).
+present(H2O).
+present(II_iminoacetate).
+present(II_oxo_acid_reductase).
+present(L_xylulose_reductase).
+present(L_tyrosine).
+present(D_glucono_I_V_lactone).
+present(S_adenosyl_L_methionine).
+present(L_methionine).
+present(V_deoxyadenosine).
+present(pyruvate).
+present(D_glucose).
+present(diacetyl).
+present(ferric_chelate_reductase_NAD_P_H).
+present(IV_methylphenol).

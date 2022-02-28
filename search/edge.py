@@ -36,10 +36,15 @@ class edge :
     def show(self):
         temp = "\n" + "reaction: "
         temp += (str(self.name)) + " \n"
-
+        temp += "k"
         for i in self.getrea():
-            temp +=  (str(i.name)) + " "
+            temp +=  "*" + (str(i.name))
+        temp += "*" + self.getenz().name
+        temp += " for "
+        for i in self.getrea():
+            temp +=  (str(i.name)) + " + "
         temp +=  " =[ " + self.getenz().name + " ]=> "
         for i in self.getpro():
-            temp += (str(i.name)) + " "
+            temp += (str(i.name)) + " + "
+        temp += "."
         return temp

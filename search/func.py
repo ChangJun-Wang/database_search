@@ -242,7 +242,9 @@ class search:
                         species.mark = 1
                     for species in path1["pathnode"]:
                         species.mark = 2
-                    if self.CheckMerge(path0, path1) and self.CheckLabelC(path0, path1):
+                    if (self.CheckMerge(path0, path1) 
+                        and self.CheckLabelC(path0, path1)
+                        and node0[0].name != "H+"):
                         path_tmp = self.Merge(path0, path1)
                         for rec in path_tmp["pathlist"]:
                             print(rec.show())
@@ -257,13 +259,15 @@ class search:
                                 print (cnode.show())
                                 print (len(cnode.getUpedge()))
                                 for upEdge in cnode.getUpedge():
-                                    print(upEdge.show())
-                                    for species in upEdge.getrea():
-                                        allnodes.add(species)
-                                    for species in upEdge.getpro():
-                                        allnodes.add(species)
-                                    allnodes.add(upEdge.getenz())
-                                    break
+                                    if (upEdge.getenz().name != "alcohol_dehydrogenase" 
+                                        and upEdge.getenz().name != "spontaneous_reaction"):
+                                        print(upEdge.show())
+                                        for species in upEdge.getrea():
+                                            allnodes.add(species)
+                                        for species in upEdge.getpro():
+                                            allnodes.add(species)
+                                        allnodes.add(upEdge.getenz())
+                                        break
                         print("/////////////////all related reaction///////////////")
                         print(self.check(allnodes, path_tmp["pathlist"]))
                         for nodes in allnodes:
@@ -471,11 +475,20 @@ class search:
 
     def check(self, allnodes, pathlist):
         temp = ""
-        for enz in allnodes:
-            for reaction in enz.getCatedge():
-                if reaction not in pathlist:
-                    if reaction.activated(allnodes):
-                        temp += (reaction.show())
+        count = 1
+        allnode = allnodes.copy()
+        allrec  = set()
+        while count != 0:
+            tmp = len(allrec)
+            for enz in allnodes:
+                for reaction in enz.getCatedge():
+                    if reaction not in pathlist and reaction not in allrec:
+                        if reaction.activated(allnode):
+                            for pro in reaction.getpro():
+                                allnode.add(pro)
+                            allrec.add(reaction)
+                            temp += (reaction.show())
+            count = len(allrec) - tmp
         return temp
     
     def ClearVis(self):

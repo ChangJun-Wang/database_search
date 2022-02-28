@@ -1,0 +1,61 @@
+clear_model.
+parameter(k0 = , k1 = , k2 = , k3 = , k4 = , k5 = , k6 = , k7 = , k8 = , k9 = , k10 = ).
+
+
+k0*D_glucose*alpha_D_galactose_1_phosphate*beta_D_galactosyl_1_4_L_rhamnose_phosphorylase for D_glucose + alpha_D_galactose_1_phosphate =[ beta_D_galactosyl_1_4_L_rhamnose_phosphorylase ]=> beta_D_galactosyl_1_4_D_glucose + phosphate.
+
+
+k1*CO2*GTP*H2O*acetone*acetone_carboxylase for CO2 + GTP + H2O + acetone =[ acetone_carboxylase ]=> acetoacetate + GMP + phosphate.
+
+
+k2*L_glutamate_5_semialdehyde*NADp*phosphate*glutamate_5_semialdehyde_dehydrogenase for L_glutamate_5_semialdehyde + NADp + phosphate =[ glutamate_5_semialdehyde_dehydrogenase ]=> NADH + L_glutamyl_5_phosphate + Hp.
+
+
+k3*O2*decanoyl_CoA*acyl_CoA_oxidase for O2 + decanoyl_CoA =[ acyl_CoA_oxidase ]=> trans_2_decenoyl_CoA + H2O2.
+
+
+k4*NADH*trans_2_decenoyl_CoA*enoyl_acyl_carrier_protein_reductase for NADH + trans_2_decenoyl_CoA =[ enoyl_acyl_carrier_protein_reductase ]=> NADp + decanoyl_CoA.
+
+
+k5*NADH*O2*ubiquinol_oxidase for NADH + O2 =[ ubiquinol_oxidase ]=> _.
+
+
+k6*H2O2*glycine_betaine*choline_oxidase for H2O2 + glycine_betaine =[ choline_oxidase ]=> O2 + H2O + betaine_aldehyde.
+
+
+k7*D_glucose*alpha_D_galactose_1_phosphate*beta_D_galactosyl_1_4_L_rhamnose_phosphorylase for D_glucose + alpha_D_galactose_1_phosphate =[ beta_D_galactosyl_1_4_L_rhamnose_phosphorylase ]=> phosphate + D_galactosyl_beta_1_3_D_glucose.
+
+k8*O2*H2O*betaine_aldehyde*choline_oxidase for O2 + H2O + betaine_aldehyde =[ choline_oxidase ]=> betaine + H2O2.
+
+k9*O2*H2O*betaine_aldehyde*choline_oxidase for O2 + H2O + betaine_aldehyde =[ choline_oxidase ]=> H2O2 + glycine_betaine.
+
+k10*NADH*trans_2_decenoyl_CoA*Hp*enoyl_acyl_carrier_protein_reductase for NADH + trans_2_decenoyl_CoA + Hp =[ enoyl_acyl_carrier_protein_reductase ]=> NADp + decanoyl_CoA.
+
+present(ubiquinol_oxidase).
+present(trans_2_decenoyl_CoA).
+present(beta_D_galactosyl_1_4_L_rhamnose_phosphorylase).
+present(Hp).
+present(choline_oxidase).
+present(acetone_carboxylase).
+present(betaine_aldehyde).
+present(GTP).
+present(GMP).
+present(D_glucose).
+present(L_glutamate_5_semialdehyde).
+present(glycine_betaine).
+present(alpha_D_galactose_1_phosphate).
+present(acetone).
+present(glutamate_5_semialdehyde_dehydrogenase).
+present(enoyl_acyl_carrier_protein_reductase).
+present(H2O).
+present(NADp).
+present(L_glutamyl_5_phosphate).
+present(phosphate).
+present(NADH).
+present(decanoyl_CoA).
+present(beta_D_galactosyl_1_4_D_glucose).
+present(H2O2).
+present(acetoacetate).
+present(O2).
+present(acyl_CoA_oxidase).
+present(CO2).
