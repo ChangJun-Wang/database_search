@@ -5,13 +5,12 @@ from node import node
 from edge import edge
 
 class BFS:
-    def __init__(self, startNode, Target_type, mapToCnode, mapToClist):
+    def __init__(self, startNode, Target_type):
         self.search_limit = 1
         self.bfs          = [startNode]
         self.type         = Target_type
         self.candidate    = set()
-        self.mapToCnode   = mapToCnode
-        self.mapToClist   = mapToClist
+
 	
     def BuildStart(self, input_species):
         (input_species[0].path[0])["pathnode"].append(input_species[1])
@@ -26,12 +25,15 @@ class BFS:
         while (self.bfs != []):
             startPro = self.bfs.pop(0)
             if (self.type in startPro.label):
-                assert self.type == "A" or self.type == "C_side"
                 if self.type == "A" and (startPro.getpin() > 2):
                     # print ("find A")
                     self.foundA(startPro)
                 elif self.type == "C_side":
                     self.foundC_side(startPro)
+                elif self.type == "B":
+                    self.foundB(startPro)
+                elif self.type == "B_side":
+                    self.foundB_side(startPro)
 
             if startPro.level + 1 <= self.search_limit:
                 for downRec in startPro.getDownedge():
@@ -59,3 +61,22 @@ class BFS:
     def foundC_side(self, product):
         for label in product.labelC_side:
             self.candidate.add((product, label))
+
+    def foundB(self, product):
+        assert(len(product.getDownedge()) > 1)
+        for downRec in product.getDownedge():
+            self.candidate.add((product, downRec.name))
+            downRec.labelB.append(product.labelB)
+            for rea in downRec.getrea():
+                if rea != product:
+                    rea.label.add("B_side")
+                    # rea.labelB_side.append(product.labelB)
+                    # rea.labelBmap[product.labelB] = downRec.name
+
+    def foundB_side(self, product):
+        for downRec in product.getDownedge():
+            if downRec.labelB!=[]:
+                self.candidate.add((product, downRec.name))
+        # for label in product.labelB_side:
+        #     self.candidate.add((product, label))
+

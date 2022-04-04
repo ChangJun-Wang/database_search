@@ -9,6 +9,7 @@ class edge :
         self.reverse  = False
         self.label    = set()
         self.labelC   = []
+        self.labelB   = []
         self.visited  = 0
         
     def getpro(self):
