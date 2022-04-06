@@ -16,16 +16,14 @@ class node :
         self.sidepath = []
 
         self.recordA  = []
-        self.recordC  = {}
 
         self.labelA      = ""
         self.labelB      = ""
-        self.labelB_side = []
-        self.labelBmap   = {}
         self.labelC      = []
         self.labelC_side = []
         self.labelD      = ""
         self.labelE      = []
+
     def getUpedge(self):
         return self.upEdge
     def getDownedge(self):

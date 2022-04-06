@@ -11,10 +11,19 @@ class BFS:
         self.type         = Target_type
         self.candidate    = set()
 
-	
-    def BuildStart(self, input_species):
-        (input_species[0].path[0])["pathnode"].append(input_species[1])
-        (input_species[1].path[0])["pathnode"].append(input_species[0])
+    # def initial(self, input_species):
+    #     candidate = []
+    #     for downRec in input_species.getDownedge():
+    #         # check whether this reaction has conflict to previous reactions and input
+    #         CheckDownRec = input_species.CheckDownRec(downRec)
+    #         if CheckDownRec != []:
+    #             for product in downRec.getpro():
+    #                 CheckProduct = product.CheckProduct(CheckDownRec)
+    #                 if CheckProduct != []:
+    #                     product.AddPath(startPro, downRec, CheckProduct)
+    #                     product.level = startPro.level + 1
+    #                     if (product not in self.bfs and product.level <= self.search_limit):
+    #                         self.bfs.append(product)
 
     def search(self):
 		# initializtion for starting node
@@ -34,8 +43,8 @@ class BFS:
                     self.foundB(startPro)
                 elif self.type == "B_side":
                     self.foundB_side(startPro)
-
             if startPro.level + 1 <= self.search_limit:
+                # for path in startPro.path:
                 for downRec in startPro.getDownedge():
                     # check whether this reaction has conflict to previous reactions and input
                     CheckDownRec = startPro.CheckDownRec(downRec)
@@ -49,7 +58,10 @@ class BFS:
                                     self.bfs.append(product)
                                 assert product.path != CheckProduct
                                 assert len(product.path) != 0
+            # startPro.level = 0
+            # startPro.path = []
         return self.candidate
+
 
     def foundA(self, product):
         if product.path == []:

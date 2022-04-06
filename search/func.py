@@ -7,9 +7,6 @@ from bfs  import BFS
 class search:
     def __init__(self):
         self.c = 0
-        self.mapTotar    = {}
-        self.core_node   = []
-        self.tmp_path    = {}
         self.forbid_node = set()
         self.mapToNode   = {}
         self.mapToEdge   = {}
@@ -193,8 +190,8 @@ class search:
     def main(self, input_species):
         candidate = []
         result    = []
+        self.BuildStart(input_species)
         bfs = BFS(input_species[0], "A")
-        bfs.BuildStart(input_species)
         candidate0 = bfs.search()
         # record all the returned type A
         for species in candidate0:
@@ -204,8 +201,8 @@ class search:
 
         print(len(candidate0))
 
+        self.BuildStart(input_species)
         bfs = BFS(input_species[1], "A")
-        bfs.BuildStart(input_species)
         candidate1 = bfs.search()
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
@@ -308,37 +305,20 @@ class search:
                         return path_tmp
         return {}
 
-    def MergeCside(self, label0, label1):
-        path_tmp = {}
-        for sidepath in label0[0].sidepath:
-            for path in label1[0].path:
-                for species in sidepath["pathnode"]:
-                    species.mark = 1
-                for species in path["pathnode"]:
-                    species.mark = 2
-                if self.CheckMerge(path, sidepath): # and self.CheckPathnode(path, sidepath):
-                    path0 = self.Merge(path, sidepath)
-                    labelnum = int(label0[1])
-                    pathnode = self.mapToCnode[str(labelnum)].copy()
-                    related  = []
-                    enz      = []
-                    for rec in self.mapToClist[str(labelnum)]:
-                        enz.append(rec.getenz())
-                        for rea in rec.getrea():
-                            if rea not in pathnode:
-                                related.append(rea)
-                    path1 = {}
-                    path1["pathnode"] = pathnode
-                    path1["related"]  = related
-                    path1["pathlist"] = self.mapToClist[str(labelnum)]
-                    path1["pathenz"]  = enz
-                    if self.CheckMerge(path0, path1) and self.CheckLabelC(path0, path1):
-                        path_tmp = self.Merge(path0, path1)
-                for species in sidepath["pathnode"]:
-                    species.mark = 0
-                for species in path["pathnode"]:
-                    species.mark = 0
-        return path_tmp
+    def BuildStart(self, input_species):
+        for node in input_species:
+            tmp             = {}
+            tmp["related"]  = set()
+            tmp["pathlist"] = []
+            tmp["pathenz"]  = []
+            tmp["pathnode"] = []
+            node.path.append(tmp)
+        for node in input_species:
+            node.path[0]["related"].add(self.mapToNode["H2O"])
+            node.path[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
+            
+        (input_species[0].path[0])["pathnode"].append(input_species[1])
+        (input_species[1].path[0])["pathnode"].append(input_species[0])
 
     def CheckPathnode(self, path0, path1):
         assert (len(path0) > 2)
@@ -356,64 +336,6 @@ class search:
                 return False
         for species in path0["pathnode"]:
             if species in path1["related"]:
-                return False
-        return True
-
-    def CheckLabelC(self, path0, path1):
-        AllSpecies = set()
-
-        for rec in path0["pathlist"]:
-            for species in rec.getrea():
-                AllSpecies.add(species)
-            AllSpecies.add(rec.getenz())
-            for species in rec.getpro():
-                AllSpecies.add(species)
-        for rec in path1["pathlist"]:
-            for species in rec.getrea():
-                AllSpecies.add(species)
-            AllSpecies.add(rec.getenz())
-            for species in rec.getpro():
-                AllSpecies.add(species)
-
-        AllSpecies.add(self.mapToNode["H2O"])
-        AllSpecies.add(self.mapToNode["spontaneous_reaction"])
-
-        for enz in path0["pathenz"]:
-            for rec in enz.getCatedge():
-                if rec.activated(AllSpecies):
-                    if not self.CheckCycle(path0, rec):
-                        return False
-        for enz in path1["pathenz"]:
-            for rec in enz.getCatedge():
-                if rec.activated(AllSpecies):
-                    if not self.CheckCycle(path1, rec):
-                        return False
-
-        return True
-
-    def CheckCycle(self, path, rec):
-        if rec in path["pathlist"]:
-            return True
-        c1 = 0
-        c2 = 0
-        cr = 0
-        for rea in rec.getrea():
-            if rea.mark == 1:
-                c1 = c1 + 1
-            elif rea.mark == 2:
-                c2 = c2 + 1
-        for pro in rec.getpro():
-            if pro.mark == 1:
-                c1 = c1 + 1
-            elif pro.mark == 2:
-                c2 = c2 + 1
-        if c1 == 0 or c2 == 0:
-            return True
-        return False
-
-    def check_rea(self, enz, product):
-        for catrec in enz.getCatedge():
-            if product in catrec.getrea():
                 return False
         return True
 
@@ -455,33 +377,19 @@ class search:
     def ClearPath(self):
         for node in self.nodeList:
             node.path       = []
-            tmp             = {}
-            tmp["related"]  = set()
-            tmp["pathlist"] = []
-            tmp["pathenz"]  = []
-            tmp["pathnode"] = []
-            node.path.append(tmp)
-
-        for node in self.nodeList:
-            node.path[0]["related"].add(self.mapToNode["H2O"])
-            node.path[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
 
     def ClearRecordA(self):
         for node in self.nodeList:
             node.recordA    = []
-            tmp             = {}
-            tmp["related"]  = set()
-            tmp["pathlist"] = []
-            tmp["pathenz"]  = []
-            tmp["pathnode"] = []
-            node.recordA.append(tmp)
-        for node in self.nodeList:
-            node.recordA[0]["related"].add(self.mapToNode["H2O"])
-            node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
-
-    def ClearRecordC(self):
-        for node in self.nodeList:
-            node.recordC = {}
+        #     tmp             = {}
+        #     tmp["related"]  = set()
+        #     tmp["pathlist"] = []
+        #     tmp["pathenz"]  = []
+        #     tmp["pathnode"] = []
+        #     node.recordA.append(tmp)
+        # for node in self.nodeList:
+        #     node.recordA[0]["related"].add(self.mapToNode["H2O"])
+        #     node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
 
     def ClearLevel(self):
         for node in self.nodeList:
