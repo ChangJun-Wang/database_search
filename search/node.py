@@ -54,6 +54,22 @@ class node :
     def show(self):
         return (self.name)
 
+    # def SortPath(self):
+    #     length = len(self.path)
+    #     for i in range(length-1):
+    #         for j in range(i+1, length):
+    #             if (self.path[i])
+
+    #     length = len(self.sidepath)
+    #     for i in range(length-1):
+    #         for j in range(i+1, length):
+    #             pass
+
+    #     length = len(self.recordA)
+    #     for i in range(length-1):
+    #         for j in range(i+1, length):
+    #             pass
+
     def AddPath(self, startPro, downRec, pathlist):
         tmpList = []
         for path in pathlist:

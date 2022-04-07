@@ -2,7 +2,77 @@ from node import node
 
 from edge import edge
 
-from bfs  import BFS
+# from bfs  import BFS
+
+def BFS(startNode, Target_type):
+    search_limit = 1
+    bfs          = [startNode]
+    stype        = Target_type
+    candidate    = set()
+
+    # initializtion for starting node
+    bfs[0].CopyToPath()
+
+    # start to traverse
+    count = 0
+    while (bfs != []):
+        startPro = bfs.pop(0)
+        if (stype in startPro.label):
+            if stype == "A" and (startPro.getpin() > 2):
+                # print ("find A")
+                foundA(startPro, candidate)
+            elif stype == "C_side":
+                foundC_side(startPro, candidate)
+            elif stype == "B":
+                foundB(startPro, candidate)
+            elif stype == "B_side":
+                foundB_side(startPro, candidate)
+        if startPro.level + 1 <= search_limit:
+            # for path in startPro.path:
+            for downRec in startPro.getDownedge():
+                # check whether this reaction has conflict to previous reactions and input
+                CheckDownRec = startPro.CheckDownRec(downRec)
+                if CheckDownRec != []:
+                    for product in downRec.getpro():
+                        CheckProduct = product.CheckProduct(CheckDownRec)
+                        if CheckProduct != []:
+                            product.AddPath(startPro, downRec, CheckProduct)
+                            product.level = startPro.level + 1
+                            if (product not in bfs and product.level <= search_limit):
+                                bfs.append(product)
+                            assert product.path != CheckProduct
+                            assert len(product.path) != 0
+        # startPro.level = 0
+        # startPro.path = []
+    return candidate
+
+
+def foundA(product, candidate):
+    if product.path == []:
+        return False
+    else:
+        candidate.add((product, product.labelA))
+        return True
+
+def foundC_side(product, candidate):
+    for label in product.labelC_side:
+        candidate.add((product, label))
+
+def foundB(product, candidate):
+    assert(len(product.getDownedge()) > 1)
+    for downRec in product.getDownedge():
+        candidate.add((product, downRec.name))
+        downRec.labelB.append(product.labelB)
+        for rea in downRec.getrea():
+            if rea != product:
+                rea.label.add("B_side")
+                # rea.labelB_side.append(product.labelB)
+                # rea.labelBmap[product.labelB] = downRec.name
+
+def foundB_side(product, candidate):
+    for downRec in product.getDownedge():
+        if downRec.labelB!=[]:
+            candidate.add((product, downRec.name))
 
 class search:
     def __init__(self):
@@ -191,8 +261,7 @@ class search:
         candidate = []
         result    = []
         self.BuildStart(input_species)
-        bfs = BFS(input_species[0], "A")
-        candidate0 = bfs.search()
+        candidate0 = BFS(input_species[0], "A")
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord()
@@ -202,8 +271,7 @@ class search:
         print(len(candidate0))
 
         self.BuildStart(input_species)
-        bfs = BFS(input_species[1], "A")
-        candidate1 = bfs.search()
+        candidate1 = BFS(input_species[1], "A")
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
         for label in candidate0:
@@ -217,16 +285,16 @@ class search:
         print(len(candidate))
 
         for i in range(len(candidate)):
-            bfs0 = BFS(candidate[i], "B")
-            candidate0 = bfs0.search()
+            candidate0 = BFS(candidate[i], "B")
+            print ("candidate0 : ", len(candidate0))
             for species in candidate0:
                 species[0].CopyToSide()
             self.ClearPath()
             self.ClearLevel()
             for j in range(len(candidate)):
                 if i != j:
-                    bfs1 = BFS(candidate[j], "B_side")
-                    candidate1 = bfs1.search()
+                    candidate1 = BFS(candidate[j], "B_side")
+                    print ("candidate1 : ", len(candidate1))
                     print("start merging type B_side")
                     for label0 in candidate0:
                         for label1 in candidate1:
@@ -381,15 +449,6 @@ class search:
     def ClearRecordA(self):
         for node in self.nodeList:
             node.recordA    = []
-        #     tmp             = {}
-        #     tmp["related"]  = set()
-        #     tmp["pathlist"] = []
-        #     tmp["pathenz"]  = []
-        #     tmp["pathnode"] = []
-        #     node.recordA.append(tmp)
-        # for node in self.nodeList:
-        #     node.recordA[0]["related"].add(self.mapToNode["H2O"])
-        #     node.recordA[0]["pathenz"].append(self.mapToNode["spontaneous_reaction"])
 
     def ClearLevel(self):
         for node in self.nodeList:
