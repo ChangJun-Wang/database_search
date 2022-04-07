@@ -2,8 +2,6 @@ from node import node
 
 from edge import edge
 
-# from bfs  import BFS
-
 def BFS(startNode, Target_type):
     search_limit = 1
     bfs          = [startNode]

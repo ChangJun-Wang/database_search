@@ -22,7 +22,7 @@ class edge :
     def getall(self):
         toEnz = []
         toEnz.append(self.toEnz)
-        return self.toRea + self.toPro + self.toEnz
+        return self.toRea + self.toPro + toEnz
 
     def addpro(self, pro):
         (self.toPro).add(pro)
