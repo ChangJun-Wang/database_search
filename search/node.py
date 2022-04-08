@@ -1,3 +1,5 @@
+from edge import edge
+
 class node :
     def __init__(self, name):
         self.name     = name
@@ -112,6 +114,9 @@ class node :
 
     def CheckDownRec(self, downRec):
         tmp = []
+
+        if self in downRec.getpro():
+            return tmp
         downRecs = []
         downRecs.append(downRec)
         added_species = set()

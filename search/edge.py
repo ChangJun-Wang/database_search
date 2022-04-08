@@ -39,10 +39,10 @@ class edge :
                 return False
         return True
 
-    def show(self):
+    def show(self, c):
         temp = "\n" + "reaction: "
         temp += (str(self.name)) + " \n"
-        temp += "k"
+        temp += "k" + str(c)
         for i in self.getrea():
             temp +=  "*" + (str(i.name))
         temp += "*" + self.getenz().name

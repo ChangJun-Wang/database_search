@@ -12,19 +12,11 @@ def BFS(startNode, Target_type):
     bfs[0].CopyToPath()
 
     # start to traverse
-    count = 0
     while (bfs != []):
         startPro = bfs.pop(0)
         if (stype in startPro.label):
-            if stype == "A" and (startPro.getpin() > 2):
-                # print ("find A")
-                foundA(startPro, candidate)
-            elif stype == "C_side":
-                foundC_side(startPro, candidate)
-            elif stype == "B":
-                foundB(startPro, candidate)
-            elif stype == "B_side":
-                foundB_side(startPro, candidate)
+            found(stype, startPro, candidate)
+
         if startPro.level + 1 <= search_limit:
             # for path in startPro.path:
             for downRec in startPro.getDownedge():
@@ -44,55 +36,50 @@ def BFS(startNode, Target_type):
         # startPro.path = []
     return candidate
 
-
-def foundA(product, candidate):
-    if product.path == []:
-        return False
-    else:
-        candidate.add((product, product.labelA))
-        return True
-
-def foundC_side(product, candidate):
-    for label in product.labelC_side:
-        candidate.add((product, label))
-
-def foundB(product, candidate):
-    assert(len(product.getDownedge()) > 1)
-    for downRec in product.getDownedge():
-        candidate.add((product, downRec.name))
-        downRec.labelB.append(product.labelB)
-        for rea in downRec.getrea():
-            if rea != product:
-                rea.label.add("B_side")
-                # rea.labelB_side.append(product.labelB)
-                # rea.labelBmap[product.labelB] = downRec.name
-
-def foundB_side(product, candidate):
-    for downRec in product.getDownedge():
-        if downRec.labelB!=[]:
+def found(stype, product, candidate):
+    if stype == "A" and (product.getpin() > 2):
+        if product.path != []:
+            candidate.add((product, product.labelA))
+    elif stype == "C_side":
+        for label in product.labelC_side:
+            candidate.add((product, label))
+    elif stype == "B":
+        assert(len(product.getDownedge()) > 1)
+        for downRec in product.getDownedge():
             candidate.add((product, downRec.name))
+            downRec.labelB.append(product.labelB)
+            for rea in downRec.getrea():
+                if rea != product:
+                    rea.label.add("B_side")
+                    # rea.labelB_side.append(product.labelB)
+                    # rea.labelBmap[product.labelB] = downRec.name
+    elif stype == "B_side":
+        for downRec in product.getDownedge():
+            if downRec.labelB!=[]:
+                candidate.add((product, downRec.name))
 
 class search:
     def __init__(self):
         self.c = 0
-        self.forbid_node = set()
-        self.mapToNode   = {}
-        self.mapToEdge   = {}
-        self.mapToClist  = {}
-        self.mapToCnode  = {}
-        self.mapToCforbid= {}
-        self.nodeList    = []
-        self.edgeList    = []
-        self.HashTable   = {}
-        self.HashCollect = {}
-        self.reaction    = 0
-        self.typeA       = 0
-        self.typeB       = 0
-        self.typeC       = 0
-        self.typeD       = 0
-        self.typeE       = 0
+        self.input_species  = []
+        self.forbid_node    = set()
+        self.mapToNode      = {}
+        self.mapToEdge      = {}
+        self.mapToClist     = {}
+        self.mapToCnode     = {}
+        self.mapToCforbid   = {}
+        self.nodeList       = []
+        self.edgeList       = []
+        self.HashTable      = {}
+        self.HashCollect    = {}
+        self.reaction       = 0
+        self.typeA          = 0
+        self.typeB          = 0
+        self.typeC          = 0
+        self.typeD          = 0
+        self.typeE          = 0
 
-        self.count       = 0
+        self.count          = 0
 
     def split(self, inputline):
         temp    = ""
@@ -256,8 +243,8 @@ class search:
         self.initialize()
 
     def main(self, input_species):
+        self.input_species = input_species
         candidate = []
-        result    = []
         self.BuildStart(input_species)
         candidate0 = BFS(input_species[0], "A")
         # record all the returned type A
@@ -303,13 +290,13 @@ class search:
                                 accept = self.MergeBside(label0, label1)
                                 if accept != {}:
                                     allnodes = set()
-                                    result.append(accept)
                                     for node in accept["pathnode"]:
                                         print(node.show())
                                     for node in labelB:
                                         print("labelB : ", node.show())
                                     for rec in accept["pathlist"]:
-                                        print(rec.show())
+                                        print(rec.show(self.c))
+                                        self.c = self.c+1
                                         for species in rec.getrea():
                                             allnodes.add(species)
                                         for species in rec.getpro():
@@ -317,14 +304,12 @@ class search:
                                         allnodes.add(rec.getenz())
 
                                     print("/////////////////all related reaction///////////////")
-                                    print(self.check(allnodes, accept["pathlist"]))
+                                    print(self.Check(allnodes, accept["pathlist"]))
                                     for node in allnodes:
                                         print ("present(" + node.show() + ").")
                                     return True
                     self.ClearPath()
                     self.ClearLevel()
-
-        print(len(result))
         return False
 
     def Merge(self, path, record):
@@ -349,11 +334,26 @@ class search:
         path_tmp = {}
         for sidepath in label0[0].sidepath:
             for path in label1[0].path:
-                if self.CheckMerge(path, sidepath):
+                if self.CheckMerge(path, sidepath) and self.CheckPathnode(path, sidepath):
+                    label0[0].mark = 1
+                    label1[0].mark = 2
+                    for rec in path["pathlist"]:
+                        if (self.input_species[0] in rec.getrea()) or (self.input_species[1] in rec.getrea()):
+                            rec.getenz().mark = 1
+                    for rec in sidepath["pathlist"]:
+                        if (self.input_species[0] in rec.getrea()) or (self.input_species[1] in rec.getrea()):
+                            rec.getenz().mark = 2
+                    for node in path["pathnode"]:
+                        if (node not in self.input_species):
+                            node.mark = 1
+                    for node in sidepath["pathnode"]:
+                        if (node not in self.input_species):
+                            node.mark = 2
                     path0 = self.Merge(path, sidepath)
                     downRec  = self.mapToEdge[label1[1]]
                     pathnode = []
                     pathnode.append(label1[0])
+                    pathnode.append(label0[0])
                     related  = []
                     enz      = []
                     enz.append(downRec.getenz())
@@ -368,7 +368,18 @@ class search:
                     path1["pathenz"]  = enz
                     if self.CheckMerge(path0, path1):
                         path_tmp = self.Merge(path0, path1)
-                        return path_tmp
+                        if self.CheckAll(path_tmp):
+                            return path_tmp
+                    label0[0].mark = 0
+                    label1[0].mark = 0
+                    for rec in path["pathlist"]:
+                        rec.getenz().mark = 0
+                    for rec in sidepath["pathlist"]:
+                        rec.getenz().mark = 0
+                    for node in path["pathnode"]:
+                        node.mark = 0
+                    for node in sidepath["pathnode"]:
+                        node.mark = 0
         return {}
 
     def BuildStart(self, input_species):
@@ -385,6 +396,50 @@ class search:
             
         (input_species[0].path[0])["pathnode"].append(input_species[1])
         (input_species[1].path[0])["pathnode"].append(input_species[0])
+
+    def CheckAll(self, path):
+        for node in path["pathnode"]:
+            if node.name == "NAD(P)H" or node.name == "NAD(P)+":
+                return False
+        allnodes = set()
+        for rec in path["pathlist"]:
+            for node in rec.getrea():
+                allnodes.add(node)
+            for node in rec.getpro():
+                allnodes.add(node)
+            allnodes.add(rec.getenz())
+
+        allrec = self.CollectAll(allnodes, path["pathlist"])
+
+        for rec in allrec:
+            cr1 = 0
+            cr2 = 0
+            cp1 = 0
+            cp2 = 0
+            enzMark = rec.getenz().mark
+
+            for pro in rec.getpro():
+                if pro.mark == 1:
+                    cp1 = cp1 + 1
+                elif pro.mark == 2:
+                    cp2 = cp2 + 1
+            for rea in rec.getrea():
+                if rea in self.input_species:
+                    if cp1 != 0 and cp2 != 0:
+                        return False
+                if rea.mark == 1:
+                    cr1 = cr1 + 1
+                elif rea.mark == 2:
+                    cr2 = cr2 + 1
+            if cr1+cr2 == 0:
+                if enzMark == 0:
+                    return False
+            if cr1 != 0 and cp2 != 0:
+                return False
+            if cp1 != 0 and cr2 != 0:
+                return False
+
+        return True
 
     def CheckPathnode(self, path0, path1):
         assert (len(path0) > 2)
@@ -405,7 +460,7 @@ class search:
                 return False
         return True
 
-    def check(self, allnodes, pathlist):
+    def Check(self, allnodes, pathlist):
         temp = ""
         count = 1
         allnode = allnodes.copy()
@@ -419,10 +474,27 @@ class search:
                             for pro in reaction.getpro():
                                 allnode.add(pro)
                             allrec.add(reaction)
-                            temp += (reaction.show())
+                            temp += (reaction.show(self.c))
+                            self.c = self.c+1
             count = len(allrec) - tmp
         return temp
     
+    def CollectAll(self, allnodes, pathlist):
+        temp = ""
+        count = 1
+        allnode = allnodes.copy()
+        allrec  = set()
+        while count != 0:
+            tmp = len(allrec)
+            for enz in allnodes:
+                for reaction in enz.getCatedge():
+                    if (reaction not in pathlist) and (reaction not in allrec) and (reaction.activated(allnode)):
+                        for pro in reaction.getpro():
+                            allnode.add(pro)
+                        allrec.add(reaction)
+            count = len(allrec) - tmp
+        return allrec
+
     def ClearVis(self):
         for nodes in self.nodeList:
             nodes.visited  = 0
