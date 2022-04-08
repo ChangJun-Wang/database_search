@@ -43,7 +43,7 @@ def found(stype, product, candidate):
     elif stype == "C_side":
         for label in product.labelC_side:
             candidate.add((product, label))
-    elif stype == "B":
+    elif stype == "B" and (product.getpout() > 1):
         assert(len(product.getDownedge()) > 1)
         for downRec in product.getDownedge():
             candidate.add((product, downRec.name))
@@ -330,11 +330,31 @@ class search:
 
         return tmp
 
+
+    def whatever(self, path0, downRec0, label0, label1):
+        for node in downRec0.getall():
+            if node == label1 or node in path0["pathnode"]:
+                return False
+        return True
+
+
     def MergeBside(self, label0, label1):
         path_tmp = {}
         for sidepath in label0[0].sidepath:
             for path in label1[0].path:
-                if self.CheckMerge(path, sidepath) and self.CheckPathnode(path, sidepath):
+                # flag = False
+                for downRec0 in label0[0].getDownedge():
+                    if downRec0 not in sidepath["pathlist"]:
+                        sidepath["pathlist"].append(downRec0)
+                        break
+                #     if self.whatever(sidepath, downRec0, label0[0], label1[0]):
+                #         flag = True
+                #         sidepath["pathlist"].append(downRec0)
+                #         break
+                # if ~flag:
+                #     return {}
+
+                if self.CheckMerge(path, sidepath): 
                     label0[0].mark = 1
                     label1[0].mark = 2
                     for rec in path["pathlist"]:
@@ -354,18 +374,8 @@ class search:
                     pathnode = []
                     pathnode.append(label1[0])
                     pathnode.append(label0[0])
-                    related  = []
-                    enz      = []
-                    enz.append(downRec.getenz())
-                    for rea in downRec.getrea():
-                        if rea not in pathnode:
-                            related.append(rea)
-                    path1 = {}
-                    path1["pathnode"] = pathnode
-                    path1["related"]  = related
-                    path1["pathlist"] = []
-                    path1["pathlist"].append(downRec)
-                    path1["pathenz"]  = enz
+                    path1 = self.CreatePath(pathnode, downRec)
+
                     if self.CheckMerge(path0, path1):
                         path_tmp = self.Merge(path0, path1)
                         if self.CheckAll(path_tmp):
@@ -381,6 +391,24 @@ class search:
                     for node in sidepath["pathnode"]:
                         node.mark = 0
         return {}
+
+    def CreatePath(self, pathnode, downRec):
+        related  = set()
+        enz      = []
+        enz.append(downRec.getenz())
+        for rea in downRec.getrea():
+            if rea not in pathnode:
+                related.add(rea)
+        for pro in downRec.getpro():
+            related.add(pro)
+        path = {}
+        path["pathnode"] = pathnode
+        path["related"]  = related
+        path["pathlist"] = []
+        path["pathlist"].append(downRec)
+        path["pathenz"]  = enz
+
+        return path
 
     def BuildStart(self, input_species):
         for node in input_species:
@@ -442,18 +470,18 @@ class search:
         return True
 
     def CheckPathnode(self, path0, path1):
-        assert (len(path0) > 2)
+        # assert (len(path0) > 2)
         for species in path1["pathnode"]:
-            if (species in path0["pathnode"][2:]):
+            if (species not in self.input_species) and (species in path0["pathnode"]):
                 return False
         return True
 
     def CheckMerge(self, path0, path1):
         for species in path1["pathnode"]:
-            if (species in path0["pathnode"][2:]):
+            if (species not in self.input_species) and (species in path0["pathnode"]):
                 return False
         for species in path1["pathnode"]:
-            if (species in path0["related"]):
+            if species in path0["related"]:
                 return False
         for species in path0["pathnode"]:
             if species in path1["related"]:

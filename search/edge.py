@@ -20,9 +20,13 @@ class edge :
         return self.toEnz
 
     def getall(self):
-        toEnz = []
-        toEnz.append(self.toEnz)
-        return self.toRea + self.toPro + toEnz
+        rec = set()
+        rec.add(self.toEnz)
+        for i in self.toRea:
+            rec.add(i)
+        for i in self.toPro:
+            rec.add(i)
+        return rec
 
     def addpro(self, pro):
         (self.toPro).add(pro)
