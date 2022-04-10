@@ -23,8 +23,8 @@ if __name__ == '__main__':
     print ("\n", "*************************************************")
 
     #specified input species :
-    # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
-    input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
+    input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
+    # input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
     # input_species = [searcher.mapToNode["D-glucose"], searcher.mapToNode["lactate"]]
 
     searcher.main(input_species)

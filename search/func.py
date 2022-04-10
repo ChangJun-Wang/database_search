@@ -430,6 +430,8 @@ class search:
             if node.name == "NAD(P)H" or node.name == "NAD(P)+":
                 return False
         allnodes = set()
+        allnodes.add(self.mapToNode["H2O"])
+        allnodes.add(self.mapToNode["spontaneous_reaction"])
         for rec in path["pathlist"]:
             for node in rec.getrea():
                 allnodes.add(node)
@@ -493,6 +495,8 @@ class search:
         count = 1
         allnode = allnodes.copy()
         allrec  = set()
+        allnode.add(self.mapToNode["H2O"])
+        allnode.add(self.mapToNode["spontaneous_reaction"])
         while count != 0:
             tmp = len(allrec)
             for enz in allnodes:
@@ -511,6 +515,8 @@ class search:
         temp = ""
         count = 1
         allnode = allnodes.copy()
+        allnode.add(self.mapToNode["H2O"])
+        allnode.add(self.mapToNode["spontaneous_reaction"])
         allrec  = set()
         while count != 0:
             tmp = len(allrec)
