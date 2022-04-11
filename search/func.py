@@ -183,27 +183,60 @@ class search:
                                     species = species[2:]
                                 elif species[0] == "a":
                                     species = species[2:]
-                        if len(species) > 3:
+                        elif len(species) > 3:
                             if species[2] == "_":
                                 if species[0:2].isdigit():
                                     par = int(species[0:2])
                                     species = species[3:]
                                 elif species[0:2] == "an":
                                     species = species[3:]
-                                
-                        if (species not in self.mapToNode):
-                            self.mapToNode[species] = node(species)
-                            self.nodeList.append(self.mapToNode[species])
-                        if (is_product == 0):
-                            self.mapToEdge[self.reaction].addrea(self.mapToNode[species])
-                            self.mapToNode[species].addDownedge(self.mapToEdge[self.reaction])
-                            (self.mapToNode[species]).downEdgePar[self.mapToEdge[self.reaction]] = par
-                            self.mapToNode[species].addpout()
-                        else:
-                            self.mapToEdge[self.reaction].addpro(self.mapToNode[species])
-                            self.mapToNode[species].addUpedge(self.mapToEdge[self.reaction])
-                            (self.mapToNode[species]).upEdgePar[self.mapToEdge[self.reaction]] = par
-                            self.mapToNode[species].addpin()
+
+                        if species[0:6] == "NAD(P)":
+                            species0 = "NAD" + species[6:]
+                            if (species0 not in self.mapToNode):
+                                self.mapToNode[species0] = node(species0)
+                                self.nodeList.append(self.mapToNode[species0])
+                            
+                            if (is_product == 0):
+                                self.mapToEdge[self.reaction].addrea(self.mapToNode[species0])
+                                self.mapToNode[species0].addDownedge(self.mapToEdge[self.reaction])
+                                (self.mapToNode[species0]).downEdgePar[self.mapToEdge[self.reaction]] = par
+                                self.mapToNode[species0].addpout()
+                            else:
+                                self.mapToEdge[self.reaction].addpro(self.mapToNode[species0])
+                                self.mapToNode[species0].addUpedge(self.mapToEdge[self.reaction])
+                                (self.mapToNode[species0]).upEdgePar[self.mapToEdge[self.reaction]] = par
+                                self.mapToNode[species0].addpin()
+                            species1 = "NADP" + species[6:]
+                            if (species1 not in self.mapToNode):
+                                self.mapToNode[species1] = node(species1)
+                                self.nodeList.append(self.mapToNode[species1])
+                            
+                            if (is_product == 0):
+                                self.mapToEdge[self.reaction].addrea(self.mapToNode[species1])
+                                self.mapToNode[species1].addDownedge(self.mapToEdge[self.reaction])
+                                (self.mapToNode[species1]).downEdgePar[self.mapToEdge[self.reaction]] = par
+                                self.mapToNode[species1].addpout()
+                            else:
+                                self.mapToEdge[self.reaction].addpro(self.mapToNode[species1])
+                                self.mapToNode[species1].addUpedge(self.mapToEdge[self.reaction])
+                                (self.mapToNode[species1]).upEdgePar[self.mapToEdge[self.reaction]] = par
+                                self.mapToNode[species1].addpin()
+
+                        else:  
+                            if (species not in self.mapToNode):
+                                self.mapToNode[species] = node(species)
+                                self.nodeList.append(self.mapToNode[species])
+                            if (is_product == 0):
+                                self.mapToEdge[self.reaction].addrea(self.mapToNode[species])
+                                self.mapToNode[species].addDownedge(self.mapToEdge[self.reaction])
+                                (self.mapToNode[species]).downEdgePar[self.mapToEdge[self.reaction]] = par
+                                self.mapToNode[species].addpout()
+                            else:
+                                self.mapToEdge[self.reaction].addpro(self.mapToNode[species])
+                                self.mapToNode[species].addUpedge(self.mapToEdge[self.reaction])
+                                (self.mapToNode[species]).upEdgePar[self.mapToEdge[self.reaction]] = par
+                                self.mapToNode[species].addpin()
 
     def parsing_label(self, inputfile):
         # print("in record label parsing")
@@ -436,9 +469,9 @@ class search:
         (input_species[1].path[0])["pathnode"].append(input_species[0])
 
     def CheckAll(self, path):
-        for node in path["pathnode"]:
-            if node.name == "NAD(P)H" or node.name == "NAD(P)+":
-                return False
+        # for node in path["pathnode"]:
+        #     if node.name == "NAD(P)H" or node.name == "NAD(P)+":
+        #         return False
         allnodes = set()
         allnodes.add(self.mapToNode["H2O"])
         allnodes.add(self.mapToNode["spontaneous_reaction"])

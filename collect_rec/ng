@@ -1,0 +1,109 @@
+nitric_oxide
+D-glucose
+nitric_oxide
+D-glucose
+NAD+
+NH3
+p-hydroxyphenylpyruvate
+labelB :  p-hydroxyphenylpyruvate
+labelB :  NH3
+
+reaction: 30429
+k0*nitric_oxide*ferrocytochrome_c*nitrite_reductase for nitric_oxide + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+
+reaction: 52384
+k1*phosphoramidate*D-glucose*phosphoramidate-hexose_phosphotransferase for phosphoramidate + D-glucose +  =[ phosphoramidate-hexose_phosphotransferase ]=> D-glucose_1-phosphate + NH3 + .
+
+reaction: 31036
+k2*nitric_oxide*NADH*dihydrolipoyl_dehydrogenase for nitric_oxide + NADH +  =[ dihydrolipoyl_dehydrogenase ]=> NAD+ + nitrate + .
+
+reaction: 3679
+k3*NADPH*D-glucose*NADH*aldose_reductase for NADPH + D-glucose + NADH +  =[ aldose_reductase ]=> NAD+ + NADP+ + sorbitol + .
+
+reaction: 25981
+k4*NAD+*NADP+*prephenate*arogenate_dehydrogenase_[NAD(P)+] for NAD+ + NADP+ + prephenate +  =[ arogenate_dehydrogenase_[NAD(P)+] ]=> NADPH + p-hydroxyphenylpyruvate + NADH + CO2 + .
+
+reaction: 24296
+k5*oxidized_ferredoxin*p-hydroxyphenylpyruvate*CoA*indolepyruvate_ferredoxin_oxidoreductase for oxidized_ferredoxin + p-hydroxyphenylpyruvate + CoA +  =[ indolepyruvate_ferredoxin_oxidoreductase ]=> reduced_ferredoxin + p-hydroxyphenylacetyl-CoA + CO2 + .
+
+reaction: 27221
+k6*NADPH*p-hydroxyphenylpyruvate*NH3*glutamate_dehydrogenase for NADPH + p-hydroxyphenylpyruvate + NH3 +  =[ glutamate_dehydrogenase ]=> L-tyrosine + H2O + NADP+ + .
+/////////////////all related reaction///////////////
+
+reaction: 30350
+k7*NAD+*H2O*NH3*nitrite_reductase for NAD+ + H2O + NH3 +  =[ nitrite_reductase ]=> H+ + NADH + nitrite + .
+reaction: 30351
+k8*H+*NADH*nitrite*nitrite_reductase for H+ + NADH + nitrite +  =[ nitrite_reductase ]=> ammonia + H2O + NAD+ + .
+reaction: 30352
+k9*NADH*ferricytochrome_c*nitrite_reductase for NADH + ferricytochrome_c +  =[ nitrite_reductase ]=> NAD+ + H+ + ferrocytochrome_c + .
+reaction: 30359
+k10*nitric_oxide*H2O*ferricytochrome_c*nitrite_reductase for nitric_oxide + H2O + ferricytochrome_c +  =[ nitrite_reductase ]=> H+ + nitrite + ferrocytochrome_c + .
+reaction: 30369
+k11*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NO + .
+reaction: 30370
+k12*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> nitric_oxide + H2O + ferricytochrome_c + .
+reaction: 30375
+k13*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> nitric_oxide + H2O + ferricytochrome_c + .
+reaction: 30406
+k14*H2O*ferricytochrome_c*NH3*nitrite_reductase for H2O + ferricytochrome_c + NH3 +  =[ nitrite_reductase ]=> H+ + nitrite + ferrocytochrome_c + .
+reaction: 30410
+k15*H+*NO*ferrocytochrome_c*nitrite_reductase for H+ + NO + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+reaction: 30411
+k16*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+reaction: 30412
+k17*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + hydroxylamine + .
+reaction: 30413
+k18*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+reaction: 30414
+k19*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+reaction: 30415
+k20*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c +  =[ nitrite_reductase ]=> ferricytochrome + NH3 + .
+reaction: 30427
+k21*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+reaction: 30431
+k22*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3 + .
+reaction: 3664
+k23*NADPH*H+*D-glucose*aldose_reductase for NADPH + H+ + D-glucose +  =[ aldose_reductase ]=> NADP+ + sorbitol + .
+reaction: 3670
+k24*NAD+*sorbitol*aldose_reductase for NAD+ + sorbitol +  =[ aldose_reductase ]=> H+ + NADH + D-fructose + .
+reaction: 3674
+k25*NADPH*H+*D-glucose*aldose_reductase for NADPH + H+ + D-glucose +  =[ aldose_reductase ]=> D-sorbitol + NADP+ + .
+reaction: 3818
+k26*NADPH*H+*NADH*D-fructose*aldose_reductase for NADPH + H+ + NADH + D-fructose +  =[ aldose_reductase ]=> NAD+ + D-arabino-hexitol + NADP+ + .
+reaction: 31014
+k27*H+*NADH*dihydrolipoyl_dehydrogenase for H+ + NADH +  =[ dihydrolipoyl_dehydrogenase ]=> NAD+ + .
+reaction: 31030
+k28*NADH*ferricytochrome_c*dihydrolipoyl_dehydrogenase for NADH + ferricytochrome_c +  =[ dihydrolipoyl_dehydrogenase ]=> NAD+ + H+ + ferrocytochrome_c + .
+reaction: 30355
+k29*H+*NADH*hydroxylamine*nitrite_reductase for H+ + NADH + hydroxylamine +  =[ nitrite_reductase ]=> .
+reaction: 30407
+k30*ferricytochrome_c*hydroxylamine*nitrite_reductase for ferricytochrome_c + hydroxylamine +  =[ nitrite_reductase ]=> nitrite + ferrocytochrome_c + .
+present(D-glucose_1-phosphate).
+present(NH3).
+present(nitrite_reductase).
+present(L-tyrosine).
+present(CoA).
+present(aldose_reductase).
+present(indolepyruvate_ferredoxin_oxidoreductase).
+present(NAD+).
+present(p-hydroxyphenylpyruvate).
+present(D-glucose).
+present(NADH).
+present(sorbitol).
+present(H2O).
+present(ferricytochrome_c).
+present(ferrocytochrome_c).
+present(prephenate).
+present(p-hydroxyphenylacetyl-CoA).
+present(phosphoramidate-hexose_phosphotransferase).
+present(CO2).
+present(nitric_oxide).
+present(phosphoramidate).
+present(NADP+).
+present(NADPH).
+present(arogenate_dehydrogenase_[NAD(P)+]).
+present(reduced_ferredoxin).
+present(oxidized_ferredoxin).
+present(dihydrolipoyl_dehydrogenase).
+present(glutamate_dehydrogenase).
+present(nitrate).
