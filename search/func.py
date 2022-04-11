@@ -177,9 +177,19 @@ class search:
                     else:
                         par = 1
                         if len(species) > 2:
-                            if species[1] == "_" and species[0].isdigit():
-                                par = int(species[0])
-                                species = species[2:]
+                            if species[1] == "_":
+                                if species[0].isdigit():
+                                    par = int(species[0])
+                                    species = species[2:]
+                                elif species[0] == "a":
+                                    species = species[2:]
+                        if len(species) > 3:
+                            if species[2] == "_":
+                                if species[0:2].isdigit():
+                                    par = int(species[0:2])
+                                    species = species[3:]
+                                elif species[0:2] == "an":
+                                    species = species[3:]
                                 
                         if (species not in self.mapToNode):
                             self.mapToNode[species] = node(species)
@@ -196,48 +206,48 @@ class search:
                             self.mapToNode[species].addpin()
 
     def parsing_label(self, inputfile):
-        print("in record label parsing")
-        tmpList = []
-        typeC = 0
-        forbid = False
-        for line in inputfile:
-            tmpList = self.split(line)
-            if len(tmpList) > 0:
-                if tmpList[0] == "TypeC:":
-                    self.typeC += 1
-                    forbid = False
-                    typeC = tmpList[1]
-                    self.mapToClist[typeC] = []
-                    assert(tmpList[1].isdigit())
-                elif tmpList[0] == "reaction:":
-                    self.mapToClist[typeC].append(self.mapToEdge[tmpList[1]])
-                    self.mapToEdge[tmpList[1]].label.add("C")
-                    self.mapToEdge[tmpList[1]].labelC.append(typeC)
-                elif tmpList[0] == "CoreNode:":
-                    assert len(tmpList) == 5
-                    self.mapToCnode[typeC] = []
-                    self.mapToCnode[typeC].append(self.mapToNode[tmpList[1]])
-                    self.mapToCnode[typeC].append(self.mapToNode[tmpList[2]])
-                    self.mapToCnode[typeC].append(self.mapToNode[tmpList[3]])
-                    self.mapToCnode[typeC].append(self.mapToNode[tmpList[4]])
-                    self.mapToNode[tmpList[1]].label.add("C")
-                    self.mapToNode[tmpList[2]].label.add("C")
-                    self.mapToNode[tmpList[3]].label.add("C_side")
-                    self.mapToNode[tmpList[4]].label.add("C_side")
-                    self.mapToNode[tmpList[1]].labelC.append(typeC)
-                    self.mapToNode[tmpList[2]].labelC.append(typeC)
-                    self.mapToNode[tmpList[3]].labelC_side.append(typeC)
-                    self.mapToNode[tmpList[4]].labelC_side.append(typeC)
+        # print("in record label parsing")
+        # tmpList = []
+        # typeC = 0
+        # forbid = False
+        # for line in inputfile:
+        #     tmpList = self.split(line)
+        #     if len(tmpList) > 0:
+        #         if tmpList[0] == "TypeC:":
+        #             self.typeC += 1
+        #             forbid = False
+        #             typeC = tmpList[1]
+        #             self.mapToClist[typeC] = []
+        #             assert(tmpList[1].isdigit())
+        #         elif tmpList[0] == "reaction:":
+        #             self.mapToClist[typeC].append(self.mapToEdge[tmpList[1]])
+        #             self.mapToEdge[tmpList[1]].label.add("C")
+        #             self.mapToEdge[tmpList[1]].labelC.append(typeC)
+        #         elif tmpList[0] == "CoreNode:":
+        #             assert len(tmpList) == 5
+        #             self.mapToCnode[typeC] = []
+        #             self.mapToCnode[typeC].append(self.mapToNode[tmpList[1]])
+        #             self.mapToCnode[typeC].append(self.mapToNode[tmpList[2]])
+        #             self.mapToCnode[typeC].append(self.mapToNode[tmpList[3]])
+        #             self.mapToCnode[typeC].append(self.mapToNode[tmpList[4]])
+        #             self.mapToNode[tmpList[1]].label.add("C")
+        #             self.mapToNode[tmpList[2]].label.add("C")
+        #             self.mapToNode[tmpList[3]].label.add("C_side")
+        #             self.mapToNode[tmpList[4]].label.add("C_side")
+        #             self.mapToNode[tmpList[1]].labelC.append(typeC)
+        #             self.mapToNode[tmpList[2]].labelC.append(typeC)
+        #             self.mapToNode[tmpList[3]].labelC_side.append(typeC)
+        #             self.mapToNode[tmpList[4]].labelC_side.append(typeC)
                     
-                elif tmpList[0] == "Forbidnode:":
-                    forbid = True
-                    self.mapToCforbid[typeC] = []
-                else:
-                    if forbid:
-                        for i in tmpList:
-                            tmp = []
-                            tmp.append(self.mapToNode[i])
-                        self.mapToCforbid[typeC].append(tmp)
+        #         elif tmpList[0] == "Forbidnode:":
+        #             forbid = True
+        #             self.mapToCforbid[typeC] = []
+        #         else:
+        #             if forbid:
+        #                 for i in tmpList:
+        #                     tmp = []
+        #                     tmp.append(self.mapToNode[i])
+        #                 self.mapToCforbid[typeC].append(tmp)
 
         print("start initializing")
         self.initialize()
@@ -344,7 +354,7 @@ class search:
             for path in label1[0].path:
                 # flag = False
                 for downRec0 in label0[0].getDownedge():
-                    if downRec0 not in sidepath["pathlist"]:
+                    if downRec0 not in sidepath["pathlist"] and downRec0.getenz().name != "spontaneous_reaction":
                         sidepath["pathlist"].append(downRec0)
                         break
                 #     if self.whatever(sidepath, downRec0, label0[0], label1[0]):
