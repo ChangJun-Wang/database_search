@@ -1,0 +1,76 @@
+D-glucose
+acetone
+NADP+
+D-glucose
+acetone
+phosphate
+pyruvate
+methylamine
+labelB :  methylamine
+labelB :  pyruvate
+
+reaction: 6995
+k0*NADPH*D-glucose*glycerol_dehydrogenase for NADPH + D-glucose +  =[ glycerol_dehydrogenase ]=> sorbitol + NADP+ + .
+
+reaction: 15645
+k1*NADPH*O2*H+*acetone*acetone_monooxygenase for NADPH + O2 + H+ + acetone +  =[ acetone_monooxygenase ]=> H2O + NADP+ + methyl_acetate + .
+
+reaction: 29106
+k2*H2O*NADP+*staphylopine*staphylopine_dehydrogenase for H2O + NADP+ + staphylopine +  =[ staphylopine_dehydrogenase ]=> H+ + yl)ethyl]amino}butanoate + pyruvate + NADPH + .
+
+reaction: 44907
+k3*beta-D-glucose_1-phosphate*D-glucose*maltose_phosphorylase for beta-D-glucose_1-phosphate + D-glucose +  =[ maltose_phosphorylase ]=> maltose + phosphate + .
+
+reaction: 116869
+k4*H2O*CO2*GTP*acetone*acetone_carboxylase for H2O + CO2 + GTP + acetone +  =[ acetone_carboxylase ]=> phosphate + GMP + acetoacetate + .
+
+reaction: 24503
+k5*N-methylglycine*dithioerythritol*phosphate*sarcosine_reductase for N-methylglycine + dithioerythritol + phosphate +  =[ sarcosine_reductase ]=> methylamine + dithioerythritol_disulfide + acetyl_phosphate + .
+
+reaction: 16024
+k6*NADH*methylamine*H+*O2*methane_monooxygenase for NADH + methylamine + H+ + O2 +  =[ methane_monooxygenase ]=> NAD+ + H2O + hydroxymethylamine + .
+
+reaction: 28726
+k7*methylamine*pyruvate*1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase for methylamine + pyruvate +  =[ 1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase ]=> N-methylalanine + .
+/////////////////all related reaction///////////////
+
+reaction: 44897
+k8*maltose*phosphate*maltose_phosphorylase for maltose + phosphate +  =[ maltose_phosphorylase ]=> beta-D-glucose_1-phosphate + D-glucose + .
+reaction: 6925
+k9*sorbitol*NAD+*glycerol_dehydrogenase for sorbitol + NAD+ +  =[ glycerol_dehydrogenase ]=> .
+present(yl)ethyl]amino}butanoate).
+present(GTP).
+present(acetone_carboxylase).
+present(CO2).
+present(acetyl_phosphate).
+present(methylamine).
+present(D-glucose).
+present(sorbitol).
+present(acetone_monooxygenase).
+present(NADP+).
+present(NADPH).
+present(H+).
+present(maltose).
+present(O2).
+present(methyl_acetate).
+present(phosphate).
+present(sarcosine_reductase).
+present(beta-D-glucose_1-phosphate).
+present(N-methylglycine).
+present(GMP).
+present(N-methylalanine).
+present(dithioerythritol_disulfide).
+present(maltose_phosphorylase).
+present(hydroxymethylamine).
+present(methane_monooxygenase).
+present(1-piperideine-2-carboxylate/1-pyrroline-2-carboxylate_reductase).
+present(glycerol_dehydrogenase).
+present(dithioerythritol).
+present(acetone).
+present(acetoacetate).
+present(NAD+).
+present(NADH).
+present(staphylopine_dehydrogenase).
+present(H2O).
+present(pyruvate).
+present(staphylopine).

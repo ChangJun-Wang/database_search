@@ -1,0 +1,49 @@
+clear_model.
+parameter( k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1 ).
+
+k0*NADPH*D_glucose*glycerol_dehydrogenase for NADPH + D_glucose =[ glycerol_dehydrogenase ]=> sorbitol + NADPp.
+
+k1*NADPH*O2*Hp*acetone*acetone_monooxygenase for NADPH + O2 + Hp + acetone =[ acetone_monooxygenase ]=> H2O + NADPp + methyl_acetate.
+
+k2*H2O*NADPp*staphylopine*staphylopine_dehydrogenase for H2O + NADPp + staphylopine =[ staphylopine_dehydrogenase ]=> Hp + yl_ethyl_amino_butanoate + pyruvate + NADPH.
+
+k3*beta_D_glucose_1_phosphate*D_glucose*maltose_phosphorylase for beta_D_glucose_1_phosphate + D_glucose =[ maltose_phosphorylase ]=> maltose + phosphate.
+
+k4*H2O*CO2*GTP*acetone*acetone_carboxylase for H2O + CO2 + GTP + acetone =[ acetone_carboxylase ]=> phosphate + GMP + acetoacetate.
+
+k5*N_methylglycine*dithioerythritol*phosphate*sarcosine_reductase for N_methylglycine + dithioerythritol + phosphate =[ sarcosine_reductase ]=> methylamine + dithioerythritol_disulfide + acetyl_phosphate.
+
+k6*NADH*methylamine*Hp*O2*methane_monooxygenase for NADH + methylamine + Hp + O2 =[ methane_monooxygenase ]=> NADp + H2O + hydroxymethylamine.
+
+k7*methylamine*pyruvate*I_piperideine_2_carboxylate1_pyrroline_2_carboxylate_reductase for methylamine + pyruvate =[ I_piperideine_2_carboxylate1_pyrroline_2_carboxylate_reductase ]=> N_methylalanine.
+
+
+k8*maltose*phosphate*maltose_phosphorylase for maltose + phosphate =[ maltose_phosphorylase ]=> beta_D_glucose_1_phosphate + D_glucose.
+
+k9*sorbitol*NADp*glycerol_dehydrogenase for sorbitol + NADp =[ glycerol_dehydrogenase ]=> _.
+
+present(acetone_carboxylase, 1e-5).
+present(acetone_monooxygenase, 1e-5).
+present(sarcosine_reductase, 1e-2).
+present(maltose_phosphorylase, 2e-5).
+present(methane_monooxygenase, 1e-2).
+present(I_piperideine_2_carboxylate1_pyrroline_2_carboxylate_reductase, 1e0).
+present(glycerol_dehydrogenase, 1e-5).
+present(staphylopine_dehydrogenase, 1e-2).
+
+present(GTP,1).
+present(CO2, 1).
+present(NADPH, 1).
+present(Hp, 1).
+present(O2, 1).
+present(beta_D_glucose_1_phosphate, 1).
+present(N_methylglycine, 1).
+present(dithioerythritol, 1).
+present(NADH, 1).
+present(H2O, 1).
+present(staphylopine, 1).
+
+present(D_glucose, 1).
+present(acetone, 0).
+
+numerical_simulation(time: 5e3). plot(show:{methylamine}).

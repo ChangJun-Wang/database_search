@@ -1,0 +1,56 @@
+clear_model.
+parameter( k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1, k10 = 1, k11 = 1, k12 = 1, k13 = 1, k14 = 1 ).
+
+k0*NADp*ethanol*isopropanol_dehydrogenase for NADp + ethanol =[ isopropanol_dehydrogenase ]=> ethanal + NADH.
+
+k1*NADp*reduced_ferredoxin_iron_sulfur_cluster*lactate*lactate_dehydrogenase for NADp + reduced_ferredoxin_iron_sulfur_cluster + lactate =[ lactate_dehydrogenase ]=> oxidized_ferredoxin_iron_sulfur_cluster + pyruvate + NADH.
+
+k2*NADPp*NADH*proton_translocating_NADPp_transhydrogenase for NADPp + NADH =[ proton_translocating_NADPp_transhydrogenase ]=> NADp + NADPH.
+
+k3*O2*ethanol*aryl_alcohol_oxidase for O2 + ethanol =[ aryl_alcohol_oxidase ]=> acetaldehyde + H2O2.
+
+k4*lactate*O2*S_2_hydroxy_acid_oxidase for lactate + O2 =[ S_2_hydroxy_acid_oxidase ]=> pyruvate + H2O2.
+
+k5*H2O2*III_7_chloroindol_3_yl_2_iminopropanoate*dichlorochromopyrrolate_synthase for H2O2 + III_7_chloroindol_3_yl_2_iminopropanoate =[ dichlorochromopyrrolate_synthase ]=> dichlorochromopyrrolate + H2O + NH3.
+
+k6*reduced_acceptor*NH3*O2*ammonia_monooxygenase for reduced_acceptor + NH3 + O2 =[ ammonia_monooxygenase ]=> NH2OH + an_acceptor + H2O.
+
+k7*beta_phenylpyruvate*NH3*NADPH*glutamate_dehydrogenase for beta_phenylpyruvate + NH3 + NADPH =[ glutamate_dehydrogenase ]=> NADPp + H2O + L_phenylalanine.
+
+
+
+k8*oxidized_ferredoxin_iron_sulfur_cluster*pyruvate*NADH*lactate_dehydrogenase for oxidized_ferredoxin_iron_sulfur_cluster + pyruvate + NADH =[ lactate_dehydrogenase ]=> NADp + reduced_ferredoxin_iron_sulfur_cluster + lactate.
+
+k9*L_phenylalanine*O2*S_2_hydroxy_acid_oxidase for L_phenylalanine + O2 =[ S_2_hydroxy_acid_oxidase ]=> H2O2.
+
+k10*NADPp*ethanol*isopropanol_dehydrogenase for NADPp + ethanol =[ isopropanol_dehydrogenase ]=> Hp + ethanal + NADPH.
+
+k11*Hp*acetaldehyde*NADPH*isopropanol_dehydrogenase for Hp + acetaldehyde + NADPH =[ isopropanol_dehydrogenase ]=> NADPp + ethanol.
+
+k12*NADPp*ethanol*isopropanol_dehydrogenase for NADPp + ethanol =[ isopropanol_dehydrogenase ]=> Hp + acetaldehyde + NADPH.
+
+k13*pyruvate*NH3*NADPH*glutamate_dehydrogenase for pyruvate + NH3 + NADPH =[ glutamate_dehydrogenase ]=> NADPp + H2O + L_alanine.
+
+k14*O2*L_alanine*S_2_hydroxy_acid_oxidase for O2 + L_alanine =[ S_2_hydroxy_acid_oxidase ]=> H2O2.
+
+present(aryl_alcohol_oxidase, 1e-5).
+present(lactate_dehydrogenase, 1e-5).
+present(proton_translocating_NADPp_transhydrogenase, 1e-2).
+present(ammonia_monooxygenase, 1e-2).
+present(S_2_hydroxy_acid_oxidase, 2e-5).
+present(dichlorochromopyrrolate_synthase, 1e-2).
+present(isopropanol_dehydrogenase, 1e-5).
+present(glutamate_dehydrogenase, 1e0).
+
+present(reduced_ferredoxin_iron_sulfur_cluster, 1).
+present(III_7_chloroindol_3_yl_2_iminopropanoate, 1).
+present(beta_phenylpyruvate, 1).
+present(O2, 1).
+present(NADp, 1).
+present(reduced_acceptor, 1).
+present(NADPp, 1).
+
+present(lactate, 1).
+present(ethanol, 1).
+
+numerical_simulation(time: 5e3). plot(show:{NH3}).

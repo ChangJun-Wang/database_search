@@ -79,20 +79,31 @@ class node :
         for path in pathlist:
             tmp = {}
             tmp["related"] = path["related"].copy()
+            tmp["pathlist"] = path["pathlist"].copy()
+            tmp["pathnode"] = path["pathnode"].copy()
+            tmp["pathenz"] = path["pathenz"].copy()
             for i in downRec.getrea():
                 if i != startPro:
                     tmp["related"].add(i)
-            tmp["pathlist"] = path["pathlist"].copy()
-            tmp["pathlist"].append(downRec)
-            tmp["pathnode"] = path["pathnode"].copy()
+
             tmp["pathnode"].append(startPro)
-            tmp["pathenz"] = path["pathenz"].copy()
+            for i in tmp["pathlist"]:
+                if i not in tmp["pathnode"]:
+                    tmp["related"].add(i)
+
             tmp["pathenz"].append(downRec.getenz())
+            tmp["pathlist"].append(downRec)
             tmpList.append(tmp)
             assert tmp["pathlist"] != path["pathlist"]
             assert tmp["pathnode"] != path["pathnode"]
             assert tmp != path
         self.path = tmpList
+
+    # def UpdateRelated(self):
+    #     for path in self.path:
+    #     for i in tmp["pathlist"]:
+    #         if i not in tmp["pathnode"]:
+    #             tmp["related"].add(i)
 
     def CheckRecSpecies(self, pathnode, downRec):
         for species in (downRec.getrea()):
@@ -114,6 +125,9 @@ class node :
 
     def CheckDownRec(self, downRec):
         tmp = []
+
+        if downRec.getenz().name == "alcohol_dehydrogenase":
+            return tmp
 
         if self in downRec.getpro():
             return tmp

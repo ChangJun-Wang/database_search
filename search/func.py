@@ -384,10 +384,19 @@ class search:
     def MergeBside(self, label0, label1):
         path_tmp = {}
         for sidepath in label0[0].sidepath:
+            for i in sidepath["pathlist"][-1].getpro():
+                if i != label0[0]:
+                    sidepath["related"].add(i)
+        for path in label1[0].path:
+            for i in path["pathlist"][-1].getpro():
+                    if i != label1[0]:
+                        path["related"].add(i)
+
+        for sidepath in label0[0].sidepath:
             for path in label1[0].path:
                 # flag = False
                 for downRec0 in label0[0].getDownedge():
-                    if downRec0 not in sidepath["pathlist"] and downRec0.getenz().name != "spontaneous_reaction":
+                    if downRec0 not in sidepath["pathlist"] and downRec0 not in path["pathlist"] and downRec0.getenz().name != "spontaneous_reaction":
                         sidepath["pathlist"].append(downRec0)
                         break
                 #     if self.whatever(sidepath, downRec0, label0[0], label1[0]):
