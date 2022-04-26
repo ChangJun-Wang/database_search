@@ -24,10 +24,14 @@ if __name__ == '__main__':
 
     #specified input species :
     # input_species = [searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
+    # output_species = [searcher.mapToNode["NADH"], searcher.mapToNode["2,2'-azino-bis(3-ethylbenzthiazoline-6-sulfonic acid) "]]
     input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
+    output_species = [searcher.mapToNode["NADH"], searcher.mapToNode["resorufin"]]
     # input_species = [searcher.mapToNode["D-glucose"], searcher.mapToNode["nitric_oxide"]]
+    # output_species = [searcher.mapToNode["NADH"], searcher.mapToNode["resorufin"]]
 
-    searcher.main(input_species)
+
+    searcher.main(input_species, output_species)
     # print (searcher.c)
 
     

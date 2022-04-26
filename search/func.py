@@ -62,6 +62,7 @@ class search:
     def __init__(self):
         self.c = 0
         self.input_species  = []
+        self.output_species = []
         self.forbid_node    = set()
         self.mapToNode      = {}
         self.mapToEdge      = {}
@@ -285,8 +286,9 @@ class search:
         print("start initializing")
         self.initialize()
 
-    def main(self, input_species):
-        self.input_species = input_species
+    def main(self, input_species, output_species):
+        self.input_species  = input_species
+        self.output_species = output_species
         candidate = []
         self.BuildStart(input_species)
         candidate0 = BFS(input_species[0], "A")
@@ -368,7 +370,7 @@ class search:
             tmp["pathlist"].append(rec)
         for enz in record["pathenz"]:
             tmp["pathenz"].append(enz)
-        for species in record["pathnode"]:s
+        for species in record["pathnode"]:
             tmp["pathnode"].append(species)
 
         return tmp
