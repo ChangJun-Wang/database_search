@@ -125,10 +125,6 @@ class node :
 
     def CheckDownRec(self, downRec):
         tmp = []
-
-        if downRec.getenz().name == "alcohol_dehydrogenase":
-            return tmp
-
         if self in downRec.getpro():
             return tmp
         downRecs = []

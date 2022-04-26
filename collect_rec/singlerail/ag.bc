@@ -22,13 +22,15 @@ k8*maltose*phosphate*maltose_phosphorylase for maltose + phosphate =[ maltose_ph
 
 k9*sorbitol*NADp*glycerol_dehydrogenase for sorbitol + NADp =[ glycerol_dehydrogenase ]=> _.
 
-present(acetone_carboxylase, 1e-5).
-present(acetone_monooxygenase, 1e-5).
+present(glycerol_dehydrogenase, 0e-5).
+present(acetone_monooxygenase, 2e-5).
+
+present(maltose_phosphorylase, 1e-5).
+present(acetone_carboxylase, 0e-5).
+
 present(sarcosine_reductase, 1e-2).
-present(maltose_phosphorylase, 2e-5).
-present(methane_monooxygenase, 1e-2).
+present(methane_monooxygenase, 1e-5).
 present(I_piperideine_2_carboxylate1_pyrroline_2_carboxylate_reductase, 1e0).
-present(glycerol_dehydrogenase, 1e-5).
 present(staphylopine_dehydrogenase, 1e-2).
 
 present(GTP,1).
@@ -43,7 +45,9 @@ present(NADH, 1).
 present(H2O, 1).
 present(staphylopine, 1).
 
-present(D_glucose, 1).
-present(acetone, 0).
 
-numerical_simulation(time: 5e3). plot(show:{methylamine}).
+present(D_glucose, 0).
+present(acetone, 1).
+
+numerical_simulation(time: 5e3). plot(show:{methylamine, pyruvate}).
+

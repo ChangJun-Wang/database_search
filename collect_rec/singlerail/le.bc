@@ -33,13 +33,13 @@ k13*pyruvate*NH3*NADPH*glutamate_dehydrogenase for pyruvate + NH3 + NADPH =[ glu
 
 k14*O2*L_alanine*S_2_hydroxy_acid_oxidase for O2 + L_alanine =[ S_2_hydroxy_acid_oxidase ]=> H2O2.
 
-present(aryl_alcohol_oxidase, 1e-5).
-present(lactate_dehydrogenase, 1e-5).
+present(isopropanol_dehydrogenase, 0e-5).
+present(lactate_dehydrogenase, 0e-5).
 present(proton_translocating_NADPp_transhydrogenase, 1e-2).
 present(ammonia_monooxygenase, 1e-2).
-present(S_2_hydroxy_acid_oxidase, 2e-5).
+present(aryl_alcohol_oxidase, 1e-5).
+present(S_2_hydroxy_acid_oxidase, 0e-5).
 present(dichlorochromopyrrolate_synthase, 1e-2).
-present(isopropanol_dehydrogenase, 1e-5).
 present(glutamate_dehydrogenase, 1e0).
 
 present(reduced_ferredoxin_iron_sulfur_cluster, 1).
@@ -50,7 +50,7 @@ present(NADp, 1).
 present(reduced_acceptor, 1).
 present(NADPp, 1).
 
-present(lactate, 1).
+present(lactate,0).
 present(ethanol, 1).
 
 numerical_simulation(time: 5e3). plot(show:{NH3}).

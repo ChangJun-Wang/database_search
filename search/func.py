@@ -368,17 +368,10 @@ class search:
             tmp["pathlist"].append(rec)
         for enz in record["pathenz"]:
             tmp["pathenz"].append(enz)
-        for species in record["pathnode"]:  
+        for species in record["pathnode"]:s
             tmp["pathnode"].append(species)
 
         return tmp
-
-
-    def whatever(self, path0, downRec0, label0, label1):
-        for node in downRec0.getall():
-            if node == label1 or node in path0["pathnode"]:
-                return False
-        return True
 
 
     def MergeBside(self, label0, label1):
@@ -399,12 +392,6 @@ class search:
                     if downRec0 not in sidepath["pathlist"] and downRec0 not in path["pathlist"] and downRec0.getenz().name != "spontaneous_reaction":
                         sidepath["pathlist"].append(downRec0)
                         break
-                #     if self.whatever(sidepath, downRec0, label0[0], label1[0]):
-                #         flag = True
-                #         sidepath["pathlist"].append(downRec0)
-                #         break
-                # if ~flag:
-                #     return {}
 
                 if self.CheckMerge(path, sidepath): 
                     label0[0].mark = 1

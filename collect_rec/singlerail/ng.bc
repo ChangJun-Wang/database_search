@@ -1,5 +1,6 @@
 clear_model.
-parameter( k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1,  k10 = 1, k11 = 1, k12 = 1, k13 = 1, k14 = 1, k15 = 1, k16 = 1, k17 = 1, k18 = 1, k19 = 1, k20 = 1, k21 = 1, k22 = 1, k23 = 1, k24 = 1, k25 = 1, k26 = 1, k27 = 1, k28 = 1, k29 = 1, k30 = 1)
+parameter( k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1,  k10 = 1, k11 = 1, k12 = 1, k13 = 1, k14 = 1, k15 = 1, k16 = 1, k17 = 1, k18 = 1, k19 = 1, k20 = 1, k21 = 1, k22 = 1, k23 = 1, k24 = 1, k25 = 1, k26 = 1, k27 = 1, k28 = 1, k29 = 1, k30 = 1).
+
 k0*nitric_oxide*ferrocytochrome_c*nitrite_reductase for nitric_oxide + ferrocytochrome_c =[ nitrite_reductase ]=> H2O + ferricytochrome_c + NH3.
 
 k1*phosphoramidate*D_glucose*phosphoramidate_hexose_phosphotransferase for phosphoramidate + D_glucose =[ phosphoramidate_hexose_phosphotransferase ]=> D_glucose_1_phosphate + NH3.
@@ -59,36 +60,32 @@ k27*Hp*NADH*dihydrolipoyl_dehydrogenase for Hp + NADH =[ dihydrolipoyl_dehydroge
 
 k28*NADH*ferricytochrome_c*dihydrolipoyl_dehydrogenase for NADH + ferricytochrome_c =[ dihydrolipoyl_dehydrogenase ]=> NADp + Hp + ferrocytochrome_c.
 
-k29*Hp*NADH*hydroxylamine*nitrite_reductase for Hp + NADH + hydroxylamine =[ nitrite_reductase ]=> .
+k29*Hp*NADH*hydroxylamine*nitrite_reductase for Hp + NADH + hydroxylamine =[ nitrite_reductase ]=> _.
 
 k30*ferricytochrome_c*hydroxylamine*nitrite_reductase for ferricytochrome_c + hydroxylamine =[ nitrite_reductase ]=> nitrite + ferrocytochrome_c.
 
-present(D_glucose_1_phosphate).
-present(NH3).
-present(nitrite_reductase).
-present(L_tyrosine).
-present(CoA).
-present(aldose_reductase).
-present(indolepyruvate_ferredoxin_oxidoreductase).
-present(NADp).
-present(p_hydroxyphenylpyruvate).
-present(D_glucose).
-present(NADH).
-present(sorbitol).
-present(H2O).
-present(ferricytochrome_c).
-present(ferrocytochrome_c).
-present(prephenate).
-present(p_hydroxyphenylacetyl_CoA).
-present(phosphoramidate_hexose_phosphotransferase).
-present(CO2).
-present(nitric_oxide).
-present(phosphoramidate).
-present(NADPp).
-present(NADPH).
-present(arogenate_dehydrogenase_NADPp).
-present(reduced_ferredoxin).
-present(oxidized_ferredoxin).
-present(dihydrolipoyl_dehydrogenase).
-present(glutamate_dehydrogenase).
-present(nitrate).
+
+present(nitrite_reductase, 0e-5).
+present(phosphoramidate_hexose_phosphotransferase, 1e-5).
+
+present(aldose_reductase, 0e-5).
+present(dihydrolipoyl_dehydrogenase, 2e-5).
+
+present(CoA, 1).
+present(indolepyruvate_ferredoxin_oxidoreductase, 1e-5).
+present(NADPp, 1).
+present(NADH, 1).
+present(H2O, 1).
+present(ferrocytochrome_c, 1).
+present(prephenate, 1).
+present(phosphoramidatem, 1).
+present(NADPH, 1).
+present(arogenate_dehydrogenase_NADPp, 1e-2).
+present(oxidized_ferredoxin, 1).
+present(glutamate_dehydrogenase, 1e0).
+present(phosphoramidate, 1).
+
+present(D_glucose, 0).
+present(nitric_oxide, 0).
+
+numerical_simulation(time: 5e3). plot(show:{NH3, p_hydroxyphenylpyruvate}).
