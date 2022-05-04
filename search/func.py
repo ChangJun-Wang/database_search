@@ -2,7 +2,26 @@ from node import node
 
 from edge import edge
 
-def BFS(startNode, Target_type):
+
+def SearchUp(startNode):
+    search_limit = 8
+    layer        = 0
+    bfs          = [startNode]
+
+    # start to traverse
+    while (bfs != []):
+        startPro = bfs.pop(0)
+
+        if layer <= search_limit:
+            layer = layer + 1
+            # for path in startPro.path:
+            for upRec in startPro.getUpedge():
+                for rea in upRec.getrea():
+                    if (rea.layer == 0):
+                        rea.layer = layer
+                        bfs.append(product)
+
+def SearchDown(startNode, Target_type):
     search_limit = 1
     bfs          = [startNode]
     stype        = Target_type
@@ -291,7 +310,7 @@ class search:
         self.output_species = output_species
         candidate = []
         self.BuildStart(input_species)
-        candidate0 = BFS(input_species[0], "A")
+        candidate0 = SearchDown(input_species[0], "A")
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord()
@@ -301,7 +320,7 @@ class search:
         print(len(candidate0))
 
         self.BuildStart(input_species)
-        candidate1 = BFS(input_species[1], "A")
+        candidate1 = SearchDown(input_species[1], "A")
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
         for label in candidate0:
@@ -315,7 +334,7 @@ class search:
         print(len(candidate))
 
         for i in range(len(candidate)):
-            candidate0 = BFS(candidate[i], "B")
+            candidate0 = SearchDown(candidate[i], "B")
             print ("candidate0 : ", len(candidate0))
             for species in candidate0:
                 species[0].CopyToSide()
@@ -323,7 +342,7 @@ class search:
             self.ClearLevel()
             for j in range(len(candidate)):
                 if i != j:
-                    candidate1 = BFS(candidate[j], "B_side")
+                    candidate1 = SearchDown(candidate[j], "B_side")
                     print ("candidate1 : ", len(candidate1))
                     print("start merging type B_side")
                     for label0 in candidate0:

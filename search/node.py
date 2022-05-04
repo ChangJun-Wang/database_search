@@ -15,6 +15,7 @@ class node :
         self.level    = 0
         self.mark     = 0
         self.label    = set()
+        self.layer    = 0
         self.paths    = [[]]*(self.pathnum)
         self.path     = []
         self.sidepath = []
