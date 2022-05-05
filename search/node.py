@@ -29,6 +29,9 @@ class node :
         self.labelD      = ""
         self.labelE      = []
 
+    # def getUpNode(self):
+    #     for rec in self.upEdge:
+    #         pass
     def getUpedge(self):
         return self.upEdge
     def getDownedge(self):

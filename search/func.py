@@ -4,22 +4,20 @@ from edge import edge
 
 
 def SearchUp(startNode):
-    search_limit = 8
-    layer        = 0
+    search_limit = 9
+    startNode.layer = 1
     bfs          = [startNode]
 
     # start to traverse
     while (bfs != []):
-        startPro = bfs.pop(0)
+        startNode = bfs.pop(0)
 
-        if layer <= search_limit:
-            layer = layer + 1
-            # for path in startPro.path:
-            for upRec in startPro.getUpedge():
+        if startNode.layer <= search_limit:
+            for upRec in startNode.getUpedge():
                 for rea in upRec.getrea():
                     if (rea.layer == 0):
-                        rea.layer = layer
-                        bfs.append(product)
+                        rea.layer = startNode.layer + 1
+                        bfs.append(rea)
 
 def SearchDown(startNode, Target_type):
     search_limit = 1
@@ -43,14 +41,15 @@ def SearchDown(startNode, Target_type):
                 CheckDownRec = startPro.CheckDownRec(downRec)
                 if CheckDownRec != []:
                     for product in downRec.getpro():
-                        CheckProduct = product.CheckProduct(CheckDownRec)
-                        if CheckProduct != []:
-                            product.AddPath(startPro, downRec, CheckProduct)
-                            product.level = startPro.level + 1
-                            if (product not in bfs and product.level <= search_limit):
-                                bfs.append(product)
-                            assert product.path != CheckProduct
-                            assert len(product.path) != 0
+                        if product.layer != 0:
+                            CheckProduct = product.CheckProduct(CheckDownRec)
+                            if CheckProduct != []:
+                                product.AddPath(startPro, downRec, CheckProduct)
+                                product.level = startPro.level + 1
+                                if (product not in bfs and product.level <= search_limit):
+                                    bfs.append(product)
+                                assert product.path != CheckProduct
+                                assert len(product.path) != 0
         # startPro.level = 0
         # startPro.path = []
     return candidate
@@ -308,6 +307,12 @@ class search:
     def main(self, input_species, output_species):
         self.input_species  = input_species
         self.output_species = output_species
+
+        for node in self.output_species:
+            SearchUp(node)
+        for node in self.input_species:
+            print ("input_species : ", node.layer)
+
         candidate = []
         self.BuildStart(input_species)
         candidate0 = SearchDown(input_species[0], "A")
@@ -340,38 +345,42 @@ class search:
                 species[0].CopyToSide()
             self.ClearPath()
             self.ClearLevel()
+            c = 0
             for j in range(len(candidate)):
                 if i != j:
                     candidate1 = SearchDown(candidate[j], "B_side")
                     print ("candidate1 : ", len(candidate1))
                     print("start merging type B_side")
                     for label0 in candidate0:
-                        for label1 in candidate1:
-                            labelB = []
-                            if (label0[1] == label1[1]) and (label0[0] != label1[0]):
-                                labelB.append(label0[0])
-                                labelB.append(label1[0])
-                                accept = self.MergeBside(label0, label1)
-                                if accept != {}:
-                                    allnodes = set()
-                                    for node in accept["pathnode"]:
-                                        print(node.show())
-                                    for node in labelB:
-                                        print("labelB : ", node.show())
-                                    for rec in accept["pathlist"]:
-                                        print(rec.show(self.c))
-                                        self.c = self.c+1
-                                        for species in rec.getrea():
-                                            allnodes.add(species)
-                                        for species in rec.getpro():
-                                            allnodes.add(species)
-                                        allnodes.add(rec.getenz())
+                        if label0[0] in self.output_species:
+                            # print ("find ",c ," : ", label0[0].name)
+                            c = c+1
+                            for label1 in candidate1:
+                                labelB = []
+                                if (label0[1] == label1[1]) and (label0[0] != label1[0]):
+                                    labelB.append(label0[0])
+                                    labelB.append(label1[0])
+                                    accept = self.MergeBside(label0, label1)
+                                    if accept != {}:
+                                        allnodes = set()
+                                        for node in accept["pathnode"]:
+                                            print(node.show())
+                                        for node in labelB:
+                                            print("labelB : ", node.show())
+                                        for rec in accept["pathlist"]:
+                                            print(rec.show(self.c))
+                                            self.c = self.c+1
+                                            for species in rec.getrea():
+                                                allnodes.add(species)
+                                            for species in rec.getpro():
+                                                allnodes.add(species)
+                                            allnodes.add(rec.getenz())
 
-                                    print("/////////////////all related reaction///////////////")
-                                    print(self.Check(allnodes, accept["pathlist"]))
-                                    for node in allnodes:
-                                        print ("present(" + node.show() + ").")
-                                    return True
+                                        print("/////////////////all related reaction///////////////")
+                                        print(self.Check(allnodes, accept["pathlist"]))
+                                        for node in allnodes:
+                                            print ("present(" + node.show() + ").")
+                                        return True
                     self.ClearPath()
                     self.ClearLevel()
         return False
