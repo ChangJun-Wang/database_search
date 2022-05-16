@@ -1,3 +1,5 @@
+#update
+
 from func import search
 
 if __name__ == '__main__':
@@ -31,7 +33,7 @@ if __name__ == '__main__':
     # input_species = [searcher.mapToNode["D-glucose"], searcher.mapToNode["nitric_oxide"]]
     # output_species = [searcher.mapToNode["NADH"], searcher.mapToNode["resorufin"]]
 
-
+    # searcher.test()
     searcher.main(input_species, output_species)
     # print (searcher.c)
 
