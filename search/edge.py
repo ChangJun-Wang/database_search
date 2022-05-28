@@ -11,6 +11,7 @@ class edge :
         self.labelC   = []
         self.labelB   = []
         self.visited  = 0
+        self.pathA1   = ""
         
     def getpro(self):
         return self.toPro

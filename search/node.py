@@ -18,13 +18,18 @@ class node :
         self.label    = set()
         self.layer    = 0
         self.paths    = [[]]*(self.pathnum)
+        self.pathA1   = []
+        self.pathA2   = []
+        self.pathB    = []
+        self.pathOut  = []
         self.path     = []
-        self.sidepath = []
 
+        self.sidepath = []
         self.recordA  = []
 
         self.labelA      = ""
         self.labelB      = ""
+        self.labelB_side = []
         self.labelC      = []
         self.labelC_side = []
         self.labelD      = ""
@@ -146,6 +151,7 @@ class node :
         tmp = []
         if self in downRec.getpro():
             return []
+
         downRecs = []
         downRecs.append(downRec)
         added_species = set()
@@ -163,40 +169,78 @@ class node :
 
         for path in self.path:
             if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
-                tmp.append(path)
+                if downRec not in path["pathlist"]:
+                    tmp.append(path)
         return tmp
 
 
     # check these selected pathnode products whether they have been related species already or not.
-    def CheckProduct(self, pathlist, up_limit):
+    def CheckProduct(self, pathlist, up_limit, outNode):
         tmp = []
         for path in pathlist:
             if self not in path["related"] and self.name != "H2O":
-                # if (self.layer + len(path["pathlist"])) <= up_limit:
                 tmp.append(path)
         return tmp
 
-    def CopyToRecord(self):
+    def CopyToRecord(self, pathtype):
         # self.recordA = self.path.copy()
-        self.recordA = []
-        for path in self.path:
-            tmp    = {}
-            tmp["related"]  = path["related"].copy()
-            tmp["pathlist"] = path["pathlist"].copy()
-            tmp["pathenz"]  = path["pathenz"].copy()
-            tmp["pathnode"] = path["pathnode"].copy()
-            self.recordA.append(tmp)
+        
+        if pathtype == "A":
+            self.recordA = []
+            for path in self.path:
+                tmp    = {}
+                tmp["related"]  = path["related"].copy()
+                tmp["pathlist"] = path["pathlist"].copy()
+                tmp["pathenz"]  = path["pathenz"].copy()
+                tmp["pathnode"] = path["pathnode"].copy()
+                self.recordA.append(tmp)
+        if pathtype == "A1":
+            self.pathA1 = []
+            for path in self.path:
+                tmp    = {}
+                tmp["related"]  = path["related"].copy()
+                tmp["pathlist"] = path["pathlist"].copy()
+                tmp["pathenz"]  = path["pathenz"].copy()
+                tmp["pathnode"] = path["pathnode"].copy()
+                self.pathA1.append(tmp)
 
-    def CopyToPath(self):
+        if pathtype == "A2":
+            self.pathA2 = []
+            for path in self.path:
+                tmp    = {}
+                tmp["related"]  = path["related"].copy()
+                tmp["pathlist"] = path["pathlist"].copy()
+                tmp["pathenz"]  = path["pathenz"].copy()
+                tmp["pathnode"] = path["pathnode"].copy()
+                self.pathA2.append(tmp)
+
+    def CopyToPath(self, pathtype):
         # self.path = self.recordA.copy()
         self.path = []
-        for record in self.recordA:
-            tmp    = {}
-            tmp["related"]  = record["related"].copy()
-            tmp["pathlist"] = record["pathlist"].copy()
-            tmp["pathenz"]  = record["pathenz"].copy()
-            tmp["pathnode"] = record["pathnode"].copy()
-            self.path.append(tmp)
+        if pathtype == "A":
+            for record in self.recordA:
+                tmp    = {}
+                tmp["related"]  = record["related"].copy()
+                tmp["pathlist"] = record["pathlist"].copy()
+                tmp["pathenz"]  = record["pathenz"].copy()
+                tmp["pathnode"] = record["pathnode"].copy()
+                self.path.append(tmp)
+        elif pathtype == "A1":
+            for record in self.pathA1:
+                tmp    = {}
+                tmp["related"]  = record["related"].copy()
+                tmp["pathlist"] = record["pathlist"].copy()
+                tmp["pathenz"]  = record["pathenz"].copy()
+                tmp["pathnode"] = record["pathnode"].copy()
+                self.path.append(tmp)
+        elif pathtype == "A2":
+            for record in self.pathA2:
+                tmp    = {}
+                tmp["related"]  = record["related"].copy()
+                tmp["pathlist"] = record["pathlist"].copy()
+                tmp["pathenz"]  = record["pathenz"].copy()
+                tmp["pathnode"] = record["pathnode"].copy()
+                self.path.append(tmp)
 
     def CopyToSide(self):
         # self.sidepath = self.path.copy()
@@ -250,10 +294,10 @@ class node :
         elif label == "B_side":
             path_tmp = []
             for path in self.path:
-                for side in self.sidepath:
-                    if self.CheckMerge(path, side):
-                        path_tmp.append(self.Merge(path, side))
-            self.path = path_tmp
+                for pathA1 in self.pathA1:
+                    if self.CheckMerge(path, pathA1):
+                        path_tmp.append(self.Merge(path, pathA1))
+            self.pathA2 = path_tmp
             return True
         return False
 
