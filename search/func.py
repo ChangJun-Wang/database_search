@@ -2,6 +2,8 @@ from node import node
 
 from edge import edge
 
+import copy
+
 
 def aa(path, rec):
     for rea in rec.getrea():
@@ -33,7 +35,7 @@ def SearchUp(startNode, search_limit):
                         rea.layer = startNode.layer + 1
                         bfs.append(rea)
  
-def SearchDown(startNode, Target_type, up_limit, down_limit, outNode):
+def SearchDown(startNode, Target_type, up_limit, down_limit, inNodes, outNode):
     search_limit = down_limit
     bfs          = [startNode]
     candidate    = set()
@@ -43,7 +45,7 @@ def SearchDown(startNode, Target_type, up_limit, down_limit, outNode):
     while (bfs != []):
         startPro = bfs.pop(0)
         if (Target_type in startPro.label):
-            found(Target_type, startPro, candidate)
+            found(Target_type, startPro, candidate, inNodes)
             # if Target_type == "output":
             #     return candidate
 
@@ -55,27 +57,29 @@ def SearchDown(startNode, Target_type, up_limit, down_limit, outNode):
                 if CheckDownRec != []:
                     # flag = True
                     # for node in outNode:
-                    if Target_type == "output" and outNode in downRec.getpro():
-                        CheckProduct = outNode.CheckProduct(CheckDownRec, up_limit, outNode)
-                        if CheckProduct != []:
-                            outNode.AddPath(startPro, downRec, CheckProduct)
-                            if (outNode not in bfs):
-                                bfs.append(outNode)
-
-                    else:
-                        for product in downRec.getpro():
-                            if product.layer != 0:
-                                CheckProduct = product.CheckProduct(CheckDownRec, up_limit, outNode)
-                                if CheckProduct != []:
-                                    product.AddPath(startPro, downRec, CheckProduct)
-                                    product.level = startPro.level + 1
-                                    if (product not in bfs and product.level <= search_limit):
-                                        bfs.append(product)
-                                    assert product.path != CheckProduct
-                                    assert len(product.path) != 0
+                    # if Target_type == "output" and outNode in downRec.getpro():
+                    #     CheckProduct = outNode.CheckProduct(CheckDownRec, up_limit, outNode)
+                    #     if CheckProduct != []:
+                    #         outNode.AddPath(startPro, downRec, CheckProduct)
+                    #         if (outNode not in bfs):
+                    #             bfs.append(outNode)
+                    # else:
+                    for product in downRec.getpro():
+                        if product.layer != 0 and product not in downRec.getrea():
+                            CheckProduct = product.CheckProduct(CheckDownRec, up_limit, outNode)
+                            if CheckProduct != []:
+                                # if Target_type == "output":
+                                #     product.SetPath(startPro, downRec, CheckProduct)
+                                # else:
+                                product.AddPath(startPro, downRec, CheckProduct)
+                                product.level = startPro.level + 1
+                                if (product not in bfs and product.level <= search_limit):
+                                    bfs.append(product)
+                                # assert product.path != CheckProduct
+                                assert len(product.path) != 0
     return candidate
 
-def found(stype, product, candidate):
+def found(stype, product, candidate, inNodes):
     if stype == "A" and (product.getpin() > 2):
         if product.path != []:
             candidate.add((product, product.labelA))
@@ -83,8 +87,6 @@ def found(stype, product, candidate):
         for label in product.labelC_side:
             candidate.add((product, label))
     elif stype == "B" and (product.getpout() > 1):
-        assert(len(product.getDownedge()) > 1)
-        # downRec.labelB.append(product.labelB).
         MaxPathRec = product.getDownedge()[0]
         MaxCount = 0
         for downRec in product.getDownedge():
@@ -94,7 +96,7 @@ def found(stype, product, candidate):
                 MaxPathRec = downRec
 
         candidate.add((product, MaxPathRec.name))
-        if MaxPathRec.pathA1 == "" :
+        if MaxPathRec.pathA1 == None :
             MaxPathRec.pathA1 = product
         else:
             if product.layer != 0 and product.layer < MaxPathRec.pathA1.layer:
@@ -107,30 +109,11 @@ def found(stype, product, candidate):
 
     elif stype == "B_side":
         for rec in product.labelB_side:
-            CheckDownRec = product.CheckDownRec(rec)
-            if CheckDownRec != []:
-                for path in CheckDownRec:
-                    path["pathnode"].append(product)
-                product.path = CheckDownRec
-                candidate.add((product, rec.name))
-                break
-                # total_path = []
-                # for upRec in product.getUpedge():
-                #     CheckUpRec = CheckRec(upRec, CheckDownRec.copy())
-                #     if CheckUpRec != []:
-                #         # total_path += CheckUpRec.copy()
-                #         # candidate.add((product, rec.name))
-                #         for path in CheckUpRec:
-                #             path["pathnode"].append(product)
-                #         product.path = CheckUpRec
-                #         candidate.add((product, rec.name))
-                #         break
-                # if total_path != []:
-                #     for path in total_path:
-                #         path["pathnode"].append(product)
-                #     product.path = total_path
-                #     candidate.add((product, rec.name))
-                #     break
+            if ~rec.is_reverse():
+                CheckDownRec = product.CheckDownRec(rec)
+                if CheckDownRec != []:
+                    candidate.add((product, rec.name))
+                    break
 
     elif stype == "output":
         candidate.add((product, "output"))
@@ -243,7 +226,7 @@ class search:
                     self.nodeList.append(self.mapToNode[enzyme])
             else: #if (tmpList[0] == "RE"):
                 is_product = 0
-                self.reaction = tmpList[0]
+                self.reaction = self.reaction + 1
                 self.mapToEdge[self.reaction] = edge(self.reaction)
                 self.edgeList.append(self.mapToEdge[self.reaction])
 
@@ -256,6 +239,14 @@ class search:
                         is_product = 1
                     else:
                         par = 1
+                        
+                        if len(species) > 3:
+                            if species[2] == "_":
+                                if species[0:2].isdigit():
+                                    par = int(species[0:2])
+                                    species = species[3:]
+                                elif species[0:2] == "an":
+                                    species = species[3:]
                         if len(species) > 2:
                             if species[1] == "_":
                                 if species[0].isdigit():
@@ -263,13 +254,6 @@ class search:
                                     species = species[2:]
                                 elif species[0] == "a":
                                     species = species[2:]
-                        elif len(species) > 3:
-                            if species[2] == "_":
-                                if species[0:2].isdigit():
-                                    par = int(species[0:2])
-                                    species = species[3:]
-                                elif species[0:2] == "an":
-                                    species = species[3:]
 
                         if species[0:6] == "NAD(P)":
                             species0 = "NAD" + species[6:]
@@ -287,6 +271,7 @@ class search:
                                 self.mapToNode[species0].addUpedge(self.mapToEdge[self.reaction])
                                 (self.mapToNode[species0]).upEdgePar[self.mapToEdge[self.reaction]] = par
                                 self.mapToNode[species0].addpin()
+                                
                             species1 = "NADP" + species[6:]
                             if (species1 not in self.mapToNode):
                                 self.mapToNode[species1] = node(species1)
@@ -386,7 +371,7 @@ class search:
         candidate = []
         self.BuildStart(input_species)
         input_species[0].CopyToPath("A")
-        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.output_species)
+        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.input_species, self.output_species)
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord("A")
@@ -397,23 +382,37 @@ class search:
 
         self.BuildStart(input_species)
         input_species[1].CopyToPath("A")
-        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.output_species)
+        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.input_species, self.output_species)
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
         for label in candidate0:
             if label in candidate1:
-                if label[0].MergeAll("A"):
-                    candidate.append(label[0])
+                label[0].MergeAll("A")
+                candidate.append(label[0])
         self.ClearPath()
         self.ClearLevel()
 
         print(len(candidate1))
         print(len(candidate))
 
+        # for x in candidate:
+        #     print ("//////////////////////////////////////////////////")
+        #     for path in x.recordA:
+        #         print("******************************")
+        #         for rec in path["pathlist"]:
+        #             print(rec.show(0))
 
+        # return True
+
+        ans = 100
+        record_ans = []
+        record_oth = []
         for i in range(len(candidate)):
+            if self.input_species == [self.mapToNode["acetone"], self.mapToNode["D-glucose"]]:
+                if candidate[i].name != "GMP":
+                    continue
             candidate[i].CopyToPath("A")
-            candidate0 = SearchDown(candidate[i], "B", self.up_limit, 1, self.output_species)
+            candidate0 = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species)
             print ("candidate0 : ", len(candidate0))
             print ("candidate name : ", candidate[i].name)
             for species in candidate0:
@@ -425,20 +424,26 @@ class search:
             for j in range(len(candidate)):
                 if i != j:
                     candidate[j].CopyToPath("A")
-                    candidate1 = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.output_species)
+                    candidate1 = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species)
                     print ("start merging B")
                     for species in candidate1:
                         targetRec = self.mapToEdge[species[1]]
                         targetB = targetRec.pathA1
                         targetB.path = species[0].path
-                        # for upRec in species[0].getUpedge():
-                            
+                        # output = SearchDown(targetB, "output", self.up_limit, 2, self.input_species, self.output_species)
 
                         merge = self.MergeBside(targetB.path, targetB.pathA1)
                         if merge != []:
                             print("merge success")
-                            targetB.MergeAll("B_side")
-                            candidate_B.append((targetB, targetRec, species[0]))
+                            targetB.pathA2 = merge # .MergeAll("B_side")
+                            for path in targetB.pathA2:
+                                path["pathlist"].append(targetRec)
+                                for pro in targetRec.getpro():
+                                    path["related"].add(pro)
+                                for rea in targetRec.getrea():
+                                    if rea not in path["pathnode"]:
+                                        path["related"].add(rea)
+                            candidate_B.append((targetB, species[0]))
                     print (len(candidate_B))
                         # species[0].CopyToRecord("A2")
                     self.ClearPath()
@@ -447,37 +452,105 @@ class search:
                     for target in candidate_B:
                         target[0].CopyToPath("A2")
                         # print (target.show())
-                        output = SearchDown(target[0], "output", self.up_limit, 3, self.output_species)
+                        output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species)
 
                         for can in output:
                             assert (can[0] == self.output_species)
-                        print ("target : ", target[0].show(), target[0].layer)
-                        c = 0
-                        if len(output) != 0:
-                            print (target[1].show(c))
-                            c = c+1
+                        # print ("target : ", target[0].show(), target[0].layer)
+                        tmp = []
+                        for path in self.output_species.path:
+                            allnodes = set()
+                            for node in self.input_species:
+                                allnodes.add(node)
+                            for rec in path["pathlist"]:
+                                for rea in rec.getrea():
+                                    if rea not in path["pathnode"]:
+                                        allnodes.add(rea)
+                            for node in path["related"]:
+                                allnodes.add(node)
+                            for rec in path["pathlist"]:
+                                allnodes.add(rec.getenz())
+                            flag = True
+                            for rec in self.output_species.getUpedge():
+                                if rec.activated(allnodes):
+                                    flag = False
+                            if flag:
+                                tmp.append(path)
+                        self.output_species.path = tmp
+                        if len(self.output_species.path) != 0:
+                            print ("target : ", target[0].show(), target[0].layer)
                             for path in self.output_species.path:
-                                # for upRec in target[2]:
-                                    
-                                for rec in path["pathlist"]:
-                                    print (rec.show(c))
-                                    c = c+1 
-                                for node in path["pathnode"]:
-                                    print (node.show())
-                                print ("******************other reactions****************")
-                                allnodes = set()
-                                for rec in path["pathlist"]:
-                                    for node in rec.getrea():
+                                thres = []
+                                for upRec in target[1].getUpedge():
+                                    flag = True
+                                    for rea in upRec.getrea():
+                                        if rea in path["pathnode"]:
+                                            flag = False
+                                    for pro in upRec.getpro():
+                                        if pro != target[1] and pro in path["pathnode"]:
+                                            flag = False
+                                        if pro == self.output_species:
+                                            flag = False
+                                    if flag and upRec.getenz().name != "spontaneous_reaction":
+                                        thres.append(upRec)
+                                # ans = 100
+                                for x in thres:
+                                    allnodes = set()
+                                    for rec in path["pathlist"]:
+                                        for node in rec.getrea():
+                                            allnodes.add(node)
+                                        for node in rec.getpro():
+                                            allnodes.add(node)
+                                        allnodes.add(rec.getenz())
+                                    # for node in target[1].getrea():
+                                    #     allnodes.add(node)
+                                    # for node in target[1].getpro():
+                                    #     allnodes.add(node)
+                                    # allnodes.add(target[1].getenz())
+                                    for node in x.getrea():
                                         allnodes.add(node)
-                                    for node in rec.getpro():
+                                    for node in x.getpro():
                                         allnodes.add(node)
-                                    allnodes.add(rec.getenz())
-                                allrec = self.CollectAll(allnodes, path["pathlist"])
-                                for rec in allrec:
-                                    print (rec.show(c))
+                                    allnodes.add(x.getenz())
+                                    allrec = self.CollectAll(allnodes, path["pathlist"])
+                                    c = 0
+                                    # print ("species :", species[0].show())
+                                    # print (target[1].show(c))
                                     c = c+1
+                                    # print (x.show(c))
+                                    c = c+1
+                                    for rec in path["pathlist"]:
+                                        # print (rec.show(c))
+                                        c = c+1 
+                                    # for node in path["pathnode"]:
+                                    #     print (node.show())
+                                    # print ("******************other reactions****************")
+                                    for rec in allrec:
+                                        # print (rec.show(c))
+                                        c = c+1
+                                    # return True
+                                    if c < ans:
+                                        ans = c
+                                        record_ans = path["pathlist"].copy()
+                                        # record_ans.append(target[1])
+                                        record_ans.append(x)
+                                        record_oth = allrec.copy()
                         self.ClearPath()
                         self.ClearLevel()
+        print ("ans : ", ans, len(record_ans), len(record_oth))
+        c = 0
+        collect_rea = set()
+        for rec in record_ans:
+            for rea in rec.getrea():
+                collect_rea.add(rea)
+            print (rec.show(c))
+            c = c+1
+        for node in collect_rea:
+            print("present(", node.show(), ", 1).")
+        print ("******************other reactions****************")
+        for rec in record_oth:
+            print (rec.show(c))
+            c = c+1
         return False
 
     def Merge(self, path, record):
@@ -567,63 +640,6 @@ class search:
                 for node in sidepath["pathnode"]:
                     node.mark = 0
         return path_tmp
-
-    # def MergeBside(self, label0, label1):
-    #     path_tmp = []
-    #     for sidepath in label0[0].sidepath:
-    #         for i in sidepath["pathlist"][-1].getpro():
-    #             if i != label0[0]:
-    #                 sidepath["related"].add(i)
-    #     for path in label1[0].path:
-    #         for i in path["pathlist"][-1].getpro():
-    #                 if i != label1[0]:
-    #                     path["related"].add(i)
-
-    #     for sidepath in label0[0].sidepath:
-    #         for path in label1[0].path:
-    #             # flag = False
-    #             for downRec0 in label0[0].getDownedge():
-    #                 if downRec0 not in sidepath["pathlist"] and downRec0 not in path["pathlist"] and downRec0.getenz().name != "spontaneous_reaction":
-    #                     sidepath["pathlist"].append(downRec0)
-    #                     break
-
-    #             if self.CheckMerge(path, sidepath): 
-    #                 label0[0].mark = 1
-    #                 label1[0].mark = 2
-    #                 for rec in path["pathlist"]:
-    #                     if (self.input_species[0] in rec.getrea()) or (self.input_species[1] in rec.getrea()):
-    #                         rec.getenz().mark = 1
-    #                 for rec in sidepath["pathlist"]:
-    #                     if (self.input_species[0] in rec.getrea()) or (self.input_species[1] in rec.getrea()):
-    #                         rec.getenz().mark = 2
-    #                 for node in path["pathnode"]:
-    #                     if (node not in self.input_species):
-    #                         node.mark = 1
-    #                 for node in sidepath["pathnode"]:
-    #                     if (node not in self.input_species):
-    #                         node.mark = 2
-    #                 path0 = self.Merge(path, sidepath)
-    #                 downRec  = self.mapToEdge[label1[1]]
-    #                 pathnode = []
-    #                 pathnode.append(label1[0])
-    #                 pathnode.append(label0[0])
-    #                 path1 = self.CreatePath(pathnode, downRec)
-
-    #                 if self.CheckMerge(path0, path1):
-    #                     tmp = self.Merge(path0, path1)
-    #                     if self.CheckAll(tmp):
-    #                         path_tmp.append(tmp)
-    #                 label0[0].mark = 0
-    #                 label1[0].mark = 0
-    #                 for rec in path["pathlist"]:
-    #                     rec.getenz().mark = 0
-    #                 for rec in sidepath["pathlist"]:
-    #                     rec.getenz().mark = 0
-    #                 for node in path["pathnode"]:
-    #                     node.mark = 0
-    #                 for node in sidepath["pathnode"]:
-    #                     node.mark = 0
-    #     return path_tmp
 
     def CreatePath(self, pathnode, downRec):
         related  = set()
