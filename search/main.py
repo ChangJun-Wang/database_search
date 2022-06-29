@@ -16,11 +16,13 @@ if __name__ == '__main__':
     
     temp = 0
 
-    print("typeA : ", searcher.typeA)
-    print("typeB : ", searcher.typeB)
-    print("typeC : ", searcher.typeC)
+    print("typeA : ", searcher.typeB)
+    print("typeB : ", searcher.typeA)
+    print("typeC : ", searcher.typeE)
     print("typeD : ", searcher.typeD)
-    print("typeE : ", searcher.typeE)
+    print("typeE : ", searcher.typeC)
+    print("typeF : ", searcher.typeF)
+    print("typeG : ", searcher.reaction)
 
     # count = 0
     print ("\n", "*************************************************")
@@ -31,9 +33,15 @@ if __name__ == '__main__':
         input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"]]
     elif sys.argv[1] == 'gn':
         input_species = [searcher.mapToNode["D-glucose"], searcher.mapToNode["nitric_oxide"]]
+    elif sys.argv[1] == 'all':
+        input_species = [searcher.mapToNode["acetone"], searcher.mapToNode["D-glucose"], searcher.mapToNode["nitric_oxide"], searcher.mapToNode["lactate"], searcher.mapToNode["ethanol"]]
+    # elif sys.argv[1] == 'gn':
+    #     input_species = [searcher.mapToNode["D-glucose"], searcher.mapToNode["nitric_oxide"]]
+    # elif sys.argv[1] == 'gn':
+    #     input_species = [searcher.mapToNode["D-glucose"], searcher.mapToNode["nitric_oxide"]]
     else:
         print ("no input")
-    output_species = searcher.mapToNode["NADH"]
+    output_species = ["NADH", "resorufin", "2,2'-azino-bis(3-ethylbenzothiazoline-6-sulphonic_acid)", " 4,5-Diaminofluorescein"]
     # output_species = searcher.mapToNode["resorufin"]
 
     if input_species != []:

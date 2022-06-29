@@ -1,0 +1,296 @@
+parameter(k0 = 0.3, k1 = 12.5, k2 = 10, k3 = 0.00004, k4 = 445, k5 = 0.014, k6 = 2.3, k7 = 0.03, k8 = 1, k9 = 0.3, k10 = 0.03, k11 = 1, k12 = 1, k13 = 1, k14 = 0.00025, k15 = 0.4, k16 = 0.4, k17 = 1, k18 = 0.03, k19 = 0.4, k20 = 0.00025, k21 = 0.3, k22 = 0.00025, k23 = 16, k24 = 0.4, k25 = 0.00025, k26 = 0.00004, k27 = 1, k28 = 5.95, k29 = 1, k30 = 0.03, k31 = 1, k32 = 0.03, k33 = 0.00025, k34 = 0.00025 ).
+
+clear_model.
+
+parameter(k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1, k10 = 1, k11 = 1, k12 = 1, k13 = 1, k14 = 1, k15 = 1, k16 = 1, k17 = 1, k18 = 1, k19 = 1, k20 = 1, k21 = 1, k22 = 1, k23 = 1, k24 = 1, k25 = 1, k26 = 1, k27 = 1, k28 = 1, k29 = 1, k30 = 1, k31 = 1, k32 = 1, k33 = 1, k34 = 1 ).
+
+k0*nitric_oxide*ferrocytochrome_c*nitrite_reductase for nitric_oxide + ferrocytochrome_c =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O.
+
+k1*phosphoramidate*D_glucose*phosphoramidate_hexose_phosphotransferase for phosphoramidate + D_glucose =[ phosphoramidate_hexose_phosphotransferase ]=> NH3 + D_glucose_1_phosphate.
+
+k2*NH3*L_aspartate*ATP*aspartate_ammonia_ligase for NH3 + L_aspartate + ATP =[ aspartate_ammonia_ligase ]=> ADP + L_asparagine + phosphate.
+
+k3*nitric_oxide*O2*NADPH*nitric_oxide_dioxygenase for nitric_oxide + O2 + NADPH =[ nitric_oxide_dioxygenase ]=> NADPp + NO3m.
+
+k4*D_glucose*NADPH*methylglyoxal_reductase for D_glucose + NADPH =[ methylglyoxal_reductase ]=> NADPp.
+
+k5*amino_group_carrier_protein_C_terminal_N_1_carboxy_5_oxopentan_1_yl_L_glutamine*NADPp*phosphate*amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase for amino_group_carrier_protein_C_terminal_N_1_carboxy_5_oxopentan_1_yl_L_glutamine + NADPp + phosphate =[ amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase ]=> Hp + amino_group_carrier_protein_C_terminal_N_1_carboxy_5_phosphooxy_5_oxopentan_1_yl_L_glutamine + NADPH.
+
+k6*pyruvate*ferricyanide*H2O*phosphate*pyruvate_oxidase for pyruvate + ferricyanide + H2O + phosphate =[ pyruvate_oxidase ]=> acetyl_phosphate + ferrocyanide + H2O2.
+
+k7*Hp*X_acetyl_3_7_dihydroxyphenoxazine*H2O2*myeloperoxidase for Hp + X_acetyl_3_7_dihydroxyphenoxazine + H2O2 =[ myeloperoxidase ]=> H2O + resorufin.
+
+k8*NADPH*beta_ketobutyryl_CoA*III_oxoacyl_acyl_carrier_protein_reductase for NADPH + beta_ketobutyryl_CoA =[ III_oxoacyl_acyl_carrier_protein_reductase ]=> NADPp + beta_hydroxybutyryl_CoA.
+
+k9*nitric_oxide*Hp*Hp*Hp*Hp*Hp*ferrocytochrome_c*ferrocytochrome_c*ferrocytochrome_c*ferrocytochrome_c*ferrocytochrome_c*ferrocytochrome_c*nitrite_reductase for nitric_oxide + Hp + Hp + Hp + Hp + Hp + ferrocytochrome_c + ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + ferricytochrome_c+ ferricytochrome_c+ ferricytochrome_c+ ferricytochrome_c + H2O.
+
+k10*Hp*H2O2*myeloperoxidase for Hp + H2O2 =[ myeloperoxidase ]=> _.
+
+k11*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O.
+
+k12*O2*ferrocytochrome_c*nitrite_reductase for O2 + ferrocytochrome_c =[ nitrite_reductase ]=> ferricytochrome_c + H2O.
+
+k14*Hp*Hp*Hp*Hp*Hp*nitrite*ferrocytochrome_c*ferrocytochrome_c*ferrocytochrome_c*ferrocytochrome_c*nitrite_reductase for Hp +Hp +Hp +Hp +Hp + nitrite + ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c =[ nitrite_reductase ]=> hydroxylamine + H2O + ferricytochrome_c + ferricytochrome_c + ferricytochrome_c + ferricytochrome_c.
+
+k15*pyruvate*O2*phosphate*pyruvate_oxidase for pyruvate + O2 + phosphate =[ pyruvate_oxidase ]=> acetyl_phosphate + H2O2 + CO2.
+
+k16*pyruvate*H2O*pyruvate_oxidase for pyruvate + H2O =[ pyruvate_oxidase ]=> acetate + CO2.
+
+k17*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c =[ nitrite_reductase ]=> NH3 + ferricytochrome.
+
+k18*nitrite*H2O2*myeloperoxidase for nitrite + H2O2 =[ myeloperoxidase ]=> _.
+
+k19*pyruvate*O2*pyruvate*O2*H2O*phosphate*pyruvate_oxidase for pyruvate + pyruvate + O2 + O2 + H2O + phosphate =[ pyruvate_oxidase ]=> acetate + acetyl_phosphate + H2O2 + H2O2 + CO2 + CO2.
+
+k20*Hp*nitrite*ferrocytochrome_c*nitrite_reductase for Hp + nitrite + ferrocytochrome_c =[ nitrite_reductase ]=> nitric_oxide + ferricytochrome_c + H2O.
+
+k21*nitric_oxide*ferricytochrome_c*H2O*nitrite_reductase for nitric_oxide + ferricytochrome_c + H2O =[ nitrite_reductase ]=> Hp + nitrite + ferrocytochrome_c.
+
+k22*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O.
+
+k23*NH3*ferricytochrome_c*ferricytochrome_c*ferricytochrome_c*ferricytochrome_c*ferricytochrome_c*ferricytochrome_c*H2O*H2O*nitrite_reductase for NH3 + ferricytochrome_c+ ferricytochrome_c+ ferricytochrome_c+ ferricytochrome_c+ ferricytochrome_c+ ferricytochrome_c + H2O  =[ nitrite_reductase ]=> Hp + Hp +Hp +Hp +Hp +Hp +Hp + nitrite + ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c+ ferrocytochrome_c.
+
+k24*pyruvate*O2*H2O*phosphate*pyruvate_oxidase for pyruvate + O2 + H2O + phosphate =[ pyruvate_oxidase ]=> acetyl_phosphate + H2O2 + CO2.
+
+k25*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c =[ nitrite_reductase ]=> nitric_oxide + ferricytochrome_c + H2O.
+
+k26*nitric_oxide*O2*nitric_oxide*O2*NADPH*nitric_oxide_dioxygenase for nitric_oxide + nitric_oxide + O2 + O2 + NADPH =[ nitric_oxide_dioxygenase ]=> NADPp + nitrate + nitrate + Hp.
+
+k28*NH3*L_aspartate*ATP*aspartate_ammonia_ligase for NH3 + L_aspartate + ATP =[ aspartate_ammonia_ligase ]=> diphosphate + L_asparagine + AMP.
+
+k29*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c =[ nitrite_reductase ]=> ferricytochrome_c.
+
+k30*H2O2*myeloperoxidase for H2O2 =[ myeloperoxidase ]=> H2O.
+
+k31*hydroxylamine*ferricytochrome_c*nitrite_reductase for hydroxylamine + ferricytochrome_c =[ nitrite_reductase ]=> nitrite + ferrocytochrome_c.
+
+k32*nitric_oxide*H2O2*myeloperoxidase for nitric_oxide + H2O2 =[ myeloperoxidase ]=> _.
+
+k33*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c =[ nitrite_reductase ]=> hydroxylamine + ferricytochrome_c.
+
+k34*Hp*nitrite*ferrocytochrome_c*nitrite_reductase for Hp + nitrite + ferrocytochrome_c =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O.
+
+
+present( amino_group_carrier_protein_C_terminal_N_1_carboxy_5_oxopentan_1_yl_L_glutamine , 1).
+present( Hp , 1).
+present( pyruvate , 1).
+present( ferrocytochrome_c , 1).
+present( ATP , 1).
+present( O2 , 1).
+present( H2O , 1).
+present( X_acetyl_3_7_dihydroxyphenoxazine , 1).
+present( phosphoramidate , 1).
+present( ferricyanide , 1).
+present( L_aspartate , 1).
+present( NADPH , 1).
+
+present( nitrite_reductase, 3.3e-4 ). 
+present( phosphoramidate_hexose_phosphotransferase, 0.24e-4 ). 
+present( aspartate_ammonia_ligase, 0.1e0 ). 
+present( nitric_oxide_dioxygenase, 0 ). 
+present( methylglyoxal_reductase, 0 ). 
+present( amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase, 71.4e4 ). 
+present( pyruvate_oxidase, 0.43e-4 ). 
+present( myeloperoxidase, 33.3e0 ). 
+present( III_oxoacyl_acyl_carrier_protein_reductase, 1e-4 ).
+
+////////////////////////or////////////////////////////
+present( D_glucose , 0).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{NH3}).
+export_plot(g0n0T5).
+
+present( D_glucose , 0).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n1T5).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n0T5).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n1T5).
+
+////////////////////////i1////////////////////////////
+present( D_glucose , 0).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n0T15).
+
+present( D_glucose , 0).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n1T15).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n0T15).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n1T15).
+
+
+////////////////////////and////////////////////////////
+present( D_glucose , 0).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n0T25).
+
+present( D_glucose , 0).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n1T25).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n0T25).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n1T25).
+
+////////////////////////i2////////////////////////////
+present( nitrite_reductase, 6.7e-4 ). 
+present( phosphoramidate_hexose_phosphotransferase, 0.08e-4 ). 
+
+present( D_glucose , 0).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n0T15_2).
+
+present( D_glucose , 0).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n1T15_2).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n0T15_2).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n1T15_2).
+
+////////////////////////i1i2'////////////////////////////
+present( nitrite_reductase, 0e-4 ). 
+present( phosphoramidate_hexose_phosphotransferase, 0.08e-4 ). 
+present( aspartate_ammonia_ligase, 0.1e0 ). 
+present( nitric_oxide_dioxygenase, 5e1 ). 
+present( methylglyoxal_reductase, 0 ). 
+present( amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase, 71.4e4 ). 
+present( pyruvate_oxidase, 0.43e-4 ). 
+present( myeloperoxidase, 33.3e0 ). 
+present( III_oxoacyl_acyl_carrier_protein_reductase, 1e-4 ).
+
+present( D_glucose , 0).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n0T0).
+
+present( D_glucose , 0).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n1T0).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n0T0).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n1T0).
+
+////////////////////////i1'i2////////////////////////////
+present( nitrite_reductase, 3.3e-4 ). 
+present( phosphoramidate_hexose_phosphotransferase, 0e-4 ). 
+present( aspartate_ammonia_ligase, 0.1e0 ). 
+present( nitric_oxide_dioxygenase, 0e-4 ). 
+present( methylglyoxal_reductase, 0.0045e-4 ). 
+present( amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase, 71.4e4 ). 
+present( pyruvate_oxidase, 0.43e-4 ). 
+present( myeloperoxidase, 33.3e0 ). 
+present( III_oxoacyl_acyl_carrier_protein_reductase, 1e-4 ).
+
+present( D_glucose , 0).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0n0T0_2).
+
+present( D_glucose , 0).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+
+export_plot(g0n1T0_2).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1n0T0_2).
+
+present( D_glucose , 1e-3).
+present( nitric_oxide , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+
+export_plot(g1n1T0_2).
+

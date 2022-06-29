@@ -23,9 +23,23 @@ def split(inputline):
     return tmpList
 #exodeoxyribonuclease I
 
+def checkRea(list0, list1):
+    if len(list0) != len(list1):
+        return False
+    c = 0
+    for i in list0:
+        if i in list1:
+            c += 1
+    if c == len(list0):
+        return True
+    return False
+
+# def checkPro():
+#     pass
+
 def check(table, species):
     for i in table:
-        if species[0] == i[0] and species[1] == i[1]:
+        if checkRea(species[0], i[0]) and checkRea(species[1], i[1]):
             return False
     return True
 

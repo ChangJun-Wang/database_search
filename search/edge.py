@@ -11,7 +11,7 @@ class edge :
         self.labelC   = []
         self.labelB   = []
         self.visited  = 0
-        self.pathA1   = None
+        self.rec_node   = None
         
     def getpro(self):
         return self.toPro

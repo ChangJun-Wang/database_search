@@ -1,0 +1,65 @@
+
+reaction: 11565
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> reduced_acceptor + ethanal + .
+
+reaction: 12316
+k1*lactate*oxidized_acceptor*2-oxo-acid_reductase for lactate + oxidized_acceptor +  =[ 2-oxo-acid_reductase ]=> reduced_acceptor + pyruvate + .
+
+reaction: 23074
+k2*O2*reduced_acceptor*stearate*stearoyl-CoA_9-desaturase for O2 + reduced_acceptor + stearate +  =[ stearoyl-CoA_9-desaturase ]=> H2O + oleate + acceptor + .
+
+reaction: 10679
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> H2O2 + ethanal + .
+
+reaction: 10051
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 + pyruvate + .
+
+reaction: 14646
+k5*H2O2*oleate*plant_seed_peroxygenase for H2O2 + oleate +  =[ plant_seed_peroxygenase ]=> .
+
+reaction: 125787
+k6*CoA*oleate*GTP*carboxylic_acid-CoA_ligase for CoA + oleate + GTP +  =[ carboxylic_acid-CoA_ligase ]=> phosphate + GDP + oleoyl-CoA + .
+
+reaction: 25488
+k7*phosphate*NAD+*butyraldehyde*glyceraldehyde-3-phosphate_dehydrogenase for phosphate + NAD+ + butyraldehyde +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> NADH + butyryl_phosphate + .
+
+reaction: 9883
+k8*O2*pyranose_oxidase for O2 +  =[ pyranose_oxidase ]=> H2O2 + .
+******************pathnode****************
+lactate
+ethanol
+ethanol
+lactate
+reduced_acceptor
+lactate
+ethanol
+ethanol
+lactate
+oleate
+phosphate
+present( oleate , 1).
+present( acceptor , 1).
+present( NAD+ , 1).
+present( butyraldehyde , 1).
+present( oxidized_acceptor , 1).
+present( H2O2 , 1).
+present( CoA , 1).
+present( lactate , 1).
+present( reduced_acceptor , 1).
+present( GTP , 1).
+present( phosphate , 1).
+present( O2 , 1).
+present( stearate , 1).
+present( ethanol , 1).
+******************other reactions****************
+
+reaction: 9883
+k9*O2*pyranose_oxidase for O2 +  =[ pyranose_oxidase ]=> H2O2 + .
+
+reaction: 12315
+k10*reduced_acceptor*pyruvate*2-oxo-acid_reductase for reduced_acceptor + pyruvate +  =[ 2-oxo-acid_reductase ]=> lactate + oxidized_acceptor + .
+total solution number :  24915
+
+real    41m40.363s
+user    41m40.177s
+sys     0m0.180s
