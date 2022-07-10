@@ -5,12 +5,13 @@ class edge :
         # self.tmp_path = []
         self.toRea    = set()  #
         self.toPro    = set()  #
-        self.toEnz    = ""
+        self.toEnz    = None
         self.reverse  = False
         self.label    = set()
         self.labelC   = []
         self.labelB   = []
         self.visited  = 0
+        self.rec_node   = None
         
     def getpro(self):
         return self.toPro
@@ -58,3 +59,14 @@ class edge :
             temp += (str(i.name)) + " + "
         temp += "."
         return temp
+
+    def is_reverse(self):
+        allnodes = self.toPro.copy()
+        allnodes.add(self.toEnz)
+        for rec in self.toEnz.getCatedge():
+            if rec.activated(allnodes):
+                return True
+        for node in self.toPro:
+            if "output" in node.label:
+                return True
+        return False
