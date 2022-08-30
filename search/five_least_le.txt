@@ -1,0 +1,314 @@
+
+******************five_least****************
+total solution number : 24846 
+total solution distribution :  
+34 : 81, 32 : 190, 45 : 114, 46 : 43, 56 : 96, 52 : 80, 48 : 32, 47 : 30, 57 : 42, 41 : 16, 43 : 166, 33 : 117, 203 : 1, 35 : 67, 58 : 26, 37 : 74, 51 : 101, 59 : 11, 54 : 163, 29 : 155, 27 : 237, 28 : 110, 30 : 183, 36 : 131, 31 : 258, 55 : 118, 26 : 129, 401 : 2, 272 : 1, 381 : 2, 261 : 2, 268 : 1, 260 : 1, 290 : 1, 262 : 2, 264 : 1, 266 : 3, 306 : 1, 44 : 96, 42 : 36, 49 : 68, 50 : 59, 62 : 11, 66 : 1, 53 : 140, 60 : 2, 61 : 6, 63 : 5, 67 : 52, 73 : 1, 64 : 5, 40 : 42, 38 : 105, 39 : 67, 240 : 2, 248 : 1, 251 : 1, 373 : 2, 243 : 1, 65 : 1, 23 : 784, 20 : 1553, 21 : 1697, 22 : 1021, 19 : 1298, 18 : 920, 24 : 480, 25 : 224, 17 : 224, 12 : 2234, 13 : 1469, 15 : 583, 14 : 847, 11 : 4312, 16 : 424, 10 : 2883, 216 : 2, 223 : 1, 227 : 1, 339 : 2, 220 : 1, 257 : 5, 206 : 2, 118 : 4, 201 : 2, 112 : 3, 111 : 1, 123 : 1, 113 : 3, 133 : 1, 105 : 2, 226 : 1, 115 : 1, 361 : 2, 109 : 1, 132 : 4, 68 : 18, 69 : 22, 72 : 2, 70 : 6, 71 : 5, 81 : 2, 91 : 138, 92 : 54, 95 : 18, 98 : 6, 96 : 6, 93 : 54, 104 : 6, 107 : 3, 106 : 3, 94 : 18, 
+five_least 94 : 
+
+reaction: 11565 
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> ethanal + reduced_acceptor + . 
+
+reaction: 12316 
+k1*lactate*oxidized_acceptor*2-oxo-acid_reductase for lactate + oxidized_acceptor +  =[ 2-oxo-acid_reductase ]=> pyruvate + reduced_acceptor + . 
+
+reaction: 23074 
+k2*O2*reduced_acceptor*stearate*stearoyl-CoA_9-desaturase for O2 + reduced_acceptor + stearate +  =[ stearoyl-CoA_9-desaturase ]=> oleate + H2O + acceptor + . 
+
+reaction: 10679 
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> ethanal + H2O2 + . 
+
+reaction: 10051 
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 + pyruvate + . 
+
+reaction: 14646 
+k5*oleate*H2O2*plant_seed_peroxygenase for oleate + H2O2 +  =[ plant_seed_peroxygenase ]=> . 
+
+reaction: 125787 
+k6*oleate*GTP*CoA*carboxylic_acid-CoA_ligase for oleate + GTP + CoA +  =[ carboxylic_acid-CoA_ligase ]=> GDP + oleoyl-CoA + phosphate + . 
+
+reaction: 25488 
+k7*NAD+*butyraldehyde*phosphate*glyceraldehyde-3-phosphate_dehydrogenase for NAD+ + butyraldehyde + phosphate +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> butyryl_phosphate + NADH + . 
+
+reaction: 9883 
+k8*O2*pyranose_oxidase for O2 +  =[ pyranose_oxidase ]=> H2O2 + . 
+******************pathnode**************** 
+lactate 
+ethanol 
+ethanol 
+lactate 
+reduced_acceptor 
+lactate 
+ethanol 
+ethanol 
+lactate 
+oleate 
+phosphate 
+present(acceptor, 1). 
+present(oxidized_acceptor, 1). 
+present(reduced_acceptor, 1). 
+present(CoA, 1). 
+present(NAD+, 1). 
+present(H2O2, 1). 
+present(phosphate, 1). 
+present(butyraldehyde, 1). 
+present(stearate, 1). 
+present(oleate, 1). 
+present(lactate, 1). 
+present(O2, 1). 
+present(GTP, 1). 
+present(ethanol, 1). 
+******************other reactions**************** 
+
+reaction: 9883 
+k9*O2*pyranose_oxidase for O2 +  =[ pyranose_oxidase ]=> H2O2 + . 
+
+reaction: 12315 
+k10*pyruvate*reduced_acceptor*2-oxo-acid_reductase for pyruvate + reduced_acceptor +  =[ 2-oxo-acid_reductase ]=> lactate + oxidized_acceptor + . 
+five_least 94 : 
+
+reaction: 11565 
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> ethanal + reduced_acceptor + . 
+
+reaction: 12316 
+k1*lactate*oxidized_acceptor*2-oxo-acid_reductase for lactate + oxidized_acceptor +  =[ 2-oxo-acid_reductase ]=> pyruvate + reduced_acceptor + . 
+
+reaction: 23074 
+k2*O2*reduced_acceptor*stearate*stearoyl-CoA_9-desaturase for O2 + reduced_acceptor + stearate +  =[ stearoyl-CoA_9-desaturase ]=> oleate + H2O + acceptor + . 
+
+reaction: 10679 
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> ethanal + H2O2 + . 
+
+reaction: 10051 
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 + pyruvate + . 
+
+reaction: 14646 
+k5*oleate*H2O2*plant_seed_peroxygenase for oleate + H2O2 +  =[ plant_seed_peroxygenase ]=> . 
+
+reaction: 125787 
+k6*oleate*GTP*CoA*carboxylic_acid-CoA_ligase for oleate + GTP + CoA +  =[ carboxylic_acid-CoA_ligase ]=> GDP + oleoyl-CoA + phosphate + . 
+
+reaction: 25488 
+k7*NAD+*butyraldehyde*phosphate*glyceraldehyde-3-phosphate_dehydrogenase for NAD+ + butyraldehyde + phosphate +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> butyryl_phosphate + NADH + . 
+
+reaction: 9906 
+k8*D-galactose*O2*L-sorbose_oxidase for D-galactose + O2 +  =[ L-sorbose_oxidase ]=> H2O2 + 2-dehydro-D-galactose + . 
+******************pathnode**************** 
+lactate 
+ethanol 
+ethanol 
+lactate 
+reduced_acceptor 
+lactate 
+ethanol 
+ethanol 
+lactate 
+oleate 
+phosphate 
+present(acceptor, 1). 
+present(oxidized_acceptor, 1). 
+present(reduced_acceptor, 1). 
+present(CoA, 1). 
+present(NAD+, 1). 
+present(H2O2, 1). 
+present(phosphate, 1). 
+present(butyraldehyde, 1). 
+present(stearate, 1). 
+present(oleate, 1). 
+present(D-galactose, 1). 
+present(lactate, 1). 
+present(O2, 1). 
+present(GTP, 1). 
+present(ethanol, 1). 
+******************other reactions**************** 
+
+reaction: 12315 
+k9*pyruvate*reduced_acceptor*2-oxo-acid_reductase for pyruvate + reduced_acceptor +  =[ 2-oxo-acid_reductase ]=> lactate + oxidized_acceptor + . 
+
+reaction: 9906 
+k10*D-galactose*O2*L-sorbose_oxidase for D-galactose + O2 +  =[ L-sorbose_oxidase ]=> H2O2 + 2-dehydro-D-galactose + . 
+five_least 94 : 
+
+reaction: 11565 
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> ethanal + reduced_acceptor + . 
+
+reaction: 12316 
+k1*lactate*oxidized_acceptor*2-oxo-acid_reductase for lactate + oxidized_acceptor +  =[ 2-oxo-acid_reductase ]=> pyruvate + reduced_acceptor + . 
+
+reaction: 23074 
+k2*O2*reduced_acceptor*stearate*stearoyl-CoA_9-desaturase for O2 + reduced_acceptor + stearate +  =[ stearoyl-CoA_9-desaturase ]=> oleate + H2O + acceptor + . 
+
+reaction: 10679 
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> ethanal + H2O2 + . 
+
+reaction: 10051 
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 + pyruvate + . 
+
+reaction: 14646 
+k5*oleate*H2O2*plant_seed_peroxygenase for oleate + H2O2 +  =[ plant_seed_peroxygenase ]=> . 
+
+reaction: 125787 
+k6*oleate*GTP*CoA*carboxylic_acid-CoA_ligase for oleate + GTP + CoA +  =[ carboxylic_acid-CoA_ligase ]=> GDP + oleoyl-CoA + phosphate + . 
+
+reaction: 25488 
+k7*NAD+*butyraldehyde*phosphate*glyceraldehyde-3-phosphate_dehydrogenase for NAD+ + butyraldehyde + phosphate +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> butyryl_phosphate + NADH + . 
+
+reaction: 9910 
+k8*O2*pyridoxine*pyridoxine_4-oxidase for O2 + pyridoxine +  =[ pyridoxine_4-oxidase ]=> H2O2 + pyridoxal + . 
+******************pathnode**************** 
+lactate 
+ethanol 
+ethanol 
+lactate 
+reduced_acceptor 
+lactate 
+ethanol 
+ethanol 
+lactate 
+oleate 
+phosphate 
+present(acceptor, 1). 
+present(oxidized_acceptor, 1). 
+present(reduced_acceptor, 1). 
+present(CoA, 1). 
+present(NAD+, 1). 
+present(H2O2, 1). 
+present(phosphate, 1). 
+present(butyraldehyde, 1). 
+present(stearate, 1). 
+present(oleate, 1). 
+present(lactate, 1). 
+present(O2, 1). 
+present(GTP, 1). 
+present(ethanol, 1). 
+present(pyridoxine, 1). 
+******************other reactions**************** 
+
+reaction: 9910 
+k9*O2*pyridoxine*pyridoxine_4-oxidase for O2 + pyridoxine +  =[ pyridoxine_4-oxidase ]=> H2O2 + pyridoxal + . 
+
+reaction: 12315 
+k10*pyruvate*reduced_acceptor*2-oxo-acid_reductase for pyruvate + reduced_acceptor +  =[ 2-oxo-acid_reductase ]=> lactate + oxidized_acceptor + . 
+five_least 94 : 
+
+reaction: 11565 
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> ethanal + reduced_acceptor + . 
+
+reaction: 12316 
+k1*lactate*oxidized_acceptor*2-oxo-acid_reductase for lactate + oxidized_acceptor +  =[ 2-oxo-acid_reductase ]=> pyruvate + reduced_acceptor + . 
+
+reaction: 23074 
+k2*O2*reduced_acceptor*stearate*stearoyl-CoA_9-desaturase for O2 + reduced_acceptor + stearate +  =[ stearoyl-CoA_9-desaturase ]=> oleate + H2O + acceptor + . 
+
+reaction: 10679 
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> ethanal + H2O2 + . 
+
+reaction: 10051 
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 + pyruvate + . 
+
+reaction: 14646 
+k5*oleate*H2O2*plant_seed_peroxygenase for oleate + H2O2 +  =[ plant_seed_peroxygenase ]=> . 
+
+reaction: 125787 
+k6*oleate*GTP*CoA*carboxylic_acid-CoA_ligase for oleate + GTP + CoA +  =[ carboxylic_acid-CoA_ligase ]=> GDP + oleoyl-CoA + phosphate + . 
+
+reaction: 25488 
+k7*NAD+*butyraldehyde*phosphate*glyceraldehyde-3-phosphate_dehydrogenase for NAD+ + butyraldehyde + phosphate +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> butyryl_phosphate + NADH + . 
+
+reaction: 9912 
+k8*5-deoxypyridoxine*O2*pyridoxine_4-oxidase for 5-deoxypyridoxine + O2 +  =[ pyridoxine_4-oxidase ]=> H2O2 + 5-deoxypyridoxal + . 
+******************pathnode**************** 
+lactate 
+ethanol 
+ethanol 
+lactate 
+reduced_acceptor 
+lactate 
+ethanol 
+ethanol 
+lactate 
+oleate 
+phosphate 
+present(acceptor, 1). 
+present(oxidized_acceptor, 1). 
+present(reduced_acceptor, 1). 
+present(CoA, 1). 
+present(NAD+, 1). 
+present(H2O2, 1). 
+present(phosphate, 1). 
+present(5-deoxypyridoxine, 1). 
+present(butyraldehyde, 1). 
+present(stearate, 1). 
+present(oleate, 1). 
+present(lactate, 1). 
+present(O2, 1). 
+present(GTP, 1). 
+present(ethanol, 1). 
+******************other reactions**************** 
+
+reaction: 9912 
+k9*5-deoxypyridoxine*O2*pyridoxine_4-oxidase for 5-deoxypyridoxine + O2 +  =[ pyridoxine_4-oxidase ]=> H2O2 + 5-deoxypyridoxal + . 
+
+reaction: 12315 
+k10*pyruvate*reduced_acceptor*2-oxo-acid_reductase for pyruvate + reduced_acceptor +  =[ 2-oxo-acid_reductase ]=> lactate + oxidized_acceptor + . 
+five_least 94 : 
+
+reaction: 11565 
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> ethanal + reduced_acceptor + . 
+
+reaction: 12316 
+k1*lactate*oxidized_acceptor*2-oxo-acid_reductase for lactate + oxidized_acceptor +  =[ 2-oxo-acid_reductase ]=> pyruvate + reduced_acceptor + . 
+
+reaction: 23074 
+k2*O2*reduced_acceptor*stearate*stearoyl-CoA_9-desaturase for O2 + reduced_acceptor + stearate +  =[ stearoyl-CoA_9-desaturase ]=> oleate + H2O + acceptor + . 
+
+reaction: 10679 
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> ethanal + H2O2 + . 
+
+reaction: 10051 
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> H2O2 + pyruvate + . 
+
+reaction: 14646 
+k5*oleate*H2O2*plant_seed_peroxygenase for oleate + H2O2 +  =[ plant_seed_peroxygenase ]=> . 
+
+reaction: 125787 
+k6*oleate*GTP*CoA*carboxylic_acid-CoA_ligase for oleate + GTP + CoA +  =[ carboxylic_acid-CoA_ligase ]=> GDP + oleoyl-CoA + phosphate + . 
+
+reaction: 25488 
+k7*NAD+*butyraldehyde*phosphate*glyceraldehyde-3-phosphate_dehydrogenase for NAD+ + butyraldehyde + phosphate +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> butyryl_phosphate + NADH + . 
+
+reaction: 9913 
+k8*2-demethyl-2-ethylpyridoxine*O2*pyridoxine_4-oxidase for 2-demethyl-2-ethylpyridoxine + O2 +  =[ pyridoxine_4-oxidase ]=> 2-demethyl-2-ethylpyridoxal + H2O2 + . 
+******************pathnode**************** 
+lactate 
+ethanol 
+ethanol 
+lactate 
+reduced_acceptor 
+lactate 
+ethanol 
+ethanol 
+lactate 
+oleate 
+phosphate 
+present(acceptor, 1). 
+present(oxidized_acceptor, 1). 
+present(reduced_acceptor, 1). 
+present(CoA, 1). 
+present(NAD+, 1). 
+present(H2O2, 1). 
+present(2-demethyl-2-ethylpyridoxine, 1). 
+present(phosphate, 1). 
+present(butyraldehyde, 1). 
+present(stearate, 1). 
+present(oleate, 1). 
+present(lactate, 1). 
+present(O2, 1). 
+present(GTP, 1). 
+present(ethanol, 1). 
+******************other reactions**************** 
+
+reaction: 9913 
+k9*2-demethyl-2-ethylpyridoxine*O2*pyridoxine_4-oxidase for 2-demethyl-2-ethylpyridoxine + O2 +  =[ pyridoxine_4-oxidase ]=> 2-demethyl-2-ethylpyridoxal + H2O2 + . 
+
+reaction: 12315 
+k10*pyruvate*reduced_acceptor*2-oxo-acid_reductase for pyruvate + reduced_acceptor +  =[ 2-oxo-acid_reductase ]=> lactate + oxidized_acceptor + . 

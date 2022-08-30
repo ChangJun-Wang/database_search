@@ -3,7 +3,8 @@ from edge import edge
 class node :
     def __init__(self, name):
         self.name     = name
-        self.pathnum  = 3
+        self.c        = 0
+        # self.pathnum  = 3
         self.B_sideRec = None
         self.enable   = True
         self.upEdge   = []
@@ -15,12 +16,14 @@ class node :
         self.pout     = 0
         self.level    = 0
         self.mark     = 0
+        self.pro_m    = [False,False,False,False,False,False,False]
+        # self.sidemark = 0
         self.label    = set()
         self.layer    = 0
-        self.paths    = [[]]*(self.pathnum)
+        # self.paths    = [[]]*(self.pathnum)
         self.pathA1   = []
         self.pathA2   = []
-        self.pathB    = []
+        # self.pathB    = []
         self.pathOut  = []
         self.path     = []
 
@@ -30,10 +33,10 @@ class node :
         self.labelA      = ""
         self.labelB      = ""
         self.labelB_side = []
-        self.labelC      = []
-        self.labelC_side = []
-        self.labelD      = ""
-        self.labelE      = []
+        # self.labelC      = []
+        # self.labelC_side = []
+        # self.labelD      = ""
+        # self.labelE      = []
 
     # def getUpNode(self):
     #     for rec in self.upEdge:
@@ -72,6 +75,7 @@ class node :
         tmpList = []
         for path in pathlist:
             tmp = {}
+            tmp["struc"] = path["struc"]
             tmp["related"] = path["related"].copy()
             tmp["pathlist"] = path["pathlist"].copy()
             tmp["pathnode"] = path["pathnode"].copy()
@@ -87,8 +91,8 @@ class node :
             tmp["pathenz"].append(downRec.getenz())
             tmp["pathlist"].append(downRec)
             tmpList.append(tmp)
-            assert tmp["pathlist"] != path["pathlist"]
-            assert tmp["pathnode"] != path["pathnode"]
+            # assert tmp["pathlist"] != path["pathlist"]
+            # assert tmp["pathnode"] != path["pathnode"]
         self.path = tmpList
 
     def enz_count(self, path):
@@ -105,6 +109,7 @@ class node :
                 path = path_tmp
                 path_c = self.enz_count(path)
         tmp = {}
+        tmp["struc"] = path["struc"]
         tmp["related"] = path["related"].copy()
         tmp["pathlist"] = path["pathlist"].copy()
         tmp["pathnode"] = path["pathnode"].copy()
@@ -119,12 +124,11 @@ class node :
         tmp["pathnode"].append(startPro)
         tmp["pathenz"].append(downRec.getenz())
         tmp["pathlist"].append(downRec)
-        assert tmp["pathlist"] != []
-        assert tmp["pathnode"] != path["pathnode"]
-        assert tmp != {}
+        # assert tmp["pathlist"] != []
+        # assert tmp["pathnode"] != path["pathnode"]
+        # assert tmp != {}
         if len(self.path) >= 10:
             for path in self.path:
-                # if self.enz_count(path) > self.enz_count(tmp):
                 if len(path["related"]) >= len(tmp["related"]):
                     path = tmp
                     break
@@ -154,12 +158,12 @@ class node :
         if self in downRec.getpro():
             return []
 
-        if downRec.getenz().mark == 1:
-            return []
+        # if downRec.getenz().mark == 1:
+        #     return []
 
-        for rea in downRec.getrea():
-            if rea.mark == 1:
-                return []
+        # for rea in downRec.getrea():
+        #     if rea.mark == 1:
+        #         return []
 
         downRecs = []
         downRecs.append(downRec)
@@ -195,6 +199,7 @@ class node :
         path_tmp = []
         for path in self.path:
             tmp    = {}
+            tmp["struc"] = path["struc"]
             tmp["related"]  = path["related"].copy()
             tmp["pathlist"] = path["pathlist"].copy()
             tmp["pathenz"]  = path["pathenz"].copy()
@@ -213,6 +218,7 @@ class node :
         if pathtype == "A":
             for record in self.recordA:
                 tmp    = {}
+                tmp["struc"] = record["struc"]
                 tmp["related"]  = record["related"].copy()
                 tmp["pathlist"] = record["pathlist"].copy()
                 tmp["pathenz"]  = record["pathenz"].copy()
@@ -221,6 +227,7 @@ class node :
         elif pathtype == "A1":
             for record in self.pathA1:
                 tmp    = {}
+                tmp["struc"] = record["struc"]
                 tmp["related"]  = record["related"].copy()
                 tmp["pathlist"] = record["pathlist"].copy()
                 tmp["pathenz"]  = record["pathenz"].copy()
@@ -229,6 +236,7 @@ class node :
         elif pathtype == "A2":
             for record in self.pathA2:
                 tmp    = {}
+                tmp["struc"] = record["struc"]
                 tmp["related"]  = record["related"].copy()
                 tmp["pathlist"] = record["pathlist"].copy()
                 tmp["pathenz"]  = record["pathenz"].copy()
@@ -259,6 +267,7 @@ class node :
 
     def Merge(self, path, record):
         tmp    = {}
+        tmp["struc"] = path["struc"]
         tmp["related"]  = path["related"].copy()
         tmp["pathlist"] = path["pathlist"].copy()
         tmp["pathenz"]  = path["pathenz"].copy()
@@ -276,15 +285,16 @@ class node :
         return tmp
 
     def MergeAll(self, label):
-        assert label == "A" or label == "B_side"
+        # assert label == "A" or label == "B_side"
         path_tmp = []
+        c = 0
         for path in self.path:
             for record in self.recordA:
                 if self.CheckMerge(path, record):
-                    assert path != {}
-                    assert record["pathlist"] != []
+                    # assert path != {}
+                    # assert record["pathlist"] != []
                     path_tmp.append(self.Merge(path, record))
         self.recordA = path_tmp
 
     def ClearRecordA(self):
-        self.recordA    = []
+        self.recordA.clear()

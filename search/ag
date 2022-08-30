@@ -1,0 +1,79 @@
+ans :  14 9 4
+
+reaction: 56791
+k0*D-glucose*GDP*ADP-specific_glucose/glucosamine_kinase for D-glucose + GDP +  =[ ADP-specific_glucose/glucosamine_kinase ]=> D-glucose_6-phosphate + GMP + .
+
+reaction: 127947
+k1*acetone*GTP*H2O*CO2*acetone_carboxylase for acetone + GTP + H2O + CO2 +  =[ acetone_carboxylase ]=> phosphate + GMP + acetoacetate + .
+
+reaction: 73836
+k2*GMP*H2O*5'-deoxynucleotidase for GMP + H2O +  =[ 5'-deoxynucleotidase ]=> phosphate + guanosine + .
+
+reaction: 5876
+k3*NADPH*D-glucose*methylglyoxal_reductase for NADPH + D-glucose +  =[ methylglyoxal_reductase ]=> NADP+ + .
+
+reaction: 7256
+k4*NADPH*H+*acetone*(R,R)-butanediol_dehydrogenase for NADPH + H+ + acetone +  =[ (R,R)-butanediol_dehydrogenase ]=> propan-2-ol + NADP+ + .
+
+reaction: 25462
+k5*NADP+*phosphate*[amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine*[amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase for NADP+ + phosphate + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine +  =[ [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase ]=> NADPH + H+ + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine + .
+
+reaction: 27379
+k6*phosphate*ferricyanide*H2O*pyruvate*pyruvate_oxidase for phosphate + ferricyanide + H2O + pyruvate +  =[ pyruvate_oxidase ]=> H2O2 + acetyl_phosphate + ferrocyanide + .
+
+reaction: 14613
+k7*H2O2*H+*10-acetyl-3,7-dihydroxyphenoxazine*myeloperoxidase for H2O2 + H+ + 10-acetyl-3,7-dihydroxyphenoxazine +  =[ myeloperoxidase ]=> resorufin + H2O + .
+
+reaction: 35033
+k8*reduced_cytochrome_c*nitrous_oxide*nitrous-oxide_reductase for reduced_cytochrome_c + nitrous_oxide +  =[ nitrous-oxide_reductase ]=> cytochrome_c + nitrogen + H2O + .
+******************pathnode****************
+acetone
+D-glucose
+D-glucose
+acetone
+GMP
+acetone
+D-glucose
+D-glucose
+acetone
+phosphate
+H2O2
+present( NADPH , 1).
+present( phosphate , 1).
+present( [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine , 1).
+present( pyruvate , 1).
+present( NADP+ , 1).
+present( H+ , 1).
+present( 10-acetyl-3,7-dihydroxyphenoxazine , 1).
+present( nitrous_oxide , 1).
+present( D-glucose , 1).
+present( reduced_cytochrome_c , 1).
+present( GTP , 1).
+present( GMP , 1).
+present( ferricyanide , 1).
+present( H2O2 , 1).
+present( acetone , 1).
+present( GDP , 1).
+present( H2O , 1).
+present( CO2 , 1).
+******************other reactions****************
+
+reaction: 14620
+k9*H+*H2O2*myeloperoxidase for H+ + H2O2 +  =[ myeloperoxidase ]=> .
+
+reaction: 14614
+k10*H2O2*myeloperoxidase for H2O2 +  =[ myeloperoxidase ]=> H2O + .
+
+reaction: 35033
+k11*reduced_cytochrome_c*nitrous_oxide*nitrous-oxide_reductase for reduced_cytochrome_c + nitrous_oxide +  =[ nitrous-oxide_reductase ]=> cytochrome_c + nitrogen + H2O + .
+
+reaction: 27372
+k12*H2O*pyruvate*pyruvate_oxidase for H2O + pyruvate +  =[ pyruvate_oxidase ]=> CO2 + acetate + .
+total solution number :  2216
+total solution distribution :  {31: 41, 29: 34, 28: 17, 35: 12, 19: 528, 14: 2, 17: 6, 21: 198, 23: 83, 18: 640, 22: 86, 20: 185, 25: 48, 26: 46, 27: 25, 32: 42, 86: 1, 79: 5, 77: 24, 80: 2, 93: 2, 78: 1, 33: 17, 36: 6, 45: 14, 69: 1, 24: 48, 37: 5, 34: 31, 76: 3, 38: 7, 70: 5, 41: 3, 30: 15, 39: 3, 43: 2, 52: 2, 47: 6, 40: 2, 63: 1, 16: 5, 15: 12}
+總共執行時間：1928.181654 秒
+檢查violation：111.064591 秒
+
+real	32m9.043s
+user	32m8.869s
+sys	0m0.160s

@@ -1,0 +1,90 @@
+RN spontaneous_reaction
+RN ADP-specific_glucose/glucosamine_kinase
+0 D-glucose GDP = GMP D-glucose_6-phosphate
+RN acetone_carboxylase
+1 H2O acetone GTP CO2 = GMP acetoacetate phosphate
+RN 5'-deoxynucleotidase
+2 H2O GMP = phosphate guanosine
+RN methylglyoxal_reductase
+3 NADPH D-glucose = NADP+
+RN (R,R)-butanediol_dehydrogenase
+4 NADPH acetone H+ = NADP+ propan-2-ol
+RN [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase
+5 [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine phosphate NADP+ = NADPH [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine H+
+RN pyruvate_oxidase
+6 ferricyanide phosphate H2O pyruvate = H2O2 acetyl_phosphate ferrocyanide
+7 H2O pyruvate = acetate CO2
+RN myeloperoxidase
+8 10-acetyl-3,7-dihydroxyphenoxazine H2O2 H+ = resorufin H2O
+9 H2O2 H+ = 
+10 H2O2 = H2O
+RN 3-oxoacyl-[acyl-carrier-protein]_reductase
+11 NADPH beta-ketobutyryl-CoA = NADP+ beta-hydroxybutyryl-CoA
+RN sorbose_dehydrogenase
+12 ethanol + acceptor = ethanal + reduced_acceptor
+RN 2-oxo-acid_reductase
+13 lactate  oxidized_acceptor = reduced_acceptor  pyruvate
+14 reduced_acceptor  pyruvate = lactate  oxidized_acceptor
+RN stearoyl-CoA_9-desaturase
+15 stearate reduced_acceptor + O2 = H2O oleate acceptor
+RN cholesterol_oxidase
+16 ethanol O2 = ethanal H2O2
+RN (S)-2-hydroxy-acid_oxidase
+17 lactate O2 = pyruvate H2O2
+RN plant_seed_peroxygenase
+18 for oleate H2O2 = 
+RN carboxylic_acid
+19 oleate GTP CoA = phosphate GDP oleoyl-CoA
+RN glyceraldehyde-3-phosphate_dehydrogenase
+20 butyraldehyde NAD+ phosphate = butyryl_phosphate NADH
+RN pyranose_oxidase
+21 O2 = H2O2
+RN AA
+22 BB CC = GMP
+23 BB CC = reduced_acceptor 
+RN nitrite_reductase
+24 ferrocytochrome_c nitric_oxide = ferricytochrome_c  H2O  NH3
+25 ferrocytochrome_c hydroxylamine  = ferricytochrome_c
+26 nitrite ferrocytochrome_c  = ferricytochrome_c H2O nitric_oxide
+27 ferrocytochrome_c O2  = ferricytochrome_c H2O
+28 ferricytochrome_c H2O nitric_oxide  = nitrite ferrocytochrome_c H+
+29 nitrite ferrocytochrome_c H+  = ferricytochrome_c H2O hydroxylamine
+30 nitrite ferrocytochrome_c  = ferricytochrome_c H2O nitric_oxide
+31 nitrite ferrocytochrome_c  = ferricytochrome_c hydroxylamine
+32 ferrocytochrome_c hydroxylamine  = ferricytochrome NH3
+33 nitrite ferrocytochrome_c H+  = ferricytochrome_c H2O nitric_oxide
+34 ferricytochrome_c H2O NH3  = nitrite ferrocytochrome_c H+
+35 nitrite ferrocytochrome_c  = ferricytochrome_c H2O NH3
+36 ferrocytochrome_c hydroxylamine  = ferricytochrome_c H2O NH3
+37 ferricytochrome_c hydroxylamine  = nitrite ferrocytochrome_c
+38 ferrocytochrome_c H+ nitric_oxide  = ferricytochrome_c H2O NH3
+39 nitrite ferrocytochrome_c H+ = ferricytochrome_c H2O NH3
+RN phosphoramidate-hexose_phosphotransferase
+40 D-glucose phosphoramidate  = D-glucose_1-phosphate NH3
+RN aspartate-ammonia_ligase
+41 L-aspartate ATP NH3   = AMP diphosphate L-asparagine
+42 L-aspartate ATP NH3   = ADP phosphate L-asparagine
+RN nitric_oxide_dioxygenase
+43 NADPH O2 nitric_oxide = H+ nitrate NADP+
+44 NADPH O2 nitric_oxide = NO3- NADP+
+45 NADPH O2 nitric_oxide = H+ NO3- NADP+
+RN methylglyoxal_reductase
+46 NADPH D-glucose = NADP+
+RN [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase
+47 [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine phosphate NADP+  = H+ NADPH [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine
+RN pyruvate_oxidase
+48 pyruvate H2O ferricyanide phosphate   = acetyl_phosphate ferrocyanide H2O2
+49 pyruvate H2O phosphate O2   = acetate CO2 acetyl_phosphate H2O2
+50 pyruvate H2O   = acetate CO2
+51 pyruvate H2O phosphate O2   = acetyl_phosphate CO2 H2O2
+52 pyruvate phosphate O2   = acetyl_phosphate CO2 H2O2
+RN myeloperoxidase
+53 10-acetyl-3,7-dihydroxyphenoxazine H2O2 H+ = H2O resorufin
+54 H2O2 = H2O
+55 H+ H2O2  = 
+56 nitrite H2O2 = 
+57 H2O2 nitric_oxide = 
+59 H+ H2O2 = 
+60 nitrite H2O2 = 
+RN 3-oxoacyl-[acyl-carrier-protein]_reductase
+61 beta-ketobutyryl-CoA NADPH  = beta-hydroxybutyryl-CoA NADP+ 

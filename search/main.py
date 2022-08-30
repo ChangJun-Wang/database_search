@@ -1,11 +1,15 @@
 #update
 import sys
 
+import time
+
 from func import search
 
 if __name__ == '__main__':
+    start = time.process_time()
     searcher = search()
     f = open("parseddata.txt", encoding="utf-8", mode='r')
+    # f = open("testsys.txt", encoding="utf-8", mode='r')
     searcher.parsing(f)
     f.close()
     fl = open("label.txt", encoding="utf-8", mode='r')
@@ -18,11 +22,11 @@ if __name__ == '__main__':
 
     print("typeA : ", searcher.typeB)
     print("typeB : ", searcher.typeA)
-    print("typeC : ", searcher.typeE)
-    print("typeD : ", searcher.typeD)
-    print("typeE : ", searcher.typeC)
-    print("typeF : ", searcher.typeF)
-    print("typeG : ", searcher.reaction)
+    # print("typeC : ", searcher.typeE)
+    # print("typeD : ", searcher.typeD)
+    # print("typeE : ", searcher.typeC)
+    # print("typeF : ", searcher.typeF)
+    # print("typeG : ", searcher.reaction)
 
     # count = 0
     print ("\n", "*************************************************")
@@ -46,6 +50,13 @@ if __name__ == '__main__':
 
     if input_species != []:
         searcher.main(input_species, output_species)
+        # searcher.XORmain(input_species, output_species)
+
+    end = time.process_time()
+    print("總共執行時間：%f 秒" % (end - start))
+    print("檢查violation：%f 秒" % (searcher.time))
+    # print ("return true")
+
 
     #specified input species :
     # output_species = searcher.mapToNode["NADH"]
