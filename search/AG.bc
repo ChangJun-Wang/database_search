@@ -1,0 +1,251 @@
+clear_model.
+
+parameter(k0 = 0.0011, k1 = 0.0078, k2 = 0.00747, k3 = 445, k4 = 0.6, k5 = 0.014, k6 = 2.3, k7 = 0.03, k8 = 0.0093, k9 = 0.03, k11 = 0.03, k12 = 0.4 ).
+
+
+clear_model.
+
+parameter(k0 = 1, k1 = 1, k2 = 1, k3 = 1, k4 = 1, k5 = 1, k6 = 1, k7 = 1, k8 = 1, k9 = 1, k10 = 1, k11 = 1, k12 = 1 ).
+
+k0*D_glucose*GDP*ADP_specific_glucose_glucosamine_kinase for D_glucose + GDP =[ ADP_specific_glucose_glucosamine_kinase ]=> D_glucose_6_phosphate + GMP.
+
+k1*GTP*CO2*H2O*acetone*acetone_carboxylase for GTP + CO2 + H2O + acetone =[ acetone_carboxylase ]=> acetoacetate + GMP + phosphate.
+
+k2*H2O*GMP*V_deoxynucleotidase for H2O + GMP =[ V_deoxynucleotidase ]=> guanosine + phosphate.
+
+k3*D_glucose*NADPH*methylglyoxal_reductase for D_glucose + NADPH =[ methylglyoxal_reductase ]=> NADPp.
+
+k4*Hp*NADPH*acetone*R_R_butanediol_dehydrogenase for Hp + NADPH + acetone =[ R_R_butanediol_dehydrogenase ]=> NADPp + propan_2_ol.
+
+k5*NADPp*amino_group_carrier_protein_C_terminal_N_1_carboxy_5_oxopentan_1_yl_L_glutamine*phosphate*amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase for NADPp + amino_group_carrier_protein_C_terminal_N_1_carboxy_5_oxopentan_1_yl_L_glutamine + phosphate =[ amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase ]=> amino_group_carrier_protein_C_terminal_N_1_carboxy_5_phosphooxy_5_oxopentan_1_yl_L_glutamine + Hp + NADPH.
+
+k6*ferricyanide*pyruvate*H2O*phosphate*pyruvate_oxidase for ferricyanide + pyruvate + H2O + phosphate =[ pyruvate_oxidase ]=> acetyl_phosphate + ferrocyanide + H2O2.
+
+k7*Hp*X_acetyl_3_7_dihydroxyphenoxazine*H2O2*myeloperoxidase for Hp + X_acetyl_3_7_dihydroxyphenoxazine + H2O2 =[ myeloperoxidase ]=> H2O + resorufin.
+
+k8*beta_ketobutyryl_CoA*NADPH*III_oxoacyl_acyl_carrier_protein_reductase for beta_ketobutyryl_CoA + NADPH =[ III_oxoacyl_acyl_carrier_protein_reductase ]=> NADPp + beta_hydroxybutyryl_CoA.
+
+
+k9*H2O2*myeloperoxidase for H2O2 =[ myeloperoxidase ]=> H2O.
+
+k11*Hp*H2O2*myeloperoxidase for Hp + H2O2 =[ myeloperoxidase ]=> _.
+
+k12*pyruvate*H2O*pyruvate_oxidase for pyruvate + H2O =[ pyruvate_oxidase ]=> acetate + CO2.
+
+present( X_acetyl_3_7_dihydroxyphenoxazine , 1).
+present( Hp , 1).
+present( amino_group_carrier_protein_C_terminal_N_1_carboxy_5_oxopentan_1_yl_L_glutamine , 1).
+present( NADPH , 1).
+present( pyruvate , 1).
+present( GTP , 1).
+present( GDP , 1).
+present( ferricyanide , 1).
+present( CO2 , 1).
+present( H2O , 1).
+
+present(ADP_specific_glucose_glucosamine_kinase, 1818e-4 ). 
+present(acetone_carboxylase, 64e-4 ). 
+present(V_deoxynucleotidase, 134e0 ). 
+present(methylglyoxal_reductase, 0e-4 ). 
+present(R_R_butanediol_dehydrogenase, 0e-4 ). 
+present(amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase, 71.4e4 ). 
+present(pyruvate_oxidase, 0.43e-4 ). 
+present(myeloperoxidase, 33e0 ). 
+present(III_oxoacyl_acyl_carrier_protein_reductase, 108e-4 ). 
+
+////////////////////////or////////////////////////////
+present( D_glucose , 0).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a0T5).
+
+present( D_glucose , 0).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a1T5).
+
+present( D_glucose , 1e-3).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a0T5).
+
+present( D_glucose , 1e-3).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 0.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a1T5).
+
+////////////////////////i1////////////////////////////
+present( D_glucose , 0).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a0T15).
+
+present( D_glucose , 0).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a1T15).
+
+present( D_glucose , 1e-3).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a0T15).
+
+present( D_glucose , 1e-3).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a1T15).
+
+////////////////////////and////////////////////////////
+present( D_glucose , 0).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a0T25).
+
+present( D_glucose , 0).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a1T25).
+
+present( D_glucose , 1e-3).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a0T25).
+
+present( D_glucose , 1e-3).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 2.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a1T25).
+
+////////////////////////i2////////////////////////////
+present(ADP_specific_glucose_glucosamine_kinase, 909e-4 ). 
+present(acetone_carboxylase, 128e-4 ). 
+
+ present( D_glucose , 0).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a0T15_2).
+
+present( D_glucose , 0).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a1T15_2).
+
+present( D_glucose , 1e-3).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a0T15_2).
+
+present( D_glucose , 1e-3).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 1.5e-3).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a1T15_2).
+
+/////////////////////i1i2'/////////////////////////
+present(ADP_specific_glucose_glucosamine_kinase, 909e-4 ). 
+present(acetone_carboxylase, 0e-4 ). 
+present(V_deoxynucleotidase, 134e0 ). 
+present(methylglyoxal_reductase, 0e-4 ). 
+present(R_R_butanediol_dehydrogenase, 3.4e-4 ). 
+present(amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase, 71.4e4 ). 
+present(pyruvate_oxidase, 0.43e-4 ). 
+present(myeloperoxidase, 33e0 ). 
+present(III_oxoacyl_acyl_carrier_protein_reductase, 108e-4 ). 
+
+present( D_glucose , 0).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a0T0).
+
+present( D_glucose , 0).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a1T0).
+
+present( D_glucose , 1e-3).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a0T0).
+
+present( D_glucose , 1e-3).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a1T0).
+
+/////////////////////i1'i2/////////////////////////
+present(ADP_specific_glucose_glucosamine_kinase, 0e-4 ). 
+present(acetone_carboxylase, 64e-4 ). 
+present(V_deoxynucleotidase, 134e0 ). 
+present(methylglyoxal_reductase, 0.0045e-4 ). 
+present(R_R_butanediol_dehydrogenase, 0e-4 ). 
+present(amino_group_carrier_protein_6_phospho_L_2_aminoadipate_reductase, 71.4e4 ). 
+present(pyruvate_oxidase, 0.43e-4 ). 
+present(myeloperoxidase, 33e0 ). 
+present(III_oxoacyl_acyl_carrier_protein_reductase, 108e-4 ). 
+
+present( D_glucose , 0).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a0T0_2).
+
+present( D_glucose , 0).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g0a1T0_2).
+
+present( D_glucose , 1e-3).
+present( acetone , 0).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a0T0_2).
+
+present( D_glucose , 1e-3).
+present( acetone , 1e-3).
+present( beta_ketobutyryl_CoA , 0).
+
+numerical_simulation(time: 3e3). plot(show:{resorufin}).
+export_plot(g1a1T0_2).

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 reaction: 34991
 k0*nitric_oxide*ferrocytochrome_c*nitrite_reductase for nitric_oxide + ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O + .
 
@@ -141,3 +142,148 @@ k35*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c 
 real    23m26.503s
 user    23m26.342s
 sys     0m0.160s
+=======
+reaction: 34991
+k0*nitric_oxide*ferrocytochrome_c*nitrite_reductase for nitric_oxide + ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O + .
+
+reaction: 58104
+k1*phosphoramidate*D-glucose*phosphoramidate-hexose_phosphotransferase for phosphoramidate + D-glucose +  =[ phosphoramidate-hexose_phosphotransferase ]=> NH3 + D-glucose_1-phosphate + .
+
+reaction: 126621
+k2*NH3*L-aspartate*ATP*aspartate-ammonia_ligase for NH3 + L-aspartate + ATP +  =[ aspartate-ammonia_ligase ]=> ADP + L-asparagine + phosphate + .
+
+reaction: 17639
+k3*nitric_oxide*O2*NADPH*nitric_oxide_dioxygenase for nitric_oxide + O2 + NADPH +  =[ nitric_oxide_dioxygenase ]=> NADP+ + NO3- + .
+
+reaction: 5876
+k4*D-glucose*NADPH*methylglyoxal_reductase for D-glucose + NADPH +  =[ methylglyoxal_reductase ]=> NADP+ + .
+
+reaction: 25462
+k5*[amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine*NADP+*phosphate*[amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase for [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine + NADP+ + phosphate +  =[ [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase ]=> H+ + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine + NADPH + .
+
+reaction: 27379
+k6*pyruvate*ferricyanide*H2O*phosphate*pyruvate_oxidase for pyruvate + ferricyanide + H2O + phosphate +  =[ pyruvate_oxidase ]=> acetyl_phosphate + ferrocyanide + H2O2 + .
+
+reaction: 14613
+k7*H+*10-acetyl-3,7-dihydroxyphenoxazine*H2O2*myeloperoxidase for H+ + 10-acetyl-3,7-dihydroxyphenoxazine + H2O2 +  =[ myeloperoxidase ]=> H2O + resorufin + .
+
+reaction: 976
+k8*NADPH*beta-ketobutyryl-CoA*3-oxoacyl-[acyl-carrier-protein]_reductase for NADPH + beta-ketobutyryl-CoA +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> NADP+ + beta-hydroxybutyryl-CoA + .
+******************pathnode****************
+D-glucose
+nitric_oxide
+nitric_oxide
+D-glucose
+NH3
+D-glucose
+nitric_oxide
+nitric_oxide
+D-glucose
+phosphate
+H2O2
+present( [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine , 1).
+present( H+ , 1).
+present( pyruvate , 1).
+present( ferrocytochrome_c , 1).
+present( ATP , 1).
+present( phosphate , 1).
+present( NADP+ , 1).
+present( O2 , 1).
+present( H2O , 1).
+present( 10-acetyl-3,7-dihydroxyphenoxazine , 1).
+present( beta-ketobutyryl-CoA , 1).
+present( nitric_oxide , 1).
+present( D-glucose , 1).
+present( phosphoramidate , 1).
+present( ferricyanide , 1).
+present( H2O2 , 1).
+present( NH3 , 1).
+present( L-aspartate , 1).
+present( NADPH , 1).
+******************other reactions****************
+
+reaction: 34973
+k9*nitric_oxide*H+*ferrocytochrome_c*nitrite_reductase for nitric_oxide + 5 H+ + 5 ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + 5 ferricytochrome_c + H2O + .
+
+reaction: 14620
+k10*H+*H2O2*myeloperoxidase for H+ + H2O2 +  =[ myeloperoxidase ]=> .
+
+reaction: 34976
+k11*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O + .
+
+reaction: 34935
+k12*O2*ferrocytochrome_c*nitrite_reductase for O2 + ferrocytochrome_c +  =[ nitrite_reductase ]=> ferricytochrome_c + H2O + .
+
+reaction: 17637
+k13*nitric_oxide*O2*NADPH*nitric_oxide_dioxygenase for nitric_oxide + O2 + NADPH +  =[ nitric_oxide_dioxygenase ]=> NADP+ + H+ + NO3- + .
+
+reaction: 34975
+k14*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> hydroxylamine + H2O + ferricytochrome_c + .
+
+reaction: 27370
+k15*pyruvate*O2*phosphate*pyruvate_oxidase for pyruvate + O2 + phosphate +  =[ pyruvate_oxidase ]=> acetyl_phosphate + H2O2 + CO2 + .
+
+reaction: 27372
+k16*pyruvate*H2O*pyruvate_oxidase for pyruvate + H2O +  =[ pyruvate_oxidase ]=> acetate + CO2 + .
+
+reaction: 34977
+k17*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + ferricytochrome + .
+
+reaction: 14558
+k18*nitrite*H2O2*myeloperoxidase for nitrite + H2O2 +  =[ myeloperoxidase ]=> .
+
+reaction: 27373
+k19*pyruvate*O2*H2O*phosphate*pyruvate_oxidase for pyruvate + O2 + H2O + phosphate +  =[ pyruvate_oxidase ]=> acetate + acetyl_phosphate + H2O2 + CO2 + .
+
+reaction: 34928
+k20*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> nitric_oxide + ferricytochrome_c + H2O + .
+
+reaction: 34916
+k21*nitric_oxide*ferricytochrome_c*H2O*nitrite_reductase for nitric_oxide + ferricytochrome_c + H2O +  =[ nitrite_reductase ]=> H+ + nitrite + ferrocytochrome_c + .
+
+reaction: 34993
+k22*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O + .
+
+reaction: 34968
+k23*NH3*ferricytochrome_c*H2O*nitrite_reductase for NH3 + ferricytochrome_c + H2O +  =[ nitrite_reductase ]=> H+ + nitrite + ferrocytochrome_c + .
+
+reaction: 27371
+k24*pyruvate*O2*H2O*phosphate*pyruvate_oxidase for pyruvate + O2 + H2O + phosphate +  =[ pyruvate_oxidase ]=> acetyl_phosphate + H2O2 + CO2 + .
+
+reaction: 34934
+k25*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> nitric_oxide + ferricytochrome_c + H2O + .
+
+reaction: 17634
+k26*nitric_oxide*O2*NADPH*nitric_oxide_dioxygenase for nitric_oxide + O2 + NADPH +  =[ nitric_oxide_dioxygenase ]=> NADP+ + nitrate + H+ + .
+
+reaction: 976
+k27*NADPH*beta-ketobutyryl-CoA*3-oxoacyl-[acyl-carrier-protein]_reductase for NADPH + beta-ketobutyryl-CoA +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> NADP+ + beta-hydroxybutyryl-CoA + .
+
+reaction: 126502
+k28*NH3*L-aspartate*ATP*aspartate-ammonia_ligase for NH3 + L-aspartate + ATP +  =[ aspartate-ammonia_ligase ]=> diphosphate + L-asparagine + AMP + .
+
+reaction: 34989
+k29*hydroxylamine*ferrocytochrome_c*nitrite_reductase for hydroxylamine + ferrocytochrome_c +  =[ nitrite_reductase ]=> ferricytochrome_c + .
+
+reaction: 14614
+k30*H2O2*myeloperoxidase for H2O2 +  =[ myeloperoxidase ]=> H2O + .
+
+reaction: 34970
+k31*hydroxylamine*ferricytochrome_c*nitrite_reductase for hydroxylamine + ferricytochrome_c +  =[ nitrite_reductase ]=> nitrite + ferrocytochrome_c + .
+
+reaction: 14557
+k32*nitric_oxide*H2O2*myeloperoxidase for nitric_oxide + H2O2 +  =[ myeloperoxidase ]=> .
+
+reaction: 34969
+k33*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> hydroxylamine + ferricytochrome_c + .
+
+reaction: 34974
+k34*H+*nitrite*ferrocytochrome_c*nitrite_reductase for H+ + nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> NH3 + ferricytochrome_c + H2O + .
+
+reaction: 34927
+k35*nitrite*ferrocytochrome_c*nitrite_reductase for nitrite + ferrocytochrome_c +  =[ nitrite_reductase ]=> nitric_oxide + ferricytochrome_c + H2O + .
+
+real    23m26.503s
+user    23m26.342s
+sys     0m0.160s
+>>>>>>> d9fa1734b190534bfa52384f299936f809ef9a8f

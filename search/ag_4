@@ -1,0 +1,73 @@
+reaction: 56791
+k0*D-glucose*GDP*ADP-specific_glucose/glucosamine_kinase for D-glucose + GDP +  =[ ADP-specific_glucose/glucosamine_kinase ]=> GMP + D-glucose_6-phosphate + .
+
+reaction: 127947
+k1*H2O*acetone*GTP*CO2*acetone_carboxylase for H2O + acetone + GTP + CO2 +  =[ acetone_carboxylase ]=> GMP + acetoacetate + phosphate + .
+
+reaction: 73836
+k2*H2O*GMP*5'-deoxynucleotidase for H2O + GMP +  =[ 5'-deoxynucleotidase ]=> phosphate + guanosine + .
+
+reaction: 5876
+k3*NADPH*D-glucose*methylglyoxal_reductase for NADPH + D-glucose +  =[ methylglyoxal_reductase ]=> NADP+ + .
+
+reaction: 7256
+k4*NADPH*acetone*H+*(R,R)-butanediol_dehydrogenase for NADPH + acetone + H+ +  =[ (R,R)-butanediol_dehydrogenase ]=> NADP+ + propan-2-ol + .
+
+reaction: 25462
+k5*[amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine*phosphate*NADP+*[amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase for [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine + phosphate + NADP+ +  =[ [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase ]=> NADPH + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine + H+ + .
+
+reaction: 27379
+k6*ferricyanide*phosphate*H2O*pyruvate*pyruvate_oxidase for ferricyanide + phosphate + H2O + pyruvate +  =[ pyruvate_oxidase ]=> H2O2 + acetyl_phosphate + ferrocyanide + .
+
+reaction: 14613
+k7*10-acetyl-3,7-dihydroxyphenoxazine*H2O2*H+*myeloperoxidase for 10-acetyl-3,7-dihydroxyphenoxazine + H2O2 + H+ +  =[ myeloperoxidase ]=> resorufin + H2O + .
+
+reaction: 976
+k8*NADPH*beta-ketobutyryl-CoA*3-oxoacyl-[acyl-carrier-protein]_reductase for NADPH + beta-ketobutyryl-CoA +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> NADP+ + beta-hydroxybutyryl-CoA + .
+******************pathnode****************
+acetone
+D-glucose
+D-glucose
+acetone
+GMP
+acetone
+D-glucose
+D-glucose
+acetone
+phosphate
+H2O2
+present( H2O , 1).
+present( GMP , 1).
+present( 10-acetyl-3,7-dihydroxyphenoxazine , 1).
+present( acetone , 1).
+present( D-glucose , 1).
+present( ferricyanide , 1).
+present( H2O2 , 1).
+present( H+ , 1).
+present( [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine , 1).
+present( NADPH , 1).
+present( beta-ketobutyryl-CoA , 1).
+present( pyruvate , 1).
+present( phosphate , 1).
+present( NADP+ , 1).
+present( GTP , 1).
+present( GDP , 1).
+present( CO2 , 1).
+******************other reactions****************
+
+reaction: 14620
+k9*H2O2*H+*myeloperoxidase for H2O2 + H+ +  =[ myeloperoxidase ]=> .
+
+reaction: 27372
+k10*H2O*pyruvate*pyruvate_oxidase for H2O + pyruvate +  =[ pyruvate_oxidase ]=> acetate + CO2 + .
+
+reaction: 14614
+k11*H2O2*myeloperoxidase for H2O2 +  =[ myeloperoxidase ]=> H2O + .
+
+reaction: 976
+k12*NADPH*beta-ketobutyryl-CoA*3-oxoacyl-[acyl-carrier-protein]_reductase for NADPH + beta-ketobutyryl-CoA +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> NADP+ + beta-hydroxybutyryl-CoA + .
+total solution number :  53691
+
+real    39m59.686s
+user    39m59.418s
+sys     0m0.220s

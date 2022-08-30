@@ -1,0 +1,233 @@
+clear_model.
+
+parameter(k0 = 1, k1 = 1, k2 = 1, k3 = 0.165, k4 = 0.022, k5 = 1.3, k6 = 4.3, k7 = 0.2, k8 = 0.03, k9 = 1 ).
+
+
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol =[ sorbose_dehydrogenase ]=> reduced_acceptor + ethanal.
+
+k1*lactate*oxidized_acceptor*II_oxo_acid_reductase for lactate + oxidized_acceptor =[ II_oxo_acid_reductase ]=> reduced_acceptor + pyruvate.
+
+k2*O2*reduced_acceptor*stearate*stearoyl_CoA_9_desaturase for O2 + reduced_acceptor + stearate =[ stearoyl_CoA_9_desaturase ]=> H2O + oleate + acceptor.
+
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol =[ cholesterol_oxidase ]=> H2O2 + ethanal.
+
+k4*lactate*O2*S_2_hydroxy_acid_oxidase for lactate + O2 =[ S_2_hydroxy_acid_oxidase ]=> H2O2 + pyruvate.
+
+k5*H2O2*oleate*plant_seed_peroxygenase for H2O2 + oleate =[ plant_seed_peroxygenase ]=> _.
+
+k6*CoA*oleate*GTP*carboxylic_acid_CoA_ligase for CoA + oleate + GTP =[ carboxylic_acid_CoA_ligase ]=> phosphate + GDP + oleoyl_CoA.
+
+k7*phosphate*NADp*butyraldehyde*glyceraldehyde_3_phosphate_dehydrogenase for phosphate + NADp + butyraldehyde =[ glyceraldehyde_3_phosphate_dehydrogenase ]=> NADH + butyryl_phosphate.
+
+k8*O2*pyranose_oxidase for O2 =[ pyranose_oxidase ]=> H2O2.
+
+
+k9*reduced_acceptor*pyruvate*II_oxo_acid_reductase for reduced_acceptor + pyruvate =[ II_oxo_acid_reductase ]=> lactate + oxidized_acceptor.
+
+present( acceptor , 1).
+present( NADp , 1).
+present( butyraldehyde , 1).
+present( oxidized_acceptor , 1).
+present( CoA , 1).
+present( GTP , 1).
+present( O2 , 1).
+present( stearate , 1).
+
+present( sorbose_dehydrogenase, 2e-4 ). 
+present( II_oxo_acid_reductase, 1e-4 ). 
+present( stearoyl_CoA_9_desaturase, 1e0 ). 
+present( cholesterol_oxidase, 0e-4 ). 
+present( S_2_hydroxy_acid_oxidase, 0e-4 ). 
+present( plant_seed_peroxygenase, 0.77e4 ). 
+present( carboxylic_acid_CoA_ligase, 0.23e-4 ). 
+present( glyceraldehyde_3_phosphate_dehydrogenase, 5e0 ).
+
+///////////////////////or///////////////////////////
+
+present( ethanol , 0).
+present( lactate , 0).
+present( pyranose_oxidase , 16.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l0T5).
+
+present( ethanol , 1e-2).
+present( lactate , 0).
+present( pyranose_oxidase , 16.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l0T5).
+
+present( ethanol , 0).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 16.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l1T5).
+
+present( ethanol , 1e-2).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 16.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l1T5).
+
+///////////////////////i1///////////////////////////
+present( ethanol , 0).
+present( lactate , 0).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l0T15).
+
+present( ethanol , 1e-2).
+present( lactate , 0).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l0T15).
+
+present( ethanol , 0).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l1T15).
+
+present( ethanol , 1e-2).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l1T15).
+
+///////////////////////and///////////////////////////
+present( ethanol , 0).
+present( lactate , 0).
+present( pyranose_oxidase , 66.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l0T25).
+
+present( ethanol , 1e-2).
+present( lactate , 0).
+present( pyranose_oxidase , 66.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l0T25).
+
+present( ethanol , 0).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 66.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l1T25).
+
+present( ethanol , 1e-2).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 66.7e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l1T25).
+
+
+//////////////////i2////////////////////
+present( sorbose_dehydrogenase, 1e-4 ). 
+present( II_oxo_acid_reductase, 2e-4 ). 
+present( ethanol , 0).
+present( lactate , 0).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l0T15_2).
+
+present( ethanol , 1e-2).
+present( lactate , 0).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l0T15_2).
+
+present( ethanol , 0).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l1T15_2).
+
+present( ethanol , 1e-2).
+present( lactate , 1e-2).
+present( pyranose_oxidase , 33.3e-6).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l1T15_2).
+
+/////////////////////i1i2'/////////////////////////
+present( sorbose_dehydrogenase, 1e-4 ). 
+present( II_oxo_acid_reductase, 0e-4 ). 
+present( stearoyl_CoA_9_desaturase, 1e0 ). 
+present( cholesterol_oxidase, 0e-4 ). 
+present( S_2_hydroxy_acid_oxidase, 91e-4 ). 
+present( plant_seed_peroxygenase, 0.77e4 ). 
+present( carboxylic_acid_CoA_ligase, 0.23e-4 ). 
+present( glyceraldehyde_3_phosphate_dehydrogenase, 5e0 ).
+ present( pyranose_oxidase , 0).
+
+ present( ethanol , 0).
+present( lactate , 0).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l0T0).
+
+present( ethanol , 1e-2).
+present( lactate , 0).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l0T0).
+
+present( ethanol , 0).
+present( lactate , 1e-2).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l1T0).
+
+present( ethanol , 1e-2).
+present( lactate , 1e-2).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l1T0).
+
+/////////////////////i1'i2/////////////////////////
+present( sorbose_dehydrogenase, 0e-4 ). 
+present( II_oxo_acid_reductase, 1e-4 ). 
+present( stearoyl_CoA_9_desaturase, 1e0 ). 
+present( cholesterol_oxidase, 12.1e-4 ). 
+present( S_2_hydroxy_acid_oxidase, 0e-4 ). 
+present( plant_seed_peroxygenase, 0.77e4 ). 
+present( carboxylic_acid_CoA_ligase, 0.23e-4 ). 
+present( glyceraldehyde_3_phosphate_dehydrogenase, 5e0 ).
+ present( pyranose_oxidase , 0).
+
+ present( ethanol , 0).
+present( lactate , 0).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l0T0_2).
+
+present( ethanol , 1e-2).
+present( lactate , 0).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l0T0_2).
+
+present( ethanol , 0).
+present( lactate , 1e-2).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e0l1T0_2).
+
+present( ethanol , 1e-2).
+present( lactate , 1e-2).
+
+numerical_simulation(time: 3e3). plot(show:{NADH}).
+export_plot(e1l1T0_2).
