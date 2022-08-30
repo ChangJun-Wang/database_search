@@ -1,0 +1,7287 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+lactate 2
+ethanol 2
+258
+start merging type A
+685
+112
+candidateB :  1410
+candidate name :  glyoxylate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  215
+candidate name :  4-hydroxybenzoate
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  phenol 3
+outNode :  resorufin
+target :  4-hydroxybenzoyl-CoA 3
+target :  NH3 2
+target :  4-hydroxybenzoate 3
+outNode :  NADH
+target :  5-bromo-2'-deoxyuridine 3
+target :  oxidized_donor 4
+target :  H+[side_1] 2
+target :  oxidized_thioredoxin 3
+target :  diphosphate 3
+target :  UDP 3
+target :  diphosphate 3
+target :  HOCl 4
+target :  diphosphate 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  diphosphate 3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  CO2 2
+target :  5-bromo-2'-deoxyuridine 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  UDP 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  quinol 3
+outNode :  NADH
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+11
+target :  adenosine_3',5'-bisphosphate 3
+target :  K3[Fe(CN)6] 3
+target :  NH3 2
+target :  benzoquinone 3
+target :  diphosphate 3
+target :  oxidized_thioredoxin 3
+target :  CO2 2
+target :  diphosphate 3
+target :  2-chloro-1,4-benzoquinone 4
+target :  diphosphate 3
+target :  CMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  2-chloro-1,4-benzoquinone 4
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+outNode :  NADH
+outNode :  resorufin
+target :  quinone 3
+target :  K3[Fe(CN)6] 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  phenol 3
+outNode :  resorufin
+target :  NH3 2
+target :  diphosphate 3
+target :  4-hydroxybenzoate 3
+outNode :  NADH
+target :  oxidized_thioredoxin 3
+target :  CO2 2
+target :  UDP 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  5-bromo-2'-deoxyuridine 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+8
+target :  4-hydroxybenzoyl-CoA 3
+target :  NH3 2
+outNode :  NADH
+target :  diphosphate 3
+target :  diphosphate 3
+target :  UDP 3
+outNode :  resorufin
+target :  diphosphate 3
+target :  diphosphate 3
+target :  CMP 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  NADP+ 2
+outNode :  NADH
+outNode :  resorufin
+target :  CO2 2
+target :  protocatechuate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1754
+candidate name :  H+
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  isobutanol 2
+target :  AMP 3
+outNode :  NADH
+target :  Cl- 3
+outNode :  resorufin
+target :  acetyl_phosphate 3
+target :  AMP 3
+target :  AMP 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  reduced_methylene_blue 3
+target :  Cl- 3
+target :  acetyl_phosphate 3
+target :  CO2 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  Cl- 3
+outNode :  resorufin
+target :  2-methylpentanal 3
+target :  CO2 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+8
+target :  AMP 3
+target :  acetyl_phosphate 3
+target :  AMP 3
+target :  methylamine 3
+target :  Cl- 3
+outNode :  resorufin
+target :  CO2 2
+outNode :  NADH
+target :  AMP 3
+target :  isobutanol 2
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  methylamine 3
+target :  D-erythro-dihydrosphingosine 3
+target :  acetyl_phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  methylamine 3
+target :  acetyl_phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  methylamine 3
+target :  methylamine 3
+target :  D-erythro-dihydrosphingosine 3
+target :  acetyl_phosphate 3
+target :  5'-deoxyadenosine 3
+target :  5-hydroxy-2-methyl-1,4-naphthoquinol 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  ferrocytochrome_b5 3
+target :  D-erythro-dihydrosphingosine 3
+target :  Br- 3
+outNode :  NADH
+target :  2-methylpentanal 3
+target :  Br- 3
+target :  acetyl_phosphate 3
+target :  5-hydroxytryptophan 3
+target :  tetrahydrofolate 3
+target :  alpha-linolenoyl-[glycerolipid] 3
+target :  CO2 2
+target :  methylamine 3
+target :  Cl- 3
+outNode :  resorufin
+target :  sulindac 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+37
+target :  ferrocytochrome_b5 3
+target :  Escherichia_coli_thioredoxin 3
+target :  xanthosine_5'-phosphate 3
+target :  D-erythro-dihydrosphingosine 3
+target :  5,10-methylenetetrahydromethanopterin 3
+target :  Cl- 3
+outNode :  NADH
+outNode :  resorufin
+target :  glutathione 2
+target :  I- 3
+target :  Br- 3
+target :  2-methylpentanal 3
+target :  methyl_viologen 3
+outNode :  NADH
+target :  carbamoylphosphate 3
+target :  isobutanol 2
+outNode :  NADH
+target :  ferrocytochrome 3
+target :  AMP 3
+outNode :  NADH
+target :  Br- 3
+target :  acetyl_phosphate 3
+target :  D-2-hydroxyglutarate 3
+target :  AMP 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  5-hydroxytryptophan 3
+target :  methylamine 3
+target :  dAMP 3
+target :  holo-[acyl-carrier_protein] 3
+target :  dimethyl_sulfoxide 2
+target :  O2 2
+outNode :  NADH
+outNode :  resorufin
+target :  O2 2
+target :  CO2 2
+outNode :  NADH
+outNode :  resorufin
+target :  CO2 2
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+target :  Cl- 3
+outNode :  NADH
+outNode :  resorufin
+target :  nitrous_oxide 3
+target :  UDP-L-rhamnose 4
+target :  D-fructose_1,6-bisphosphate 3
+outNode :  NADH
+target :  5'-deoxyadenosine 3
+target :  reduced_cytochrome_c 2
+outNode :  NADH
+target :  choloyl-CoA 2
+target :  Escherichia_coli_thioredoxin 3
+target :  sulindac 3
+outNode :  NADH
+start merging B
+merge success
+1
+target :  Cl- 3
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+14
+target :  1alpha-hydroxyvitamin_D3 3
+target :  ferrocytochrome_b5 3
+target :  hydroquinone 2
+target :  carbamoylphosphate 3
+target :  acetyl_phosphate 3
+target :  5-hydroxytryptophan 3
+outNode :  NADH
+target :  3-oxopentanoate 3
+target :  methylamine 3
+target :  alpha-linolenoyl-[glycerolipid] 3
+target :  A 4
+target :  glutathione_disulfide 3
+target :  Cl- 3
+outNode :  NADH
+outNode :  resorufin
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  sulindac 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  239
+candidate name :  2-oxohexanoate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  218
+candidate name :  FMN
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  adenine 2
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  diphosphate 3
+target :  3-methylcrotonyl-CoA 3
+target :  (E)-but-2-enoyl-CoA 3
+target :  reduced_acceptor 3
+target :  NH3 2
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  fumarate 3
+outNode :  NADH
+target :  NH3 2
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+target :  3-methylcrotonyl-CoA 3
+target :  NH3 2
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  diphosphate 3
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  glutaconyl-CoA 3
+target :  diphosphate 3
+target :  fumarate 3
+target :  diphosphate 3
+target :  NH3 2
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+target :  reduced_acceptor 3
+target :  phosphate 2
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+outNode :  NADH
+outNode :  resorufin
+target :  fumarate 3
+target :  NH3 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+merge success
+merge success
+2
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  diphosphate 3
+target :  phosphate 2
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  diphosphate 3
+target :  NH3 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  diphosphate 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  3-hydroxy-2-oxopropanoate 3
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  diphosphate 3
+target :  fumarate 3
+target :  diphosphate 3
+target :  NH3 2
+target :  diphosphate 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  5-guanidino-2-oxopentanoate 3
+target :  (E)-but-2-enoyl-CoA 3
+target :  NH3 2
+target :  adenine 2
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  3-hydroxy-2-oxopropanoate 3
+target :  diphosphate 3
+target :  reduced_acceptor 3
+target :  NH3 2
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  NH3 2
+target :  diphosphate 3
+target :  phosphate 2
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  3-hydroxy-2-oxopropanoate 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+outNode :  resorufin
+target :  reduced_riboflavin 2
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  reduced_acceptor 3
+target :  NH3 2
+target :  adenine 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+target :  (E)-but-2-enoyl-CoA 3
+target :  NH3 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1786
+candidate name :  succinate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  electron_donor 3
+target :  AMP 3
+target :  AMP 3
+target :  anthranilate 2
+target :  bacteriochlorophyllide_a 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  reduced_methylene_blue 3
+target :  decanal 2
+target :  hydroxylamine 2
+outNode :  NADH
+target :  4-nitrobenzoate 3
+target :  nitrous_oxide 3
+target :  NADPH 2
+outNode :  resorufin
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  reduced_3-acetylpyridine_adenine_dinucleotide 3
+outNode :  NADH
+outNode :  resorufin
+target :  AMP 3
+target :  reduced_ferredoxin_iron-sulfur_cluster 2
+target :  dimethyl_sulfoxide 2
+target :  AMP 3
+target :  propylamine 3
+outNode :  resorufin
+target :  propylamine 3
+target :  5'-deoxyadenosine 3
+target :  methylamine 3
+outNode :  resorufin
+target :  methylamine 3
+target :  NH3 2
+target :  formate 2
+target :  5'-deoxyadenosine 3
+target :  glycolic_acid 3
+target :  bacteriochlorophyllide_a 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  reduced_methylene_blue 3
+target :  ferricyanide 3
+target :  decanal 2
+target :  dimethyl_sulfoxide 2
+target :  xanthine 2
+target :  hydroxylamine 2
+outNode :  NADH
+target :  5'-deoxyadenosine 3
+target :  propanal 2
+outNode :  resorufin
+target :  propylamine 3
+outNode :  resorufin
+target :  propylamine 3
+target :  2-hydroxyglutarate 3
+target :  5'-deoxyadenosine 3
+target :  glycolate 2
+outNode :  resorufin
+target :  glycolate 2
+target :  reduced_3-acetylpyridine_adenine_dinucleotide 3
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  GDP 3
+target :  methylamine 3
+outNode :  resorufin
+target :  methylamine 3
+target :  electron_donor 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  ferricyanide 3
+target :  3-methylxanthine 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  electron_donor 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  hydroxylamine 2
+outNode :  NADH
+outNode :  resorufin
+target :  anthranilate 2
+outNode :  resorufin
+target :  anthranilate 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  acetone
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  octanal
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  182
+candidate name :  reduced_benzyl_viologen
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  nitric_oxide 3
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+14
+target :  ferricytochrome_b5 3
+target :  hydroquinone 2
+target :  diphosphate 3
+target :  N2 3
+target :  oxidized_azurin 3
+target :  nitric_oxide 3
+outNode :  resorufin
+target :  oxidized_ferredoxin_[iron-sulfur]_cluster 2
+target :  sulfite 3
+outNode :  resorufin
+target :  coenzyme_B 3
+target :  diphosphate 3
+target :  NH3 2
+target :  diphosphate 3
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+target :  N2 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  846
+candidate name :  2-sulfoacetaldehyde
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  methylamine 3
+outNode :  NADH
+outNode :  resorufin
+target :  methylamine 3
+target :  acetyl_phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+22
+target :  NH4+ 3
+target :  ferrocytochrome_c 2
+target :  fluoride 3
+target :  methylamine 3
+outNode :  resorufin
+target :  methylamine 3
+target :  ferrocytochrome_b5 3
+target :  isethionate 3
+target :  Cl- 3
+target :  anthranilamide 3
+target :  nitric_oxide 3
+outNode :  NADH
+outNode :  resorufin
+target :  dimethyl_sulfoxide 2
+target :  Br- 3
+target :  sulfite 3
+target :  hexadecanoyl-[acyl-carrier_protein] 3
+target :  acetyl_phosphate 3
+target :  2-sulfoacetaldehyde 2
+outNode :  NADH
+outNode :  resorufin
+target :  2-sulfoacetaldehyde 2
+target :  zymosterol 3
+target :  Br- 3
+target :  NADPH 2
+outNode :  NADH
+outNode :  resorufin
+target :  CDP 3
+target :  glutathione_disulfide 3
+target :  glutathione_disulfide 3
+target :  anthranilamide 3
+start merging B
+merge success
+1
+target :  nitric_oxide 3
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  824
+candidate name :  malonic_semialdehyde
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  5-methyltetrahydrofolate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1219
+candidate name :  CoA
+start merging B
+0
+start merging B
+merge success
+1
+target :  CoA 2
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  reduced_methylene_blue 3
+target :  oxidized_benzyl_viologen 3
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  indoleacetyl-CoA 3
+target :  monochloroacetate 3
+target :  2-oxobutanoate 3
+target :  3-mercapto-2-oxopropanoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  CoA 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  CoA 2
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  CoA 2
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  oxidized_benzyl_viologen 3
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  FMNH 3
+outNode :  resorufin
+target :  reduced_methylene_blue 3
+target :  oxidized_benzyl_viologen 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  CoA 2
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  D-fructose-6-phosphate 3
+target :  oxidized_benzyl_viologen 3
+target :  3-oxosteroid 3
+target :  hydroxylamine 2
+outNode :  resorufin
+target :  glutaconyl-CoA 3
+target :  ferrocenium_hexafluorophosphate 3
+target :  acetyl_phosphate 3
+target :  2-oxo_carboxylate 3
+target :  D-homoserine 3
+target :  O2 2
+outNode :  NADH
+target :  O2 2
+outNode :  resorufin
+target :  O2 2
+target :  CoA 2
+target :  androst-5-ene-3,17-dione 4
+target :  2-oxobutanoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  FMNH 3
+start merging B
+merge success
+1
+target :  CoA 2
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+8
+target :  3-oxosteroid 3
+target :  indoleacetyl-CoA 3
+target :  acetyl_phosphate 3
+target :  adenine 2
+target :  4-phenylbutan-2-one 2
+target :  trans-cinnamic_acid 3
+target :  2-oxobutanoate 3
+target :  reduced_cytochrome_c 2
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  CoA 2
+start merging B
+0
+start merging B
+0
+candidateB :  922
+candidate name :  5,6,7,8-tetrahydromethanopterin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  sulindac 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  4-nitrobenzoate 3
+target :  reduced_methylene_blue 3
+target :  decanal 2
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+12
+target :  4-nitrobenzoate 3
+target :  methylamine 3
+outNode :  resorufin
+target :  methylamine 3
+target :  NH3 2
+target :  decanal 2
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+target :  AMP 3
+target :  5'-deoxyadenosine 3
+target :  AMP 3
+target :  5,6,7,8-tetrahydrobiopterin 3
+target :  AMP 3
+target :  bacteriochlorophyllide_a 3
+target :  reduced_3-acetylpyridine_adenine_dinucleotide 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+8
+target :  phenol 3
+outNode :  NADH
+outNode :  resorufin
+target :  reduced_methylene_blue 3
+target :  decanal 2
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+target :  5'-deoxyadenosine 3
+target :  propanal 2
+outNode :  resorufin
+target :  chlorophyllide_b 3
+target :  reduced_3-acetylpyridine_adenine_dinucleotide 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  4-nitrobenzoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  chlorophyllide_b 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  bacteriochlorophyllide_a 3
+target :  chlorophyllide_b 3
+target :  phosphate 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  chlorophyllide_b 3
+start merging B
+merge success
+merge success
+merge success
+3
+target :  bacteriochlorophyllide_a 3
+target :  CN- 3
+target :  chlorophyllide_b 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  CN- 3
+target :  2,3-dimethoxy-5-methyl-1,4-benzoquinol 2
+target :  bacteriochlorophyllide_a 3
+target :  cholic_acid 2
+target :  chlorophyllide_b 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  659
+candidate name :  ADP
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+10
+target :  phenol 3
+outNode :  NADH
+outNode :  resorufin
+target :  oxidized_methyl_viologen 2
+target :  CoA 2
+outNode :  resorufin
+target :  acetyl_phosphate 3
+target :  AMP 3
+target :  gamma-L-Glu-L-Cys 3
+target :  acetyl_phosphate 3
+target :  AMP 3
+target :  AMP 3
+target :  (S)-lactate 2
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  reduced_methylene_blue 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  gamma-L-Glu-L-Cys 3
+target :  acetyl_phosphate 3
+target :  AMP 3
+outNode :  NADH
+target :  chlorophyllide_a 3
+outNode :  NADH
+target :  NH3 2
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+14
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  phenol 3
+outNode :  NADH
+outNode :  resorufin
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+target :  ferricytochrome_c 3
+outNode :  resorufin
+target :  tetrahydrofolate 3
+target :  2-oxosuccinamate 3
+target :  UTP 3
+target :  acetyl_phosphate 3
+target :  alanine 2
+target :  D-fructose_1,6-bisphosphate 3
+target :  oxidized_thioredoxin 3
+target :  taurine 3
+target :  AMP 3
+target :  uracil 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  phenol 3
+target :  reduced_methylene_blue 3
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+start merging B
+merge success
+1
+target :  oxidized_thioredoxin 3
+start merging B
+merge success
+merge success
+merge success
+3
+target :  acetyl_phosphate 3
+target :  reduced_methylene_blue 3
+target :  AMP 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  phenol 3
+outNode :  resorufin
+target :  acetyl_phosphate 3
+target :  AMP 3
+outNode :  NADH
+target :  gamma-L-Glu-L-Cys 3
+target :  acetyl_phosphate 3
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  AMP 3
+target :  acetyl_phosphate 3
+target :  AMP 3
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+target :  CoA 2
+outNode :  resorufin
+target :  AMP 3
+target :  gamma-L-Glu-L-Cys 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  acetyl_phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  CoA 2
+outNode :  NADH
+outNode :  resorufin
+target :  acetyl_phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  UTP 3
+target :  oxidized_thioredoxin 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  phenol 3
+outNode :  resorufin
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+target :  tetrahydrofolate 3
+outNode :  NADH
+target :  gamma-L-Glu-L-Cys 3
+target :  ferrocyanide 2
+target :  uracil 2
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  2-oxosuccinamate 3
+target :  UTP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+8
+target :  FMNH 3
+outNode :  resorufin
+target :  oxidized_methyl_viologen 2
+target :  2-oxosuccinamate 3
+outNode :  NADH
+target :  5-guanidino-2-oxopentanoate 3
+target :  gamma-L-Glu-L-Cys 3
+target :  ferrocyanide 2
+target :  AMP 3
+target :  AMP 3
+start merging B
+merge success
+merge success
+merge success
+3
+target :  tetrahydrofolate 3
+target :  AMP 3
+target :  AMP 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+26
+target :  ferrocenium_ion 4
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  oxidized_methyl_viologen 2
+outNode :  NADH
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+target :  tetrahydrofolate 3
+target :  2-oxosuccinamate 3
+target :  UTP 3
+target :  glyceraldehyde_3-phosphate 2
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  N-benzoylglycine 3
+target :  AMP 3
+target :  N-acetyl-alpha-D-glucosamine_1-phosphate 3
+target :  dADP 3
+target :  CoA 2
+outNode :  resorufin
+target :  CoA 2
+target :  acetyl_phosphate 3
+target :  coenzyme_B 3
+target :  alanine 2
+target :  AMP 3
+target :  AMP 3
+target :  4-(methylsulfanyl)-2-oxobutanoate 3
+target :  taurine 3
+outNode :  resorufin
+target :  NH3 2
+target :  AMP 3
+target :  HCO3- 2
+target :  isobutyrate 3
+target :  uracil 2
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  tetrahydrofolate 3
+outNode :  NADH
+target :  2-oxosuccinamate 3
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+target :  AMP 3
+target :  quinol 3
+target :  AMP 3
+target :  AMP 3
+start merging B
+merge success
+1
+target :  AMP 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+26
+target :  reduced_ferredoxin_[iron-sulfur]_cluster 2
+outNode :  NADH
+outNode :  resorufin
+target :  oleoyl-[acyl-carrier_protein] 3
+outNode :  NADH
+target :  phenol 3
+outNode :  NADH
+target :  oxidized_methyl_viologen 2
+outNode :  NADH
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+target :  CoA 2
+outNode :  NADH
+outNode :  resorufin
+target :  4-oxobutanoate 3
+target :  2-oxosuccinamate 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  reduced_coenzyme_F420 3
+outNode :  NADH
+target :  Cl- 3
+outNode :  NADH
+target :  reduced_ferredoxin 2
+target :  gamma-L-Glu-L-Cys 3
+target :  acetyl_phosphate 3
+target :  quinol 3
+target :  IDP-glucose 4
+target :  D-fructose_1,6-bisphosphate 3
+target :  AMP 3
+outNode :  NADH
+target :  chlorophyllide_a 3
+outNode :  NADH
+target :  4-(methylsulfanyl)-2-oxobutanoate 3
+target :  taurine 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  HCO3- 2
+outNode :  NADH
+target :  isobutyrate 3
+target :  (S)-lactate 2
+outNode :  NADH
+target :  uracil 2
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+3
+target :  phenol 3
+target :  L-glutamine 2
+target :  chlorophyllide_a 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  FMNH 3
+target :  gamma-L-Glu-L-Cys 3
+target :  AMP 3
+outNode :  NADH
+target :  AMP 3
+target :  AMP 3
+start merging B
+merge success
+merge success
+merge success
+3
+target :  reduced_methylene_blue 3
+target :  ferrocyanide 2
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+19
+target :  reduced_ferredoxin_[iron-sulfur]_cluster 2
+outNode :  NADH
+outNode :  resorufin
+target :  oleoyl-[acyl-carrier_protein] 3
+outNode :  NADH
+target :  1-oleoyl-2-lysophosphatidylcholine 3
+target :  2-oxosuccinamate 3
+outNode :  NADH
+target :  UTP 3
+target :  AMP 3
+outNode :  NADH
+target :  dADP 3
+target :  gamma-L-Glu-L-Cys 3
+target :  ethanal 3
+target :  linoleoyl-[glycerolipid] 3
+outNode :  NADH
+target :  acetyl_phosphate 3
+target :  oxidized_thioredoxin 3
+target :  taurine 3
+outNode :  NADH
+target :  NH3 2
+outNode :  NADH
+target :  calcidiol 3
+target :  AMP 3
+outNode :  NADH
+target :  HCO3- 2
+outNode :  NADH
+target :  isobutyrate 3
+target :  uracil 2
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  60
+candidate name :  4-methylphenol
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  AMP 3
+target :  4-methylphenol 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  NH3 2
+outNode :  NADH
+target :  AMP 3
+target :  AMP 3
+target :  resorufin 1
+outNode :  resorufin
+target :  3-(1H-imidazol-4-yl)-2-oxopropanoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  AMP 3
+outNode :  resorufin
+target :  4-methylphenol 3
+outNode :  resorufin
+target :  UDP 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  4-methylphenol 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  4-methylphenol 3
+outNode :  NADH
+outNode :  resorufin
+start merging B
+merge success
+1
+target :  4-methylphenol 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  4-methylphenol 3
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+merge success
+1
+target :  4-methylphenol 3
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  418
+candidate name :  1-decanol
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  277
+candidate name :  Gly
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  10
+candidate name :  L-malate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  127
+candidate name :  hnu
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  hnu 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  butanoyl-CoA
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  0
+candidate name :  Fe(CN)64-
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  278
+candidate name :  hexanoyl-CoA
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  NH3 2
+target :  5-bromo-2'-deoxyuridine 3
+target :  oxidized_donor 4
+target :  O2 2
+outNode :  resorufin
+target :  O2 2
+target :  electron_donor 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  NH3 2
+outNode :  NADH
+target :  hexanoate 3
+target :  benzoquinone 3
+target :  oxidized_thioredoxin 3
+target :  2-chloro-1,4-benzoquinone 4
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  2-chloro-1,4-benzoquinone 4
+start merging B
+merge success
+merge success
+2
+target :  dehydroascorbate 4
+target :  GDP 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  oxidized_donor 4
+target :  CO2 2
+target :  succinate 2
+target :  benzyl_viologen 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  422
+candidate name :  L-tyrosine
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  pyruvate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1377
+candidate name :  succinate_semialdehyde
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+9
+target :  ferrocytochrome_b5 3
+target :  ATP 2
+outNode :  NADH
+target :  methanol 2
+target :  2'-deoxyribonucleoside_triphosphate 3
+target :  phytyl_diphosphate 3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  ferricytochrome_b5 3
+target :  zymosterol 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  598
+candidate name :  ammonia
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B

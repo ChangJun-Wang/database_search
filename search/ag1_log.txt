@@ -1,0 +1,185 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+acetone 2
+D-glucose 2
+14
+start merging type A
+86
+7
+candidateB :  64
+candidate name :  AMP
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  phosphate 2
+outNode :  NADH
+target :  4-nitrophenol 3
+target :  AMP 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  D-fructose_6-phosphate 3
+target :  L-2-aminoadipate 3
+target :  4-nitrophenol 3
+target :  NADPH 2
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  842
+candidate name :  NADH
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  Na+/out 3
+target :  diphosphate 3
+target :  nitric_oxide 3
+start merging B
+0
+start merging B
+merge success
+1
+target :  NADH 1
+outNode :  NADH
+start merging B
+0
+candidateB :  668
+candidate name :  NADP+
+start merging B
+merge success
+1
+target :  hexanoate 3
+start merging B
+0
+start merging B
+merge success
+1
+target :  hexanoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  255
+candidate name :  phosphate
+start merging B
+merge success
+1
+target :  NADPH 2
+outNode :  NADH
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  ATP 2
+outNode :  NADH
+target :  phosphate 2
+target :  fluoride 3
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  18
+candidate name :  GMP
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  XMP 3
+target :  GMP 3
+target :  NH3 2
+outNode :  NADH
+target :  GMP 3
+start merging B
+0
+start merging B
+merge success
+1
+target :  phosphate 2
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1056
+candidate name :  H+
+start merging B
+merge success
+1
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  D-erythro-dihydrosphingosine 3
+target :  Cl- 3
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  NAD+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+ans :  100 0 0
+******************pathnode****************
+******************other reactions****************
+total solution number :  0
+total solution distribution :  {}
+總共執行時間：1464.057222 秒
+檢查violation：11.294729 秒

@@ -1,0 +1,750 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+lactate 2
+ethanol 2
+15
+start merging type A
+32
+6
+candidateB :  182
+candidate name :  CoA
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+12
+target :  adenosine_3',5'-bisphosphate 3
+target :  dAMP 3
+outNode :  NADH
+target :  diphosphate 3
+target :  GDP 3
+target :  palmitoyl-CoA 3
+outNode :  NADH
+target :  4-hydroxybenzoyl-CoA 3
+target :  4-methoxycinnamoyl-CoA 3
+target :  feruloyl-CoA 3
+target :  diphosphate 3
+target :  isobutyryl-CoA 3
+target :  diphosphate 3
+target :  myristoleic_acid 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  adenosine_3',5'-bisphosphate 3
+outNode :  NADH
+target :  adenosine_3',5'-bisphosphate 3
+target :  diphosphate 3
+target :  HCO3- 2
+target :  CoA 2
+outNode :  NADH
+target :  acetaldehyde 2
+target :  myristoleic_acid 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+9
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  adenosine_3',5'-bisphosphate 3
+target :  myristoyl-CoA 3
+outNode :  resorufin
+target :  4-chlorobenzoyl-CoA 3
+target :  diphosphate 3
+target :  GDP 3
+target :  4-hydroxybenzoyl-CoA 3
+target :  4-methoxycinnamoyl-CoA 3
+target :  acyl-CoA 2
+outNode :  resorufin
+target :  acyl-CoA 2
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  4-chlorobenzoyl-CoA 3
+target :  diphosphate 3
+target :  glutathione 2
+outNode :  resorufin
+target :  glutathione 2
+target :  diphosphate 3
+target :  diphosphate 3
+target :  palmitoyl-CoA 3
+target :  myristoleic_acid 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+10
+target :  FMNH 3
+outNode :  resorufin
+target :  FMNH 3
+target :  adenosine_3',5'-bisphosphate 3
+outNode :  NADH
+target :  diphosphate 3
+target :  glutathione 2
+outNode :  resorufin
+target :  glutathione 2
+target :  4-hydroxybenzoyl-CoA 3
+target :  diphosphate 3
+target :  acyl-CoA 2
+outNode :  NADH
+outNode :  resorufin
+target :  acyl-CoA 2
+target :  diphosphate 3
+target :  reduced_cytochrome_c 2
+outNode :  NADH
+outNode :  resorufin
+target :  stearyl-CoA 3
+candidateB :  1058
+candidate name :  H+
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  AMP 3
+target :  AMP 3
+target :  Cl- 3
+outNode :  NADH
+outNode :  resorufin
+target :  AMP 3
+target :  tetrahydrodipicolinate 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  methylamine 3
+target :  AMP 3
+outNode :  NADH
+target :  D-2-hydroxyglutarate 3
+target :  Cl- 3
+outNode :  NADH
+outNode :  resorufin
+target :  2-methylpentanal 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  tetrahydrofolate 3
+outNode :  NADH
+target :  AMP 3
+target :  Cl- 3
+outNode :  resorufin
+target :  Br- 3
+target :  AMP 3
+target :  sulindac 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  glutathione 2
+target :  AMP 3
+outNode :  NADH
+target :  Cl- 3
+outNode :  NADH
+outNode :  resorufin
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+target :  AMP 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+2
+target :  nonan-2-one 3
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+candidateB :  144
+candidate name :  H2O2
+start merging B
+merge success
+1
+target :  dehydroascorbate 4
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+9
+target :  oxidized_donor 4
+target :  dehydroascorbate 4
+target :  phenol 3
+target :  Fe2+ 2
+target :  NO2- 3
+target :  5-bromo-2'-deoxyuridine 3
+target :  oxidized_thioredoxin 3
+target :  glutathione_disulfide 3
+target :  2-chloro-1,4-benzoquinone 4
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  oxidized_donor 4
+target :  dehydroascorbate 4
+target :  Fe2+ 2
+target :  NO2- 3
+target :  oxidized_azurin 3
+target :  glutathione_disulfide 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+2
+target :  oxidized_azurin 3
+target :  5-bromo-2'-deoxyuridine 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+9
+target :  oxidized_donor 4
+target :  ferricytochrome_c552 3
+target :  dehydroascorbate 4
+target :  NO2- 3
+target :  5-bromo-2'-deoxyuridine 3
+outNode :  NADH
+target :  oxidized_thioredoxin 3
+target :  oxidized_azurin 3
+target :  Fe2+ 2
+outNode :  NADH
+target :  2-chloro-1,4-benzoquinone 4
+candidateB :  841
+candidate name :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  diphosphate 3
+target :  5-androstene-3,17-dione 2
+target :  hydroxylamine 2
+outNode :  resorufin
+target :  diphosphate 3
+target :  tetrahydrodipicolinate 3
+target :  nitric_oxide 3
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  NH4+ 3
+target :  5'-deoxyadenosine 3
+target :  NADH 1
+outNode :  NADH
+target :  tetrahydrofolate 3
+outNode :  resorufin
+target :  tetrahydrofolate 3
+target :  indoleglycolate 2
+target :  isovalerate 3
+target :  5-hydroxy-1,4-naphthoquinol 3
+target :  nitric_oxide 3
+target :  Br- 3
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+target :  5'-deoxyadenosine 3
+target :  CDP 3
+target :  chloride 3
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  methylamine 3
+target :  1-methylxanthine 2
+target :  5'-deoxyadenosine 3
+target :  D-2-hydroxyglutarate 3
+target :  nitric_oxide 3
+outNode :  resorufin
+target :  5-hydroxy-1,4-naphthoquinol 3
+target :  bromide 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+12
+target :  H2o 2
+target :  Na+/out 3
+target :  diphosphate 3
+outNode :  NADH
+target :  5'-deoxyadenosine 3
+target :  NADH 1
+outNode :  NADH
+target :  Na+/out 3
+target :  1-octadecanol 2
+target :  5'-deoxyadenosine 3
+target :  diphosphate 3
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+target :  anthranilamide 3
+target :  nitric_oxide 3
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+20
+target :  reduced_ferredoxin_iron-sulfur_cluster 2
+target :  5'-deoxyadenosine 3
+target :  O2- 2
+outNode :  NADH
+outNode :  resorufin
+target :  dimethyl_sulfone 3
+target :  oxidized_ferredoxin_[iron-sulfur]_cluster 2
+target :  anthranilamide 3
+target :  5-hydroxy-1,4-naphthoquinol 3
+target :  Br- 3
+outNode :  resorufin
+target :  sulfite 3
+outNode :  resorufin
+target :  Na+/out 3
+target :  5-androstene-3,17-dione 2
+target :  zymosterol 3
+target :  Br- 3
+outNode :  resorufin
+target :  1-octadecanol 2
+target :  diphosphate 3
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+target :  5'-deoxyadenosine 3
+target :  NH3 2
+target :  diphosphate 3
+target :  reduced_cytochrome_c 2
+outNode :  resorufin
+candidateB :  108
+candidate name :  reduced_acceptor
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  oleate 3
+outNode :  NADH
+target :  AMP 3
+target :  5'-deoxyadenosine 3
+target :  17alpha-hydroxypregnenolone 2
+target :  N2 3
+target :  AMP 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  NH3 2
+outNode :  NADH
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  4-chlorophenol 3
+outNode :  NADH
+target :  O2 2
+outNode :  NADH
+outNode :  resorufin
+target :  O2 2
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  oleate 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  2-hydroxyglutarate 3
+target :  chloride 3
+outNode :  NADH
+outNode :  resorufin
+target :  NH2OH 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  oleate 3
+outNode :  NADH
+target :  oleate 3
+target :  5'-deoxyadenosine 3
+target :  17alpha-hydroxypregnenolone 2
+target :  succinate 2
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+8
+target :  oleate 3
+outNode :  NADH
+target :  4-chlorophenol 3
+target :  NH3 2
+target :  phytosphinganine 3
+target :  AMP 3
+outNode :  resorufin
+target :  5'-deoxyadenosine 3
+target :  N2 3
+target :  AMP 3
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+11
+target :  NH3 2
+outNode :  NADH
+target :  4-chlorophenol 3
+outNode :  resorufin
+target :  oleate 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  phytosphinganine 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  17alpha-hydroxypregnenolone 2
+target :  N2 3
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+candidateB :  916
+candidate name :  NADPH
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  nitrous_oxide 3
+outNode :  NADH
+outNode :  resorufin
+target :  nitrous_oxide 3
+target :  AMP 3
+target :  AMP 3
+target :  3-hydroxybenzoyl-CoA 3
+target :  hydroxylamine 2
+outNode :  NADH
+outNode :  resorufin
+target :  AMP 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+13
+target :  phenol 3
+outNode :  resorufin
+target :  nonan-2-one 3
+target :  NADPH 2
+target :  tetrahydrofolate 3
+target :  AMP 3
+target :  acyl-carrier_protein 3
+target :  AMP 3
+target :  5-hydroxy-2-methyl-1,4-naphthoquinol 3
+target :  NH3 2
+target :  chloride 3
+outNode :  NADH
+outNode :  resorufin
+target :  chlorophyllide_b 3
+target :  glutathione_disulfide 3
+target :  glutathione_disulfide 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  AMP 3
+outNode :  NADH
+target :  phenol 3
+target :  octan-3-one 3
+target :  2-methylpentanal 3
+target :  chlorophyllide_b 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+21
+target :  3-hydroxybenzoyl-CoA 3
+outNode :  NADH
+target :  ferrocytochrome_b5 3
+outNode :  resorufin
+target :  ferrocytochrome_b5 3
+target :  O2- 2
+outNode :  resorufin
+target :  tetrahydrofolate 3
+target :  1,4-benzoquinone 3
+target :  AMP 3
+target :  protochlorophyllide_a 3
+target :  nitrous_oxide 3
+outNode :  resorufin
+target :  tyrosine 3
+target :  isethionate 3
+target :  zymosterol 3
+target :  tyrosine 3
+target :  hydroxylamine 2
+target :  5'-deoxyadenosine 3
+target :  5,6,7,8-tetrahydrobiopterin 3
+target :  AMP 3
+target :  phytyl_diphosphate 3
+target :  AMP 3
+target :  chlorophyllide_b 3
+target :  glutathione_disulfide 3
+target :  glutathione_disulfide 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+7
+target :  AMP 3
+outNode :  NADH
+target :  glutathione 2
+outNode :  resorufin
+target :  glutathione 2
+target :  AMP 3
+outNode :  NADH
+target :  bacteriochlorophyllide_a 3
+outNode :  NADH
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  chlorophyllide_b 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+ans :  10 9 1
+
+reaction: 11565 
+k0*acceptor*ethanol*sorbose_dehydrogenase for acceptor + ethanol +  =[ sorbose_dehydrogenase ]=> ethanal + reduced_acceptor + .
+
+reaction: 12316 
+k1*oxidized_acceptor*lactate*2-oxo-acid_reductase for oxidized_acceptor + lactate +  =[ 2-oxo-acid_reductase ]=> pyruvate + reduced_acceptor + .
+
+reaction: 23074 
+k2*stearate*O2*reduced_acceptor*stearoyl-CoA_9-desaturase for stearate + O2 + reduced_acceptor +  =[ stearoyl-CoA_9-desaturase ]=> acceptor + H2O + oleate + .
+
+reaction: 10679 
+k3*O2*ethanol*cholesterol_oxidase for O2 + ethanol +  =[ cholesterol_oxidase ]=> H2O2 + ethanal + .
+
+reaction: 10051 
+k4*lactate*O2*(S)-2-hydroxy-acid_oxidase for lactate + O2 +  =[ (S)-2-hydroxy-acid_oxidase ]=> pyruvate + H2O2 + .
+
+reaction: 14646 
+k5*H2O2*oleate*plant_seed_peroxygenase for H2O2 + oleate +  =[ plant_seed_peroxygenase ]=> .
+
+reaction: 125787 
+k6*oleate*GTP*CoA*carboxylic_acid-CoA_ligase for oleate + GTP + CoA +  =[ carboxylic_acid-CoA_ligase ]=> oleoyl-CoA + GDP + phosphate + .
+
+reaction: 25488 
+k7*NAD+*butyraldehyde*phosphate*glyceraldehyde-3-phosphate_dehydrogenase for NAD+ + butyraldehyde + phosphate +  =[ glyceraldehyde-3-phosphate_dehydrogenase ]=> NADH + butyryl_phosphate + .
+
+reaction: 9883 
+k8*O2*pyranose_oxidase for O2 +  =[ pyranose_oxidase ]=> H2O2 + .
+******************pathnode****************
+lactate
+ethanol
+ethanol
+lactate
+reduced_acceptor
+lactate
+ethanol
+ethanol
+lactate
+oleate
+phosphate
+present( H2O2 , 1).
+present( O2 , 1).
+present( GTP , 1).
+present( phosphate , 1).
+present( stearate , 1).
+present( lactate , 1).
+present( butyraldehyde , 1).
+present( oleate , 1).
+present( acceptor , 1).
+present( reduced_acceptor , 1).
+present( CoA , 1).
+present( oxidized_acceptor , 1).
+present( NAD+ , 1).
+present( ethanol , 1).
+******************other reactions****************
+
+reaction: 12315 
+k9*pyruvate*reduced_acceptor*2-oxo-acid_reductase for pyruvate + reduced_acceptor +  =[ 2-oxo-acid_reductase ]=> oxidized_acceptor + lactate + .
+total solution number :  14827
+total solution distribution :  {16: 391, 17: 203, 18: 136, 21: 29, 19: 64, 20: 52, 15: 554, 54: 152, 55: 74, 56: 29, 59: 4, 57: 12, 58: 8, 67: 47, 68: 13, 69: 8, 72: 2, 70: 2, 71: 2, 91: 138, 92: 42, 95: 12, 98: 6, 96: 6, 93: 12, 94: 7, 53: 109, 28: 41, 30: 27, 27: 70, 29: 28, 32: 62, 33: 33, 31: 80, 35: 50, 36: 112, 37: 72, 34: 18, 38: 96, 44: 18, 46: 5, 25: 16, 26: 22, 42: 34, 40: 30, 39: 64, 43: 31, 41: 15, 45: 3, 47: 8, 49: 45, 52: 37, 88: 1, 86: 1, 100: 1, 48: 39, 50: 81, 12: 2161, 13: 1379, 14: 791, 11: 4270, 22: 15, 23: 5, 10: 2883, 24: 1, 51: 66, 60: 2}
+總共執行時間：6515.108323 秒
+檢查violation：812.564694 秒

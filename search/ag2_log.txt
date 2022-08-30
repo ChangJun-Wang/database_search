@@ -1,0 +1,276 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+acetone 2
+D-glucose 2
+14
+start merging type A
+86
+7
+candidateB :  64
+candidate name :  AMP
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  AMP 3
+outNode :  NADH
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+target :  4-nitrophenol 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+3
+target :  NADPH 2
+outNode :  NADH
+target :  D-fructose_6-phosphate 3
+target :  4-nitrophenol 3
+outNode :  NADH
+start merging B
+0
+candidateB :  18
+candidate name :  GMP
+start merging B
+merge success
+merge success
+merge success
+3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+target :  XMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+start merging B
+0
+start merging B
+0
+candidateB :  842
+candidate name :  NADH
+start merging B
+merge success
+merge success
+2
+target :  diphosphate 3
+target :  NH3 2
+start merging B
+0
+start merging B
+merge success
+1
+target :  NADH 1
+outNode :  NADH
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  diphosphate 3
+target :  Na+/out 3
+target :  isovalerate 3
+start merging B
+0
+candidateB :  1056
+candidate name :  H+
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  diphosphate 3
+target :  D-erythro-dihydrosphingosine 3
+target :  Cl- 3
+start merging B
+0
+candidateB :  668
+candidate name :  NADP+
+start merging B
+merge success
+1
+target :  hexanoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  propionate 3
+target :  hexanoate 3
+start merging B
+0
+candidateB :  255
+candidate name :  phosphate
+start merging B
+merge success
+1
+target :  NADPH 2
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  fluoride 3
+target :  diphosphate 3
+outNode :  NADH
+target :  phosphate 2
+target :  ATP 2
+outNode :  NADH
+start merging B
+0
+candidateB :  1
+candidate name :  NAD+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+ans :  16 9 7
+
+reaction: 56791 
+k0*D-glucose*GDP*ADP-specific_glucose/glucosamine_kinase for D-glucose + GDP +  =[ ADP-specific_glucose/glucosamine_kinase ]=> D-glucose_6-phosphate + GMP + .
+
+reaction: 127947 
+k1*acetone*GTP*H2O*CO2*acetone_carboxylase for acetone + GTP + H2O + CO2 +  =[ acetone_carboxylase ]=> phosphate + GMP + acetoacetate + .
+
+reaction: 56774 
+k2*D-glucose*ADP*ADP-specific_phosphofructokinase for D-glucose + ADP +  =[ ADP-specific_phosphofructokinase ]=> D-glucose_6-phosphate + AMP + .
+
+reaction: 127945 
+k3*ATP*acetone*H2O*CO2*acetone_carboxylase for ATP + acetone + H2O + CO2 +  =[ acetone_carboxylase ]=> phosphate + acetoacetate + AMP + .
+
+reaction: 26106 
+k4*AMP*diphosphate*NADP+*aromatic_aldehyde*carboxylate_reductase for AMP + diphosphate + NADP+ + aromatic_aldehyde +  =[ carboxylate_reductase ]=> H+ + NADPH + ATP + aromatic_acid + .
+
+reaction: 34910 
+k5*H+*GMP*NADPH*GMP_reductase for H+ + GMP + NADPH +  =[ GMP_reductase ]=> IMP + NADP+ + NH3 + .
+
+reaction: 51431 
+k6*phosphate*GMP*AMP_phosphorylase for phosphate + GMP +  =[ AMP_phosphorylase ]=> phosphate + guanine + .
+
+reaction: 24473 
+k7*H2O*NAD+*guanine*xanthine_dehydrogenase for H2O + NAD+ + guanine +  =[ xanthine_dehydrogenase ]=> NADH + .
+
+reaction: 1002 
+k8*3-hydroxydecanoyl-N-acetylcysteamine*NADP+*3-oxoacyl-[acyl-carrier-protein]_reductase for 3-hydroxydecanoyl-N-acetylcysteamine + NADP+ +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> H+ + 3-oxodecanoyl-N-acetylcysteamine + NADPH + .
+******************pathnode****************
+acetone
+D-glucose
+D-glucose
+acetone
+acetone
+D-glucose
+D-glucose
+acetone
+AMP
+GMP
+guanine
+present( guanine , 1).
+present( 3-hydroxydecanoyl-N-acetylcysteamine , 1).
+present( aromatic_aldehyde , 1).
+present( NAD+ , 1).
+present( acetone , 1).
+present( GDP , 1).
+present( H2O , 1).
+present( CO2 , 1).
+present( GMP , 1).
+present( AMP , 1).
+present( NADPH , 1).
+present( phosphate , 1).
+present( GTP , 1).
+present( diphosphate , 1).
+present( NADP+ , 1).
+present( H+ , 1).
+present( D-glucose , 1).
+present( ATP , 1).
+present( ADP , 1).
+******************other reactions****************
+
+reaction: 51427 
+k9*phosphate*AMP*AMP_phosphorylase for phosphate + AMP +  =[ AMP_phosphorylase ]=> alpha-D-ribose_1,5-bisphosphate + adenine + .
+
+reaction: 51430 
+k10*phosphate*GMP*AMP_phosphorylase for phosphate + GMP +  =[ AMP_phosphorylase ]=> alpha-D-ribose_1,5-bisphosphate + guanine + .
+
+reaction: 34908 
+k11*IMP*NADP+*NH3*GMP_reductase for IMP + NADP+ + NH3 +  =[ GMP_reductase ]=> H+ + GMP + NADPH + .
+
+reaction: 56790 
+k12*D-glucose_6-phosphate*AMP*ADP-specific_glucose/glucosamine_kinase for D-glucose_6-phosphate + AMP +  =[ ADP-specific_glucose/glucosamine_kinase ]=> D-glucose + ADP + .
+
+reaction: 56783 
+k13*D-glucose*ADP*ADP-specific_glucose/glucosamine_kinase for D-glucose + ADP +  =[ ADP-specific_glucose/glucosamine_kinase ]=> D-glucose_6-phosphate + AMP + .
+
+reaction: 24598 
+k14*H2O*NAD+*adenine*xanthine_dehydrogenase for H2O + NAD+ + adenine +  =[ xanthine_dehydrogenase ]=> NADH + .
+
+reaction: 56773 
+k15*D-glucose_6-phosphate*AMP*ADP-specific_phosphofructokinase for D-glucose_6-phosphate + AMP +  =[ ADP-specific_phosphofructokinase ]=> D-glucose + ADP + .
+total solution number :  10640
+total solution distribution :  {28: 1188, 34: 105, 27: 2208, 30: 412, 29: 612, 72: 2, 31: 216, 74: 3, 32: 171, 33: 152, 55: 48, 53: 19, 54: 33, 68: 9, 58: 6, 63: 1, 65: 1, 56: 39, 59: 5, 57: 10, 61: 3, 38: 43, 39: 15, 40: 15, 35: 100, 69: 8, 67: 5, 71: 4, 37: 63, 70: 5, 36: 67, 79: 2, 41: 10, 44: 6, 48: 3, 60: 2, 62: 3, 43: 8, 45: 8, 42: 6, 52: 4, 21: 132, 16: 713, 17: 1231, 19: 348, 25: 47, 26: 1403, 18: 678, 23: 53, 76: 1, 24: 69, 22: 93, 20: 226, 46: 9, 77: 1, 75: 2, 47: 5, 50: 1, 51: 3, 73: 1, 64: 1, 66: 1, 78: 2}
+總共執行時間：3658.307498 秒
+檢查violation：1397.556679 秒

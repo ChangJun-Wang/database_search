@@ -1,0 +1,172 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+D-glucose 2
+nitric_oxide 3
+86
+start merging type A
+19
+6
+candidateB :  5
+candidate name :  reduced_phenazine_methosulfate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  799
+candidate name :  NAD+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  bacteriochlorophyllide_a 3
+target :  bacteriochlorophyllide_a 3
+target :  AMP 3
+target :  2-oxo_carboxylate 3
+target :  XMP 3
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  AMP 3
+target :  bacteriochlorophyllide_a 3
+target :  bacteriochlorophyllide_a 3
+target :  XMP 3
+candidateB :  668
+candidate name :  NADP+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  1,3-diphosphoglycerate 3
+target :  3-amino-2,3-dideoxy-scyllo-inosose 3
+target :  hexanoate 3
+target :  ATP 2
+outNode :  NADH
+target :  2-oxo_carboxylate 3
+start merging B
+merge success
+merge success
+2
+target :  1,3-diphosphoglycerate 3
+target :  hexanoate 3
+candidateB :  1054
+candidate name :  H+
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  isobutanol 2
+start merging B
+0
+start merging B
+0
+candidateB :  106
+candidate name :  reduced_acceptor
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  AMP 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  AMP 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  reduced_acceptor 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  17alpha-hydroxypregnenolone 2
+target :  NH2OH 3
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  AMP 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  AMP 3
+candidateB :  132
+candidate name :  NH3
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  GMP 3
+target :  diphosphate 3
+start merging B
+merge success
+merge success
+merge success
+3
+target :  GMP 3
+target :  NH2OH 3
+target :  phosphate 2
+outNode :  NADH
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  L-alanine 2
+ans :  100 0 0
+******************pathnode****************
+******************other reactions****************
+total solution number :  0
+total solution distribution :  {}
+總共執行時間：1018.237507 秒
+檢查violation：2.906280 秒

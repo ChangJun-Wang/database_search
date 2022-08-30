@@ -1,0 +1,290 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+D-glucose 2
+nitric_oxide 3
+86
+start merging type A
+19
+6
+candidateB :  799
+candidate name :  NAD+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  XMP 3
+target :  bacteriochlorophyllide_a 3
+outNode :  NADH
+target :  bacteriochlorophyllide_a 3
+target :  AMP 3
+outNode :  resorufin
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  oxidized_ferredoxin_iron-sulfur_cluster 2
+target :  AMP 3
+target :  bacteriochlorophyllide_a 3
+target :  2-oxo_carboxylate 3
+outNode :  resorufin
+target :  bacteriochlorophyllide_a 3
+target :  XMP 3
+candidateB :  5
+candidate name :  reduced_phenazine_methosulfate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  1054
+candidate name :  H+
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  isobutanol 2
+start merging B
+0
+start merging B
+0
+candidateB :  668
+candidate name :  NADP+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  1,3-diphosphoglycerate 3
+outNode :  NADH
+target :  hexanoate 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  1,3-diphosphoglycerate 3
+outNode :  NADH
+target :  3-amino-2,3-dideoxy-scyllo-inosose 3
+target :  hexanoate 3
+outNode :  NADH
+target :  2-oxo_carboxylate 3
+outNode :  NADH
+target :  ATP 2
+outNode :  NADH
+candidateB :  132
+candidate name :  NH3
+start merging B
+merge success
+merge success
+2
+target :  diphosphate 3
+outNode :  resorufin
+target :  GMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  NH2OH 3
+outNode :  NADH
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+target :  GMP 3
+outNode :  NADH
+start merging B
+merge success
+merge success
+merge success
+3
+target :  diphosphate 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+candidateB :  106
+candidate name :  reduced_acceptor
+start merging B
+merge success
+merge success
+2
+target :  AMP 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  NH2OH 3
+outNode :  NADH
+target :  reduced_acceptor 3
+outNode :  NADH
+outNode :  resorufin
+target :  reduced_acceptor 3
+target :  17alpha-hydroxypregnenolone 2
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  AMP 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+ans :  23 9 14
+
+reaction: 35061 
+k0*nitric_oxide*oxidized_acceptor*H+*nitric_oxide_reductase for nitric_oxide + oxidized_acceptor + H+ +  =[ nitric_oxide_reductase ]=> nitrous_oxide + H2O + reduced_acceptor + .
+
+reaction: 11561 
+k1*D-glucose*acceptor*sorbose_dehydrogenase for D-glucose + acceptor +  =[ sorbose_dehydrogenase ]=> reduced_acceptor + D-gluconic_acid + .
+
+reaction: 17639 
+k2*O2*nitric_oxide*NADPH*nitric_oxide_dioxygenase for O2 + nitric_oxide + NADPH +  =[ nitric_oxide_dioxygenase ]=> NO3- + NADP+ + .
+
+reaction: 5876 
+k3*D-glucose*NADPH*methylglyoxal_reductase for D-glucose + NADPH +  =[ methylglyoxal_reductase ]=> NADP+ + .
+
+reaction: 25345 
+k4*reduced_[2Fe-2S]_ferredoxin*NADP+*H+*ferredoxin-NAD(P)+_reductase for reduced_[2Fe-2S]_ferredoxin + NADP+ + H+ +  =[ ferredoxin-NAD(P)+_reductase ]=> oxidized_[2Fe-2S]_ferredoxin + NADPH + .
+
+reaction: 11518 
+k5*S-adenosyl-L-methionine*[arylsulfatase]-L-serine*reduced_acceptor*Ser-type_anaerobic_sulfatase-maturating_enzyme for S-adenosyl-L-methionine + [arylsulfatase]-L-serine + reduced_acceptor +  =[ Ser-type_anaerobic_sulfatase-maturating_enzyme ]=> L-methionine + [arylsulfatase]-3-oxo-L-alanine + H2O + acceptor + 5'-deoxyadenosine + .
+
+reaction: 24243 
+k6*superoxide*reduced_acceptor*superoxide_reductase for superoxide + reduced_acceptor +  =[ superoxide_reductase ]=> H2O2 + acceptor + O2 + .
+
+reaction: 14613 
+k7*10-acetyl-3,7-dihydroxyphenoxazine*H+*H2O2*myeloperoxidase for 10-acetyl-3,7-dihydroxyphenoxazine + H+ + H2O2 +  =[ myeloperoxidase ]=> resorufin + H2O + .
+
+reaction: 36609 
+k8*S-adenosyl-L-homocysteine*(S)-reticuline*(RS)-norcoclaurine_6-O-methyltransferase for S-adenosyl-L-homocysteine + (S)-reticuline +  =[ (RS)-norcoclaurine_6-O-methyltransferase ]=> 3'-hydroxy-N-methyl-(S)-coclaurine + S-adenosyl-L-methionine + .
+******************pathnode****************
+D-glucose
+nitric_oxide
+nitric_oxide
+D-glucose
+D-glucose
+nitric_oxide
+nitric_oxide
+D-glucose
+NADP+
+reduced_acceptor
+H2O2
+present( nitric_oxide , 1).
+present( oxidized_acceptor , 1).
+present( S-adenosyl-L-methionine , 1).
+present( (S)-reticuline , 1).
+present( reduced_[2Fe-2S]_ferredoxin , 1).
+present( superoxide , 1).
+present( H2O2 , 1).
+present( [arylsulfatase]-L-serine , 1).
+present( 10-acetyl-3,7-dihydroxyphenoxazine , 1).
+present( NADPH , 1).
+present( S-adenosyl-L-homocysteine , 1).
+present( acceptor , 1).
+present( NADP+ , 1).
+present( H+ , 1).
+present( O2 , 1).
+present( D-glucose , 1).
+present( reduced_acceptor , 1).
+******************other reactions****************
+
+reaction: 35056 
+k9*nitric_oxide*NADPH*nitric_oxide_reductase for nitric_oxide + NADPH +  =[ nitric_oxide_reductase ]=> H2O + NADP+ + N2O + .
+
+reaction: 14557 
+k10*H2O2*nitric_oxide*myeloperoxidase for H2O2 + nitric_oxide +  =[ myeloperoxidase ]=> .
+
+reaction: 14620 
+k11*H2O2*H+*myeloperoxidase for H2O2 + H+ +  =[ myeloperoxidase ]=> .
+
+reaction: 24238 
+k12*superoxide*reduced_acceptor*H+*superoxide_reductase for superoxide + reduced_acceptor + H+ +  =[ superoxide_reductase ]=> H2O2 + oxidized_acceptor + .
+
+reaction: 35067 
+k13*nitric_oxide*reduced_acceptor*nitric_oxide_reductase for nitric_oxide + reduced_acceptor +  =[ nitric_oxide_reductase ]=> nitrous_oxide + H2O + oxidized_acceptor + .
+
+reaction: 35052 
+k14*nitric_oxide*reduced_acceptor*nitric_oxide_reductase for nitric_oxide + reduced_acceptor +  =[ nitric_oxide_reductase ]=> acceptor + H2O + N2O + .
+
+reaction: 35051 
+k15*nitric_oxide*reduced_acceptor*nitric_oxide_reductase for nitric_oxide + reduced_acceptor +  =[ nitric_oxide_reductase ]=> nitrous_oxide + acceptor + H2O + .
+
+reaction: 14614 
+k16*H2O2*myeloperoxidase for H2O2 +  =[ myeloperoxidase ]=> H2O + .
+
+reaction: 35058 
+k17*H+*nitric_oxide*NADPH*nitric_oxide_reductase for H+ + nitric_oxide + NADPH +  =[ nitric_oxide_reductase ]=> nitrous_oxide + H2O + NADP+ + .
+
+reaction: 35053 
+k18*acceptor*H2O*N2O*nitric_oxide_reductase for acceptor + H2O + N2O +  =[ nitric_oxide_reductase ]=> nitric_oxide + reduced_acceptor + .
+
+reaction: 24242 
+k19*superoxide*reduced_acceptor*H+*superoxide_reductase for superoxide + reduced_acceptor + H+ +  =[ superoxide_reductase ]=> H2O2 + acceptor + .
+
+reaction: 17634 
+k20*O2*nitric_oxide*NADPH*nitric_oxide_dioxygenase for O2 + nitric_oxide + NADPH +  =[ nitric_oxide_dioxygenase ]=> NADP+ + nitrate + H+ + .
+
+reaction: 17637 
+k21*O2*nitric_oxide*NADPH*nitric_oxide_dioxygenase for O2 + nitric_oxide + NADPH +  =[ nitric_oxide_dioxygenase ]=> NO3- + NADP+ + H+ + .
+
+reaction: 35065 
+k22*O2*reduced_acceptor*H+*nitric_oxide_reductase for O2 + reduced_acceptor + H+ +  =[ nitric_oxide_reductase ]=> H2O + oxidized_acceptor + .
+total solution number :  13327
+total solution distribution :  {46: 1648, 52: 129, 45: 2531, 48: 405, 47: 808, 49: 338, 60: 6, 50: 205, 51: 240, 57: 50, 71: 4, 56: 112, 70: 2, 59: 14, 65: 3, 67: 2, 58: 36, 61: 9, 63: 4, 55: 54, 53: 55, 86: 2, 87: 4, 85: 2, 89: 4, 54: 113, 97: 2, 66: 6, 95: 4, 36: 757, 40: 117, 35: 1789, 39: 127, 37: 489, 38: 227, 41: 97, 69: 1, 42: 47, 44: 33, 93: 2, 43: 30, 33: 761, 32: 1766, 34: 286, 23: 4, 24: 1, 25: 1}
+總共執行時間：3839.446874 秒
+檢查violation：1238.492344 秒

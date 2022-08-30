@@ -1,0 +1,260 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+acetone 2
+D-glucose 2
+14
+start merging type A
+86
+7
+candidateB :  255
+candidate name :  phosphate
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+outNode :  NADH
+target :  chlorophyllide_a 3
+outNode :  NADH
+target :  ATP 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+start merging B
+merge success
+1
+target :  NADPH 2
+outNode :  NADH
+outNode :  resorufin
+start merging B
+0
+candidateB :  842
+candidate name :  NADH
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  Na+/out 3
+target :  diphosphate 3
+target :  diphosphate 3
+target :  nitric_oxide 3
+start merging B
+merge success
+1
+target :  NADH 1
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  NH3 2
+target :  diphosphate 3
+start merging B
+0
+candidateB :  1056
+candidate name :  H+
+start merging B
+merge success
+merge success
+merge success
+3
+target :  AMP 3
+target :  Cl- 3
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  AMP 3
+start merging B
+0
+candidateB :  1
+candidate name :  NAD+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  668
+candidate name :  NADP+
+start merging B
+merge success
+1
+target :  hexanoate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  hexanoate 3
+start merging B
+0
+candidateB :  64
+candidate name :  AMP
+start merging B
+merge success
+merge success
+merge success
+3
+target :  NADPH 2
+outNode :  NADH
+outNode :  resorufin
+target :  4-nitrophenol 3
+outNode :  NADH
+target :  D-fructose_6-phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  AMP 3
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+start merging B
+0
+candidateB :  18
+candidate name :  GMP
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+start merging B
+merge success
+merge success
+merge success
+3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+target :  XMP 3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+ans :  12 9 3
+
+reaction: 56791 
+k0*GDP*D-glucose*ADP-specific_glucose/glucosamine_kinase for GDP + D-glucose +  =[ ADP-specific_glucose/glucosamine_kinase ]=> D-glucose_6-phosphate + GMP + .
+
+reaction: 127947 
+k1*CO2*H2O*GTP*acetone*acetone_carboxylase for CO2 + H2O + GTP + acetone +  =[ acetone_carboxylase ]=> acetoacetate + GMP + phosphate + .
+
+reaction: 73836 
+k2*H2O*GMP*5'-deoxynucleotidase for H2O + GMP +  =[ 5'-deoxynucleotidase ]=> guanosine + phosphate + .
+
+reaction: 5876 
+k3*NADPH*D-glucose*methylglyoxal_reductase for NADPH + D-glucose +  =[ methylglyoxal_reductase ]=> NADP+ + .
+
+reaction: 7256 
+k4*H+*acetone*NADPH*(R,R)-butanediol_dehydrogenase for H+ + acetone + NADPH +  =[ (R,R)-butanediol_dehydrogenase ]=> propan-2-ol + NADP+ + .
+
+reaction: 25462 
+k5*NADP+*[amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine*phosphate*[amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase for NADP+ + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine + phosphate +  =[ [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase ]=> [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine + H+ + NADPH + .
+
+reaction: 27379 
+k6*pyruvate*H2O*ferricyanide*phosphate*pyruvate_oxidase for pyruvate + H2O + ferricyanide + phosphate +  =[ pyruvate_oxidase ]=> H2O2 + acetyl_phosphate + ferrocyanide + .
+
+reaction: 14613 
+k7*H2O2*10-acetyl-3,7-dihydroxyphenoxazine*H+*myeloperoxidase for H2O2 + 10-acetyl-3,7-dihydroxyphenoxazine + H+ +  =[ myeloperoxidase ]=> resorufin + H2O + .
+
+reaction: 976 
+k8*NADPH*beta-ketobutyryl-CoA*3-oxoacyl-[acyl-carrier-protein]_reductase for NADPH + beta-ketobutyryl-CoA +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> beta-hydroxybutyryl-CoA + NADP+ + .
+******************pathnode****************
+acetone
+D-glucose
+D-glucose
+acetone
+GMP
+acetone
+D-glucose
+D-glucose
+acetone
+phosphate
+H2O2
+present( H2O2 , 1).
+present( CO2 , 1).
+present( H2O , 1).
+present( GDP , 1).
+present( GTP , 1).
+present( NADPH , 1).
+present( phosphate , 1).
+present( pyruvate , 1).
+present( GMP , 1).
+present( 10-acetyl-3,7-dihydroxyphenoxazine , 1).
+present( H+ , 1).
+present( D-glucose , 1).
+present( NADP+ , 1).
+present( [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine , 1).
+present( ferricyanide , 1).
+present( acetone , 1).
+present( beta-ketobutyryl-CoA , 1).
+******************other reactions****************
+
+reaction: 14620 
+k9*H2O2*H+*myeloperoxidase for H2O2 + H+ +  =[ myeloperoxidase ]=> .
+
+reaction: 14614 
+k10*H2O2*myeloperoxidase for H2O2 +  =[ myeloperoxidase ]=> H2O + .
+
+reaction: 27372 
+k11*pyruvate*H2O*pyruvate_oxidase for pyruvate + H2O +  =[ pyruvate_oxidase ]=> acetate + CO2 + .
+total solution number :  46122
+total solution distribution :  {28: 3088, 34: 309, 27: 6074, 30: 1114, 29: 1703, 72: 4, 31: 559, 74: 4, 32: 470, 33: 411, 55: 158, 53: 70, 54: 100, 68: 21, 58: 20, 63: 8, 65: 4, 56: 94, 59: 12, 57: 24, 61: 7, 38: 93, 39: 44, 40: 40, 35: 284, 69: 23, 67: 20, 71: 13, 37: 196, 70: 15, 36: 172, 79: 4, 41: 23, 44: 14, 48: 6, 60: 6, 62: 12, 43: 18, 45: 11, 42: 17, 52: 12, 14: 1300, 18: 2871, 13: 2710, 15: 2178, 16: 4760, 17: 5444, 19: 1496, 46: 18, 24: 202, 20: 878, 22: 375, 21: 506, 64: 8, 26: 5589, 23: 221, 25: 169, 50: 2, 73: 4, 66: 8, 78: 8, 47: 16, 51: 10, 12: 2064, 49: 1, 75: 4, 76: 1, 77: 2}
+總共執行時間：10276.788934 秒
+檢查violation：4254.461493 秒
