@@ -153,7 +153,7 @@ class node :
                     return False
         return True
 
-    def CheckDownRec(self, downRec):
+    def CheckDownRec(self, downRec, out, ans):
         tmp = []
         if self in downRec.getpro():
             return []
@@ -179,11 +179,20 @@ class node :
                 for rec in enz.getCatedge():
                     if rec.activated(added_species):
                         downRecs.append(rec)
-
-        for path in self.path:
-            if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
-                if downRec not in path["pathlist"]:
-                    tmp.append(path)
+        if (out):
+            for path in self.path:
+                pathlist = path["pathlist"].copy()
+                pathlist.append(downRec)
+                if self.CollectAll_tmp(pathlist) > ans:
+                    continue
+                if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
+                    if downRec not in path["pathlist"]:
+                        tmp.append(path)
+        else:
+            for path in self.path:
+                if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
+                    if downRec not in path["pathlist"]:
+                        tmp.append(path)
         return tmp
 
 
@@ -264,6 +273,23 @@ class node :
             return False
         return True
 
+    def CollectAll_tmp(self, allnodes, pathlist):
+        temp = ""
+        count = 1
+        allnode = allnodes.copy()
+        allnode.add(self.mapToNode["H2O"])
+        allnode.add(self.mapToNode["spontaneous_reaction"])
+        allrec  = set()
+        while count != 0:
+            tmp = len(allrec)
+            for enz in allnodes:
+                for reaction in enz.getCatedge():
+                    if (reaction not in pathlist) and (reaction not in allrec) and (reaction.activated(allnode)):
+                        for pro in reaction.getpro():
+                            allnode.add(pro)
+                        allrec.add(reaction)
+            count = len(allrec) - tmp
+        return len(allrec)
 
     def Merge(self, path, record):
         tmp    = {}

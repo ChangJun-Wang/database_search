@@ -1,0 +1,124 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+D-glucose 2
+nitric_oxide 3
+86
+start merging type A
+19
+6
+candidateB :  106
+candidate name :  reduced_acceptor
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  AMP 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  AMP 3
+target :  4-chlorophenol 3
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  5'-deoxyadenosine 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  NH2OH 3
+outNode :  NADH
+target :  17alpha-hydroxypregnenolone 2
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+start merging B
+0
+candidateB :  1054
+candidate name :  H+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  isobutanol 2
+start merging B
+0
+candidateB :  132
+candidate name :  NH3
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  L-alanine 2
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+start merging B
+merge success
+1
+target :  NH3 2
+start merging B
+merge success
+merge success
+2
+target :  NH2OH 3
+target :  GMP 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  NH2OH 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+target :  diphosphate 3
+outNode :  NADH
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+Traceback (most recent call last):
+  File "main.py", line 52, in <module>
+    searcher.main(1, input_species, output_species)
+  File "/home/R08943064/configurable/database_search/search/func.py", line 214, in main
+    self.main_bd(input_species, output_species)
+  File "/home/R08943064/configurable/database_search/search/func.py", line 305, in main_bd
+    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
+  File "/home/R08943064/configurable/database_search/search/func.py", line 36, in SearchDown
+    CheckDownRec = startPro.CheckDownRec(downRec, out, ans)
+  File "/home/R08943064/configurable/database_search/search/node.py", line 186, in CheckDownRec
+    if self.CollectAll_tmp(pathlist) > ans:
+TypeError: CollectAll_tmp() missing 1 required positional argument: 'pathlist'

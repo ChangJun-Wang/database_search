@@ -1,0 +1,102 @@
+nohup: ignoring input
+in database parsing
+start initializing
+num of reaction :  129788
+num of species :  114504
+typeA :  16430
+typeB :  13073
+
+ *************************************************
+lactate 2
+ethanol 2
+15
+start merging type A
+32
+6
+candidateB :  108
+candidate name :  reduced_acceptor
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+10
+target :  phytosphinganine 3
+target :  AMP 3
+outNode :  NADH
+target :  oleate 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+target :  NH3 2
+outNode :  NADH
+target :  cyclohexa-1,5-diene-1-carbonyl-CoA 3
+target :  4-chlorophenol 3
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  5'-deoxyadenosine 3
+outNode :  NADH
+target :  N2 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+6
+target :  AMP 3
+target :  AMP 3
+target :  oleate 3
+outNode :  NADH
+target :  17alpha-hydroxypregnenolone 2
+target :  5'-deoxyadenosine 3
+target :  N2 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+merge success
+9
+target :  phytosphinganine 3
+target :  AMP 3
+outNode :  NADH
+target :  oleate 3
+target :  AMP 3
+target :  NH3 2
+target :  CO 2
+target :  4-chlorophenol 3
+target :  2-hydroxyglutarate 3
+target :  5'-deoxyadenosine 3
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  oleate 3
+outNode :  NADH
+target :  oleate 3
+Traceback (most recent call last):
+  File "main.py", line 52, in <module>
+    searcher.main(1, input_species, output_species)
+  File "/home/R08943064/configurable/database_search/search/func.py", line 214, in main
+    self.main_bd(input_species, output_species)
+  File "/home/R08943064/configurable/database_search/search/func.py", line 305, in main_bd
+    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
+  File "/home/R08943064/configurable/database_search/search/func.py", line 36, in SearchDown
+    CheckDownRec = startPro.CheckDownRec(downRec, out, ans)
+  File "/home/R08943064/configurable/database_search/search/node.py", line 186, in CheckDownRec
+    if self.CollectAll_tmp(pathlist) > ans:
+TypeError: CollectAll_tmp() missing 1 required positional argument: 'pathlist'

@@ -20,7 +20,7 @@ def SearchUp(startNode, search_limit):
                         rea.layer = startNode.layer + 1
                         bfs.append(rea)
  
-def SearchDown(startNode, Target_type, struc, down_limit, inNodes, outNode):
+def SearchDown(startNode, Target_type, struc, down_limit, inNodes, outNode, out, ans):
     search_limit = down_limit
     bfs          = [startNode]
     candidate    = set()
@@ -28,12 +28,12 @@ def SearchDown(startNode, Target_type, struc, down_limit, inNodes, outNode):
     while (bfs != []):
         startPro = bfs.pop(0)
         if (Target_type in startPro.label):
-            found(Target_type, startPro, candidate, inNodes, struc)
+            found(Target_type, startPro, candidate, inNodes, struc, out, ans)
 
         if startPro.level+1 <= search_limit:
             for downRec in startPro.getDownedge():
                 # check whether this reaction has conflict to previous reactions and input
-                CheckDownRec = startPro.CheckDownRec(downRec)
+                CheckDownRec = startPro.CheckDownRec(downRec, out, ans)
                 if CheckDownRec != []:
                     for product in downRec.getpro():
                         if product.layer != 0 and product not in downRec.getrea():
@@ -45,7 +45,7 @@ def SearchDown(startNode, Target_type, struc, down_limit, inNodes, outNode):
                                     bfs.append(product)
     return candidate
 
-def found(stype, product, candidate, inNodes, struc):
+def found(stype, product, candidate, inNodes, struc, out, ans):
     if stype == "A" and (product.getpin() > 2):
         if product.path != []:
             candidate.add((product, product.labelA))
@@ -53,7 +53,7 @@ def found(stype, product, candidate, inNodes, struc):
         MaxPathRec = product.getDownedge()[0]
         MaxCount = 0
         for downRec in product.getDownedge():
-            CheckDownRec = product.CheckDownRec(downRec)
+            CheckDownRec = product.CheckDownRec(downRec, out, ans)
             if len(CheckDownRec) > MaxCount:
                 MaxCount = len(CheckDownRec)
                 MaxPathRec = downRec
@@ -73,7 +73,7 @@ def found(stype, product, candidate, inNodes, struc):
     elif stype == "B_side":
         for rec in product.labelB_side:
             if ~rec.is_reverse():
-                CheckDownRec = product.CheckDownRec(rec)
+                CheckDownRec = product.CheckDownRec(rec, out, ans)
                 if CheckDownRec != []:
                     candidate.add((product, rec.name))
                     break
@@ -207,6 +207,14 @@ class search:
                 count = count + len(downRec.getpro())
         print ("average next node count : ", count/len(self.nodeList))
 
+    def main(self, mode, input_species, output_species):
+        if (mode == 0):
+            self.main_default(input_species, output_species)
+        elif (mode == 1):
+            self.main_bd(input_species, output_species)
+        elif (mode == 2):
+            self.main_XOR(input_species, output_species)
+
     def main_bd(self, input_species, output_species):
         self.input_species  = input_species
 
@@ -221,7 +229,7 @@ class search:
 
         candidate = []
         self.BuildStart(input_species)
-        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.input_species, self.output_species)
+        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord("A")
@@ -229,7 +237,7 @@ class search:
         self.ClearLevel()
         print(len(candidate0))
         self.BuildStart(input_species)
-        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.input_species, self.output_species)
+        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
 
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
@@ -251,7 +259,7 @@ class search:
             self.ClearPath()
             self.ClearLevel()
             candidate[i].CopyToPath("A")
-            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species)
+            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
             print ("candidateB : ", len(candidateB))
             print ("candidate name : ", candidate[i].name)
             for candB in candidateB:
@@ -264,7 +272,7 @@ class search:
                 self.ClearLevel()
                 candidate_B = []
                 candidate[j].CopyToPath("A")
-                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species)
+                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
                 print ("start merging B")
 
                 for species in candidate_Bside:
@@ -294,7 +302,7 @@ class search:
                     target[0].CopyToPath("A2")
                     target[1].mark = 1
                     target[2].getenz().mark = 1
-                    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species)
+                    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
                     target[1].mark = 0
                     target[2].getenz().mark = 0
 
@@ -391,7 +399,7 @@ class search:
         self.Summary()
 
 
-    def main(self, input_species, output_species):
+    def main_default(self, input_species, output_species):
         self.input_species  = input_species
 
         for node in output_species:
@@ -406,7 +414,7 @@ class search:
         candidate = []
         self.BuildStart(input_species)
         # input_species[0].CopyToPath("A")
-        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 3, self.input_species, self.output_species)
+        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord("A")
@@ -419,7 +427,7 @@ class search:
         # for inNode in input_species:
         self.BuildStart(input_species)
         # input_species[1].CopyToPath("A")
-        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 3, self.input_species, self.output_species)
+        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
         for label in candidate0:
@@ -440,7 +448,7 @@ class search:
             self.ClearPath()
             self.ClearLevel()
             candidate[i].CopyToPath("A")
-            candidateB = SearchDown(candidate[i], "B", self.up_limit, 3, self.input_species, self.output_species)
+            candidateB = SearchDown(candidate[i], "B", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
             print ("candidateB : ", len(candidateB))
             print ("candidate name : ", candidate[i].name)
             for candB in candidateB:
@@ -453,7 +461,7 @@ class search:
                 self.ClearLevel()
                 candidate_B = []
                 candidate[j].CopyToPath("A")
-                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 3, self.input_species, self.output_species)
+                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
                 print ("start merging B")
                 # for species in candidate_Bside:
                 #     targetRec = self.mapToEdge[species[1]]
@@ -516,7 +524,7 @@ class search:
                     target[0].CopyToPath("A2")
                     target[1].mark = 1
                     target[2].getenz().mark = 1
-                    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species)
+                    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
                     target[1].mark = 0
                     target[2].getenz().mark = 0
 
@@ -619,7 +627,7 @@ class search:
                                         self.record_oth = allrec.copy()
         self.Summary()
 
-    def XORmain(self, input_species, output_species):
+    def main_XOR(self, input_species, output_species):
         self.input_species  = input_species
 
         for node in output_species:
@@ -634,7 +642,7 @@ class search:
         candidate = []
         self.BuildStart(input_species)
         # input_species[0].CopyToPath("A")
-        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.input_species, self.output_species)
+        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord("A")
@@ -645,7 +653,7 @@ class search:
         print(len(candidate0))
 
         self.BuildStart(input_species)
-        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.input_species, self.output_species)
+        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
         print("start merging type A")
         for label in candidate0:
             if label in candidate1:
@@ -665,7 +673,7 @@ class search:
             self.ClearPath()
             self.ClearLevel()
             candidate[i].CopyToPath("A")
-            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species)
+            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
             print ("candidateB : ", len(candidateB))
             print ("candidate name : ", candidate[i].name)
             for candB in candidateB:
@@ -676,7 +684,7 @@ class search:
                 self.ClearLevel()
                 candidate_B = []
                 candidateB[j].CopyToPath("A1")
-                candidate_Bside = SearchDown(candidateB[j], "B_side", self.up_limit, 1, self.input_species, self.output_species)
+                candidate_Bside = SearchDown(candidateB[j], "B_side", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
                 print ("start merging B")
 
                 for species in candidate_Bside:
@@ -707,7 +715,7 @@ class search:
                     target[0].CopyToPath("A2")
                     target[1].mark = 1
                     target[2].getenz().mark = 1
-                    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species)
+                    output = SearchDown(target[0], "output", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
                     target[1].mark = 0
                     target[2].getenz().mark = 0
 
