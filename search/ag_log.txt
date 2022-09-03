@@ -24,11 +24,11 @@ merge success
 1
 target :  hexanoate 3
 start merging B
+0
+start merging B
 merge success
 1
 target :  hexanoate 3
-start merging B
-0
 start merging B
 0
 candidateB :  1
@@ -54,17 +54,173 @@ target :  phosphate 2
 outNode :  NADH
 outNode :  resorufin
 target :  phosphate 2
-Traceback (most recent call last):
-  File "main.py", line 52, in <module>
-    searcher.main(1, input_species, output_species)
-  File "/home/R08943064/configurable/database_search/search/func.py", line 214, in main
-    self.main_bd(input_species, output_species)
-  File "/home/R08943064/configurable/database_search/search/func.py", line 275, in main_bd
-    candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
-  File "/home/R08943064/configurable/database_search/search/func.py", line 31, in SearchDown
-    found(Target_type, startPro, candidate, inNodes, struc, out, ans)
-  File "/home/R08943064/configurable/database_search/search/func.py", line 76, in found
-    CheckDownRec = product.CheckDownRec(rec, out, ans)
-  File "/home/R08943064/configurable/database_search/search/node.py", line 186, in CheckDownRec
-    if self.CollectAll_tmp(pathlist) > ans:
-TypeError: CollectAll_tmp() missing 1 required positional argument: 'pathlist'
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+target :  XMP 3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+start merging B
+0
+start merging B
+merge success
+1
+target :  XMP 3
+start merging B
+0
+candidateB :  62
+candidate name :  AMP
+start merging B
+merge success
+1
+target :  AMP 3
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  NADPH 2
+target :  4-nitrophenol 3
+outNode :  NADH
+target :  L-2-aminoadipate 3
+target :  D-fructose_6-phosphate 3
+start merging B
+0
+candidateB :  1
+candidate name :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+candidateB :  227
+candidate name :  phosphate
+start merging B
+merge success
+merge success
+merge success
+3
+target :  phosphate 2
+target :  H2O2 3
+target :  glucose_6-phosphate 3
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  methylamine 3
+outNode :  resorufin
+start merging B
+0
+start merging B
+0
+candidateB :  1
+candidate name :  H+
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+ans :  12 9 3
+
+reaction: 56791 
+k0*D-glucose*GDP*ADP-specific_glucose/glucosamine_kinase for D-glucose + GDP +  =[ ADP-specific_glucose/glucosamine_kinase ]=> D-glucose_6-phosphate + GMP + .
+
+reaction: 127947 
+k1*acetone*GTP*H2O*CO2*acetone_carboxylase for acetone + GTP + H2O + CO2 +  =[ acetone_carboxylase ]=> phosphate + GMP + acetoacetate + .
+
+reaction: 73836 
+k2*GMP*H2O*5'-deoxynucleotidase for GMP + H2O +  =[ 5'-deoxynucleotidase ]=> phosphate + guanosine + .
+
+reaction: 5876 
+k3*NADPH*D-glucose*methylglyoxal_reductase for NADPH + D-glucose +  =[ methylglyoxal_reductase ]=> NADP+ + .
+
+reaction: 7256 
+k4*NADPH*acetone*H+*(R,R)-butanediol_dehydrogenase for NADPH + acetone + H+ +  =[ (R,R)-butanediol_dehydrogenase ]=> NADP+ + propan-2-ol + .
+
+reaction: 25462 
+k5*phosphate*[amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine*NADP+*[amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase for phosphate + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine + NADP+ +  =[ [amino_group_carrier_protein]-6-phospho-L-2-aminoadipate_reductase ]=> NADPH + H+ + [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-phosphooxy-5-oxopentan-1-yl)-L_glutamine + .
+
+reaction: 27379 
+k6*phosphate*ferricyanide*H2O*pyruvate*pyruvate_oxidase for phosphate + ferricyanide + H2O + pyruvate +  =[ pyruvate_oxidase ]=> H2O2 + acetyl_phosphate + ferrocyanide + .
+
+reaction: 14613 
+k7*H+*10-acetyl-3,7-dihydroxyphenoxazine*H2O2*myeloperoxidase for H+ + 10-acetyl-3,7-dihydroxyphenoxazine + H2O2 +  =[ myeloperoxidase ]=> resorufin + H2O + .
+
+reaction: 976 
+k8*NADPH*beta-ketobutyryl-CoA*3-oxoacyl-[acyl-carrier-protein]_reductase for NADPH + beta-ketobutyryl-CoA +  =[ 3-oxoacyl-[acyl-carrier-protein]_reductase ]=> beta-hydroxybutyryl-CoA + NADP+ + .
+******************pathnode****************
+acetone
+D-glucose
+D-glucose
+acetone
+GMP
+acetone
+D-glucose
+D-glucose
+acetone
+phosphate
+H2O2
+present( H2O2 , 1).
+present( acetone , 1).
+present( GDP , 1).
+present( H2O , 1).
+present( GTP , 1).
+present( CO2 , 1).
+present( GMP , 1).
+present( NADPH , 1).
+present( phosphate , 1).
+present( ferricyanide , 1).
+present( [amino_group_carrier_protein]-C-terminal-N-(1-carboxy-5-oxopentan-1-yl)-L-glutamine , 1).
+present( pyruvate , 1).
+present( NADP+ , 1).
+present( H+ , 1).
+present( 10-acetyl-3,7-dihydroxyphenoxazine , 1).
+present( beta-ketobutyryl-CoA , 1).
+present( D-glucose , 1).
+******************other reactions****************
+
+reaction: 14614 
+k9*H2O2*myeloperoxidase for H2O2 +  =[ myeloperoxidase ]=> H2O + .
+
+reaction: 27372 
+k10*H2O*pyruvate*pyruvate_oxidase for H2O + pyruvate +  =[ pyruvate_oxidase ]=> CO2 + acetate + .
+
+reaction: 14620 
+k11*H+*H2O2*myeloperoxidase for H+ + H2O2 +  =[ myeloperoxidase ]=> .
+total solution number :  10668
+total solution distribution :  {27: 846, 33: 78, 26: 1420, 29: 272, 28: 386, 71: 2, 30: 192, 73: 1, 31: 96, 32: 105, 54: 17, 52: 2, 53: 16, 67: 4, 57: 2, 62: 4, 64: 2, 55: 31, 58: 4, 56: 8, 60: 1, 37: 44, 38: 7, 39: 11, 34: 55, 68: 6, 66: 2, 70: 2, 36: 26, 69: 6, 35: 52, 78: 2, 40: 7, 43: 6, 47: 5, 59: 1, 61: 2, 42: 3, 44: 4, 41: 6, 51: 3, 13: 325, 17: 1395, 12: 1032, 14: 323, 15: 777, 16: 1119, 18: 814, 45: 8, 23: 63, 19: 393, 21: 161, 20: 263, 63: 1, 25: 51, 22: 104, 24: 84, 76: 1, 74: 2, 46: 9, 77: 1, 75: 2, 50: 1}
+總共執行時間：5108.768525 秒
+檢查violation：923.352607 秒

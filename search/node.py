@@ -30,6 +30,9 @@ class node :
         self.sidepath = []
         self.recordA  = []
 
+        self.H2O      = None
+        self.spontaneous_reaction = None
+
         self.labelA      = ""
         self.labelB      = ""
         self.labelB_side = []
@@ -183,11 +186,17 @@ class node :
             for path in self.path:
                 pathlist = path["pathlist"].copy()
                 pathlist.append(downRec)
-                if self.CollectAll_tmp(pathlist) > ans:
-                    continue
-                if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
-                    if downRec not in path["pathlist"]:
-                        tmp.append(path)
+                allnodes = set()
+                for rec in pathlist:
+                    for rea in rec.getrea():
+                        allnodes.add(rea)
+                    for pro in rec.getpro():
+                        allnodes.add(pro)
+                    allnodes.add(rec.getenz())
+                if self.CollectAll_tmp(allnodes, pathlist) <= ans:
+                    if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
+                        if downRec not in path["pathlist"]:
+                            tmp.append(path)
         else:
             for path in self.path:
                 if (self.CheckRecSpecies(path["pathnode"], downRec) and self.CheckEnz(path["pathnode"], downRecs)):
@@ -277,8 +286,8 @@ class node :
         temp = ""
         count = 1
         allnode = allnodes.copy()
-        allnode.add(self.mapToNode["H2O"])
-        allnode.add(self.mapToNode["spontaneous_reaction"])
+        allnode.add(self.H2O)
+        allnode.add(self.spontaneous_reaction)
         allrec  = set()
         while count != 0:
             tmp = len(allrec)

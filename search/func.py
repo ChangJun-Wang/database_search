@@ -36,7 +36,7 @@ def SearchDown(startNode, Target_type, struc, down_limit, inNodes, outNode, out,
                 CheckDownRec = startPro.CheckDownRec(downRec, out, ans)
                 if CheckDownRec != []:
                     for product in downRec.getpro():
-                        if product.layer != 0 and product not in downRec.getrea():
+                        if product not in downRec.getrea(): #product.layer != 0 and 
                             CheckProduct = product.CheckProduct(CheckDownRec, 0, outNode)
                             if CheckProduct != []:
                                 product.AddPath(startPro, downRec, CheckProduct)
@@ -132,6 +132,8 @@ class search:
 
     def initialize(self):
         for nodes in self.nodeList:
+            nodes.H2O = self.mapToNode["H2O"]
+            nodes.spontaneous_reaction = self.mapToNode["spontaneous_reaction"]
             if (nodes.getpin() > 1):
                 enz = set()
                 for rec in nodes.getUpedge():
@@ -259,7 +261,7 @@ class search:
             self.ClearPath()
             self.ClearLevel()
             candidate[i].CopyToPath("A")
-            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
+            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species, False, self.ans)
             print ("candidateB : ", len(candidateB))
             print ("candidate name : ", candidate[i].name)
             for candB in candidateB:
@@ -272,7 +274,7 @@ class search:
                 self.ClearLevel()
                 candidate_B = []
                 candidate[j].CopyToPath("A")
-                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
+                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species, False, self.ans)
                 print ("start merging B")
 
                 for species in candidate_Bside:
