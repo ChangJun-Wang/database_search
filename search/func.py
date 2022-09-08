@@ -36,7 +36,7 @@ def SearchDown(startNode, Target_type, struc, down_limit, inNodes, outNode, out,
                 CheckDownRec = startPro.CheckDownRec(downRec, out, ans)
                 if CheckDownRec != []:
                     for product in downRec.getpro():
-                        if product not in downRec.getrea(): #product.layer != 0 and 
+                        if product not in downRec.getrea(): 
                             CheckProduct = product.CheckProduct(CheckDownRec, 0, outNode)
                             if CheckProduct != []:
                                 product.AddPath(startPro, downRec, CheckProduct)
@@ -416,7 +416,7 @@ class search:
         candidate = []
         self.BuildStart(input_species)
         # input_species[0].CopyToPath("A")
-        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
+        candidate0 = SearchDown(input_species[0], "A", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
         # record all the returned type A
         for species in candidate0:
             species[0].CopyToRecord("A")
@@ -429,7 +429,7 @@ class search:
         # for inNode in input_species:
         self.BuildStart(input_species)
         # input_species[1].CopyToPath("A")
-        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
+        candidate1 = SearchDown(input_species[1], "A", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
         # check if there is any common label found between input0 and input1 path
         print("start merging type A")
         for label in candidate0:
@@ -450,7 +450,7 @@ class search:
             self.ClearPath()
             self.ClearLevel()
             candidate[i].CopyToPath("A")
-            candidateB = SearchDown(candidate[i], "B", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
+            candidateB = SearchDown(candidate[i], "B", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
             print ("candidateB : ", len(candidateB))
             print ("candidate name : ", candidate[i].name)
             for candB in candidateB:
@@ -463,7 +463,7 @@ class search:
                 self.ClearLevel()
                 candidate_B = []
                 candidate[j].CopyToPath("A")
-                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 3, self.input_species, self.output_species, self.out, self.ans)
+                candidate_Bside = SearchDown(candidate[j], "B_side", self.up_limit, 1, self.input_species, self.output_species, self.out, self.ans)
                 print ("start merging B")
                 # for species in candidate_Bside:
                 #     targetRec = self.mapToEdge[species[1]]
@@ -791,7 +791,6 @@ class search:
                                         for node in rec.getpro():
                                             allnodes.add(node)
                                         allnodes.add(rec.getenz())
-                                    # allrec_tmp = len(self.CollectAll(allnodes, pathlist))
 
                                     pathlist.append(x)
                                     for node in x.getrea():
@@ -898,43 +897,6 @@ class search:
         for node in self.nodeList:
             node.mark    = 0
 
-    # def CheckVio(self, pw_p, nw_p, out_p, vp, vn):
-    # def CheckVio(self, label0, label1, node0, node1, targetRec):
-    #     merge = self.MergeBside(label0, label1, node0, node1)
-    #     if merge == []:
-    #         return False
-        
-    #     print("merge success")
-    #     # path_tmp = []
-    #     for cand in merge:
-    #         path = cand[0]
-    #         sidepath = cand[1]
-    #         self.ClearPath()
-    #         self.ClearLevel()
-    #         tmp = self.Merge(path, sidepath, targetRec)
-    #         # for rec in tmp["pathlist"]:
-    #         #     print (rec.show(0))
-    #         node0.path.append(tmp)
-    #         output = SearchDown(node0, "output", self.up_limit, 3, self.input_species, self.output_species)
-    #         # print ("**********************output : ",len(output))
-    #         for outNode in output:
-    #             for outpath in outNode[0].path:                
-    #                 self.MarkPath(path, sidepath, outpath, node0, node1)
-    #                 outNode[0].mark = 6
-    #                 for reaction in outpath["pathlist"]:
-    #                     if node0 in reaction.getrea() and node1 not in reaction.getrea():
-    #                         reaction.getenz().mark = 6
-    #                 # for rec in outpath["pathlist"]:
-    #                 #     print (rec.show(0))
-    #                 if self.CheckAll(outpath):
-    #                     print ("find one outpath")
-    #                     outNode[0].pathOut.append(outpath)
-    #                     self.ClearMP(path, sidepath, outpath, node0, node1)
-    #                     break
-    #                 self.ClearMP(path, sidepath, outpath, node0, node1)
-    #                 outNode[0].mark = 0
-    #     return True
-
     def CheckVio(self, path, sidepath, node0, node1, outpath, upRec):
         self.ClearMP(path, sidepath, outpath, node0, node1)
         self.MarkPath(path, sidepath, outpath, node0, node1)
@@ -943,8 +905,6 @@ class search:
         for reaction in outpath["pathlist"]:
             if node0 in reaction.getrea() and node1 not in reaction.getrea():
                 reaction.getenz().mark = 6
-        # for rec in outpath["pathlist"]:
-        #     print (rec.show(0))
         if self.CheckAll(outpath,upRec):
             self.ClearMP(path, sidepath, outpath, node0, node1)
             return True
@@ -976,10 +936,6 @@ class search:
                         node.mark = 2
                 node0.mark = 3
                 node1.mark = 4
-                # path0 = self.Merge(path, sidepath)
-                # downRec  = self.mapToEdge[label1[1]]
-                # pathnode = []
-                # path1 = self.CreatePath(pathnode, downRec)
 
                 if self.CheckMerge(path, sidepath):
                     tmp = self.Merge_tmp(path, sidepath)
@@ -1097,24 +1053,6 @@ class search:
             count = len(allrec) - tmp
         return allrec
 
-    # def CreatePath(self, pathnode, downRec):
-    #     related  = set()
-    #     enz      = []
-    #     enz.append(downRec.getenz())
-    #     for rea in downRec.getrea():
-    #         if rea not in pathnode:
-    #             related.add(rea)
-    #     for pro in downRec.getpro():
-    #         related.add(pro)
-    #     path = {}
-    #     path["pathnode"] = pathnode
-    #     path["related"]  = related
-    #     path["pathlist"] = []
-    #     path["pathlist"].append(downRec)
-    #     path["pathenz"]  = enz
-
-    #     return path
-
     def BuildStart(self, input_species):
         for node in input_species:
             tmp             = {}
@@ -1178,13 +1116,16 @@ class search:
             if c_c < 2:
                 for pro in rec.getpro():
                     if pro.mark == 1 or pro.mark == 3:
-                        if pro.pro_m[2]:
+                        if pro.pro_m[2] or pro.pro_m[4]:
                             return False
                     elif pro.mark == 2:
-                        if pro.pro_m[1] or pro.pro_m[3]:
+                        if pro.pro_m[1] or pro.pro_m[6]:
                             return False
                     elif pro.mark == 6:
-                        if pro.pro_m[1] or pro.pro_m[2]:
+                        if pro.pro_m[1] or pro.pro_m[2] or pro.pro_m[4]:
+                            return False
+                    elif pro.mark == 4:
+                        if pro.pro_m[1] or pro.pro_m[6]:
                             return False
         return True
 

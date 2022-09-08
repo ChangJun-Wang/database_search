@@ -11,26 +11,145 @@ acetone 2
 D-glucose 2
 14
 start merging type A
-86
+93
 7
+candidateB :  64
+candidate name :  AMP
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+target :  4-nitrophenol 3
+outNode :  NADH
+target :  AMP 3
+outNode :  NADH
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  NADPH 2
+outNode :  NADH
+outNode :  resorufin
+target :  4-nitrophenol 3
+outNode :  NADH
+target :  D-fructose_6-phosphate 3
+candidateB :  1070
+candidate name :  H+
+start merging B
+merge success
+1
+target :  AMP 3
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+3
+target :  AMP 3
+target :  AMP 3
+target :  Cl- 3
+candidateB :  18
+candidate name :  GMP
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+target :  XMP 3
+target :  GMP 3
+outNode :  NADH
+target :  GMP 3
+target :  NH3 2
+outNode :  NADH
+start merging B
+0
+start merging B
+0
+start merging B
+merge success
+1
+target :  phosphate 2
+outNode :  NADH
+outNode :  resorufin
+target :  phosphate 2
+start merging B
+0
+start merging B
+0
+candidateB :  852
+candidate name :  NADH
+start merging B
+merge success
+1
+target :  diphosphate 3
+start merging B
+merge success
+1
+target :  NADH 1
+outNode :  NADH
+start merging B
+0
+start merging B
+merge success
+1
+target :  p-nitrocatechol 4
+start merging B
+0
+start merging B
+merge success
+merge success
+merge success
+merge success
+4
+target :  diphosphate 3
+target :  Na+/out 3
+target :  diphosphate 3
+target :  isovalerate 3
 candidateB :  668
 candidate name :  NADP+
 start merging B
-0
-start merging B
-0
-start merging B
 merge success
 1
 target :  hexanoate 3
 start merging B
 0
 start merging B
-merge success
-1
-target :  hexanoate 3
+0
 start merging B
 0
+start merging B
+0
+start merging B
+merge success
+merge success
+2
+target :  propionate 3
+target :  hexanoate 3
 candidateB :  1
 candidate name :  NAD+
 start merging B
@@ -45,112 +164,34 @@ start merging B
 0
 start merging B
 0
-candidateB :  18
-candidate name :  GMP
-start merging B
-merge success
-1
-target :  phosphate 2
-outNode :  NADH
-outNode :  resorufin
-target :  phosphate 2
-start merging B
-0
-start merging B
-merge success
-merge success
-merge success
-3
-target :  GMP 3
-outNode :  NADH
-target :  GMP 3
-target :  XMP 3
-target :  GMP 3
-outNode :  NADH
-target :  GMP 3
-start merging B
-0
-start merging B
-merge success
-1
-target :  XMP 3
-start merging B
-0
-candidateB :  62
-candidate name :  AMP
-start merging B
-merge success
-1
-target :  AMP 3
-outNode :  NADH
-start merging B
-0
-start merging B
-0
-start merging B
-0
-start merging B
-merge success
-merge success
-merge success
-merge success
-4
-target :  NADPH 2
-target :  4-nitrophenol 3
-outNode :  NADH
-target :  L-2-aminoadipate 3
-target :  D-fructose_6-phosphate 3
-start merging B
-0
-candidateB :  1
-candidate name :  NADH
-start merging B
-0
-start merging B
-0
-start merging B
-0
-start merging B
-0
-start merging B
-0
-start merging B
-0
-candidateB :  227
+candidateB :  255
 candidate name :  phosphate
 start merging B
 merge success
-merge success
-merge success
-3
-target :  phosphate 2
-target :  H2O2 3
-target :  glucose_6-phosphate 3
-start merging B
-0
-start merging B
-0
-start merging B
-merge success
 1
-target :  methylamine 3
+target :  NADPH 2
+outNode :  NADH
 outNode :  resorufin
 start merging B
 0
 start merging B
 0
-candidateB :  1
-candidate name :  H+
 start merging B
 0
 start merging B
-0
-start merging B
-0
-start merging B
-0
-start merging B
-0
+merge success
+merge success
+merge success
+merge success
+merge success
+5
+target :  ATP 2
+outNode :  NADH
+target :  phosphate 2
+target :  2-fluoroadenosine 3
+target :  diphosphate 3
+outNode :  NADH
+target :  fluoride 3
 start merging B
 0
 ans :  12 9 3
@@ -196,8 +237,8 @@ H2O2
 present( H2O2 , 1).
 present( acetone , 1).
 present( GDP , 1).
-present( H2O , 1).
 present( GTP , 1).
+present( H2O , 1).
 present( CO2 , 1).
 present( GMP , 1).
 present( NADPH , 1).
@@ -220,7 +261,7 @@ k10*H2O*pyruvate*pyruvate_oxidase for H2O + pyruvate +  =[ pyruvate_oxidase ]=> 
 
 reaction: 14620 
 k11*H+*H2O2*myeloperoxidase for H+ + H2O2 +  =[ myeloperoxidase ]=> .
-total solution number :  10668
-total solution distribution :  {27: 846, 33: 78, 26: 1420, 29: 272, 28: 386, 71: 2, 30: 192, 73: 1, 31: 96, 32: 105, 54: 17, 52: 2, 53: 16, 67: 4, 57: 2, 62: 4, 64: 2, 55: 31, 58: 4, 56: 8, 60: 1, 37: 44, 38: 7, 39: 11, 34: 55, 68: 6, 66: 2, 70: 2, 36: 26, 69: 6, 35: 52, 78: 2, 40: 7, 43: 6, 47: 5, 59: 1, 61: 2, 42: 3, 44: 4, 41: 6, 51: 3, 13: 325, 17: 1395, 12: 1032, 14: 323, 15: 777, 16: 1119, 18: 814, 45: 8, 23: 63, 19: 393, 21: 161, 20: 263, 63: 1, 25: 51, 22: 104, 24: 84, 76: 1, 74: 2, 46: 9, 77: 1, 75: 2, 50: 1}
-總共執行時間：5108.768525 秒
-檢查violation：923.352607 秒
+total solution number :  12008
+total solution distribution :  {28: 1185, 34: 103, 27: 2204, 30: 393, 29: 606, 72: 2, 31: 194, 74: 3, 32: 160, 33: 134, 55: 48, 53: 19, 54: 33, 68: 8, 58: 6, 63: 2, 65: 1, 56: 39, 59: 5, 57: 10, 61: 3, 38: 41, 39: 14, 40: 13, 35: 95, 69: 5, 67: 5, 71: 4, 37: 58, 70: 5, 36: 66, 79: 2, 41: 10, 44: 3, 48: 3, 60: 2, 62: 4, 43: 7, 45: 9, 42: 5, 52: 4, 21: 83, 16: 1119, 17: 640, 19: 206, 25: 17, 26: 1410, 18: 317, 23: 37, 76: 1, 24: 52, 22: 40, 20: 101, 46: 2, 50: 1, 73: 1, 64: 2, 66: 2, 78: 2, 47: 3, 51: 2, 13: 325, 12: 1032, 14: 323, 15: 777}
+總共執行時間：2942.930031 秒
+檢查violation：933.851394 秒

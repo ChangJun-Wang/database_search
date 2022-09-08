@@ -49,7 +49,7 @@ if __name__ == '__main__':
     # output_species = searcher.mapToNode["resorufin"]
 
     if input_species != []:
-        searcher.main(1, input_species, output_species)
+        searcher.main(0, input_species, output_species)
 
     end = time.process_time()
     print("總共執行時間：%f 秒" % (end - start))
